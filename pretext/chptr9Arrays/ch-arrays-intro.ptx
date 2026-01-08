@@ -16,22 +16,22 @@
     our only alternative would be to declare a separate
 <c>JButton</c> variable for each letter of the alphabet:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
  JButton button1;
  JButton button2;
  ...
  JButton button26;
- </input></program>
+ </code></program>
   <p>
     Obviously, requiring 26 separate variables for this problem is tedious and inconvenient.
     Similarly, to instantiate and assign a label to each button would require 26 statements:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
  button1 = new JButton("A");
  button2 = new JButton("B");
  ...
  button26 = new JButton("Z");
- </input></program>
+ </code></program>
   <p>
     This approach is also tedious.
     What we need is some way to use a loop to process each button,
@@ -41,11 +41,11 @@
     For example,
     the following code will declare an array for storing 26 <c>JButton</c> s and then instantiate and label each button:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
  JButton letter[]  = new JButton[26];
  for (int k = 0; k &lt; 26; k++)
      letter[k] = new JButton("A" + k);
- </input></program>
+ </code></program>
   <p>
     You may not yet understand the code in this segment,
     but you can see how economical it is.

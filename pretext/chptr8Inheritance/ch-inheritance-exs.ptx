@@ -322,7 +322,7 @@
           Explain the difference between each of the following pairs of concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>class</em></premise>
@@ -395,7 +395,7 @@
 	</match>
 
 	
-      </matches>
+      </cardsort>
     </exercise>
 
      
@@ -542,14 +542,14 @@ List the names of all the methods that would be inherited by the <c>ToggleButton
       </p>
     </statement>
       <program label="jinx_shift_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -567,14 +567,14 @@ List the names of all the methods that would be inherited by the <c>ToggleButton
       </p>
     </statement>
       <program label="jinx_substitution_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -590,10 +590,10 @@ List the names of all the methods that would be inherited by the <c>ToggleButton
         You place the keyword at the beginning of the alphabet,
         and then fill out the other 21 slots with remaining letters,
         giving the following alphabet:
- <program language="java"><input>
+ <program language="java"><code>
 Cipher alphabet:   zebracdfghijklmnopqstuvwxy
 Plain alphabet:    abcdefghijklmnopqrstuvwxyz
- </input></program>Design and implement an <c>Alphabet</c> class for constructing these kinds of substitution alphabets.
+ </code></program>Design and implement an <c>Alphabet</c> class for constructing these kinds of substitution alphabets.
         It should have a single public method that takes a keyword <c>String</c> as an argument and returns an alphabet string.
         Note that an alphabet cannot contain duplicate letters,
         so repeated letters in a keyword like
@@ -602,14 +602,14 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       </p>
     </statement>
       <program label="jinx_alphabet_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -624,14 +624,14 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       </p>
     </statement>
       <program label="jinx_alpha_cipher_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -649,14 +649,14 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       </p>
     </statement>
       <program label="jinx_mult_game_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -670,14 +670,14 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       </p>
     </statement>
       <program label="jinx_mult_player_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -697,14 +697,14 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       </p>
     </statement>
       <program label="jinx_rps_game_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -719,14 +719,14 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       </p>
     </statement>
       <program label="jinx_rps_player_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -739,7 +739,7 @@ Plain alphabet:    abcdefghijklmnopqrstuvwxyz
       Given the classes with the following headers
 
 <program language="java">
-<input>
+<code>
 public class Animal ...
 public class DomesticAnimal extends Animal ...
 public class FarmAnimal extends DomesticAnimal...
@@ -747,7 +747,7 @@ public class HousePet extends DomesticAnimal...
 public class Cow extends FarmAnimal ...
 public class Goat extends FarmAnimal ...
 public class DairyCow extends Cow ...
-</input>
+</code>
 </program>
 
 draw a UML class diagram representing the hierarchy created by these declarations.
@@ -764,13 +764,13 @@ draw a UML class diagram representing the hierarchy created by these declaration
       which of the following are legal assignment statements?
 
 <program language="java">
-<input>
+<code>
 DairyCow dc = new FarmAnimal();
 FarmAnimal fa = new Goat();
 Cow c1 = new DomesticAnimal();
 Cow c2 = new DairyCow();
 DomesticAnimal dom = new HousePet();
-</input>
+</code>
 </program>
 </p>
 </statement>
@@ -787,7 +787,7 @@ The JFrame that follows contains a semantic error in its <c>SomeFrame()</c> cons
   Why? (<em>Hint</em>: Think scope!)
 </p>
 <program language="java">
-<input>
+<code>
 public class SomeFrame extends JFrame
                 implements ActionListener
 {
@@ -806,7 +806,7 @@ public class SomeFrame extends JFrame
       System.out.println("Clicked");
   } // actionPerformed()
 } // SomeFrame
-</input>
+</code>
 </program>
 </statement>
       <response />
@@ -819,7 +819,7 @@ public class SomeFrame extends JFrame
   What would be output by the following program?
 
 <program language="java">
-<input>
+<code>
 public class SomeFrame2 extends JFrame
 {
   // Declare instance variables
@@ -840,7 +840,7 @@ public class SomeFrame2 extends JFrame
     frame.setVisible(true);
   }
 } // SomeFrame2
-</input>
+</code>
 </program>
 
 </p>

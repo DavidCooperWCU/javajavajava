@@ -12,7 +12,7 @@
     <listing xml:id="list-helloworld2">
       <caption><c>HelloWorldCanvas</c> source code.</caption>
     <program language="java">
-    <input>
+    <code>
 /** File: HelloWorldCanvas program */
 import javax.swing.JFrame; // Import class names
 import java.awt.Graphics;
@@ -31,7 +31,7 @@ public class HelloWorldCanvas extends Canvas // Class header
         f.setVisible(true);
     } // main
 }  // End of HelloWorldCanvas
-    </input>
+    </code>
     </program>
     </listing>
     <p>
@@ -90,10 +90,10 @@ public class HelloWorldCanvas extends Canvas // Class header
       is displayed we could use the statements
     </p>
     <program language="java">
-    <input>
+    <code>
     g.drawString("Hello, World!",10,20);
     g.drawString("Welcome to Java",10,35);
-    </input>
+    </code>
     </program>
     <p>
       in the body of <c>HelloWorldCanvas</c>'s <c>paint()</c> method.
@@ -135,9 +135,9 @@ public class HelloWorldCanvas extends Canvas // Class header
       Thus, a call to <c>fillRect()</c> would take the form
     </p>
     <program language="java">
-    <input>
+    <code>
     g.fillRect(x,y,width,height);
-    </input>
+    </code>
     </program>
     <p>
       where <c>x</c> and <c>y</c> arguments specify the location of the upper left corner of the rectangle as being <c>x</c> pixels from the left edge of the window and <c>y</c> pixels down from the top edge of the window.
@@ -230,9 +230,9 @@ public class HelloWorldCanvas extends Canvas // Class header
       The statement
     </p>
     <program language="java">
-    <input>
+    <code>
     g.fillRect(25, 25, 140, 40);
-    </input>
+    </code>
     </program>
     <p>
       will fill this rectangle with whatever color happens to be <c>g</c>'s current color.
@@ -241,9 +241,9 @@ public class HelloWorldCanvas extends Canvas // Class header
       the statement
     </p>
     <program language="java">
-    <input>
+    <code>
     g.drawString("Hello, World!", 50, 50);
-    </input>
+    </code>
     </program>
     <p>
       will display
@@ -261,7 +261,7 @@ public class HelloWorldCanvas extends Canvas // Class header
       <caption>The <c>HelloWorldCanvas</c> class is a Java
       Swing program that shows how to use color and drawing methods.</caption>
     <program language="java">
-    <input>
+    <code>
 import java.awt.*;
 import javax.swing.JFrame;
 
@@ -290,7 +290,7 @@ public class HelloWorldCanvas extends Canvas
         f.setVisible(true);
     } //main
 } //HelloWorldCanvas
-    </input>
+    </code>
     </program>
     </listing>
      <p>You can run this Java Canvas application below.  Note how we repeatedly use the <c>g.setColor()</c> method to change <c>g</c>'s 
@@ -342,7 +342,7 @@ public class HelloWorldCanvas extends Canvas
 </datafile>
 
 <program label="ds_hello_world_canvas_practice_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-    <input>
+    <code>
 import java.awt.*;
 import javax.swing.JFrame;
 
@@ -369,7 +369,7 @@ public class HelloWorldCanvas extends Canvas
         HtmlImageUtil.show(c,300, 300);
     } //main
 } //HelloWorldCanvas
-    </input>
+    </code>
     </program>
     
 

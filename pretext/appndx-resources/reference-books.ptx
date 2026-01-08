@@ -16,9 +16,9 @@
         This book, which is part of Addison-Wesley's Java Series,
         provides a detailed description of the Java language.
         An online version is available at  }
- <program language="java"><input>
+ <program language="java"><code>
 http://java.sun.com/docs/books/jls
- </input></program>
+ </code></program>
       </p>
     </li>
     <li>

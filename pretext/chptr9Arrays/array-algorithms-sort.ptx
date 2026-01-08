@@ -52,7 +52,7 @@
     </p>
     <algorithm>
     <title>Insertion sort </title>
- <program language="java"><input>
+ <program language="java"><code>
 Insertion Sort of an array, arr, of N elements into ascending order
 1. For k assigned 1 through N-1
 2.   Save the kth element, arr[k], in temp.
@@ -61,7 +61,7 @@ Insertion Sort of an array, arr, of N elements into ascending order
 5.     Shift the ith element to the right
 6.     Set i to point to the next element in the sorted part
 7.   Insert temp, the kth element, at its correct location.
- </input></program>
+ </code></program>
  </algorithm>
     <p>
       As you see, the algorithm has nested loops, an outer for-loop and an inner while-loop.
@@ -90,10 +90,10 @@ Insertion Sort of an array, arr, of N elements into ascending order
       To see how this works,
       consider an integer array containing five numbers:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 21 |  20  27  24  19      temp = 20
       k
- </input></program>
+ </code></program>
     <p>
       The vertical line marks the boundary between the sorted and unsorted portions of the array.
       The outer loop will look at each of the remaining elements, starting at arr[1],
@@ -110,27 +110,27 @@ Insertion Sort of an array, arr, of N elements into ascending order
       At this point, after one complete iteration of the outer loop, 
       the first two numbers are in the correct order relative to each other:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 20  21 |  27  24  19     temp = 27
           k
- </input></program>
+ </code></program>
     <p>
       For the next element, 27,
       none of elements in the sorted portion need to be moved because they are
       all less than 27. The inner loop will not iterate at all in this case.
       So after two complete iterations we have:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 20  21  27 |  24  19    temp = 24
               k
- </input></program>
+ </code></program>
     <p>
       For the fourth element, 24, only the 27 needs to be shited to the right, giving:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 20  21  24  27 | 19    temp = 19
                  k
- </input></program>
+ </code></program>
     <p>
       At this point, the sorted part of the array consists of the first four elements,
       which are in the correct order relative to each other.
@@ -141,7 +141,7 @@ Insertion Sort of an array, arr, of N elements into ascending order
       space to the right. Let's trace each iteration of the inner loop starting
       from this point, where k = 4 and i = 3:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
               k
 20 21 24 27 | 19   Save 19 in temp:              temp=19, i=3
 20 21 24 27 | 27   Move 27 to the right:         temp=19, i=2
@@ -149,7 +149,7 @@ Insertion Sort of an array, arr, of N elements into ascending order
 20 21 21 24 | 27   Move 21 to the right:         temp=19, i=0
 20 20 21 24 | 27   Move 20 to the right:         temp=19, i=-1 inner loop terminates
 19 20 21 24 27 |   Insert temp=19 at index i+1
- </input></program>
+ </code></program>
     <p>
       It's important to see that when the inner loop terminates <em>i</em> 
       will always be one space to the left of where we make the insertion. 
@@ -167,11 +167,11 @@ Here's a Youtube anomation that matches our algorithm: https://www.youtube.com/w
 </video>
 -->
 
-    <listing xml:id="lst-insertion">
+    <listing  xml:id="lst-insertion">
       <caption>Source code for  the <c>insertionSort()</c> method.
       Note in <c>main()</c> how an integer array is passed to the method.</caption>
 
- <program language="java" interactive="activecode"><input>
+ <program label="array-alg-insertion-sort" language="java" interactive="activecode"><code>
 public class Sort {
 
   public void insertionSort(int arr[]) {
@@ -201,7 +201,7 @@ public class Sort {
     sorter.print(intArr);
   } // main()
 } //Sort
- </input></program>
+ </code></program>
     </listing>
 
     <p>
@@ -213,9 +213,9 @@ public class Sort {
     <p>
       Also, note the complex entry condition we use for the inner while-loop:
     </p>
-      <program language="java"><input>
+      <program language="java"><code>
       i >= 0 &amp;&amp; arr[i] > temp; 
-      </input></program>
+      </code></program>
     <p>
       This is necessary because we want <c>i</c> to iterate from right to 
       left, but not to go past 0. But we also want the loop to stop if 
@@ -243,9 +243,9 @@ public class Sort {
       when an array of integers is passed to the <c>insertionSort()</c> 
       method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 sorter.insertionSort(intArr); // Pass intArr to the method
- </input></program>
+ </code></program>
 
     <principle>
       <title>DEBUGGING TIP: Passing an Array Argument</title>
@@ -264,7 +264,7 @@ sorter.insertionSort(intArr); // Pass intArr to the method
       the code with the Next button.
     </p>
   </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
 public class Sort {
 
   public void insertionSort(int arr[]) {
@@ -294,7 +294,7 @@ public class Sort {
     sorter.print(intArr);
   } // main()
 } // Sort
- </input></program>
+ </code></program>
  <solution>
   <p>Use Codelens to step through the insertion sort algorithm.</p>
  </solution>
@@ -454,7 +454,7 @@ public class Sort {
 
      <algorithm>
     <title>Selection sort </title>
- <program language="java"><input>
+ <program language="java"><code>
           <![CDATA[
 Selection sort of an N element array <c>arr</c> from small to large
 1. For k assigned 0 to N-2          // Outer loop
@@ -465,7 +465,7 @@ Selection sort of an N element array <c>arr</c> from small to large
 6.   Swap arr[k] and arr[smallest]   // Swap kth and smallest
           ]]>
 
- </input></program>
+ </code></program>
  </algorithm>
     <p>
       For an array of N elements, you need to repeat the outer loop N-1 times.
@@ -488,8 +488,8 @@ Selection sort of an N element array <c>arr</c> from small to large
       Finally, when the inner loop terminates, the algorithm swaps the smallest 
       element with <em>k</em>th element.
     </p>
-
-<exercises>
+</subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
     <exercise label="sort-3">
     <title>Selection sort trace 1</title>
@@ -613,7 +613,7 @@ Selection sort of an N element array <c>arr</c> from small to large
       </pre>
     </solution>  
   </exercise>
-  </exercises>
+  
   </subsection>
 
   <subsection xml:id="sec-swap-vars">
@@ -629,11 +629,11 @@ Selection sort of an N element array <c>arr</c> from small to large
     </p>
     <algorithm>
     <title>Swap Two Variables </title>
- <program language="java"><input>
+ <program language="java"><code>
 int temp = arr[j]; // Store the jth element in temp
 arr[j] = arr[k];   // Move the kth element into j
 arr[k] = temp;     // Move the jth element into k
- </input></program>
+ </code></program>
  </algorithm>
     <p>
       The <c>temp</c> variable temporarily stores the
@@ -642,10 +642,10 @@ arr[k] = temp;     // Move the jth element into k
       The need for this variable is a subtlety that beginning programmers frequently overlook.
       But consider what would happen if we used the following erroneous algorithm: 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 arr[j] = arr[k]; // Erroneous swap code
 arr[k] = arr[j];
- </input></program>
+ </code></program>
     <p>
       If <c>arr[j]</c> refers to 4 and <c>arr[k]</c> refers to 2 
       in the array 1 4 2 8 , then the erroneous algorithm would produce 1 2 2 8 , the wrong result.
@@ -662,15 +662,16 @@ arr[k] = arr[j];
       The following method implements the swap algorithm for two elements,
       <em>el1</em> and <em>el2</em> of an <c>int</c> array:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 void swap(int arr[], int el1, int el2) {
     int temp = arr[el1]; // Assign first element to temp
     arr[el1] = arr[el2]; // Overwrite first with second
     arr[el2] = temp;     // Overwrite second with first
 } // swap()
- </input></program>
+ </code></program>
 
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises</title>
   <exercise label="swap-algorithm" adaptive="yes">
    <title>Swapping values in variables</title>
@@ -702,7 +703,7 @@ void swap(int arr[], int el1, int el2) {
    </pre>
    </solution>
 </exercise>
-</exercises>
+
  </subsection>
 
   <subsection xml:id="paasing-params">
@@ -733,13 +734,13 @@ void swap(int arr[], int el1, int el2) {
       the following method takes an <c>int</c> parameter <em>n</em>,
       which is incremented within the method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void add1(int n) {
   System.out.print("n = " + n);
   n = n + 1;
   System.out.println(",  n = " + n);
 }
- </input></program>
+ </code></program>
     <p>
       But because <em>n</em> is a parameter of primitive type,
       incrementing it within the method has no effect on its associated argument.
@@ -748,12 +749,12 @@ public void add1(int n) {
       not be affected by what goes on inside the <c>add()</c> method.
       The output produced by the code segment is shown in the comments:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int Num = 5;
 System.out.println("Num = " + Num); // Prints Num = 5
 add1(Num);                    // Prints n = 5,  n = 6
 System.out.println("Num = " + Num); // Prints Num = 5
- </input></program>
+ </code></program>
     <p>
       Note that while <em>n</em>'s value has changed inside the method,
       <em>Num</em>'s value remains unaffected.
@@ -767,13 +768,13 @@ System.out.println("Num = " + Num); // Prints Num = 5
       the array <c>anArr</c> is printed,
       then sorted, and then printed again:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Sort sorter = new Sorter();
  int anArr[] = { 5, 10, 16, -2, 4, 6, 1 };
  sorter.print(anArr);           // Prints 5 10 16 -2 4 6 1
  sorter.insertionSort(anArr);   // Sorts anArr
  sorter.print(anArr);           // Prints -2 1 4 5 6 10 16
- </input></program>
+ </code></program>
     <p>
       As you can see, the object itself
       (the array)
@@ -802,14 +803,14 @@ Sort sorter = new Sorter();
       expense of copying large amounts of data.
       Indeed, Java provides no way to pass a copy of an object to a method.
     </p>
-
-    <exercises xml:id="ss-params">
+</subsection>
+     <subsection xml:id="ss-params">
     <title>Self-Study Exercise</title>
       <exercise label="params-1">
     <title>Array Parameter</title>
     <statement>
         <p>Consider the fillowing code segment:</p>
-         <program language="java"><input>
+         <program language="java"><code>
           int myArr[] = {1,2,3,4,5};    
           int k = 3;
           
@@ -817,7 +818,7 @@ Sort sorter = new Sorter();
             ++a[m];
             --m;
           }
-        </input></program>
+        </code></program>
           <p>Which of the following gives the correct values stored in <c>myArr</c> 
             after  <c>mystery(myArr, k)</c> is called?
           </p>
@@ -870,7 +871,7 @@ Sort sorter = new Sorter();
     <title>What's the value?</title>
     <statement>
         <p>Consider the fillowing code segment:</p>
-         <program language="java"><input>
+         <program language="java"><code>
           int myArr[] = {1,2,3,4,5};    
           int k = 3;
           
@@ -878,7 +879,7 @@ Sort sorter = new Sorter();
             ++a[m];
             --m;
           }
-        </input></program>
+        </code></program>
           <p>After the <c>mystery(myArr, k)</c> method completes the 
           variable <c>k</c> will have the value <var/>.
           </p>    
@@ -913,7 +914,7 @@ Sort sorter = new Sorter();
    <title>Selection sort</title>
    <statement>
        <p> Arrange the following blocks to complete the implemention of selection sort.
-       <program language="java"><input>
+       <program language="java"><code>
       public void selectionSort(int arr[]) {
         int smallest = 0;
         for (int k = 0; k &lt; arr.length -1; k++)  {
@@ -922,7 +923,7 @@ Sort sorter = new Sorter();
 
         } // outer
       } // selectionSort()       
-       </input></program>
+       </code></program>
        </p>
    </statement>          
    <blocks>
@@ -957,7 +958,7 @@ Sort sorter = new Sorter();
    </pre>
    </solution>
 </exercise>
-</exercises>
+
 
   </subsection>
 </section>

@@ -61,7 +61,7 @@
         How would you get out the last element of the ArrayList? 
       </statement>
       
-   <program language="java" interactive="activecode"><input>
+   <program language="java" interactive="activecode"><code>
       import java.util.ArrayList;
 
       public class ArrayListDemo {
@@ -77,7 +77,7 @@
           System.out.println(strList);
         } // main()
       } // ArrayListDemo
-   </input></program>
+   </code></program>
     </activity>
  
     <p>
@@ -88,12 +88,12 @@
       If you use a <c>ArrayList</c> object,
       the above code would be written as follows.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
    ArrayList strList = new ArrayList();
    strList.add("alpha");
    strList.add("beta");
    String str = (String)strList.get(0);
- </input></program> 
+ </code></program> 
     <p> -->
       One benefit that a generic type provides is type checking of method arguments at compile time.
       If <c>strList</c> is a <c>ArrayList&lt;String&gt;</c> object,
@@ -136,7 +136,7 @@
     </p>
     <activity label="stackdemo"><statement>Run the code below. Try pushing more items to the stack and popping two items.
     </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
     import java.util.*;
 
     public class StackDemo {
@@ -150,17 +150,17 @@
         System.out.println("The top of the stack was " + str);          
       } 
     } 
- </input></program>
+ </code></program>
    </activity>
- 
- <exercises><title>Self-Study Exercise</title>
+ </subsection>
+     <subsection><title>Self-Study Exercise</title>
     <exercise label="stackReverseEx">
       <statement>
           <p>
             Modify the code to use the parameterized
 <c>java.util.Stack&lt;E&gt;</c> class instead of the <c>Stack</c> class we defined in the earlier sections.           </p>
 </statement>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
             import java.util.*;
         
             public class StackReverse {
@@ -180,12 +180,12 @@
                  System.out.println("Reversed String: " + reversed);
             } // main()
           } // StackReverse
-             </input></program>
+             </code></program>
              <hint>Use the type Character, not String, for the Stack.</hint>
              <solution>
               <p>
                 The following class tests the <c>java.util.Stack&lt;E&gt;</c> class:
-       <program language="java"><input>
+       <program language="java"><code>
       import java.util.*;
       public class StackTest{
       public static void main( String args[] ) {
@@ -203,11 +203,11 @@
          System.out.println("Reversed String: " + reversed);
         } // main()
       } // StackTest class
-       </input></program>
+       </code></program>
               </p>
              </solution>
         </exercise>
-        </exercises>
+        
  </subsection>
 
  <subsection>
@@ -250,7 +250,7 @@
     <listing xml:id="listing-listtest">
       <caption>A method that demonstrates the interface <c>List&lt;E&gt;</c>
       and the class <c>LinkedList&lt;E&gt;</c>.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 /**
   * testList() creates a list of PhoneRecord objects using the
   * LinkedList constructor and then prints out that list. 
@@ -267,13 +267,13 @@ public static void testList() {
   for (PhoneRecord pr : theList)
      System.out.println(pr);
  } // testList
-</input></program>
+</code></program>
 </listing>
 
 <activity label="linkedlistdemo"><statement>
 <p>  Run the code below. Try adding a new PhoneRecord to the linked list.</p>
 </statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 import java.util.*;
 
 public class LinkedListOfPhoneRecords {    
@@ -373,14 +373,14 @@ class PhoneRecord implements Comparable{
     } // hashCode()
 
 } // PhoneRecord
- </input></program>
+ </code></program>
 </activity>
     <p>
       Note that the statement
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 List&lt;PhoneRecord> theList = new LinkedList&lt;PhoneRecord>();
- </input></program>
+ </code></program>
     <p>
       declares a variable <c>theList</c> of interface type <c>List&lt;E&gt;</c> but assigns an object of class type <c>LinkedList&lt;E&gt;</c>. This is appropriate because the class implements the interface and the code uses only methods from the interface.
       The class <c>ArrayList&lt;E&gt;</c> in the collections framework also implements the <c>List&lt;E&gt;</c> interface.
@@ -389,17 +389,17 @@ List&lt;PhoneRecord> theList = new LinkedList&lt;PhoneRecord>();
       but always less than, 100 elements,
       then it might be better to declare:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 List&lt;PhoneRecord> theList = new ArrayList&lt;PhoneRecord>(100);
- </input></program>
+ </code></program>
     <p>
       Also note the unusual looking <c>for</c> loop at the end of the method.
       This is a new feature of Java 5.0 which can be used to simplify the coding of loops that iterate through every object in a collection of objects.
       The statement 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (PhoneRecord pr : theList) { *** }
- </input></program>
+ </code></program>
     <p>
       should be thought of as executing the enclosed statements
       <em>for each</em><c>PhoneRecord</c> object, <c>pr</c>, in the <c>theList</c> data structure.
@@ -411,13 +411,13 @@ for (PhoneRecord pr : theList) { *** }
     <p>
       The output of the method will be:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
           Roger M 090-997-2918
           Jane M 090-997-1987
           Stacy K 090-997-9188
           Gary G 201-119-8765
           Jane M 090-997-1987
- </input></program>
+ </code></program>
     <p>
       In the next section we will examine two other structures in the collections framework,
       the <c>Set</c> interface and the <c>Map</c> interface.

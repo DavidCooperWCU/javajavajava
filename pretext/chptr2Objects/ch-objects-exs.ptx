@@ -199,10 +199,10 @@
       <statement>
         <p>
           Which of the following would be valid identifiers?
-	  <program language="java"><input>
+	  <program language="java"><code>
 	    int  74ElmStreet  Big_N     L$&amp;%#   boolean  Boolean  _number
 	    Int  public       Private   Joe     j1       2*K      big numb
-	  </input></program>
+	  </code></program>
         </p>
       </statement>
       <choices multiple-correct="yes" randomize="yes">
@@ -338,49 +338,49 @@
       </introduction>
       <exercise label="joex_public_is_even">
 	<statement> 
-          <program language="java"><input>public boolean isEven;</input></program>
+          <program language="java"><code>public boolean isEven;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_private_is_even">
 	<statement> 
-          <program language="java"><input>Private boolean isEven;</input></program>
+          <program language="java"><code>Private boolean isEven;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_private_is_odd">
 	<statement> 
-          <program language="java"><input>private boolean isOdd</input></program>
+          <program language="java"><code>private boolean isOdd</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_public_is_odd">
 	<statement> 
-          <program language="java"><input>public boolean is Odd;</input></program>
+          <program language="java"><code>public boolean is Odd;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_string_s">
 	<statement> 
-          <program language="java"><input>string S;</input></program>
+          <program language="java"><code>string S;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_string_boolean">
 	<statement> 
-          <program language="java"><input>public String boolean;</input></program>
+          <program language="java"><code>public String boolean;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_boolean_initialization">
 	<statement> 
-          <program language="java"><input>private boolean even = 0;</input></program>
+          <program language="java"><code>private boolean even = 0;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_string_initialization">
 	<statement> 
-          <program language="java"><input>private String s = helloWorld;</input></program>
+          <program language="java"><code>private String s = helloWorld;</code></program>
         </statement>
 	<response />
       </exercise>                 
@@ -430,31 +430,31 @@
 
       <exercise label="joex_boolean_method">
 	<statement> 
-          <program language="java"><input> public String boolean()</input></program>
+          <program language="java"><code> public String boolean()</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_string_method">
 	<statement> 
-          <program language="java"><input>private void String ()</input></program>
+          <program language="java"><code>private void String ()</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_void_myMethod">
 	<statement> 
-          <program language="java"><input>private void myMethod</input></program>
+          <program language="java"><code>private void myMethod</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_private_myMethod">
 	<statement> 
-          <program language="java"><input>private myMethod()</input></program>
+          <program language="java"><code>private myMethod()</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_static_main_method">
 	<statement> 
-          <program language="java"><input>public static void Main (String argv[])</input></program>
+          <program language="java"><code>public static void Main (String argv[])</code></program>
         </statement>
 	<response />
       </exercise> 
@@ -467,51 +467,51 @@
           Identify the syntax error (if any) in each assignment statement.
           Assume that the following variables have been declared:
         </p>
-	<program language="java"><input>
+	<program language="java"><code>
 	  public int m;
 	  public boolean b;
 	  public String s;
-	</input></program>
+	</code></program>
       </introduction>
       <exercise label="joex_va_a">
 	<statement> 
-          <program language="java"><input>m = "86";</input></program>
+          <program language="java"><code>m = "86";</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_va_b">
 	<statement> 
-          <program language="java"><input>m = 86;</input></program>
+          <program language="java"><code>m = 86;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_va_c">
 	<statement> 
-          <program language="java"><input>m = true;</input></program>
+          <program language="java"><code>m = true;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_va_d">
 	<statement> 
-          <program language="java"><input>s = 1295;</input></program>
+          <program language="java"><code>s = 1295;</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_va_e">
 	<statement> 
-          <program language="java"><input>s = "1295";</input></program>
+          <program language="java"><code>s = "1295";</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_va_f">
 	<statement> 
-          <program language="java"><input>b = "true";</input></program>
+          <program language="java"><code>b = "true";</code></program>
         </statement>
 	<response />
       </exercise>
       <exercise label="joex_va_g">
 	<statement> 
-          <program language="java"><input>b = false</input></program>
+          <program language="java"><code>b = false</code></program>
         </statement>
 	<response />
       </exercise>        
@@ -527,7 +527,7 @@
           Then add statements to print their respective sums.
 	</p>
       </statement>
-      <program label="joex_number_adder_prg" language="java" interactive="activecode"><input>
+      <program label="joex_number_adder_prg" language="java" interactive="activecode"><code>
 	public class NumberAdder
 	{
 	private int num1;
@@ -545,7 +545,7 @@
 	{
 	}
 	}
-      </input>
+      </code>
 	<tests>
           <![CDATA[
 import static org.junit.Assert.*;
@@ -609,7 +609,7 @@ public class RunestoneTests extends CodeTestHelper
          Match the Object terms to definitions.
 	</p>
       </setup>
-            <matches>
+            <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>method definition</em></premise>
@@ -646,7 +646,7 @@ cutable statements that the method performs </response>
 	  the object that holds the values of the variable.</response>
 	</match>
 	
-      </matches>
+      </cardsort>
 
       
       </exercise>
@@ -665,11 +665,11 @@ cutable statements that the method performs </response>
         </p>
       </statement>
       <program label="joex_number_cruncher_class" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	public class NumberCruncher {
 
 	}
-      </input>
+      </code>
       	<tests>
           <![CDATA[
 import static org.junit.Assert.*;
@@ -995,11 +995,11 @@ int value = 7;
         </p>
       </statement>
       <program label="joex_number_cruncher_prg_main" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	public class NumberCruncher {
 	// copy code from previous problem and add main method
 	}
-      </input>
+      </code>
       </program>
 
     </exercise>
@@ -1014,11 +1014,11 @@ int value = 7;
         </p>
       </statement>
       <program label="joex_cube_class" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	public class Cube {
 
 	}
-      </input>
+      </code>
       	<tests>
           <![CDATA[
 import static org.junit.Assert.*;
@@ -1191,7 +1191,7 @@ int value = 9;
         </p>
       </statement>
       <program label="joex_cube_user_prg" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	// copy Cube code from above and paste it as a protected class
 	// (with a public constructor)
 
@@ -1202,7 +1202,7 @@ int value = 9;
 	}
 
 	}
-      </input>
+      </code>
       </program>
     </exercise>
 
@@ -1217,7 +1217,7 @@ int value = 9;
         </p>
       </statement>
       <program label="joex_cube_user_side_choice_prg" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	// copy Cube and CubeUser code from above and paste 
 	// it instead of the below code
 
@@ -1228,7 +1228,7 @@ int value = 9;
 	}
 
 	}
-      </input>
+      </code>
       </program>
     </exercise>
 
@@ -1248,14 +1248,14 @@ int value = 9;
         </p>
       </statement>
       <program label="joex_address_book_code" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	
 	public class AddressBookEntry {
 
 	
 
 	}
-      </input>
+      </code>
       	<tests>
           <![CDATA[
 import static org.junit.Assert.*;

@@ -106,7 +106,7 @@
     </p>
     <listing xml:id="list-serverpro">
       <caption>Template for the server protocol.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 Socket socket;    // Reference to the socket
 ServerSocket port;// The port where the server will listen
 try {
@@ -118,7 +118,7 @@ try {
   } catch (IOException e) {
     e.printStackTrace();
   }
- </input></program>
+ </code></program>
 </listing>
     <p>
       Once a connection is established,
@@ -198,7 +198,7 @@ try {
     </p>
     <listing xml:id="list-clientpro">
       <caption>Template for the client protocol.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 Socket connection;     // Reference to the socket
 try {                  // Request a connection
   connection = new Socket("java.cs.trincoll.edu", 10001);
@@ -207,7 +207,7 @@ try {                  // Request a connection
   } catch (IOException e ) {
     e.printStackTrace();
   }
- </input></program>
+ </code></program>
 </listing>
   </subsection>
   <subsection>
@@ -223,14 +223,14 @@ try {                  // Request a connection
       The <c>writeToSocket()</c> method takes two parameters,
       the <c>Socket</c> and a <c>String</c>, which will be sent to the process on the other end of the socket:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 protected void writeToSocket(Socket sock, String str)
                              throws IOException {
     oStream = sock.getOutputStream();
     for (int k = 0; k &lt; str.length(); k++)
         oStream.write(str.charAt(k));
   }// writeToSocket()
- </input></program>
+ </code></program>
     <p>
       If <c>writeToSocket()</c> is called by the server,
       then the string will be sent to the client.
@@ -288,7 +288,7 @@ protected void writeToSocket(Socket sock, String str)
     <p>
       The <c>readFromSocket()</c> method takes a <c>Socket</c> parameter  and returns a <c>String</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 protected String readFromSocket(Socket sock)
                                 throws IOException {
     iStream = sock.getInputStream();
@@ -298,7 +298,7 @@ protected String readFromSocket(Socket sock)
         str = str + c + "";
     return str;
   }
- </input></program>
+ </code></program>
     <p>
       It uses the <c>Socket.getInputStream()</c> method to obtain a reference to the socket's input stream,
       which has already been created.

@@ -24,7 +24,7 @@
       A URL might be invalid if the protocol were left off or if it is not a known protocol.
       The following simple code creates a URL for the home page of our companion Web site:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 URL url;
 try {
  url =
@@ -32,14 +32,14 @@ try {
 } catch (MalformedURLException e) {
  System.out.println("Malformed URL: " + e);
 }
- </input></program>
+ </code></program>
     <p>
       Note how we catch the <c>MalformedURLException</c> when we 
       create a new <c>URL</c>.
     </p>
     <activity label="fixURL"><statement><p>Try the program below to see the exception. 
       Fix the URL.</p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
       import java.net.URL;
       import java.net.MalformedURLException;
       
@@ -55,7 +55,7 @@ try {
               }
           }
       }
-    </input>  </program>
+    </code>  </program>
     </activity>
       
     <p>
@@ -79,7 +79,7 @@ try {
       The <c>java.applet.Applet</c> class itself contains several useful methods for downloading and displaying Web resources.
       These methods are inherited by <c>javax.swing.JApplet</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Applet extends Panel {
     public AppletContext getAppletContext();
     public AudioClip getAudioClip(URL url);
@@ -87,7 +87,7 @@ public class Applet extends Panel {
     public void play(URL url);
     public void showStatus(String msg);
   }
- </input></program>
+ </code></program>
     <p>
       As you see, both the <c>getImage()</c> and <c>getAudioClip()</c> methods use a URL to download a resource.
       An <c>AudioClip</c> is a sound file encoded in <c>AU</c> format,
@@ -100,7 +100,7 @@ public class Applet extends Panel {
       For example,
       to download and play an audio clip within an applet requires just two lines of code:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 URL url;
 try {
   url = new
@@ -109,13 +109,13 @@ try {
 } catch (MalformedURLException e) {
     System.out.println("Malformed URL: " + url.toString());
   }
- </input></program>
+ </code></program>
     <p>
       Similarly, to download
       (and store a reference to)
       an image is just as simple:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 URL url;
 try {
   url = new
@@ -124,7 +124,7 @@ try {
 } catch (MalformedURLException e) {
     System.out.println( "Malformed URL: " + url.toString());
   }
- </input></program>
+ </code></program>
     <p>
       So, if applets were still in fashion,
       then these would be the methods we need to implement our slide show.
@@ -133,7 +133,7 @@ try {
       <c>ImageRef </c> and the call to read the image url is 
       different:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 URL url;
 Image imageRef;
 try {
@@ -143,10 +143,10 @@ try {
 } catch (MalformedURLException e) {
     System.out.println( "Malformed URL: " + url.toString());
   }
- </input></program>
+ </code></program>
 
  <activity label="malformedURL"><statement><p>Try the program below. Try changing the URL to a broken one and see the exception.</p></statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   import java.net.URL;
   import java.net.MalformedURLException;
   import java.io.IOException;
@@ -170,7 +170,7 @@ try {
           }
       }
   }
-</input>  </program>
+</code>  </program>
 </activity>
     <p>
       For sound we need the <c>javax.sound.sampled</c> package.
@@ -179,7 +179,7 @@ try {
       and then get the line as a <c>Clip</c>, which we can then use to play the sound.
       The <c>AudioSystem </c> class is used heavily for this.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Clip clip; URL url = null;
 try {
     url = new
@@ -214,7 +214,7 @@ try {
   } catch (IOException ioex) {
     ioex.printStackTrace();
   }
- </input></program>
+ </code></program>
     <p>
       We'll use the <c>URL()</c> constructor to create a URL from
        a <c>String</c>, and we'll use the <c>javax.imageio.ImageIO.read(url)</c> 

@@ -67,7 +67,7 @@
 
     <listing xml:id="listing-queueadt">
       <caption>The <c>Queue</c>ADT.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Queue extends List {
      public Queue() {
          super();          // Initialize the list
@@ -79,14 +79,14 @@ public class Queue extends List {
          return removeFirst();
      }
 }// Queue
- </input></program>
+ </code></program>
     </listing>
 
 
     <listing xml:id="listing-queueadttest">
       <caption>A method to test the <c>Queue</c>ADT. Letters inserted
       in a queue come out in the same order they went in.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public static void main(String argv[]) {
      Queue queue = new Queue();
      String string = "Hello this is a test string";
@@ -102,7 +102,7 @@ public static void main(String argv[]) {
          System.out.print( o.toString() );
      }
 } // main()
- </input></program>
+ </code></program>
     </listing>
 
  
@@ -114,8 +114,8 @@ public static void main(String argv[]) {
         they can be used in a wide range of applications.
       </p>
     </principle>
-    
-   <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
         <exercise label="queue-test">
     <title>Queue Test</title>
@@ -129,7 +129,7 @@ public static void main(String argv[]) {
             constructor has been deprecated. To create a <c>Character</c> object,
             you can use the static method <c>Character.valueOf(char)</c> instead.)
           </p>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
 public class Queue extends List {
     public Queue() {
         super(); // Initialize the list
@@ -218,7 +218,7 @@ class List {
         return current.getData();
     } // removeLast()
 } // List
-</input></program>
+</code></program>
       </statement>
         <hint>
         <p>Your algorithm should loop through the string enqueing each character onto the queue.
@@ -227,7 +227,7 @@ class List {
         </p>
         </hint>
         <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     public static void main(String argv[]) {
         Queue queue = new Queue();
         String string = "Hello this is a test string";
@@ -243,7 +243,7 @@ class List {
             System.out.print(o.toString());
         }
     } // main()
-</input></program>
+</code></program>
       </solution>
     </exercise>
     <exercise label="queue-peek">
@@ -261,7 +261,7 @@ class List {
         <p>
           The <c>peekLast()</c> method can be modeled after the
 <c>List.removeLast()</c> method:
- <program language="java"><input>
+ <program language="java"><code>
 public Object peekLast() {
   if (isEmpty())
     return null;
@@ -272,10 +272,10 @@ public Object peekLast() {
       return  current;                 // Return last node
     }
 } // peekLast()
- </input></program>
+ </code></program>
         </p>
       </solution>
     </exercise>    
- </exercises>    
+     
   </subsection>
 </section>

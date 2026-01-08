@@ -61,7 +61,7 @@
       To illustrate this,
       suppose we define a <c>Student</c> class as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Student {
     protected String name;
     public Student(String s) {
@@ -71,7 +71,7 @@ public class Student {
         return name;
     }
   }
- </input></program>
+ </code></program>
 
     <p>
       <xref ref="fig-student1">Figure</xref>
@@ -85,10 +85,10 @@ public class Student {
       Therefore, for a given <c>Student</c> object,
       we can call its <c>toString()</c> as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Student stu = new Student("Stu");
 System.out.println(stu.toString());
- </input></program>
+ </code></program>
     <p>
       How does Java know where to find the <c>toString()</c> method, which,
       after all,
@@ -109,7 +109,7 @@ System.out.println(stu.toString());
 
     <activity label="stu1">
       <statement>Run to see the result of the Object's toString() method below.</statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
         public class Student 
         {
             protected String name;
@@ -125,7 +125,7 @@ System.out.println(stu.toString());
                 System.out.println(stu.toString());
             }
         }
-      </input></program>
+      </code></program>
     </activity>
   </subsection>
   <subsection xml:id="overriding">
@@ -141,11 +141,11 @@ System.out.println(stu.toString());
       To override <c>toString()</c> for the <c>Student</c> class,
       let's add the following method definition to the <c>Student</c> class:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String toString() {
   return "My name is " + name +  " and I am a Student.";
 }
- </input></program>
+ </code></program>
     <p>
       <figure xml:id="fig-student2"><caption>Student overriding the toString() method</caption>
       <image width="35%" source="chptr08/student2.png"/>
@@ -166,7 +166,7 @@ public String toString() {
 
     <activity label="stu2">
       <statement>Run to see the result of the overriden toString() method below.</statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
         public class Student 
         {
             protected String name;
@@ -186,7 +186,7 @@ public String toString() {
                 System.out.println(stu.toString());
             }
         }
-      </input></program>
+      </code></program>
     </activity>
     <p>
       These examples illustrate two important object-oriented concepts:
@@ -249,13 +249,13 @@ public String toString() {
       Here's a simple example:
     </p>
     
- <program language="java"><input>
+ <program language="java"><code>
  Object obj;                        // Static type: Object
  obj = new Student("Stu");          // Actual type: Student
  System.out.println(obj.toString());// Prints "My name is Stu..."
  obj = new OneRowNim(11);           // Actual type: OneRowNim
  System.out.println(obj.toString());// Prints "nSticks = 11, player = 1"
- </input></program>
+ </code></program>
     <p>
       The variable <c>obj</c> is declared to be of type <c>Object</c>. This is its <term>static</term>
       or <em>declared</em> type.
@@ -299,11 +299,11 @@ toString()</c> method is a
       also called <em>early</em> binding, is not possible.
       Consider the following method definition:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void polyMethod(Object obj) {
   System.out.println(obj.toString()); // Polymorphic
 }
- </input></program>
+ </code></program>
     <p>
       The method call in this method, <c>obj.toString()</c>, can't be bound to the correct implementation of 
       <c>toString()</c> until the method is actually invoked<mdash/>that is,
@@ -311,12 +311,12 @@ public void polyMethod(Object obj) {
       For example,
       suppose we make the following method calls in a program:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  Student stu = new Student("Stu");
  polyMethod(stu);
  OneRowNim nim = new OneRowNim();
  polyMethod(nim);
- </input></program>
+ </code></program>
     <p>
       The first time <c>polyMethod()</c> is called,
       the <c>obj.toString()</c> is invoked on a <c>Student</c> object.
@@ -353,14 +353,14 @@ public void polyMethod(Object obj) {
       Here are the signatures of some of the different <c>print()</c> and
 <c>println()</c> methods:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 print(char c);           println(char c);
 print(int i);            println(int i);
 print(double d);         println(double d);
 print(float f);          println(float f);
 print(String s);         println(String s);
 print(Object o);         println(Object o);
- </input></program>
+ </code></program>
     <p>
       Basically, there is a <c>print()</c> and <c>println()</c> method for every type of primitive data,
       plus methods for printing any type of object.
@@ -376,14 +376,14 @@ print(Object o);         println(Object o);
       we can make an educated guess that their implementations utilize the polymorphic <c>toString()</c> method,
       as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void print(Object o) {
      System.out.print(o.toString());
  }
  public void println(Object o) {
      System.out.println(o.toString());
  }
- </input></program>
+ </code></program>
     <p>
       Here again we have a case where an expression, <c>o.toString()</c>, is bound dynamically to the correct implementation of
 <c>toString()</c> based on the type of <c>Object</c> that the variable
@@ -398,8 +398,8 @@ public void print(Object o) {
       The <c>print()</c> and <c>println()</c> methods can print any type of object,
       even new types of objects that did not exist when these library methods were written.
     </p>
-  
-    <exercises xml:id="self-study-exercisesA22">
+  </subsection>
+     <subsection xml:id="self-study-exercisesA22">
     <title>Self-Study Exercises</title>     
           <exercise label="testPrintEx">
           <statement><p>
@@ -408,7 +408,7 @@ public void print(Object o) {
             Add a comment describing how it confirms how <c>print()</c> 
             and <c>println()</c> methods are implemented.</p>
           </statement>
- <program language="java" interactive="activecode"><input>
+ <program language="java" interactive="activecode"><code>
 public class TestPrint {
   
     public static String NAME="TestPrint";
@@ -421,7 +421,7 @@ public class TestPrint {
         System.out.println(new TestPrint());
     }
 }
- </input></program>
+ </code></program>
  <solution>
    <p>
     Running the <c>TestPrint</c> with the default <c>toString()</c>produces: </p>
@@ -435,7 +435,7 @@ public class TestPrint {
     Hello TestPrint
     </pre>
 
- <program language="java"><input>
+ <program language="java"><code>
 public class TestPrint {
    public static String NAME="TestPrint";
    /** Add a toString() method **/
@@ -448,10 +448,10 @@ public class TestPrint {
         System.out.println(new TestPrint());
     }
 }
- </input></program>
+ </code></program>
  </solution>
   </exercise>      
-</exercises>
+
 </subsection>
 
   <subsection xml:id="super">
@@ -469,9 +469,9 @@ public class TestPrint {
       you wanted to concatenate the result of both the default and the new <c>toString()</c> methods.
       The following expression would accomplish that:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 super.toString() + toString()
- </input></program>
+ </code></program>
     <p>
       The <c>super</c> keyword specifies that the first
 <c>toString()</c> is the one implemented in the superclass.
@@ -480,8 +480,8 @@ super.toString() + toString()
       We will see additional examples of using the
 <c>super</c> keyword in the following sections.
     </p>
-    
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises</title>
   <exercise label="inh-output-ex">
   <title>B subclasses A</title>
@@ -490,7 +490,7 @@ super.toString() + toString()
       Given the following class definitions, what would be output 
        by the code segment? <var/>
     </p>
- <program language="java"  interactive="activecode" ><input>
+ <program language="java"  interactive="activecode" ><code>
 public class A {
      public void method() { System.out.print("A"); }
  }
@@ -504,7 +504,7 @@ public class A {
  a.method();
  B b = new B();
  b.method();
- </input></program>
+ </code></program>
 </statement>
     <setup>
       <var>
@@ -538,7 +538,7 @@ public class A {
     Modify class <c>B</c>'s  <c>method()</c> so that it invokes <c>A</c>'s version of <c>method()</c>
     before printing out <em>B</em>. What would be output in this case? <var/>
   </p>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
     class A {
         public void method() { System.out.print("A"); }
     }
@@ -560,7 +560,7 @@ public class A {
             b.method();
         }
     }
-    </input></program>
+    </code></program>
     </statement>
         <setup>
       <var>
@@ -595,12 +595,12 @@ public class A {
     previous exercises, such that B is a subclass of A, which of the following statements are 
     valid?
     </p>
- <program language="java"><input>
+ <program language="java"><code>
     A a = new B();
     a = new A();
     B b = new A();
     b = new B();
- </input></program>
+ </code></program>
 </statement>
         <choices>
           <choice correct="yes">
@@ -640,7 +640,7 @@ public class A {
       <p>All except four part C are valid</p>
     </solution>
 </exercise>
-</exercises>
+
 </subsection>
   <subsection>
     <title>Inheritance and Constructors</title>
@@ -650,7 +650,7 @@ public class A {
       To illustrate some of the implications of this language feature,
       let's define a subclass of <c>Student</c> called <c>CollegeStudent</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class CollegeStudent extends Student {
     public CollegeStudent() { }
     public CollegeStudent(String s) {
@@ -661,7 +661,7 @@ public class CollegeStudent extends Student {
                " and I am a CollegeStudent.";
     }
 }
- </input></program>
+ </code></program>
     <p>
       Because <c>CollegeStudent</c> is a subclass of <c>Student</c>, 
       it inherits the public and 
@@ -732,19 +732,19 @@ public class CollegeStudent extends Student {
       Thus, Java's default behavior during construction of <c>B</c> is equivalent 
       to the following implementation of <c>B</c>'s constructor:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public B() {
     A();   // Call the superconstructor
     // Now continue with this constructor's code}
- </input></program>
+ </code></program>
 -->
     <p>
       Calls to the default constructors are made all the way up the class hierarchy,
       and the superclass constructor is always called before the code 
       in the class's constructor is executed.
     </p>
-  
-<exercises xml:id="self-study-exercisesB22">
+</subsection>
+     <subsection xml:id="self-study-exercisesB22">
 <title>Self-Study Exercises</title>
   <exercise label="classABex">
   <title>Super Constructors</title>
@@ -753,7 +753,7 @@ public B() {
       Given the following class definitions, what would be output by the code segment? <var/>
     </p>
 
- <program language="java"><input>
+ <program language="java"><code>
 public class A {
      public A() { System.out.print("A"); }
  }
@@ -767,7 +767,7 @@ public class A {
  A a = new A();
  B b = new B();
  C c = new C();
- </input></program>
+ </code></program>
    </statement>
     <setup>
       <var>
@@ -793,6 +793,6 @@ public class A {
     </p>
    </solution>
   </exercise>
-  </exercises>
+  
   </subsection>
 </section>

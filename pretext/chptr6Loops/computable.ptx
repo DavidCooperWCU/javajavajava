@@ -59,9 +59,9 @@
   <p>
     
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 while (isTerminating == true);  // Infinite if isTerminating true
- </input></program>
+ </code></program>
   <p>
     In other words,
     if the input to <m>P\prime</m> is a self-terminating program,

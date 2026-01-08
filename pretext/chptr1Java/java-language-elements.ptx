@@ -17,7 +17,7 @@
 <listing xml:id="lstng_helloworld"> 
   <caption>The <c>HelloWorld</c> application program.</caption>
 <program language="java">
-  <input>
+  <code>
 	/*
 	 * File: HelloWorld.java
 	 * Author: Java Java Java
@@ -39,7 +39,7 @@
 			   helloworld.greet();            // Method call
 		 }  //  main()
     }  // HelloWorld                  // End class body
-  </input>
+  </code>
   </program>
 </listing>
 
@@ -48,7 +48,7 @@
 <activity label="HelloWorldEx">
       <statement><p>Run the following code. 
         Try changing the greeting to "Hola!" and run again.</p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
 public class HelloWorld extends Object // Class header
 {                                      // Start class body
     private String greeting = "Hello, World!";
@@ -65,7 +65,7 @@ public class HelloWorld extends Object // Class header
          helloworld.greet();            // Method call
      }  //  main()
 }  // HelloWorld   
-    </input></program></activity>
+    </code></program></activity>
 
 </subsection>
 <subsection>
@@ -94,7 +94,7 @@ public class HelloWorld extends Object // Class header
 	The following code segment illustrates the rules that govern the use of /* and */:
   </p>
   <program language="java">
-  <input>
+  <code>
      /* This first comment begins and ends on the same line. */
      /* A second comment starts on this line ...
 	and goes on ...
@@ -106,7 +106,7 @@ public class HelloWorld extends Object // Class header
 	And this is the last line of the third comment.
      */
      */  This is an error because it is an unmatched end marker.
-  </input></program>
+  </code></program>
   <p>
 	As you can see from this example,
 	it is impossible to begin a new comment inside an already-started comment because all text inside the first comment,
@@ -547,11 +547,11 @@ just by how they are written. (For more on Java style conventions,
       it is the name of the object's class,
       such as <c>String</c> or <c>HelloWorld</c>. Here are some examples: 
 </p>
-<program language="java"><input>
+<program language="java"><code>
     HelloWorld helloworld;
     int num1;
     int num2;
-</input></program>
+</code></program>
 <p>
       The first declaration declares a variable namrd <c>helloworld</c> of type <c>HelloWorld</c>.
       The next two declarations declare <c>int</c> variables named <c>num1</c> and <c>num2</c>. 
@@ -584,11 +584,11 @@ just by how they are written. (For more on Java style conventions,
        value to the variable on the left hand side. 
      For example, consider these three assignment statements: 
 </p>
-<program language="java"><input>
+<program language="java"><code>
     num1 = 50;        // (a) Assign 50 to num1
     num2 = 10 + 15;   // (b) Assign 25 to num2
     num1 = num2;      // (c) Copy num2's value (25) into num1
-</input></program>
+</code></program>
 <p>
       In (a) the value on the right hand side is 50.
       So 50 gets stored in <c>num1</c>, resulting 
@@ -626,7 +626,7 @@ just by how they are written. (For more on Java style conventions,
 <activity label="AsgnEx">
 <statement><p>Run the following code. 
     Click on the "Show Code Lens" button and then the Next button to step through the code.</p></statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class AsgnEx 
 {                                   
      public static void main(String[] args)
@@ -638,7 +638,7 @@ public class AsgnEx
         System.out.println("num1 is " + num1 + " and num2 is " + num2);
       }
 }            
-</input></program></activity>
+</code></program></activity>
 
 </p>
 <!--
@@ -658,10 +658,10 @@ public class AsgnEx
       Another kind of Java statement is the <term>method-call statement</term>, as in these examples from the 
 <c>HelloWorld</c> program (<xref ref="lstng_helloworld"></xref>):
 </p>
-<program language="java"><input>
+<program language="java"><code>
      helloworld.greet();          // Call HelloWorld's greet() method
      System.out.println(greeting);// Call System.out's println() method
-</input></program>
+</code></program>
 <p>
     In the first statement we are calling the <c>greet()</c> method, which will perform certain actions for us. In the 
     second, we are calling the system's <c>println()</c> method to display a greeting on the computer screen.       
@@ -671,14 +671,14 @@ public class AsgnEx
       Finally, notice that we can use curly braces to group one or more  statements into a sequence as in the
       definition of the <c>main()</c> method.
 </p>
-<program language="java"><input>
+<program language="java"><code>
     public static void main(String args[])// Method header
     {
       HelloWorld helloworld;         // declare
       helloworld = new HelloWorld(); // create
       helloworld.greet();            // Method call
      }  //  main()
-</input></program>
+</code></program>
 </subsection>
 <subsection xml:id="subsec_expressions">
 <title>Expressions and Operators</title>
@@ -714,11 +714,11 @@ public class AsgnEx
       Rather they occur as part of the program's statements.
       Here are some additional examples of expressions:
 </p>
-<program language="java"><input>
+<program language="java"><code>
     num = 7         // An assignment expression of type int
     num = square(7) // An method call expression of type int
     num == 7        // An equality expression of type boolean
-</input></program>
+</code></program>
 <p>
       The first of these is an assignment expression.
       It has a value of <c>7</c>, because it is assigning <c>7</c> to <c>num</c>. The second example is also an assignment expression,
@@ -750,8 +750,6 @@ public class AsgnEx
 
 
 
-<exercises>
-<title>Self-Study Exercises</title>
 
 
       <exercise label="assignmentEx1">
@@ -759,10 +757,10 @@ public class AsgnEx
       
             <statement>
                   <p>The variable <c>num</c> will have the value <var/> after the following two statements are executed:
-                        <program language="java"><input>
+                        <program language="java"><code>
                               int num = 11;
                               num = 23 - num;
-                         </input></program>
+                         </code></program>
                   </p>
             </statement>
             <setup>
@@ -812,7 +810,7 @@ public class AsgnEx
             </solution>
       </exercise>
 
-</exercises>
+
 
 </subsection>  
 
@@ -847,9 +845,9 @@ public class AsgnEx
 <p>
       The class header for the <c>HelloWorld</c> class is:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 	public class HelloWorld extends Object
-</input></program>
+</code></program>
 <p>
 	  The purpose of the header is to give the class its name (<c>HelloWorld</c>), identify its 
 	  accessibility (<c>public</c> as opposed to <c>private</c>), and describe where it fits into the Java class hierarchy
@@ -890,9 +888,9 @@ public class AsgnEx
 	  That is, each instance of a class has its own copies of the class's instance variables.
 	  The <c>HelloWorld</c> class has a single instance variable, (<c>greeting</c>), which is declared as follows:
 </p>
-<program language="java"><input>
+<program language="java"><code>
     private String greeting = "Hello, World!";
-</input></program>
+</code></program>
 <p>
       In general, an instance variable declaration has the following syntax,
       some parts of which are optional:
@@ -980,9 +978,9 @@ public class AsgnEx
       For example,
       the statement in the <c>greet()</c> method,
 </p>
-<program language="java"><input>
+<program language="java"><code>
     System.out.println(greeting);   //  Output statement
-</input></program>
+</code></program>
 <p>
       prints a greeting on the console.
 </p>
@@ -1010,9 +1008,9 @@ public class AsgnEx
       Because of its unique role as the starting point for every Java application program,
       it is very important that the header for the main method be declared exactly as shown in the <c>HelloWorld</c> class:
 </p>
-<program language="java"><input>
+<program language="java"><code>
     public static void main(String args[])
-</input></program>
+</code></program>
 <p>
       It must be declared <c>public</c> so it can be accessed from outside the class that contains it.
       And it must be declared <c>static</c>. Static methods are associated with their class, not with
@@ -1054,11 +1052,11 @@ public class AsgnEx
       The <c>main()</c> method contains three statements:
 -->
 </p>
-<program language="java"><input>
+<program language="java"><code>
     HelloWorld helloworld;          // Variable declaration
     helloworld = new HelloWorld();  // Object instantiation
     helloworld.greet();             // Method invocation
-</input></program>
+</code></program>
 <p>
       The first statement declares a variable of type <c>HelloWorld</c>, which is then assigned a <c>HelloWorld</c> object.
 </p>
@@ -1069,9 +1067,9 @@ public class AsgnEx
       an object of that class. It is defined automatically by Java 
       and looks like this:
 </p>
-<program language="java"><input>
+<program language="java"><code>
      public HelloWorld() {  }  // Default constructor
-</input></program>
+</code></program>
 <p>  
       Creating an object is called <term>object instantiation</term>
       because you are creating an instance of the object.
@@ -1112,7 +1110,7 @@ public class AsgnEx
 <caption>
 <c>HelloWorldCanvas</c> program.</caption>
 
- <program language="java"><input>
+ <program language="java"><code>
 /** File: HelloWorldCanvas program */
 import javax.swing.JFrame; // Import class names
 import java.awt.Graphics;
@@ -1133,7 +1131,7 @@ public class HelloWorldCanvas extends Canvas // Class header
         f.setVisible(true);
     }  // End of main
 }  // End of HelloWorldCanvas
- </input></program>
+ </code></program>
 </listing>
 <p>
       As in the case of the <c>HelloWorld</c> console application program, <c>HelloWorldCanvas</c> consists of a class definition.
@@ -1141,9 +1139,9 @@ public class HelloWorldCanvas extends Canvas // Class header
       the <c>paint()</c> method,
       which contains a single executable statement:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 g.drawString("Hello, World!",10,10);
- </input></program>
+ </code></program>
 <p>
       This statement displays the
 <q>Hello, World!</q>
@@ -1162,7 +1160,7 @@ g.drawString("Hello, World!",10,10);
 <statement><p>Try the HelloWorldCanvas program below.</p>
 </statement>
 <program label="jle_hello_world_canvas_practice_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-    <input>
+    <code>
 import java.awt.*;
 
 public class HelloWorldCanvas extends Canvas
@@ -1177,7 +1175,7 @@ public class HelloWorldCanvas extends Canvas
         HtmlImageUtil.show(c,150, 50);
     } //main
 } //HelloWorldCanvas
-    </input>
+    </code>
     </program>
 
 </activity>
@@ -1220,9 +1218,9 @@ public class HelloWorldCanvas extends Canvas
       For example,
       the files containing the definitions of the classes in the <c>java.lang</c> package all begin with the following statement.
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 package java.lang;
- </input></program>
+ </code></program>
 <p>
       If you omit <c>package</c> statement,
       as we do for the programs in this book, Java places such classes into an unnamed default package.
@@ -1236,9 +1234,9 @@ package java.lang;
       the full name for the <c>Graphics</c> class is <c>java.awt.Graphics</c>. In short,
       the full name for a Java class takes the following form:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 package.class
- </input></program>
+ </code></program>
 
 <p>
       In other words,
@@ -1273,12 +1271,12 @@ package.class
 </p>
 <p>
       The <c>import</c> statement takes two possible forms:
- <program language="java"><input>
+ <program language="java"><code>
         import package.class
- </input></program>
- <program language="java"><input>
+ </code></program>
+ <program language="java"><code>
         import package.*
- </input></program>
+ </code></program>
 </p>
 <p>
       The first form allows a specific class to be known by its abbreviated name.
@@ -1288,9 +1286,9 @@ package.class
       The <c>import</c> statements in <c>HelloWorldCanvas</c> are examples of the first form.
       The following example,
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 import java.lang.*;
- </input></program>
+ </code></program>
 <p>
       allows all classes in the <c>java.lang</c> package to be referred to by their class names alone.
       In fact, this particular

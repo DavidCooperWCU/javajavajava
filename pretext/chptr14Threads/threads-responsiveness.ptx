@@ -108,7 +108,7 @@
     </p>
     <listing xml:id="fig-randomdotgui">
       <caption>The <c>RandomDotGUI</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -147,7 +147,7 @@ public class RandomDotGUI extends JFrame implements ActionListener {
         gui.setVisible(true);
     }
 } // RandomDotGUI
- </input></program>
+ </code></program>
 </listing>
     <p>
       The GUI arranges the control and drawing panels in a <c>BorderLayout</c> and 
@@ -156,10 +156,10 @@ public class RandomDotGUI extends JFrame implements ActionListener {
       the GUI's <c>actionPerformed()</c> method will create a new 
       <c>Dotty</c> instance and call its <c>draw()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 dotty = new Dotty(canvas);
 dotty.draw();
- </input></program>
+ </code></program>
     <p>
       Note that <c>Dotty</c> is passed a reference to the drawing
       <c>canvas</c>.
@@ -194,7 +194,7 @@ dotty.draw();
     <listing xml:id="fig-singledotty">
       <caption>The <c>Dotty</c> class, single-threaded version.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 class Dotty {
     // Coordinates
     private static final int HREF = 20, VREF = 20, LEN = 200;
@@ -237,7 +237,7 @@ class Dotty {
     } // clear()
 
 } // Dotty
- </input></program>
+ </code></program>
     </listing>
     <p>
       The complete implementation of <c>Dotty</c> is shown in <xref ref="fig-singledotty">Listing</xref>.
@@ -287,8 +287,8 @@ class Dotty {
         which forces other tasks, including user I/O tasks, to wait.
       </p>
     </principle>
-    
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
     <activity>
     <title>Single-threaded Dotty</title>
@@ -300,7 +300,7 @@ class Dotty {
     </p>
   </statement>
   </activity>
-  </exercises>
+  
 
   </subsection>
   <subsection>
@@ -324,14 +324,14 @@ class Dotty {
       the easiest way to convert
       <c>Dotty</c> into a thread is to have it implement the <c>Runnable</c> interface:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Dotty implements Runnable {
     // Everything else remains the same
     public void run() {
         draw();
     }
 }
- </input></program>
+ </code></program>
     <p>
       This version of <c>Dotty</c> will perform the same task as before except 
       that it will now run as a separate thread of execution.
@@ -375,7 +375,7 @@ public class Dotty implements Runnable {
     <figure xml:id="fig-threadeddotty">
       <caption>By implementing the <c>Runnable</c> interface, this version of <c>Dotty</c>
       can run as a separate thread.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import javax.swing.*;     // Import Swing classes
 public class Dotty implements Runnable {
@@ -419,7 +419,7 @@ public class Dotty implements Runnable {
                                              + (nDrawn-firstRed));
   } // clear()
 } // Dotty
- </input></program>
+ </code></program>
     </figure>
     <p>
       Another necessary change is that once the <c>clear()</c> method is called,
@@ -467,7 +467,7 @@ public class Dotty implements Runnable {
       In the revised version we must create a new <c>Thread</c> and pass it 
       an instance of <c>Dotty</c>, which will then run as a separate thread:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void actionPerformed(ActionEvent e) {
     if (e.getSource() == draw) {
         dotty = new Dotty(canvas, NDOTS);
@@ -477,7 +477,7 @@ public void actionPerformed(ActionEvent e) {
         dotty.clear();
     } 
 } // actionPerformed()
- </input></program>
+ </code></program>
     <p>
       Note that in addition to a reference to <c>dotty</c> we also 
       have a reference to a <c>Thread</c> named <c>dottyThread</c>. 
@@ -545,7 +545,8 @@ public void actionPerformed(ActionEvent e) {
         and let the second thread handle CPU-intensive computations.
       </p>
     </principle>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
     <activity>
     <title>Multi-threaded Dotty</title>
@@ -640,6 +641,6 @@ public void actionPerformed(ActionEvent e) {
 </solution>
 </exercise>
 
-</exercises>
+
   </subsection>
 </section>

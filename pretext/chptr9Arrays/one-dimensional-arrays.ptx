@@ -53,7 +53,7 @@
     </p>
 <activity label="elmt0"><statement><p>Run the following code. 
   Can you print out the 0th element of the array? Can you print out the (k-j)th element? Which element is that?</p></statement>
- <program language="java" interactive="activecode"><input>
+ <program language="java" interactive="activecode"><code>
   public class ArrayEx
   {                   
     public static void main(String[] args)
@@ -69,17 +69,17 @@
         // Can you print out the (k-j)th element?
       }
   }
-      </input></program>
+      </code></program>
  </activity>
    
     <p>
       It is a syntax error to use a non-integer type as an array subscript.
       Each of the following expressions would be invalid (try them above to see what happens):
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 arr[5.0]  // 5.0 is a float and can't be an array subscript
 arr["5"]  // "5" is a string not an integer
- </input></program>
+ </code></program>
     <p>
       For a given array,
       a valid array subscript must be in the range <c>0 ... N-1</c>, 
@@ -89,12 +89,12 @@ arr["5"]  // "5" is a string not an integer
       which can be detected when the program is compiled.
       For the array <c>arr</c>, each of the following expressions contain out-of-bounds subscripts:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 arr[-1]  // Arrays cannot have negative subscripts
 arr['5'] // Char '5' promoted to its Unicode value, 53
 arr[15]  // The last element of arr has subscript 14
 arr[j*k] // Since j*k equals 35
- </input></program>
+ </code></program>
     <p>
       Each of these references would lead to an <c>IndexOutOfBoundsException</c>.  Try them above to see this exception.
       (Exceptions are covered in detail in Chapter<nbsp/>10.)
@@ -174,16 +174,16 @@ arr[j*k] // Since j*k equals 35
       itself.
       The following statements create the array shown in <xref ref="fig-intarray">Figure</xref>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int arr[];          // Declare a name for the array
 arr = new int[15];  // Create the array itself
- </input></program>
+ </code></program>
     <p>
       These two steps can be combined into a single statement as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int arr[] = new int[15];
- </input></program>
+ </code></program>
     <p>
       In this example,
       the array's element type is <c>int</c> and its <c>length</c> is 15,
@@ -203,10 +203,10 @@ int arr[] = new int[15];
       The brackets can be attached either to the array's name or to its type,
       as in the following examples:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int arr[];     // The brackets may follow the array's name
 int[] arr;     // The brackets may follow the array's type
- </input></program>
+ </code></program>
     <p>
       The following example creates an array of five <c>String</c>s 
       and then uses a for loop to assign the strings <c>"hello1"</c>, <c>"hello2"</c>, 
@@ -215,13 +215,13 @@ int[] arr;     // The brackets may follow the array's type
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String strarr[];                // Declare a name for the array
 strarr = new String[5];              // Create the array itself
                                  // Assign strings to the array
 for (int k = 0; k &lt; strarr.length; k++)     // For each element
   strarr[k] = new String("hello" + (k + 1)); // Assign a string
- </input></program>
+ </code></program>
     <p>
       Note that the expression <c>k &lt; strarr.length</c> specifies the loop bound.
       Every array has a <c>length</c>
@@ -278,12 +278,12 @@ for (int k = 0; k &lt; strarr.length; k++)     // For each element
       to store three <c>Student</c>s plus the three <c>Student</c>s themselves 
       (<xref ref="fig-school">Figure</xref>):
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Student school[] = new Student[3];   // A 3 Student array
 school[0] = new Student("Socrates"); // The first Student
 school[1] = new Student("Plato");    // The second Student
 school[2] = new Student("Aristotle");// The third Student
- </input></program>
+ </code></program>
     <p>
       The first statement creates an array named <c>school</c> 
       to store three Students, and the next three statements create 
@@ -298,10 +298,10 @@ school[2] = new Student("Aristotle");// The third Student
       The following sequence of statements would lead to a null pointer 
       exception because the array's elements have not been instantiated:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Student students[] = new Student[3]; // A 3 Student array
 System.out.println(students[0].getName());
- </input></program>
+ </code></program>
     <p>
       In this case, <c>students[0]</c> is a null reference,
       thus causing the exception.
@@ -329,17 +329,17 @@ System.out.println(students[0].getName());
       The following for loop invokes each <c>Student</c>'s <c>getState()</c> 
       method to print out its current state:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = 0; k &lt; school.length; k++)
     System.out.println(school[k].getState());
- </input></program>
+ </code></program>
     <p>
       What if the three <c>Student</c>s already existed before the array was created?
       In that case,
       we could just assign their references to the array elements,
       as in the following example (<xref ref="fig-students">Figure</xref>):
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Student student1 = new Student("Socrates");
 Student student2 = new Student("Plato");
 Student student3 = new Student("Aristotle");
@@ -347,7 +347,7 @@ Student school = new Student[3]; // A 3 Student array
 school[0] = student1;
 school[1] = student2;
 school[2] = student3;
- </input></program>
+ </code></program>
     <p> 
       In this case,
       each of the three <c>Student</c> objects can be referenced by 
@@ -380,9 +380,9 @@ school[2] = student3;
       because each <c>int</c> requires 4 bytes (32 bits) of storage.
       If we declare an array of 20 <c>double</c> s,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 double arr[] = new double[20];
- </input></program>
+ </code></program>
     <p>
       the compiler will allocate 160 bytes of storage <mdash/> i.e., 20 variables of 8 
       bytes (64<nbsp/>bits) each.
@@ -392,7 +392,8 @@ double arr[] = new double[20];
       the compiler will allocate space for <em>N</em> addresses,
       where <em>N</em> is the length of the array and where each address requires 4 bytes.
     </p>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
     <p>
       How much memory space (in bytes) would be allocated for each of the following array declarations?
@@ -402,9 +403,9 @@ double arr[] = new double[20];
     <statement>
         <p>
           <var/>
-          <program language="java"><input>
+          <program language="java"><code>
             int a[] = new int[5]; 
-          </input></program>
+          </code></program>
         </p>
     </statement>
     <setup>
@@ -432,9 +433,9 @@ double arr[] = new double[20];
     <statement>
         <p>
           <var/>
-          <program language="java"><input>
+          <program language="java"><code>
             double b[] = new double[10]; 
-          </input></program>
+          </code></program>
         </p>
     </statement>
     <setup>
@@ -461,9 +462,9 @@ double arr[] = new double[20];
     <statement>
         <p>
           <var/>
-          <program language="java"><input>
+          <program language="java"><code>
             char c[] = new char[30]; 
-          </input></program>
+          </code></program>
         </p>
     </statement>
     <setup>
@@ -490,9 +491,9 @@ double arr[] = new double[20];
     <statement>
         <p>
           <var/>
-          <program language="java"><input>
+          <program language="java"><code>
             String s[] = new String[10];
-          </input></program>
+          </code></program>
         </p>
     </statement>
     <setup>
@@ -519,9 +520,9 @@ double arr[] = new double[20];
     <statement>
         <p>
           <var/>
-          <program language="java"><input>
+          <program language="java"><code>
             Student p[] = new Student[5];
-          </input></program>
+          </code></program>
         </p>
     </statement>
     <setup>
@@ -542,7 +543,7 @@ double arr[] = new double[20];
       <p>20 bytes </p>
     </solution>    
   </exercise>
-  </exercises>
+  
   </subsection>
 
   <subsection>
@@ -564,15 +565,15 @@ double arr[] = new double[20];
       For example,
       we can declare and  initialize the array shown in <xref ref="fig-intarray">Figure</xref> with the following statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int arr[] = {-2,8,-1,-3,16,20,25,16,16,8,18,19,45,21,-2};
- </input></program>
+ </code></program>
     <p>
       Similarly, to create and initialize an array of <c>String</c>s, we can use the following statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String strings[] = {"hello", "world", "goodbye", "love"};
- </input></program>
+ </code></program>
     <p>
       This example creates and stores four <c>String</c>s in the array.
       Note in these examples that when an array declaration contains an initializer,
@@ -592,39 +593,40 @@ String strings[] = {"hello", "world", "goodbye", "love"};
       statements assign values to the elements of two arrays,
       named <c>arr</c> and <c>strings</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 arr[0] = 5;
 arr[5] = 10;
 arr[2] = 3;
 strings[0] = "who";
 strings[1] = "what";
 strings[2] = strings[3] = "where";
- </input></program>
+ </code></program>
     <p>
       The following loop assigns the first 15 squares <mdash/><c>1, 4, 9 ...</c> <mdash/> 
       to the array <c>arr</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = 0; k &lt; arr.length; k++)
     arr[k] = (k+1) * (k+1);
- </input></program>
+ </code></program>
     <p>
       The following loop prints the values of the array <c>arr</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = 0; k &lt; arr.length; k++)
     System.out.println(arr[k]);
- </input></program>
-<exercises>
+ </code></program>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises</title>
 
 <exercise label="arrayaccess-1"> 
     <title>What's the value?</title>
     <statement>
         <p>For the following array declaration:</p>
-          <program language="java"><input>
+          <program language="java"><code>
             double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-          </input></program>
+          </code></program>
           <p>what is the value of <c>farr[1]</c>? <var/> </p>
     </statement>
     <setup>
@@ -650,9 +652,9 @@ for (int k = 0; k &lt; arr.length; k++)
     <title>What's the value?</title>
     <statement>
         <p>For the following array declaration:</p>
-          <program language="java"><input>
+          <program language="java"><code>
             double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-          </input></program>
+          </code></program>
           <p>what is the value of <c>farr[farr.length - 2]</c>? <var/> </p>
     </statement>
     <setup>
@@ -680,10 +682,10 @@ for (int k = 0; k &lt; arr.length; k++)
     <title>Access the last element</title>
     <statement>
         <p>For the following variable declarations:</p>
-          <program language="java"><input>
+          <program language="java"><code>
             int k = 0;
             double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-          </input></program>
+          </code></program>
           <p>which of the following expressions would correctly access the last element in <c>farr</c>?</p>
     </statement>
     <choices>
@@ -729,10 +731,10 @@ for (int k = 0; k &lt; arr.length; k++)
     <title>Assign to the first element</title>
     <statement>
         <p>For the following variable declarations:</p>
-          <program language="java"><input>
+          <program language="java"><code>
             int k = 0;
             double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-          </input></program>
+          </code></program>
           <p>which of the following expressions would correctly assing 10.5 to the first element in <c>farr</c>?</p>
     </statement>
     <choices>
@@ -778,7 +780,7 @@ for (int k = 0; k &lt; arr.length; k++)
   <statement>
     <p> Write a loop to print all the values of <c>farr</c> from first to last.</p>
   </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
 public class Farr
 {                   
   public static void main(String[] args)
@@ -792,16 +794,16 @@ public class Farr
 
   }
 }
-</input></program>
+</code></program>
     <solution>
-      <program language="java"><input>
+      <program language="java"><code>
       double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
       for (int k=0; k &lt; farr.length; k++) {
         System.out.print(farr[k] + " ");
       }
-      </input></program>
+      </code></program>
     </solution> 
 </exercise>
-</exercises>
+
 </subsection>
 </section>

@@ -15,7 +15,7 @@
 	  GUI concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>model</em></premise>
@@ -85,7 +85,7 @@ area within a <c>JFrame</c>.</response>
           <response>a window that holds a content pane.</response>
 	</match>
 	
-      </matches>
+      </cardsort>
       </exercise>
 
     <exercisegroup>
@@ -391,10 +391,10 @@ area within a <c>JFrame</c>.</response>
           </figure>
         Such a dialog box can be created with a single statement: 
       
- <program language="java"><input>
+ <program language="java"><code>
 JOptionPane.showMessageDialog(this,
          "Sorry, your number is out of range.");
- </input></program>Convert the <c>Validate</c> program (Fig.<nbsp/>6.12 from Chapter<nbsp/>6) to a GUI interface and use the <c>JOptionPane</c> dialog to report errors.
+ </code></program>Convert the <c>Validate</c> program (Fig.<nbsp/>6.12 from Chapter<nbsp/>6) to a GUI interface and use the <c>JOptionPane</c> dialog to report errors.
         </p>
     </statement>
       <response />

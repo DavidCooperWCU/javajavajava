@@ -108,9 +108,9 @@
 <c>JDialog</c>, <c>JFrame</c>, and <c>JWindow</c> containers,
       you must remember to use the getContentPane() . The correct statement is
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 getContentPane().setLayout(new FlowLayout());
- </input></program>
+ </code></program>
     <principle>
       <title>DEBUGGING TIP: Content Pane</title>
       <p>
@@ -160,9 +160,9 @@ getContentPane().setLayout(new FlowLayout());
       we need only set the keypad's layout to a <c>GridLayout</c>. This takes a single statement,
       which should be added to the beginning of the <c>KeyPad()</c> constructor:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 setLayout(new GridLayout(4,3,1,1));
- </input></program>
+ </code></program>
    <p>
       This statement creates a <c>GridLayout</c> object and assigns it as the layout manager for the keypad.
       It will ensure that the keypad will have four rows and three columns of buttons 
@@ -250,10 +250,10 @@ setLayout(new GridLayout(4,3,1,1));
       The <c>BorderLayout</c> class contains two constructors:
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public BorderLayout();
 public BorderLayout(int hgap, int vgap);
- </input></program>
+ </code></program>
     <p>
       The two parameters in the second version of the constructor allow you to insert spacing between the areas.
     </p>
@@ -271,10 +271,10 @@ public BorderLayout(int hgap, int vgap);
       to set the application window to a border layout and to add the keypad to its east area,
       we would use the following statements:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 getContentPane().setLayout(new BorderLayout(2, 2));
 getContentPane().add(keypad,"East");
- </input></program>
+ </code></program>
     <p>
       In this version of the <c>add()</c> method,
       the second parameter must be a capitalized <c>String</c> with one of the names,
@@ -294,26 +294,26 @@ getContentPane().add(keypad,"East");
       For example,
       let's create a panel to contain the prompt and the text field and place it at the north edge of the frame:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 JPanel inputPanel = new JPanel(); // Create panel
 inputPanel.add(prompt);              // Add label
 inputPanel.add(input);           // Add textfield
                     // Add the panel to the frame
 getContentPane().add(inputPanel,"North");
- </input></program>
+ </code></program>
     <p>
       The same point would apply if we want to group the keypad with the convert button and place them at the east edge.
       There are several ways these elements could be grouped.
       In this example,
       we give the panel a border layout and put the keypad in the center and the convert button at the south edge:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 JPanel controlPanel= new JPanel(new BorderLayout(0,0));
 controlPanel.add(keypad,"Center");
 controlPanel.add(convert, "South");
                     // Add the panel to the frame
 getContentPane.add(controlPanel,"East");
- </input></program>
+ </code></program>
     <p>
       Given these details about the <c>BorderLayout</c>, a more appropriate design for the converter application is shown in <xref ref="fig-metricgui3">Figure</xref>.
       Notice that the border layout for the top-level <c>JFrame</c> uses only the center, north,
@@ -354,7 +354,7 @@ getContentPane.add(controlPanel,"East");
       The only changes to the program itself occur in the constructor method,
       which in its revised form is defined as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public Converter() {
   getContentPane().setLayout(new BorderLayout());
   keypad = new KeyPad(this);
@@ -374,7 +374,7 @@ public Converter() {
   convert.addActionListener(this);
   input.addActionListener(this);
 } // Converter()
- </input></program>
+ </code></program>
     <p>
       This layout divides the interface into three main panels,
       an input panel, display panel,

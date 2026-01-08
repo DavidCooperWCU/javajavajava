@@ -16,11 +16,11 @@
     retrieve a substring of characters from a <c>String</c>. 
     These methods are defined as follows:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public char charAt(int index)
 public String substring(int startIndex)
 public String substring(int startIndex, int endIndex)
- </input></program>
+ </code></program>
   <p>
     The <c>charAt()</c> method
         <idx><h>charAt() method</h></idx>
@@ -47,11 +47,11 @@ public String substring(int startIndex, int endIndex)
     and <c>str.substring(3)</c> would return
     <q>loWorld</q>:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 String str = "HelloWorld";
 str.substring(5)            ==> "World"
 str.substring(3)            ==> "loWorld"
- </input></program>
+ </code></program>
   <p>
     The <c>substring(int, int)</c> version requires that you specify 
     both the starting and ending index of the substring.
@@ -59,13 +59,13 @@ str.substring(3)            ==> "loWorld"
     beyond the last character in the <c>String</c> you want to retrieve.
     For example,
   </p>
- <program language="java"><input>
+ <program language="java"><code>
  //   INDEX:   0123456789
  String str = "HelloWorld";
  str.substring(5,7)               ==> "Wo"
  str.substring(0,5)               ==> "Hello"
  str.substring(5, str.length())   ==> "World"
- </input></program>
+ </code></program>
   <p>
     Note here that when we want to retrieve
     <q>Wo</q>
@@ -79,12 +79,12 @@ str.substring(3)            ==> "loWorld"
     at index 5 and extending to the end of the string.
     This is equivalent to <c>str.substring(5)</c>:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 //    INDEX:   0123456789
  String str = "HelloWorld";
  str.substring(5, str.length())   ==> "World"
  str.substring(5)                 ==> "World"
- </input></program>
+ </code></program>
   <p>
     The fact that the second parameter in <c>substring()</c> refers to 
     the character one beyond the desired substring may seem a bit confusing at first,
@@ -99,11 +99,11 @@ str.substring(3)            ==> "loWorld"
     in which the <em>delimiter</em>
     is the colon, <c>':'</c>. The following code retrieves the substring preceding the delimiter:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 String str = "substring1:substring2";
 int n = str.indexOf(':');
 str.substring(0,n)               ==> "substring1"
- </input></program>
+ </code></program>
   <p>
     Thus, by making the second index of <c>substring()</c> refer to the 
     character one beyond the last character in the desired substring,
@@ -112,10 +112,10 @@ str.substring(0,n)               ==> "substring1"
     to store the index of the delimiter,
     because the two method calls can be nested:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 String str = "substring1:substring2";
 str.substring(0,str.indexOf(':'))  ==> "substring1"
- </input></program>
+ </code></program>
   <principle>
     <title>DEBUGGING TIP: <c>substring(int p1, int p2)</c></title>
     <p>
@@ -123,15 +123,16 @@ str.substring(0,str.indexOf(':'))  ==> "substring1"
       methods refers to the character just past the last character in the substring.
     </p>
   </principle>
-  <exercises>
+ </subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
     <exercise label="str-substring-1">
       <title>Substring expressions</title>
         <statement>
           <p>Given this <c>String</c> declaration</p>
-            <program language="java"><input>
+            <program language="java"><code>
             String s = "abcdefghijklmnopqrstuvwxyz";
-            </input></program>
+            </code></program>
           <p>evaluate each of the following expressions.</p>
           <p><term>(Note: All your answers should be enclosed within "" marks.)</term></p>
         <ol marker="a">
@@ -225,9 +226,9 @@ str.substring(0,str.indexOf(':'))  ==> "substring1"
       <title>Substring expressions 2</title>
         <statement>
           <p>Given this <c>String</c> declaration</p>
-            <program language="java"><input>
+            <program language="java"><code>
             String s = "abcdefghijklmnopqrstuvwxyz";
-            </input></program>
+            </code></program>
           <p>evaluate each of the following expressions.</p>
           <p><term>(Note: All your answers should be enclosed within "" marks.)</term></p>
         <ol marker="a">
@@ -314,6 +315,6 @@ str.substring(0,str.indexOf(':'))  ==> "substring1"
           <p> (a) <q>uvwxyz</q>,  (b) <q>bcde</q>,  (c) <q>xyz</q>,  (d) <q>xyz</q>,  (e) <q>xyz</q> </p>
         </solution>
       </exercise>
-  </exercises>
+  
 </subsection>
 </section>

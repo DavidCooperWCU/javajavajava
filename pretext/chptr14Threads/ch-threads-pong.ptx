@@ -81,7 +81,7 @@
     <listing xml:id="fig-paddle">
       <caption>Definition of the <c>Paddle</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 class Paddle {
     public static final int HEIGHT = 50; // Paddle size
     public static final int WIDTH = 10;
@@ -118,7 +118,7 @@ class Paddle {
     } // moveDown()
 } // Paddle
 
- </input></program>
+ </code></program>
     </listing>
     <p>
       Class constants, <c>HEIGHT</c> and <c>WIDTH</c> are used to define the size of the <c>Paddle</c>, which is represented on the frame as a simple rectangle.
@@ -128,9 +128,9 @@ class Paddle {
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 g.fillRect(pad.getX(),pad.getY(),Paddle.WIDTH,Paddle.HEIGHT);
- </input></program>
+ </code></program>
     <p>
       Note how the frame uses the paddle's <c>getX()</c> and <c>getY()</c> methods to get the paddle's current location.
     </p>
@@ -146,9 +146,9 @@ g.fillRect(pad.getX(),pad.getY(),Paddle.WIDTH,Paddle.HEIGHT);
 <c>SIZE</c> to determine the size of the oval that represents the ball,
       drawn by the frame as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 g.fillOval(ball.getX(),ball.getY(),ball.SIZE,ball.SIZE);
- </input></program>
+ </code></program>
     <p>
       As with the paddle,
       the frame uses the ball's <c>getX()</c> and <c>getY()</c> method to determine the ball's current location.
@@ -156,7 +156,7 @@ g.fillOval(ball.getX(),ball.getY(),ball.SIZE,ball.SIZE);
     <listing xml:id="fig-ball">
       <caption>Definition of the <c>Ball</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.Toolkit;
 
@@ -213,7 +213,7 @@ class Ball extends Thread {
         } // while
     } // run()
 } // Ball
- </input></program>
+ </code></program>
     </listing>
     <p>
       Unlike the paddle, however, the ball moves autonomously.
@@ -233,10 +233,10 @@ class Ball extends Thread {
       right, up,
       or down by adjusting the values of its <c>locationX</c> and <c>locationY</c> coordinates:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 locationX = locationX + directionX; // Calculate location
 locationY = locationY + directionY;
- </input></program>
+ </code></program>
     <p>
       The <c>directionX</c> and <c>directionY</c> variables are set to either <m>+1</m> or <m>-1</m>,
       depending on whether the ball is moving left or right,
@@ -270,7 +270,7 @@ locationY = locationY + directionY;
     </p>
     <listing xml:id="fig-pongapplet">
       <caption>Definition of the <c>PongFrame</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -323,7 +323,7 @@ public class PongFrame extends JFrame implements KeyListener {
         f.setVisible(true);
     }
 } // PongFrame
- </input></program>
+ </code></program>
     </listing>
     <p>
       There's a bit of redundancy in the <c>KeyListener</c> interface in the sense that a single key press and release generates three <c>KeyEvent</c> s: A key-typed event,
@@ -335,14 +335,14 @@ public class PongFrame extends JFrame implements KeyListener {
       (typed and released).
       Therefore, we implement the <c>keyPressed()</c> method as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void keyPressed( KeyEvent e) { // Check arrow keys
    int keyCode = e.getKeyCode();
    if (keyCode == e.VK_UP)            // Up arrow
       pad.moveUp();
    else if (keyCode == e.VK_DOWN)     // Down arrow
       pad.moveDown();} // keyReleased()
- </input></program>
+ </code></program>
     <p>
       Each key on the keyboard has a unique code that identifies the key.
       The key's code is gotten from the <c>KeyEvent</c> object by means of the <c>getKeyCode()</c> method.
@@ -412,7 +412,8 @@ public void keyPressed( KeyEvent e) { // Check arrow keys
       thereby making thread programming accessible to programmers.
       However, one of the lessons that should be drawn from this chapter is that multithreaded programs must be carefully designed in order to work effectively.
     </p>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
       <activity>
       <title>Pong Game</title>
@@ -425,6 +426,6 @@ public void keyPressed( KeyEvent e) { // Check arrow keys
           </p>
       </statement>
       </activity>
-    </exercises>
+    
   </subsection>
 </section>

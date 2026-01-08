@@ -37,19 +37,19 @@
     the following statements can be used to format a decimal 
     number as a currency string in dollars and cents:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     NumberFormat dollars = NumberFormat.getCurrencyInstance();
     System.out.println(dollars.format(10962.555));
-  </input></program>
+  </code></program>
   <p>
     These statements would cause the value 10962.555 to be shown as $10,962.56.
     Similarly, the statements,
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     NumberFormat percent = NumberFormat.getPercentInstance();
     percent.setMaximumFractionDigits(2);
     System.out.println(percent.format(6.55));
-  </input></program>
+  </code></program>
   <p>
     would display the value 6.55 as 6.55%. The utility of the <c>Math</c> and 
     <c>NumberFormat</c> classes illustrates the following principle:
@@ -62,7 +62,9 @@
     </p>
   </principle>
 </introduction>
-<exercises xml-id="ss-5-8-1">
+
+
+<subsection xml-id="ss-5-8-1">
     <title>Self-Study Exercise</title>
     
       <p>
@@ -120,7 +122,7 @@
           the following expression calculates maturity value with annual compounding:
       <c>principal * Math.pow(1 + rate, years)</c>
         </p></statement>
-        <program language="java" interactive="activecode"><input>
+        <program language="java" interactive="activecode"><code>
          public class BankCD
          {
 
@@ -132,9 +134,9 @@
              System.out.println("Monthly Interest: " + cd.calcMonthly());
           }
          }
-        </input>   </program>
+        </code>   </program>
         <solution>
-          <program language="java"><input>
+          <program language="java"><code>
             public class BankCD 
             { private double principal;   // The CD's initial principal
               private double rate;        // CD's interest rate
@@ -151,7 +153,7 @@
               {   return principal * Math.pow(1 + rate/365, years*365);
               } // calcDaily()
             } // BankCD
-          </input></program>
+          </code></program>
         </solution>
         </exercise>
       
@@ -179,7 +181,7 @@
       </pre>
   </p></statement>
   <solution><p>
-    <program language="java"><input>
+    <program language="java"><code>
        public class TestBankCD 
        { 
          private KeyboardReader reader = new KeyboardReader();   
@@ -211,8 +213,8 @@
            cd.run();
          } // main()
        }// TestBankCD
-    </input></program>
+    </code></program>
   </p></solution>
 </exercise>
-</exercises>
+</subsection>
 </section>

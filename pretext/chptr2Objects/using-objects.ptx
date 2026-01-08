@@ -70,9 +70,9 @@
       we can embed this expression in a print statement:
     </p>
     <program language="java">
-    <input>
+    <code>
     System.out.println(str.length()); // Print str's length
-	</input>
+	</code>
     </program> 
     <p>
       In general, to use an object's instance method,
@@ -93,9 +93,9 @@
       we first declare a <c>String</c> variable.
     </p>
     <program language="java">
-    <input>
+    <code>
     String str; // Declare a String variable named str
-	</input>
+	</code>
     </program> 
     <p>
       We then create a <c>String</c> object by using 
@@ -103,9 +103,9 @@
       and assign the new object to the variable we declared:
     </p>
     <program language="java">
-    <input>
+    <code>
 	    str = new String("Hello"); // Create a String containing the word "hello"
-	</input>
+	</code>
     </program> 
     <p>
       This example will create a <c>String</c> that contains,
@@ -125,9 +125,9 @@
       and the <em>object creation</em> into one statement:
     </p>
     <program language="java">
-    <input>
+    <code>
     	String str2 = new String(); // Create a String
-	</input>
+	</code>
     </program> 
     <p>
       This example will create a <c>String</c> object that contains the empty string as its value.
@@ -146,7 +146,7 @@
 <activity label="str1">
 <statement><p>Run the following code. Add another string that is the empty string 
   and print out its length.</p></statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class StringEx 
 {                                   
    public static void main(String[] args)
@@ -155,7 +155,7 @@ public class StringEx
       System.out.println("String " + str + " has the length " + str.length() );
    }
 }          
-</input></program></activity>    
+</code></program></activity>    
 
 </subsection>
 <subsection>
@@ -171,9 +171,9 @@ public class StringEx
       simple assignment statement:
     </p>
     <program language="java">
-    <input>
+    <code>
     int num = 5;
-	</input>
+	</code>
     </program> 
     <p> 
       This difference relates to the way Java treats these two types of variables in the computer's memory.
@@ -190,11 +190,11 @@ public class StringEx
     <figure xml:id="fig-varmemory">
     <caption>The difference between primitive variables and object variables.</caption>
     <program language="java">
-    <input>
+    <code>
       int num = 5;
       boolean boo = true;
       String s = new String("hello");
-	</input>
+	</code>
     </program> 
     <image width="80%" source="chptr02/primitive-vs-reference.png"/>
     </figure>
@@ -216,11 +216,11 @@ public class StringEx
     <figure xml:id="fig-defaults">
     <caption>Default values for primitive variables and object variables.</caption>
     <program language="java">
-    <input>
+    <code>
       int num;      // num has the value 0
       boolean boo;  // boo has the value false
       String s;     // s has the value null
-	</input>
+	</code>
     </program> 
     <image width="70%" source="chptr02/default-values.png"/>
     </figure>  
@@ -242,10 +242,10 @@ public class StringEx
       the following statements print the lengths of our two strings:
     </p>
     <program language="java">
-    <input>
+    <code>
     System.out.println(str.length());
     System.out.println(str2.length());
-	</input>
+	</code>
     </program>
     <p>
 -->    
@@ -256,11 +256,11 @@ public class StringEx
       For example:
     </p>
     <program language="java">
-    <input>
+    <code>
 		String s1 = new String("George ");
 		String s2 = new String("Washington");
 		System.out.println(s1.concat(s2));
-	</input>
+	</code>
     </program>
     <p>
       In this case,
@@ -275,19 +275,19 @@ public class StringEx
       The following code will also work:
     </p>
     <program language="java">
-    <input>
+    <code>
 		String s1 = "George ";
 		String s2 = "Washington";
-	</input>
+	</code>
     </program>
     <p>
       Similarly, an easier way to concatenate two <c>String</c> objects is to use the plus sign (+), which serves as a
       <em>concatenation operator</em> in Java:
     </p>
     <program language="java">
-    <input>
+    <code>
 		System.out.println(s1 + s2);
-	</input>
+	</code>
     </program>
 </subsection>
 <subsection>
@@ -302,11 +302,11 @@ public class StringEx
       For example, consider the following code segment:
     </p>
     <program language="java">
-    <input>
+    <code>
 		String s1 = "Hello";
 		String s2 = "Hello";
 		String s3 = "hello";
-	</input>
+	</code>
     </program>
     <p>
       In this case,
@@ -318,11 +318,11 @@ public class StringEx
 <c>String</c> variable that contains <c>null</c>. Executing the statements:
     </p>
     <program language="java">
-    <input>
+    <code>
 		String s1;                          // null
 		String s2 = "";                     // empty string
 		System.out.println(s1.equals(s2));  // System crash
-    </input>
+    </code>
     </program>
     <p>
       will not only not print out <c>true</c>, it will cause the program to crash <mdash/> to terminate abnormally.
@@ -353,7 +353,7 @@ public class StringEx
         <listing xml:id="fig-sillystr">
       <caption>A program that prints silly string puns.</caption>
     <program language="java">
-    <input>
+    <code>
 public class StringPuns {
 	public static void main(String args[]) {
 		String s = new String("string");
@@ -374,7 +374,7 @@ public class StringPuns {
 		System.out.println("1. These puns form a " + s + s6);
 	} // main()
 } //  StringPuns class
-    </input>
+    </code>
     </program>
     </listing>
 
@@ -384,7 +384,7 @@ public class StringPuns {
 <activity label="stringPuns">
 <statement><p>Run the following code. 
     Click on the "Show Code Lens" button and then the Next button to step through the code.</p></statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
   public class StringPuns {
     public static void main(String args[]) {
       String s = new String("string");
@@ -405,9 +405,9 @@ public class StringPuns {
       System.out.println("1. These puns form a " + s + s6);
     } // main()
   } //  StringPuns class     
-</input></program></activity>
-
-<exercises>
+</code></program></activity>
+</subsection>
+<subsection>
 <title>Self-Study Exercises</title>
 
   <exercise label="concatEx">
@@ -417,10 +417,10 @@ public class StringPuns {
           <p>
             When the following Java code fragment is executed, the output would be: <var/>
     <program language="java">
-    <input>
+    <code>
     String s = "ing";
     System.out.println("s" + s + s + " k" + s + ".");
-     </input>
+     </code>
     </program>
           </p>        
         </statement>
@@ -438,11 +438,10 @@ public class StringPuns {
                     </condition>
               </var>
         </setup>
-  </exercise>
+  
   <solution>
     <p>singing king.</p>
   </solution>
-</exercises>
-
+</exercise>
 </subsection>
 </section>

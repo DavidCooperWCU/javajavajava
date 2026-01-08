@@ -45,7 +45,7 @@
       an <c>IllegalArgumentException</c> is thrown.
       The exception is caught by the <c>catch</c> clause in the <c>CalcAvgTest.main()</c> method.
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
     try {
       CalcAverage ca = new CalcAverage();
       System.out.println( "AVG + " + ca.avgFirstN(0));
@@ -55,13 +55,13 @@
       e.printStackTrace();
       System.exit(0);
     }
-  </input></program>
+  </code></program>
     <listing xml:id="fig-calcavg2">
       <caption>In this version of the <c>calcAvgTest</c> program, an
 <c>IllegalArgumentException</c> thrown in <c>CalcAverage.avgFirstN()</c>, would be handled by the catch clause in
 <c>CalcAvgTest.main()</c>.</caption>
       
- <program language="java" interactive="activecode"><input>
+ <program label="exc-calc-average-2" language="java" interactive="activecode"><code>
  class CalcAverage {
   /**
    * Precondition:  N > 0
@@ -89,7 +89,7 @@ public class CalcAvgTest {
     }
   }//main
 }// CalcAvgTest
- </input></program>
+ </code></program>
 </listing>
     <p>
       Let's go through this example step by step.
@@ -99,10 +99,10 @@ public class CalcAvgTest {
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (N &lt;= 0)
    throw new IllegalArgumentException("ERROR: Illegal argument");
- </input></program>
+ </code></program>
     <p>
       Note the syntax of the <c>throw</c> statement.
       It creates a new <c>IllegalArgumentException</c> object and passes it a message that describes the error.
@@ -118,13 +118,13 @@ if (N &lt;= 0)
       the exception handler is the <c>catch</c> clause contained in the
 <c>CalcAvgTest.main()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 catch (IllegalArgumentException e) {  // Exception Handler
    System.out.println(e.getMessage());
    e.printStackTrace();
    System.exit(0);
 }
- </input></program>
+ </code></program>
     <p>
       When an <c>IllegalArgumentException</c> is thrown,
       the statements within this <c>catch</c> clause are executed.
@@ -138,7 +138,7 @@ catch (IllegalArgumentException e) {  // Exception Handler
       the following output will be generated as a result of the illegal argument error:
     </p>
     
- <program language="java"><input>
+ <program language="java"><code>
 ERROR: Can't average 0 elements
 java.lang.IllegalArgumentException: ERROR: Illegal argument
    at java.lang.Throwable.fillInStackTrace(Native Method)
@@ -150,7 +150,7 @@ java.lang.IllegalArgumentException: ERROR: Illegal argument
                        (IllegalArgumentException.java:43)
    at CalcAverage.avgFirstN(Compiled Code)
    at CalcAvgTest.main(CalcAvgTest.java:5)
- </input></program>
+ </code></program>
     <p>
       Thus, as in the previous example of Java's default exception handler,
       our exception handler also prints out a description of the error and a trace of the method calls that led up to the error.
@@ -174,12 +174,12 @@ java.lang.IllegalArgumentException: ERROR: Illegal argument
       which may or may not lead to an exception.
       These are the statements contained within the <c>try</c> clause:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 try {
     CalcAverage ca = new CalcAverage();
     System.out.println( "AVG + " + ca.avgFirstN(0));        
   }
- </input></program>
+ </code></program>
     <p>
       Second, we provide one or more <c>catch</c> clauses to handle particular types of exceptions.
       In this case,
@@ -268,7 +268,7 @@ try {
     </p>
     <listing xml:id="fig-trystmt">
       <caption>Java's try/catch statement.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 try {
       // Block of statements
       // At least one of which may throw an exception
@@ -285,7 +285,7 @@ try {
      // Optional block of statements that is executed
      // Whether an exception is thrown or not
  }
- </input></program>
+ </code></program>
 </listing>
     <p>
       The try block is meant to     include a statement or statements that might throw an exception.
@@ -308,9 +308,9 @@ try {
       Exceptions are thrown by using the <c>throw</c> statement,
       which takes the following general form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 throw new ExceptionClassName(OptionalMessageString);
- </input></program>
+ </code></program>
     <p>
       The keyword <c>throw</c> is followed by the instantiation of an object of the <c>ExceptionClassName</c> class.
       This is done the same way we instantiate any object in Java:
@@ -320,11 +320,11 @@ throw new ExceptionClassName(OptionalMessageString);
     <p>
       A <c>catch</c> block has the following general form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 catch (ExceptionClassName ParameterName) {
     // Exception handling statements
   }
- </input></program>
+ </code></program>
     <p>
       A <c>catch</c> block is very much like a method definition.
       It contains a parameter,
@@ -359,7 +359,7 @@ catch (ExceptionClassName ParameterName) {
       suppose an
 <c>ArithmeticException</c> is thrown in the following <c>try/catch</c> statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 try {
      // Suppose an ArithmeticException is thrown here} catch (ArithmeticException e) {
      System.out.println("ERROR: " + e.getMessage() );
@@ -367,7 +367,7 @@ try {
      System.exit(1);} catch (Exception e) {
      System.out.println("ERROR: " + e.getMessage() );
     }
- </input></program>
+ </code></program>
     <p>
       In this case,
       the exception would be handled by the more specific <c>ArithmeticException</c> block.
@@ -471,7 +471,7 @@ try {
     </p>
     <listing xml:id="fig-myclass">
       <caption>An example of dynamic versus static scoping.</caption>
- <program language="java" interactive="activecode"><input>
+ <program label="exc-scoping" language="java" interactive="activecode"><code>
 public class MyClass {
     public void method1() {
         int X = 1;
@@ -489,7 +489,7 @@ public class MyClass {
             myclass.method1();
     }
   } // MyClass
- </input></program>
+ </code></program>
 </listing>
  
     <p>
@@ -510,11 +510,11 @@ public class MyClass {
       In that case,
       the statement <c>System.out.println("Hello" + Y</c>) has the following dynamic scope:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 main()
     method2()
         System.out.println("Hello" + Y);
- </input></program>
+ </code></program>
  
     <p>
       It occurs within the (dynamic) scope of <c>method2()</c>, which is within the (dynamic) scope of <c>main()</c>. On the other hand,
@@ -582,8 +582,7 @@ main()
       It would, therefore, execute that catch clause.
     </p>
     </subsection>
-
-    <exercises><title>Self-Study Exercises</title>
+     <subsection><title>Self-Study Exercises</title>
     
       <exercise label="catches">
         <title>Catches</title>
@@ -664,7 +663,7 @@ main()
           What output would be printed by the program? What would be output if
           <c>printStackTrace()</c> were called in addition to 
           printing an error message?
- <program language="java"><input>
+ <program language="java"><code>
 public class MyClass2 {
     public void method1(double X) {
         if (X > 0.95)
@@ -688,22 +687,22 @@ public class MyClass2 {
         }
     } // main()
   } // MyClass2
- </input></program>
+ </code></program>
         </p></statement>
         <response></response>
         <solution>
           <p>
             If <c>Math.random()</c> in <c>MyClass2</c> returns 0.98 and then 0.44,
             the program will generate the following output:
-   <program language="java"><input>
+   <program language="java"><code>
   0.98 is out of range
-   </input></program>Note that because the out-of-range error occurs in <c>method1()</c>,
+   </code></program>Note that because the out-of-range error occurs in <c>method1()</c>,
   <c>method2()</c> is not called at all.         The following stack trace would be printed:
-  <program language="java"><input>
+  <program language="java"><code>
  java.lang.ArithmeticException: 0.98 is out of range
      at MyClass2.method1(MyClass2.java:3)
      at MyClass2.main(MyClass2.java:15)
-  </input></program>
+  </code></program>
           </p>
         </solution>
         </exercise>
@@ -725,17 +724,17 @@ public class MyClass2 {
         <solution>     <p>
           If <c>Math.random()</c> in <c>MyClass2</c> returns 0.44 and then 0.98,
           the program will generate the following output:
- <program language="java"><input>
+ <program language="java"><code>
 Hello 0.44
 0.98 is out of range
- </input></program>
+ </code></program>
         
           The following stack trace would be printed:
- <program language="java"><input>
+ <program language="java"><code>
 java.lang.ArithmeticException: 0.98 is out of range
     at MyClass2.method2(MyClass2.java:8)
     at MyClass2.main(MyClass2.java:16)
- </input></program>
+ </code></program>
         </p></solution>
         </exercise>
       
@@ -745,7 +744,7 @@ java.lang.ArithmeticException: 0.98 is out of range
         <p>
           Find the divide-by-zero error in the following program,
           and then show what stack trace would be printed by the program:
- <program language="java"><input>
+ <program language="java"><code>
 public class BadDivide {
     public void method1 (int n) {
         method2(100, n);
@@ -759,19 +758,19 @@ public class BadDivide {
             bd.method1(k);
     }
   }
- </input></program>
+ </code></program>
  </p></statement> 
  <response></response>
  <solution>
   <p>
     The divide-by-zero error in <c>BadDivide</c> occurs in the expression 
     <c>n/d</c> in <c>Method2()</c>. It would generate the following stack trace:
-<program language="java"><input>
+<program language="java"><code>
 java.lang.ArithmeticException: divide by zero
 at BadDivide.method2(BadDivide.java:7)
 at BadDivide.method1(BadDivide.java:3)
 at BadDivide.main(BadDivide.java:13)
-</input></program>
+</code></program>
   </p>
  </solution>
  </exercise>
@@ -785,7 +784,7 @@ at BadDivide.main(BadDivide.java:13)
           instead of letting Java handle it.
           Have it print an error message and a stack trace.
         </p></statement>
-        <program language="java" interactive="activecode"><input>
+        <program language="java" interactive="activecode"><code>
           public class BadDivide {
               public void method1 (int n) {
                   method2(100, n);
@@ -799,11 +798,11 @@ at BadDivide.main(BadDivide.java:13)
                       bd.method1(k);
               }
             }
-           </input></program>
+           </code></program>
            <solution>
             <p>
               The following version of <c>BadDivide.method2()</c> will handle the divide-by-zero error itself:
-     <program language="java"><input>
+     <program language="java"><code>
     public void method2 (int n, int d) {
         try {
             System.out.println(n / d);
@@ -813,7 +812,7 @@ at BadDivide.main(BadDivide.java:13)
             System.exit(0);
         }
       }
-     </input></program>
+     </code></program>
             </p>
             </solution>
             </exercise>
@@ -823,7 +822,7 @@ at BadDivide.main(BadDivide.java:13)
               <statement>
         <p>
           What would be printed by the following code segment if <c>someValue</c> equals 1000?
- <program language="java"><input>
+ <program language="java"><code>
 int M = someValue;
 try {
     System.out.println("Entering try block");
@@ -833,7 +832,7 @@ try {
   } catch (Exception e) {
     System.out.println("ERROR: " + e.getMessage());
   }
- </input></program>
+ </code></program>
         </p>
 </statement>
 <response></response>
@@ -841,10 +840,10 @@ try {
   <p>
     If <c>someValue</c> equals 1000,
     the code segment will print
-<program language="java"><input>
+<program language="java"><code>
 Entering try block
 ERROR: 1000 is too large
-</input></program>
+</code></program>
   </p>
 </solution>
 </exercise> 
@@ -860,10 +859,10 @@ ERROR: 1000 is too large
           <p>
             If <c>someValue</c> equals 50,
             the code segment will print
-   <program language="java"><input>
+   <program language="java"><code>
   Entering try block
   Exiting try block
-   </input></program>
+   </code></program>
           </p>
         </solution>
         </exercise>
@@ -878,7 +877,7 @@ ERROR: 1000 is too large
           the message returned by <c>getMessage()</c> should be
           <q>ERROR: Negative value in X coordinate.</q></p>
 </statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
   public class MyClass {
     public static void main(String argv[]) {
         
@@ -886,18 +885,18 @@ ERROR: 1000 is too large
            
     } // main()
   } // MyClass2
-   </input></program>
+   </code></program>
 <solution>
   <p>
-    <program language="java"><input>
+    <program language="java"><code>
 try {
   if (X &lt; 0)
      throw new Exception("ERROR: Negative value in X coordinate");
 } catch (Exception e) {
      System.out.println( e.getMessage() );
 }
-</input></program>
+</code></program>
 </p> </solution>
 </exercise>    
-</exercises>
+</subsection>
 </section>

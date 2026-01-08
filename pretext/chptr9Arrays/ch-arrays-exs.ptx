@@ -13,7 +13,7 @@
 	  Array concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>element</em></premise>
@@ -74,7 +74,7 @@
 	</match>
 
 	
-      </matches>
+      </cardsort>
       </exercise>
     <exercisegroup>
 <title>Fill In the Blanks</title>       
@@ -525,9 +525,9 @@
         <p>
           Evaluate each of the following expressions,
           some of which may be erroneous:
- <program language="java"><input>
+ <program language="java"><code>
 int arr[] = { 2,4,6,8,10 };
- </input></program>
+ </code></program>
 	</p>
  </introduction>
                        <exercise label="jaex_eval_array_1">       
@@ -638,11 +638,11 @@ int arr[] = { 2,4,6,8,10 };
 
         <p>
           What would be printed by the following code segment?
- <program language="java"><input>
+ <program language="java"><code>
 int arr[] = { 24, 0, 19, 21, 6, -5, 10, 16};
 for (int k = 0; k &lt; arr.length; k += 2)
   System.out.println( arr[k] );
- </input></program>
+ </code></program>
         </p>
       </statement>
       <response />
@@ -653,13 +653,13 @@ for (int k = 0; k &lt; arr.length; k += 2)
 
         <p>
           What would be printed by the following code segment?
- <program language="java"><input>
+ <program language="java"><code>
 int arr[][] = { {24, 0, 19}, {21, 6, -5}, {10, 16, 3},
                                            {1, -1, 0} };
 for (int j = 0; j &lt; arr.length; j++)
   for (int k = 0; k &lt; arr[j].length; k++)
     System.out.println( arr[j][k] );
- </input></program>
+ </code></program>
         </p>
       </statement>
       <response />
@@ -670,13 +670,13 @@ for (int j = 0; j &lt; arr.length; j++)
 
         <p>
           What would be printed by the following code segment?
- <program language="java"><input>
+ <program language="java"><code>
 int arr[][] = { {24, 0, 19}, {21, 6, -5}, {10, 16, 3},
                                            {1, -1, 0} };
 for (int j = 0; j &lt; arr[0].length; j++)
     for (int k = 0; k &lt; arr.length; k++)
         System.out.println(arr[k][j]);
- </input></program>
+ </code></program>
         </p>
       </statement>
       <response />
@@ -689,11 +689,11 @@ for (int j = 0; j &lt; arr[0].length; j++)
           What's wrong with the following code segment,
           which is supposed to swap the values of the <c>int</c> variables,
           <em>n1</em> and <em>n2</em>?
- <program language="java"><input>
+ <program language="java"><code>
 int temp = n1;
 n2 = n1;
 n1 = temp;
- </input></program>
+ </code></program>
         </p>
       </statement>
       <response />
@@ -705,12 +705,12 @@ n1 = temp;
         <p>
           Explain why the following method does not successfully swap the values of its two parameters?
           <hint>Think about the difference between value and reference parameters.</hint>
- <program language="java"><input>
+ <program language="java"><code>
 public void swapEm(int n1, int n2) {
     int temp = n1;
     n1 = n2;
     n2 = temp;}
- </input></program>
+ </code></program>
         </p>
       </statement>
       <response />
@@ -721,11 +721,11 @@ public void swapEm(int n1, int n2) {
 
         <p>
           Declare and initialize an array to store the following two-dimensional table of values:
- <program language="java"><input>
+ <program language="java"><code>
 1   2   3   4
 5   6   7   8
 9  10  11  12
- </input></program>
+ </code></program>
         </p>
       </statement>
       <response />
@@ -833,7 +833,7 @@ public void swapEm(int n1, int n2) {
     fashion, you should test it. Here's a simple application
     program that you can use for this purpose:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 import java.util.Arrays;
 
 public class MethodTester {
@@ -864,7 +864,7 @@ public class MethodTester {
     }
 }
 
-</input></program>
+</code></program>
     <p>
         Just replace
         the <c> stringify()</c> method with your method. Note that
@@ -883,7 +883,7 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jaex_average_two_d_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static Object renameMe(Object[] arr) {
 		    return null;
@@ -892,7 +892,7 @@ public class MethodTester {
 		    System.out.println("Array something:  " + renameMe(null));
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -908,7 +908,7 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jaex_last_greater_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static Object renameMe(Object[] arr) {
 		    return null;
@@ -917,7 +917,7 @@ public class MethodTester {
 		    System.out.println("Array something:  " + renameMe(null));
 		}
 	    }
-</input>
+</code>
 </program>    
 
 		 </exercise>
@@ -934,21 +934,21 @@ public class MethodTester {
           is an <m>N\; \times\; N</m> matrix of numbers in which every number from 1 to <m>N^2</m> must appear just once,
           and every row, column,
           and diagonal must add up to the same total<mdash/>for example,
- <program language="java"><input>
+ <program language="java"><code>
 6 7 2
 1 5 9
 8 3 4
- </input></program>
+ </code></program>
         </p>
       </statement>
       <program label="jaex_magic_square_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MagicSquare {
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -962,14 +962,14 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jaex_bigger_magic_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class BiggerMagicSquare {
 		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -982,13 +982,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jaex_analyze_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1005,13 +1005,13 @@ public class MethodTester {
         </p>
     </statement>
       <program label="jaex_merge_sort_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1028,13 +1028,13 @@ public class MethodTester {
         </p>
     </statement>
       <program label="jaex_big_int_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1051,13 +1051,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jaex_comp_warehouse_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1073,13 +1073,13 @@ public class MethodTester {
         </p>
     </statement>
       <program label="jaex_anagram_test_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1100,20 +1100,20 @@ public class MethodTester {
           <em>felt, left, cat, act, opt, pot,
           top.</em>
         </p>
- <program language="java"><input>
+ <program language="java"><code>
 act:  act cat
 eflt:  felt left
 opt:   opt pot top
- </input></program>
+ </code></program>
       </statement>
       <program label="jaex_anagram_dict_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1132,13 +1132,13 @@ opt:   opt pot top
         </p>
       </statement>
       <program label="jaex_distance_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1152,13 +1152,13 @@ opt:   opt pot top
         </p>
       </statement>
       <program label="jaex_word_guess_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1175,13 +1175,13 @@ opt:   opt pot top
         </p>
       </statement>
       <program label="jaex_guess_class_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -1194,13 +1194,13 @@ opt:   opt pot top
         </p>
       </statement>
       <program label="jaex_tile_cli_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>

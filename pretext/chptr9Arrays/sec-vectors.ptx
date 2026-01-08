@@ -34,7 +34,7 @@
   <listing xml:id="lst-vectordemo">
     <caption>Demonstration of the <c>Vector</c> class.</caption>
     
- <program language="java"><input>
+ <program language="java"><code>
 import java.util.Vector;
 public class VectorDemo {
   
@@ -51,7 +51,7 @@ public class VectorDemo {
     printVector(vector);            // Print the elements
   } // main()
 } // VectorDemo
- </input></program>
+ </code></program>
   </listing>
   <p>
     Once all the integers have been inserted,

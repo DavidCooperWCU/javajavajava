@@ -106,7 +106,7 @@
       However, if you just want to set your program to use one of the pre-defined look and feel models,
       you can simply use the <c>UIManager.setLookAndFeel()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public static void main (String args[]){
   try{
      UIManager.setLookAndFeel(
@@ -115,7 +115,7 @@ public static void main (String args[]){
      System.out.err("Exception: " + e.getMessage());
   }
 }//main()
- </input></program>
+ </code></program>
     <p>
       Java's default, the <em>Metal</em> look and feel,
       has been designed specifically for Java applications.

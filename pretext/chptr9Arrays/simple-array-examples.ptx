@@ -4,11 +4,11 @@
     The program in <xref ref="lst-initarrays">Listing</xref>
     creates two arrays of ten elements each and displays their values on the Java console.
   </p>
-  <listing xml:id="lst-initarrays">
+  <listing  xml:id="lst-initarrays">
     <caption>A program that displays two arrays. Its output
     is shown in <xref ref="tab-output">Table</xref>.</caption>
     
- <program language="java" interactive="activecode"><input>
+ <program label="polymorphic-printarrays" language="java" interactive="activecode"><code>
 public class PrintArrays 
 {
   static final int ARRSIZE = 10;         // The array's size
@@ -25,7 +25,7 @@ public class PrintArrays
                                  realArr[k]);  // Print them
   } // main()
 } // PrintArrays
- </input></program>
+ </code></program>
   </listing>
   <p>
     In this example, the elements of  <c>intArr</c> have not been given 
@@ -136,7 +136,7 @@ public class PrintArrays
   <listing xml:id="lst-squares100">
     <caption>A program with an array that stores the squares of the first 50 integers.
     Its output is shown in <xref ref="fig-squares">Figure</xref>.</caption>
- <program language="java" interactive="activecode"><input>
+ <program label="simple-arr-squares" language="java" interactive="activecode"><code>
 
 public class Squares 
 {
@@ -157,7 +157,7 @@ public class Squares
     } // for
   } // main()
 } // Squares
- </input></program>
+ </code></program>
   </listing>
 <figure xml:id="fig-squares">
   <title>Output of the Squares program.</title>
@@ -182,9 +182,9 @@ public class Squares
     In this example, <c>intArr</c> has 50 storage locations.
     Storing a value in one of these variables is done by an assignment statement:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 intArr[k] = (k+1) * (k+1);
- </input></program>
+ </code></program>
   <p>
     The use of the variable <em>k</em>
     in this assignment statement allows us to vary the location that is assigned 
@@ -205,10 +205,10 @@ intArr[k] = (k+1) * (k+1);
     An array's <c>length</c> variable can always be used as a 
     loop bound when iterating through all elements of the array:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = 0; k &lt; intArr.length; k++)
     intArr[k] = (k+1) * (k+1);
- </input></program>
+ </code></program>
   <p>
     However, it is important to note that the last element in the array is 
     always at location <c>length-1</c>. Attempting to refer 
@@ -223,7 +223,8 @@ for (int k = 0; k &lt; intArr.length; k++)
       Forgetting this fact can cause an off-by-one error.
     </p>
   </principle>
-  <exercises>
+  
+     <subsection>
     <title>Self-Study Exercise</title>
     <exercise label="sq-rt-array">
    <title>Square Roots</title>
@@ -235,7 +236,7 @@ for (int k = 0; k &lt; intArr.length; k++)
       Then write a loop to display the arrays elements. 
     </p>
   </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
 public class SquareRoots
 {                   
   public static void main(String[] args)
@@ -249,9 +250,9 @@ public class SquareRoots
 
   }
 }
-</input></program>
+</code></program>
 <solution>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
 public class SquareRoots {                   
   public static void main(String[] args) {
       // Create array to store the square roots of the first 20 integers.
@@ -264,8 +265,8 @@ public class SquareRoots {
       System.out.print(doubarr[k] + " ")
   }
 }
-</input></program>
+</code></program>
 </solution>
 </exercise>
-</exercises>
+</subsection>
 </section>

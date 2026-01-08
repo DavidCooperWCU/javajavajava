@@ -18,7 +18,7 @@
     A return of <c>false</c> will indicate that an illegal move has been attempted.
     Making these changes to the <c>takeSticks()</c> method will yield a method definition that looks like:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean takeSticks(int num)
 {   if (num &lt; 1) {
        return false; // Error
@@ -30,7 +30,7 @@ public boolean takeSticks(int num)
        return true;
     } //else
  } //takeSticks
- </input></program>
+ </code></program>
   <p>
     Notice that the new definition of the <c>takeSticks()</c> method has a boolean return type.
     Also notice that the <c>if/else</c> multiway structure is used to handle the three cases of the parameter <c>num</c> being less than one,
@@ -38,7 +38,7 @@ public boolean takeSticks(int num)
   </p>
   <activity label="nimErrorCheck">
     <statement><p>Run the code below. Try taking 1, 2, and -1 sticks by changing the code in main.</p></statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
     public class OneRowNim
     {   private int nSticks = 7;
         private int player = 1;
@@ -100,7 +100,7 @@ public boolean takeSticks(int num)
             game.report();
         } // main()
       } // OneRowNim class
-     </input></program>
+     </code></program>
     </activity>
  
   <p>
@@ -116,14 +116,14 @@ public boolean takeSticks(int num)
     the <c>if/else</c> statement can be used in the definition of
 <c>getWinner()</c>.
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int getWinner()
 {   if (nSticks &lt; 1)
         return player;
     else
         return 0;
 } // getWinner()
- </input></program>
+ </code></program>
   <p>
     We now have the final version
     (for this chapter)
@@ -143,7 +143,7 @@ public int getWinner()
   </p>
   <listing xml:id="fig-ornclass">
     <caption>The <c>OneRowNim</c> class with improved methods.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class OneRowNim
 {   private int nSticks = 7;
     private int player = 1;
@@ -186,7 +186,7 @@ public class OneRowNim
                                              getPlayer());
     }   // report()
   } // OneRowNim class
- </input></program>
+ </code></program>
 </listing>
 </subsection>
 
@@ -196,7 +196,7 @@ public class OneRowNim
     A pseudocode description of how a game is played might look like:
   </p>
  <algorithm>
- <program language="java"><input>
+ <program language="java"><code>
   Choose the initial number of sticks for the game
   while the game is not over {   
       Report the state of the game
@@ -204,7 +204,7 @@ public class OneRowNim
   }
   Report the state of the game
   Report who the winner is
-</input></program>
+</code></program>
 </algorithm>
   <p>
   Here is a version with a main method that chooses a random number of sticks each time through the loop.
@@ -216,7 +216,7 @@ public class OneRowNim
       What would happen if you changed the random number to be * 4 instead 
       of * 3? Try it and see.
     </p></statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   public class OneRowNim
   {   private int nSticks = 7;
       private int player = 1;
@@ -288,7 +288,7 @@ public class OneRowNim
           System.out.println(game.getWinner());
       } // main()
     } // OneRowNim class
-  </input>
+  </code>
 </program>
 </activity>
 
@@ -301,7 +301,7 @@ public class OneRowNim
     </p>
   <listing xml:id="fig-tornclass">
     <caption>The <c>TestOneRowNim</c> class with keyboard input.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.util.Scanner;
 public class TestOneRowNim {
   public static void main(String argv[]) { 
@@ -319,7 +319,7 @@ public class TestOneRowNim {
     System.out.println(game.getWinner());
  } // main()
 } // TestOneRowNim
- </input></program>
+ </code></program>
 </listing>
     <p>
       Run the code multiple times and enter 1, 2, or 3. Can you figure 

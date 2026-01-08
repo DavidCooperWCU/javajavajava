@@ -37,7 +37,7 @@
     <listing xml:id="fig-student">
       <caption>The <em>serializable</em> <c>Student</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.io.*;
 public class Student implements Serializable {
   private String name;
@@ -70,7 +70,7 @@ public class Student implements Serializable {
     return name + "\t" + year + "\t" + gpa;
   }
 } // Student
- </input></program>
+ </code></program>
     </listing>
     <p>
       The <c>Student</c> class contains its own I/O methods,
@@ -163,7 +163,7 @@ public class Student implements Serializable {
       an interface to reading and writing files of <c>Student</c>s.
       </caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;         // Swing components
 import java.awt.*;
 import java.io.*;
@@ -251,7 +251,7 @@ public class ObjectIO extends JFrame implements ActionListener{
     });
   } // main()
 } // ObjectIO
- </input></program>
+ </code></program>
     </listing>
 
     <p>
@@ -261,8 +261,8 @@ public class ObjectIO extends JFrame implements ActionListener{
       passing it a <c>FileInputStream</c>. Note how the <c>FileInputStream</c> is created and,
       unlike in <c>BinaryIO</c>, the inner try block is exited by an IOException rather than an <c>EOFException</c>.
     </p>
-
-  <exercises>
+</subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
      <exercise label="serialize">
       <title>Serializable?</title>
@@ -274,14 +274,14 @@ public class ObjectIO extends JFrame implements ActionListener{
             Explain.
           </p>
       </statement>
- <program language="java"><input>
+ <program language="java"><code>
 public class SomeObject {
     private String str;
     private short n1;
     private short n2;
     private long  n3;
 }
- </input></program>
+ </code></program>
  <solution>
          <p>
           Yes, a binary file containing several <c>SomeObjects</c> would be
@@ -296,6 +296,6 @@ public class SomeObject {
         </p>
  </solution>
   </exercise>
-  </exercises>
+  
   </subsection>
 </section>

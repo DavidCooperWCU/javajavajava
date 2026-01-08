@@ -96,7 +96,7 @@
     <listing xml:id="listing-nodeclass">
       <caption>The <c>Node</c> class is a more abstract version of
       the <c>PhoneListNode</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Node {
    private Object data;        // Stores any kind of data
    private Node next;
@@ -120,7 +120,7 @@ public class Node {
       return next;
    }
 } // Node
- </input></program>
+ </code></program>
     </listing>
   </subsection>
   <subsection>
@@ -155,7 +155,7 @@ public class Node {
     </p>
 <listing xml:id="listing-listadt">
       <caption>The <c>List</c> ADT.</caption>    
- <program language="java"><input>
+ <program language="java"><code>
 public class List {
   private Node head;
 
@@ -216,7 +216,7 @@ public class List {
   } // removeLast()
 
 } // List
- </input></program>
+ </code></program>
 </listing>
     <p>
       We already know the basic strategies for implementing these new methods,
@@ -229,9 +229,9 @@ public class List {
       our list consists of <c>Node</c>s, so we have to use the <c>Object</c> to 
       create a <c>Node</c> in our insert methods:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 head = new Node(obj);
- </input></program>
+ </code></program>
     <p>
       Recall that the <c>Node</c> constructor takes an <c>Object</c> argument and simply assigns it 
       to the <c>data</c> reference.
@@ -246,11 +246,11 @@ head = new Node(obj);
       You just need to create a new <c>Node</c> with the <c>Object</c> as its data element and then 
       link the new node into the head of the list:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Node newnode = new Node(obj);
 newnode.setNext(head);
 head = newnode;
- </input></program>
+ </code></program>
     <p>
       See <xref ref="fig-insertions">Figure</xref>a for a graphical representation of this type of insertion.
     </p>
@@ -296,7 +296,7 @@ head = newnode;
 <listing xml:id="listing-testlistadt">
       <caption>A series of tests for the <c>List</c>ADT.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 public static void main( String argv[] ) {
          // Create list and insert heterogeneous nodes
   List list = new List();
@@ -323,7 +323,7 @@ public static void main( String argv[] ) {
   System.out.println("Generic List:");
   list.print();
 } // main()
- </input></program>
+ </code></program>
     </listing>
     <principle>
       <title>EFFECTIVE DESIGN: The <c>List</c>ADT</title>
@@ -348,7 +348,7 @@ public static void main( String argv[] ) {
     </figure>
     <listing xml:id="listing-phonerecord">
       <caption>A <c>PhoneRecord</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class PhoneRecord {
      private String name;
      private String phone;
@@ -366,10 +366,10 @@ public class PhoneRecord {
          return phone;
      }
 } // PhoneRecord
- </input></program>
+ </code></program>
     </listing>
-    
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
     <exercise label="trace-main">
     <title>PhoneRecord Test</title>
@@ -380,7 +380,7 @@ public class PhoneRecord {
             Experiment with it to see how it works. Then add a new node to the list
             with your name and number. Print the list. Then remove your entry and print again. 
           </p>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
 public class List {
     private Node head;
 
@@ -524,7 +524,7 @@ class PhoneRecord {
         return phone;
     }
 } // PhoneRecord
-          </input></program>
+          </code></program>
       </statement>
     </exercise>
       
@@ -542,7 +542,7 @@ class PhoneRecord {
           Executing something like the following method calls will test whether it is possible to insert items into a
   <c>List</c> after all items have been removed:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Create and insert some nodes
 List list = new List();
 list.insertAtFront(new PhoneRecord("Roger M", "997-0020"));
@@ -563,9 +563,9 @@ list.insertAtRear(o);
 System.out.println("Current List Elements");
 list.print();       // List should have one element
 
- </input></program>
+ </code></program>
       </solution>
     </exercise>
-</exercises>
+
 </subsection>
 </section>

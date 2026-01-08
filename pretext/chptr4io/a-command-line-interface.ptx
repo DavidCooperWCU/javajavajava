@@ -83,9 +83,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     BufferedReader input = new BufferedReader(new InputStreamReader (System.in));
-    </input>
+    </code>
 </program>
 
     <p>
@@ -104,9 +104,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     String inputString = input.readLine();
-    </input>
+    </code>
 </program>
 
     <p>
@@ -142,9 +142,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     int m = Integer.parseInt("55");
-    </input>
+    </code>
 </program>
 
     <p>
@@ -156,9 +156,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     double num = Double.parseDouble("55.2");
-    </input>
+    </code>
 </program>
 
     <p>
@@ -169,7 +169,7 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     String inputString = new String();
     System.out.println("How many total miles did you run? ");
     inputString = input.readLine();   // Input a String}
@@ -178,7 +178,7 @@
     inputString = input.readLine();   // Input another String
     double minutes = Double.parseDouble(inString);  // Convert
     System.out.println("Your average pace was " + minutes/miles + " minutes per mile");
-    </input>
+    </code>
 </program>
 
     <p>
@@ -226,10 +226,10 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     KeyboardReader cmdline = new KeyboardReader();
     int m = cmdline.getKeyboardInteger();
-    </input>
+    </code>
 </program>
 
     <p>
@@ -278,7 +278,7 @@
       <caption>Definition of the <c>KeyboardReader</c> class.</caption>
 
 <program language="java">
-    <input>
+    <code>
     import java.io.*;
     public class KeyboardReader
     {   private BufferedReader reader;
@@ -311,7 +311,7 @@
         return line;
     }
   }
-    </input>
+    </code>
 </program>
 
     </listing>
@@ -325,9 +325,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
     reader = new BufferedReader (new InputStreamReader (System.in));
-    </input>
+    </code>
 </program>
 
     <p>
@@ -381,10 +381,10 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
 Hi, please input your name here > Kim
   Hi Kim, nice to meet you.
-    </input>
+    </code>
 </program>
 
     <p>
@@ -433,7 +433,7 @@ Hi, please input your name here > Kim
       <caption>Definition of the <c>GreeterApp</c> class.</caption>
 
 <program language="java">
-    <input>
+    <code>
 public class GreeterApp
 {   private KeyboardReader reader;
     public GreeterApp()
@@ -453,7 +453,7 @@ public class GreeterApp
         app.run();
     }
   } // GreaterApp
-    </input>
+    </code>
 </program>
 
     </listing>
@@ -497,8 +497,9 @@ public class GreeterApp
         </li>
       </ul>
     </p>
+     </subsection>
+     <subsection>
      
-      <exercises>
       <title>Self-Study Exercises</title>
       
       <exercise label="guessGameEx">
@@ -516,9 +517,9 @@ public class GreeterApp
 
 
 <program language="java">
-    <input>
+    <code>
     secretNumber = 1 + (int)(Math.random() * 100);
-    </input>
+    </code>
 </program>
  Given this statement, design and implement an application that will play the following guessing game with the user.
  The computer generates a random number between 1 and 100 and then lets the user guess the number,
@@ -530,7 +531,7 @@ public class GreeterApp
           </statement>
           <solution>
             <program language="java">
-              <input>
+              <code>
           public class HighLowApp
           { private KeyboardReader reader;
             private int secretNumber;
@@ -556,10 +557,10 @@ public class GreeterApp
               app.run();
             } // main()
           }// HighLowApp
-              </input>
+              </code>
           </program>
           </solution>
           </exercise>
-        </exercises>
+        
   </subsection>
 </section>

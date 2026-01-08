@@ -82,21 +82,21 @@
         this class's only task will be to convert miles to kilometers,
         for which it will use the formula that 1 kilometer equals 0.62 miles:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class MetricConverter {
     public static double milesToKm(double miles) {
         return miles / 0.62;
     }
   }
- </input></program>
+ </code></program>
       <p>
         Note that the method takes a <c>double</c> as input and returns a <c>double</c>. Also,
         by declaring the method <c>static</c>, we make it a class method,
         so it can be invoked simply by
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 MetricConverter.milesToKm(10);
- </input></program>
+ </code></program>
     </introduction>
     <subsubsection>
       <title>Choosing the Components</title>
@@ -233,7 +233,7 @@ MetricConverter.milesToKm(10);
       </p>
       <listing xml:id="listing-converterclass">
         <caption>The <c>Converter</c> class implements a simple GUI interface.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;             // Packages used
 import java.awt.*;
 import java.awt.event.*;
@@ -268,7 +268,7 @@ public class Converter extends JFrame
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // main()
 } // Converter
- </input></program>
+ </code></program>
 </listing>
 
 <p>Try the converter below.</p>
@@ -290,9 +290,9 @@ public class Converter extends JFrame
       <p>
         Second, note the statements used to set the layout and to add components directly to the <c>JFrame</c>. Instead of adding components directly to the <c>JFrame</c>, we must add them to its content pane:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 getContentPane().add(input);
- </input></program>
+ </code></program>
       <p>
         A <term>content pane</term>
             <idx><h>content pane</h></idx>
@@ -322,7 +322,7 @@ getContentPane().add(input);
         made visible,
         and eventually exited in the application's <c>main()</c> method:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public static void main(String args[]) {
    Converter f = new Converter();
    // set size width x height
@@ -332,7 +332,7 @@ public static void main(String args[]) {
    // close when x button is clicked
    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
   } // main()
- </input></program>
+ </code></program>
       <p>
         It is necessary to set both the size and visibility of the frame,
         since these are not set by default.
@@ -352,13 +352,13 @@ public static void main(String args[]) {
       which are used in the <c>main()</c> method shown above to handle the closing of the
 <c>Converter</c> application's window when the program is exited:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 f.addWindowListener(new WindowAdapter() {
        public void windowClosing(WindowEvent e) {
            System.exit(0);
        }
  });
- </input></program>
+ </code></program>
     <p>
       This code segment provides a listener that listens for  window closing events.
       When such an event occurs,
@@ -403,15 +403,15 @@ f.addWindowListener(new WindowAdapter() {
       the <c>windowClosing()</c> method,
       which is the method implemented in the anonymous inner class:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void windowClosing(WindowEvent e) {
     System.exit(0);
   }
- </input></program>
+ </code></program>
     <p>
       The <c>WindowAdapter</c> is defined simply as
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public abstract class WindowAdapter
                           implements WindowListener {
     public void windowActivated(WindowEvent e) {}
@@ -419,7 +419,7 @@ public abstract class WindowAdapter
     ...
     // Five other window listener methods
   }
- </input></program>
+ </code></program>
     <p>
       Note that each method is given a trivial implementation ().
       To create a subclass of <c>WindowAdapter</c>, you must override at least one of its trivially implemented methods.
@@ -427,7 +427,7 @@ public abstract class WindowAdapter
     <p>
       Another way to manage the application's window closing event is to define a subclass of <c>WindowAdapter</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -436,14 +436,14 @@ public class WindowCloser extends WindowAdapter {
         System.exit(0);
     }
   }
- </input></program>
+ </code></program>
     <p>
       Given this class,
       we can then place the following statement in <c>Converter</c>'s <c>main()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 f.addWindowListener(new WindowCloser());
- </input></program>
+ </code></program>
     <p>
       This is somewhat more familiar looking than the inner class construct.
       If you prefer this way of handling things,
@@ -477,9 +477,9 @@ f.addWindowListener(new WindowCloser());
       In this case,
       the user's input value is displayed along with the result in the <c>JTextArea</c>, so there's no reason not to clear the input text field:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 input.setText("");  // Clear the input field
- </input></program>
+ </code></program>
     <principle>
       <title>EFFECTIVE DESIGN: Reduce the User's Burden</title>
       <p>
@@ -505,9 +505,9 @@ input.setText("");  // Clear the input field
       we only need to add an
 <c>ActionListener</c> to the <c>JTextField</c> during the initialization step:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 input.addActionListener(this);
- </input></program>
+ </code></program>
     <p>
       A <c>JTextField</c> generates an <c>ActionEvent</c> whenever the Enter key is pressed.
       We don't even need to modify the <c>actionPerformed()</c> method,
@@ -539,8 +539,8 @@ input.addActionListener(this);
         make it a more flexible or more widely usable program.
       </p>
     </principle>
-
-   <exercises><title>Self-Study Exercises</title>
+</subsection>
+     <subsection><title>Self-Study Exercises</title>
      <exercise label="roundingEx"><title>Converter Rounding</title>
         <statement><p>
             Another deficiency in the converter interface is that it doesn't round off its result,
@@ -548,7 +548,7 @@ input.addActionListener(this);
             Modify the <c>milesToKm()</c> method below to fix this problem.
           </p>
           </statement>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
             public class MetricConverter {
                 public static double milesToKm(double miles) {
                   // Change this code to use rounding 
@@ -561,7 +561,7 @@ input.addActionListener(this);
                              + MetricConverter.milesToKm(miles));
                 }
               }
-             </input></program>
+             </code></program>
              <hint>
               To round a double you could use the <c>Math.round()</c> method introduced in Ch. 5.
              </hint>
@@ -596,7 +596,7 @@ input.addActionListener(this);
 </solution>
           </exercise>
       
-      </exercises>
+      
  </subsection>
 
   <subsection xml:id="sec-keypad">
@@ -675,19 +675,19 @@ input.addActionListener(this);
       Actually, two arrays would be even better,
       one for the buttons and one for their labels:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private JButton buttons[];
 private String labels[] = // An array of button labels
             { "1","2","3",
               "4","5","6",
               "7","8","9",
               "C","0","." };
- </input></program>
+ </code></program>
     <p>
       The <c>label</c> array stores the strings that we will use as the buttons' labels.
       The main advantage of the array is that we can use a loop to instantiate the buttons:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 buttons = new JButton[NBUTTONS]; // Create the array
                           // For each labeled button
 for(int k = 0; k &lt; buttons.length; k++) {
@@ -695,7 +695,7 @@ for(int k = 0; k &lt; buttons.length; k++) {
  buttons[k].addActionListener(this); // and a listener
  add(buttons[k]);           // and add it to the panel
 } // for
- </input></program>
+ </code></program>
     <p>
       This code should be placed in the <c>KeyPad()</c> constructor.
       It begins by instantiating the array itself.
@@ -707,10 +707,10 @@ for(int k = 0; k &lt; buttons.length; k++) {
       In that way the labels are assigned to the appropriate buttons.
       Note also how each button is assigned an <c>ActionListener</c> and added to the panel:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 buttons[k].addActionListener(this); // Add listener
 add(buttons[k]);            //  Add button to panel
- </input></program>
+ </code></program>
     <p>
       An important design issue for our <c>KeyPad</c> object concerns how it will interact with the <c>Converter</c> that contains it.
       When the user clicks a keypad button,
@@ -742,18 +742,18 @@ add(buttons[k]);            //  Add button to panel
       result of the keypress.</caption>
       <image width="90%" source="chptr13/p493f1.png"/>
     </figure>
- <program language="java"><input>
+ <program language="java"><code>
 private KeyPad keypad = new KeyPad(this);
- </input></program>
+ </code></program>
     <p>
       Another important design issue is that the <c>KeyPad</c> needs to know the name of the callback method and the <c>Converter</c> needs to have an implementation of that method.
       This is a perfect job for an abstract interface:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public abstract interface KeyPadClient {
     public void keypressCallback(String s);
   }
- </input></program>
+ </code></program>
     <p>
       The <c>KeyPad</c> can interact with any class that implements the <c>KeyPadClient</c> interface.
       Note that the <c>KeyPad</c> has a reference to the <c>KeyPadClient</c>, which it will use to invoke the
@@ -769,7 +769,7 @@ public abstract interface KeyPadClient {
       in a <c>JPanel</c>. It has a reference to the <c>KeyPadClient</c> that
       contains the keypad.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -796,7 +796,7 @@ public class KeyPad extends JPanel implements ActionListener{
     kpc.keypressCallback(keylabel);
   } // actionPerformed()
 } // KeyPad
- </input></program>
+ </code></program>
     </listing>
     <p>
       Given the <c>KeyPad</c> design,
@@ -806,14 +806,14 @@ public class KeyPad extends JPanel implements ActionListener{
       which means it must provide an implementation of the
 <c>keypressCallback()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void keypressCallback(String s) {
     if (s.equals("C"))
         input.setText("");
     else
         input.setText(input.getText() + s);
 }
- </input></program>
+ </code></program>
     <p>
       Recall that whenever the <c>KeyPad</c> object calls the
 <c>keypressCallback()</c> method,
@@ -829,7 +829,7 @@ public void keypressCallback(String s) {
     <listing xml:id="listing-convertclass2">
       <caption>The second version of the <c>Converter</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;      // Packages used
 import java.awt.*;
 import java.awt.event.*;
@@ -873,7 +873,7 @@ public class Converter extends JFrame   // Version 2
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // main()
 } // Converter
- </input></program>
+ </code></program>
     </listing>
 
     <p>Try the Metric Converter with KeyPad below.</p>

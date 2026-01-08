@@ -70,7 +70,7 @@
     <listing xml:id="list-serverclass">
       <caption>The abstract <c>Server</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.net.*;
 import java.io.*;
 public abstract class Server extends ClientServer {
@@ -103,11 +103,11 @@ public abstract class Server extends ClientServer {
  // Implemented in subclass
  protected abstract void provideService(Socket socket); 
 }// Server
- </input></program>
+ </code></program>
     </listing>
     <listing xml:id="list-clientclass">
       <caption>The abstract <c>Client</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.net.*;
 import java.io.*;
 public abstract class Client extends ClientServer {
@@ -143,7 +143,7 @@ public abstract class Client extends ClientServer {
     return line;
   }// readFromKeyboard()
 }// Client
- </input></program>
+ </code></program>
     </listing>
   </introduction>
   <subsection>
@@ -157,7 +157,7 @@ public abstract class Client extends ClientServer {
     <listing xml:id="list-nimserverclass">
       <caption>The  <c>NimServer</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.net.*;
 import java.io.*;
 public class NimServer extends Server {
@@ -218,7 +218,7 @@ public class NimServer extends Server {
     server.start();
   } // main()
 } // NimServer
- </input></program>
+ </code></program>
     </listing>
     <p>
       <xref ref="list-nimserverclass">Listing</xref>
@@ -271,7 +271,7 @@ public class NimServer extends Server {
     <listing xml:id="list-nimclientclass">
       <caption>The derived <c>NimClient</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.net.*;
 import java.io.*;
 public class NimClient extends Client {
@@ -297,7 +297,7 @@ public class NimClient extends Client {
     client.start();
   } // main()
 } // NimClient
- </input></program>
+ </code></program>
     </listing>
     <principle>
       <title>EFFECTIVE DESIGN: Inheritance</title>
@@ -318,7 +318,8 @@ public class NimClient extends Client {
       you will have to modify the <c>main()</c> methods of both <c>NimServer</c> and <c>NimClient</c> to provide the correct URL and port for your environment.
     </p>
     </subsection>
-    <exercises>
+    
+     <subsection>
     <title>Self-Study Exercise</title>
      <exercise label="scramble">
       <title>Scramble Service</title><statement>
@@ -397,7 +398,7 @@ public class NimClient extends Client {
           </solution>
           </exercise>
       >
-      </exercises>
+      </subsection>
       
  
 </section>

@@ -1,6 +1,6 @@
 <section xml:id="ch-sockets-exs">
     <title>Exercises</title>
-<exercises>
+
 <title>Socket Exercises</title>
     <p>
     <term>Note:</term> For programming exercises,
@@ -15,7 +15,7 @@
 	  Socket concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>stream</em></premise>
@@ -89,7 +89,7 @@
 
       
 
-      </matches>
+      </cardsort>
       </exercise>
   
       
@@ -237,5 +237,5 @@
       </statement>
       <response />
     </exercise>
-    </exercises>
+  
 </section>    

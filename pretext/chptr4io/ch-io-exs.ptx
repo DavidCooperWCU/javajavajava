@@ -425,10 +425,10 @@
           Like all other Java <c>Component</c> s, <c>JFrame</c>'s have an associated background color,
           which can be set by the following commands:
 <program language="java">
-    <input>
+    <code>
 setBackground(Color.red);
 setBackground(Color.yellow);
-    </input>
+    </code>
 </program>
 </p>
 <p>

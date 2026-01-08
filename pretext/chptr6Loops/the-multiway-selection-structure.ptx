@@ -6,7 +6,7 @@
     <term>switch/break structure</term>.
     It is meant to provide a shorthand way of coding the following type of multiway selection structure:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (integralVar == integralValue1)
      // some statements
 else if (integralVar == integralValue2)
@@ -14,7 +14,7 @@ else if (integralVar == integralValue2)
 else if (integralVar == integralValue3)
      // some statements
 else // some statements
- </input></program>
+ </code></program>
   <p>
     Note that each of the conditions in this case involves the equality of an integral variable and an integral value.
     This type of structure occurs so frequently in programs that most languages contain statements specially designed to handle it.
@@ -23,7 +23,7 @@ else // some statements
   <p>
     The <c>switch</c> is designed to select one of several actions depending on the value of some integral expression:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 switch (integralExpression)
 {  case integralValue1:
        // some statements
@@ -34,7 +34,7 @@ switch (integralExpression)
    default:
        some statements
 }
- </input></program>
+ </code></program>
   <p>
     The <em>integralExpression</em>
     must evaluate to a primitive integral value of type <c>byte</c>, <c>short</c>, <c>int</c>, <c>char</c>,  or <c>boolean</c>. It may not be a <c>long</c>, <c>float</c>, <c>double</c>, or a class type.
@@ -66,7 +66,7 @@ switch (integralExpression)
   <p>
     Consider the following example:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 int m = 2;
 switch (m)
 {  
@@ -79,7 +79,7 @@ switch (m)
    default:
       System.out.print(" default case");
 }
- </input></program>
+ </code></program>
   <p>
     In this case, because <em>m</em>
     equals 2, the following output would be produced:
@@ -93,7 +93,7 @@ m = 2 m = 3 default case
     which would output,
     simply, <c>m = 2</c>:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 int m = 2;
 if (m == 1)
      System.out.print(" m = 1");
@@ -103,7 +103,7 @@ else if (m == 3)
      System.out.print(" m = 3");
 else
      System.out.print(" default case");
- </input></program>
+ </code></program>
   <p>
     The reason for this disparity is that the <c>switch</c> executes <em>all</em>
     statements following the label that matches the value of the
@@ -114,7 +114,7 @@ else
     In order to use the switch as a multiway selection,
     you must force it to <c>break</c><idx><h>break</h></idx> out of the case clause after executing that clause's statements:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 int m = 2;
 switch (m)
 {  case 1:
@@ -129,7 +129,7 @@ switch (m)
    default:
        System.out.print(" default case");
 }
- </input></program>
+ </code></program>
   <p>
     In this example,
     the <c>break</c> statement causes control to pass to the end of the <c>switch</c>, with the effect being that one and only one case will be executed within the <c>switch</c>. Thus,
@@ -164,13 +164,13 @@ switch (m)
     </p>
   </principle>
   
-  
-  <exercises><title>Self-Study Exercises</title>
+  </subsection>
+     <subsection><title>Self-Study Exercises</title>
    
         <exercise label="switchbug1">
   <title>Switch Bug 1</title>
           <statement><p>Identify and fix the errors in the following switch structure.</p></statement> 
- <program language="java" interactive="activecode"><input>
+ <program language="java" interactive="activecode"><code>
 public class Bugs 
 {
   public static void main(String args[]) 
@@ -188,9 +188,9 @@ public class Bugs
         break;
   }
 }
- </input></program>
+ </code></program>
 <solution>
-  <program language="java"><input>
+  <program language="java"><code>
        int k = 0;
        switch (k)  // Syntax error: missing braces
         case 0:
@@ -203,14 +203,14 @@ public class Bugs
             System.out.println("default");
             break;
        }
-     </input></program>
+     </code></program>
 </solution>
 </exercise>
 
  <exercise label="switchbug2">
   <title>Switch Bug 2</title>
   <statement><p>Identify and fix the errors in the following switch structure.</p></statement> 
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Bugs 
 {
   public static void main(String args[]) 
@@ -226,9 +226,9 @@ public class Bugs
     }
   }
 }
- </input></program>
+ </code></program>
 <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     int k = 0;
     switch (k + 1)
     {
@@ -242,14 +242,14 @@ public class Bugs
             System.out.println("default");
             break;         // Missing break;
     }
-  </input></program>
+  </code></program>
 </solution></exercise>
 
 <exercise label="switchbug3">
   <title>Switch Bug 3</title>
          <statement><p>Identify and fix the errors in the following switch structure.
         </p></statement> 
- <program language="java" interactive="activecode"><input>
+ <program language="java" interactive="activecode"><code>
 public class Bugs 
 {
   public static void main(String args[]) 
@@ -268,9 +268,9 @@ public class Bugs
     }
   }
 }
- </input></program>
+ </code></program>
  <solution>
-  <program language="java"><input>
+  <program language="java"><code>
        int k = 6;
        switch (k / 3.0) // Syntax error: not an integral value
        {
@@ -284,7 +284,7 @@ public class Bugs
                System.out.println("default");
                break;
        }
-     </input></program>
+     </code></program>
  </solution>
         </exercise>
 
@@ -302,7 +302,7 @@ public class Bugs
           (final variables)
           to represent the ice cream flavors.
       </p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
         public class Flavors 
         {
           public static void main(String args[]) 
@@ -317,9 +317,9 @@ public class Bugs
 
           }
         }
-        </input></program>
+        </code></program>
       <solution>
-        <program language="java"><input>
+        <program language="java"><code>
           switch (flavor)
           {
               case 1:
@@ -334,9 +334,9 @@ public class Bugs
               default:
                   System.out.println("Error");
           }
-           </input></program>
+           </code></program>
       </solution>
       </exercise>
-</exercises>
+
 </subsection>
 </section>

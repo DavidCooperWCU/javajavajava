@@ -24,13 +24,13 @@
     </p>
 <algorithm>
 <title>Sequential search </title>
- <program language="java"><input>
+ <program language="java"><code>
 1. For each element of the array
 2.    If the element equals the key
 3.       Return its index
 4. If the key is not found in the array
 5.    Return -1 (to indicate failure)
- </input></program>
+ </code></program>
  </algorithm>
     <p>
       This algorithm can easily be implemented in a method that searches an integer array,
@@ -58,7 +58,7 @@
     <listing xml:id="lst-search">
       <caption>The <c>Search</c> class contains both a <c>sequentialSearch()</c>
       and a <c>binarySearch()</c>.</caption>
- <program language="java" interactive="activecode"><input>
+ <program label="array-alg-search-class" language="java" interactive="activecode"><code>
 public class Search {
 
   public int sequentialSearch(int arr[], int key) {
@@ -92,7 +92,7 @@ public class Search {
      System.out.println("Binary search for 5 at position: " + s.binarySearch(array, 5));
   }
 }//Search
- </input></program>
+ </code></program>
     </listing>
     <principle>
       <title>EFFECTIVE DESIGN: Sentinel Return Value</title>
@@ -157,7 +157,7 @@ public class Search {
     </p>
 <algorithm xml:id="alg-binary">
 <title>Binary search </title>
- <program language="java"><input>
+ <program language="java"><code>
 TO SEARCH AN ARRAY OF N ELEMENTS IN ASCENDING ORDER
 1. Assign 0 low and assign N-1 to high initially
 2. As long as low is not greater than high
@@ -168,7 +168,7 @@ TO SEARCH AN ARRAY OF N ELEMENTS IN ASCENDING ORDER
 7.        then assign mid + 1 to low
 8.    Else assign mid - 1 to high
 9. If this is reached return -1 to indicate failure
- </input></program>
+ </code></program>
 </algorithm>
     <p>
       Just as with the sequential search algorithm,
@@ -212,10 +212,10 @@ TO SEARCH AN ARRAY OF N ELEMENTS IN ASCENDING ORDER
       For example,
       suppose we are searching for <m>-5</m> in the following array:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int sortArr[] =
    { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
- </input></program>
+ </code></program>
     <p>
       The <m>-5</m> is smaller than the smallest array element.
       Therefore, the algorithm will repeatedly divide the low end of 
@@ -225,7 +225,7 @@ int sortArr[] =
     </p>
 <figure xml:id="trace-binary">
 <caption>Binary search trace.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 Key  Iteration  Low   High    Mid
 ----------------------------------
  -5   0          0     19      9
@@ -233,7 +233,7 @@ Key  Iteration  Low   High    Mid
  -5   2          0     3       1
  -5   3          0     0       0
  -5   4          0     -1      Failure
- </input></program>
+ </code></program>
  </figure>    
     <p>
       As this trace shows,
@@ -257,7 +257,7 @@ Key  Iteration  Low   High    Mid
     </p>
     <listing xml:id="lst-testsearch">
       <caption>The <c>TestSearch</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.io.*;
 public class TestSearch {
   
@@ -293,10 +293,11 @@ public class TestSearch {
     } // while
   } // main()
 } // TestSearch
- </input></program>
+ </code></program>
     </listing>
 
-    <exercises>
+   </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
      <exercise label="search-1">
     <title>Binary search</title>
@@ -359,6 +360,6 @@ public class TestSearch {
     </pre>
     </solution>
     </exercise>
-  </exercises>
+  
   </subsection>
 </section>

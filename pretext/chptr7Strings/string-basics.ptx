@@ -52,17 +52,17 @@
       the <c>String</c> class provides many constructors,
       including the following:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       public String();        // Creates an empty string
         // Copy constructor: Creates a copy of a string
       public String(String initial_value);
-    </input></program>
+    </code></program>
     <p>
       When we create an object using the default constructor, as in
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
      String name = new String();
-    </input></program>
+    </code></program>
     <p>
       Java will create a <c>String</c> object and make <c>name</c>
       the reference to it (e.g., <xref ref="fig-emptystr">Figure</xref>).
@@ -87,10 +87,10 @@
       Many Java classes have copy constructors.
       Consider the following statements:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       String s1 = new String("Hello");
       String s2 = new String(s1);
-    </input></program>
+    </code></program>
     <p>
       These two statements would result in two distinct <c>String</c> objects,
       both storing the word
@@ -118,10 +118,10 @@
     <p>
       We often use a string literal to assign a value to a <c>String</c> variable:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       String s;      // The value of s is initially null
       s = "Socrates";// s now refers to "Socrates" object
-    </input></program>
+    </code></program>
     <p>
       In this case, the reference variable <em>s</em>
       is initially <c>null</c> <mdash/> that is,
@@ -139,11 +139,11 @@
     <p>
       Assignment statements can also be used as initializers when declaring a <c>String</c> variable:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       String name1 = "";         // Reference to the empty string
       String name2 = "Socrates"; // References to "Socrates"
       String name3 = "Socrates";
-    </input></program>
+    </code></program>
     <p>
       In this example, Java does not construct new <c>String</c> objects.
       Instead, as <xref ref="fig-literalrefs">Figure</xref> shows,
@@ -169,11 +169,11 @@
       Finally, consider the following declarations,
       which do invoke the <c>String</c> constructors:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String name4 = new String();    // Creates an object
 String name5 = new String("Socrates");
 String name6 = name4;
- </input></program>
+ </code></program>
     <p>
       In this case,
       as shown in <xref ref="fig-strobjects">Figure</xref>, Java creates two new 
@@ -207,7 +207,8 @@ String name6 = name4;
         a <c>String</c> variable and assigning it an initial value.
       </p>
     </principle>
-  <exercises>
+  </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
 
       <exercise label="str-basics-1">
@@ -215,10 +216,10 @@ String name6 = name4;
         <statement>
           <p>
             The following code segment will print: <var/>
-            <program language="java"><input>
+            <program language="java"><code>
               String s1 = "silly"; 
               System.out.println(s1);
-            </input></program>
+            </code></program>
           </p>
         </statement>
         <setup>
@@ -245,11 +246,11 @@ String name6 = name4;
         <statement>
           <p>
             The following code segment will print: <var/>
-            <program language="java"><input>
+            <program language="java"><code>
               String s1 = "silly"; 
               String s2 = s1;
               System.out.println(s2);
-            </input></program>
+            </code></program>
           </p>
         </statement>
         <setup>
@@ -320,11 +321,11 @@ String name6 = name4;
         <statement>
           <p>
             Given the declarations here: 
-            <program language="java"><input>
+            <program language="java"><code>
             String s1;
             String s2 = "Hello";
             String s3 = s2;
-            </input></program>
+            </code></program>
           </p>
           <ol marker="a">
            <li>
@@ -383,7 +384,7 @@ String name6 = name4;
           <p>(a) 1, (b) 1, (c) 3</p>
         </solution>
     </exercise>
-  </exercises>
+ 
  
   </subsection>
   <subsection xml:id="sec-concatenation">
@@ -394,12 +395,12 @@ String name6 = name4;
       that there are two ways to perform string concatenation in Java: We can use the <c>concat()</c> method or the concatenation operator,
       <m>+</m>.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String lastName = "Onassis";
 String jackie =
    new String("Jacqueline " + "Kennedy " + lastName);
 System.out.println("Jacqueline".concat(lastName));
- </input></program>
+ </code></program>
     <p>
       The second of these statements uses the
       <em>concatenation  operator</em>,
@@ -426,9 +427,9 @@ System.out.println("Jacqueline".concat(lastName));
       mixed with concatenation operators.
       Thus, the statement
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.println("The sum of 5 and 5 = "+ (5 + 5));
- </input></program>
+ </code></program>
     <p>
       will print the string
       <q>The sum of 5 and 5 = 10.</q>
@@ -438,26 +439,26 @@ System.out.println("The sum of 5 and 5 = "+ (5 + 5));
       the second plus sign would also be interpreted as a concatenation operator.
       Thus,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.println("The concatenation of 5 and 5 = " + 5 + 5);
- </input></program>
+ </code></program>
     <p>
       would print
       <q>The concatenation of 5 and 5 = 55.</q>
     </p>
-
-<exercises>
+</subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
       <exercise label="str-basics-5">
       <title>What is printed?</title>
         <statement>
           <p>
             The following code segment will print: <var/>
-            <program language="java"><input>
+            <program language="java"><code>
               String s1 = "silly"; 
               String s2 = new String (s1 + " stuff");
               System.out.println(s2);
-            </input></program>
+            </code></program>
           </p>
         </statement>
         <setup>
@@ -485,10 +486,10 @@ System.out.println("The concatenation of 5 and 5 = " + 5 + 5);
           <p>
             Evaluate the following expressions given the declarations here. Make sure 
             you use quote marks to distinguish strings ("100") from numbers (100).
-            <program language="java"><input>
+            <program language="java"><code>
               int M = 5, N = 10;
               String s1 = "51", s2 = "75";
-            </input></program>
+            </code></program>
           </p>
           <ol marker="a">
            <li>
@@ -544,7 +545,7 @@ System.out.println("The concatenation of 5 and 5 = " + 5 + 5);
           <p>(a) 15, (b) <q>551</q>, <q>5175</q></p>
         </solution>
       </exercise>
-</exercises>
+
 </subsection>
   <subsection xml:id="fig-zeroindex">
     <title>Indexing <c>String</c>s</title>
@@ -564,13 +565,13 @@ System.out.println("The concatenation of 5 and 5 = " + 5 + 5);
 <c>String</c> declarations and the corresponding values of the
 <c>length()</c> method for each case:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String string1 = "";           string1.length()  ==> 0
 String string2 = "Hello";      string2.length()  ==> 5
 String string3 = "World";      string3.length()  ==> 5
 String string4 = string2 + " "
     + string3;                 string4.length()  ==> 11
- </input></program>
+ </code></program>
     <p>
       The position of a particular character in a string is called its
       <term>string index</term>.
@@ -627,9 +628,9 @@ String string4 = string2 + " "
     <p>
       There are different versions of <c>valueOf()</c>, each of which has the following type of signature:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 static public String valueOf(Type);
- </input></program>
+ </code></program>
     <p>
       where <c>Type</c> stands for any primitive data type,
       including <c>boolean</c>, <c>char</c>, <c>int</c>, <c>double</c>, and so on.
@@ -640,12 +641,12 @@ static public String valueOf(Type);
       Because <c>valueOf()</c> is a class method,
       it can be used as follows to instantiate new <c>String</c> objects:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String number = String.valueOf(128); // Creates "128"
 String truth = String.valueOf(true); // Creates "true"
 String bee = String.valueOf('B');    // Creates "B"
 String pi = String.valueOf(Math.PI);  // Creates "3.14159"
- </input></program>
+ </code></program>
     <p>
       We have already seen that Java automatically promotes primitive type values to <c>String</c> where necessary,
       so why do we need the <c>valueOf()</c> methods?
@@ -655,9 +656,9 @@ String pi = String.valueOf(Math.PI);  // Creates "3.14159"
       <q>3.14159</q>
       as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String pi = new String(""+Math.PI);// Creates "3.14"
- </input></program>
+ </code></program>
     <p>
       In this case, because it is part of a concatenation expression,
       the value of <c>Math.PI</c> will automatically be promoted to a <c>String</c> value.
@@ -669,7 +670,8 @@ String pi = new String(""+Math.PI);// Creates "3.14"
       This  helps to make the code more readable.
       (Also, see Exercise 7.9.)
     </p>
-  <exercises>
+  </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
       <exercise label="str-basics-7">
       <title>String.valueOf()</title>
@@ -784,6 +786,6 @@ String pi = new String(""+Math.PI);// Creates "3.14"
         </hint>
       </exercise>      
 XXXXXXXXXXXXXXXXXXXX -->
-    </exercises>
+    
   </subsection>
 </section>

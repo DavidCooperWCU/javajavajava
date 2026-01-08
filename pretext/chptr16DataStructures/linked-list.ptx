@@ -26,17 +26,17 @@
       In the following example,
       <em>b</em> is a reference to a <c>JButton</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 JButton b = new JButton();
- </input></program>
+ </code></program>
     <p>
       We have defined many classes that contained references to other objects:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Student {
      private String name;
 }
- </input></program>
+ </code></program>
     <p>
       In this example, <c>name</c> is a reference to a <c>String</c> object.
     </p>
@@ -53,12 +53,12 @@ public class Student {
       is an object that contains a reference to an object of the same class.
       The convention is to name this object <c>Node</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Node {
      private String name;
      private Node next;
 }
- </input></program>   
+ </code></program>   
       <p>
       In addition to the reference to a <c>String</c> object,
       each
@@ -104,7 +104,7 @@ public class Node {
       we will also want methods to manipulate its data.
       These points suggest the following basic design for a <c>Node</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Node {
      private Object data;
      private Node next;
@@ -114,7 +114,7 @@ public class Node {
      public void setNext(Node link);   // Link access
      public Node getNext();
 } // Node
- </input></program>
+ </code></program>
     <p>
       Note that we have defined the <c>Node</c>'s data in the most general possible way: 
       as a reference to an <c>Object</c>. 
@@ -139,7 +139,8 @@ public class Node {
         used to manipulate the object is an example of the divide-and-conquer principle.
       </p>
     </principle>
- <exercises>
+ </subsection>
+     <subsection>
  <title>Self-Study Exercises</title>
   <exercise xml:id="string-node">
    <title>New String Node</title>
@@ -152,9 +153,9 @@ public class Node {
         <choices>
         <choice correct="yes">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node(new String("Hello"));
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>That's one way.</p>
@@ -162,9 +163,9 @@ public class Node {
         </choice>
         <choice correct="yes">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node("Hello");
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>That's one way.</p>
@@ -172,9 +173,9 @@ public class Node {
         </choice>        
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node(new String("hello"));
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>Spelling?</p>
@@ -182,9 +183,9 @@ public class Node {
         </choice>
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node("hello");
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>Spelling?</p>
@@ -197,10 +198,10 @@ public class Node {
         </hint>
       <solution>
         <p>Either of these statements would work:
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node(new String("Hello"));
             Node node = new Node("Hello");
-            </input></program>
+            </code></program>
         </p>
       </solution>
     </exercise>  
@@ -217,9 +218,9 @@ public class Node {
         <choices>
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
               Node node = new Node(100);
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>An <c>int</c> is not an <c>Object</c>.</p>
@@ -227,9 +228,9 @@ public class Node {
         </choice>
         <choice correct="yes">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node(new Integer(100));
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>Correct, you need to use the <c>Integer</c> wrapper.</p>
@@ -237,9 +238,9 @@ public class Node {
         </choice>        
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new Node("100");
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>We want an integer, not a string.</p>
@@ -247,9 +248,9 @@ public class Node {
         </choice>
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
             Node node = new int(100);
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>You need to use the <c>Integer</c> wrapper.</p>
@@ -262,12 +263,12 @@ public class Node {
         </hint>
       <solution>
             <p>The value 100 must be converted into an <c>Object</c>.</p>
-            <program language="java"><input>
+            <program language="java"><code>
               Node node = new Node(new Integer(100));
-            </input></program>
+            </code></program>
       </solution>
     </exercise>     
-   </exercises>
+   
  </subsection>
   <subsection>
     <title>Example: The Dynamic Phone List</title>
@@ -288,7 +289,7 @@ public class Node {
     </figure>
     <listing xml:id="list-phonelistnode">
       <caption>The <c>PhoneListNode</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class PhoneListNode {
      private String name;
      private String phone;
@@ -318,7 +319,7 @@ public class PhoneListNode {
          return next;
      } // getNext()
 } // PhoneListNode
- </input></program>
+ </code></program>
 </listing>
     <p>
       The constructor and data access methods should be familiar to you.
@@ -345,19 +346,19 @@ public class PhoneListNode {
       Let's now see how we would use these methods to construct a list.
       The following statements create three nodes:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 PhoneListNode node1 = new PhoneListNode("Roger M","090-997-2918");
 PhoneListNode node2 = new PhoneListNode("Jane M","090-997-1987");
 PhoneListNode node3 = new PhoneListNode("Stacy K","090-997-9188");
- </input></program>
+ </code></program>
     <p>
       The next two statements chain the nodes together into the list shown in 
       <xref ref="fig-phonelistpic">Figure</xref>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 node1.setNext(node2);
 node2.setNext(node3);
- </input></program>
+ </code></program>
  <figure xml:id="fig-phonelistpic">
   <caption>The phonelist: a linked list of nodes, each of which contains 
   a person's name and phone number.</caption>
@@ -368,10 +369,10 @@ node2.setNext(node3);
        list,
       we could use the following statements:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 PhoneListNode node4 = new PhoneListNode("gary g","201-119-8765");
 node3.setNext(node4);
- </input></program>
+ </code></program>
     <p>
       Although this example illustrates the basic technique for inserting nodes at the end of the list,
       it depends too much on our knowledge of the list.
@@ -387,7 +388,8 @@ node3.setNext(node4);
         you should be able to manipulate its elements without knowing anything about its data.
       </p>
     </principle>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
   <exercise xml:id="phonelist-node">
    <title>New  PhoneListNode</title>
@@ -405,9 +407,9 @@ node3.setNext(node4);
         <choices>
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
               PhoneListNode newNode = new PhoneListNode("Bill C", "111-202-3331");
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>That creates a node but doesn't link it.</p>
@@ -415,9 +417,9 @@ node3.setNext(node4);
         </choice>      
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
               nodeptr.setNext(newNode);  
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>You first need to create <c>newNode</c> and populate it with the correct data.</p>
@@ -425,10 +427,10 @@ node3.setNext(node4);
         </choice>
         <choice correct="no">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
               PhoneListNode newNode = new PhoneListNode(Bill C, 111-202-3331);
               nodeptr.setNext(newNode);  
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>The constructor needs String arguments.</p>
@@ -436,10 +438,10 @@ node3.setNext(node4);
         </choice>
         <choice correct="yes">
             <statement>
-            <program language="java"><input>
+            <program language="java"><code>
               PhoneListNode newNode = new PhoneListNode("Bill C", "111-202-3331");
               nodeptr.setNext(newNode);            
-            </input></program>
+            </code></program>
             </statement>
             <feedback>
                 <p>Correct.</p>
@@ -451,13 +453,13 @@ node3.setNext(node4);
           </p>
         </hint>
       <solution>
-            <program language="java"><input>
+            <program language="java"><code>
               PhoneListNode newNode = new PhoneListNode("Bill C", "111-202-3331");
               nodeptr.setNext(newNode); 
-            </input></program>
+            </code></program>
       </solution>
     </exercise> 
-  </exercises>
+  
  </subsection>
   <subsection>
     <title>Manipulating the Phone List</title>
@@ -499,7 +501,7 @@ test whether the list is empty,
     </principle>
     <listing xml:id="list-phonelistprelim">
       <caption>A preliminary version of the <c>PhoneList</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class PhoneList {
     private PhoneListNode head;
     public PhoneList() {
@@ -513,7 +515,7 @@ public class PhoneList {
     public String remove(String name) { }
     public void print() { }
 } // PhoneList
- </input></program>
+ </code></program>
 </listing>
   </subsection>
   <subsection>
@@ -548,7 +550,7 @@ public class PhoneList {
       <c>next</c> variable of the last node to point to the new node.
       This gives us the following algorithm:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void insert(PhoneListNode newNode) {
   if (isEmpty())
     head = newNode;                   // Insert at head of list
@@ -559,7 +561,7 @@ public void insert(PhoneListNode newNode) {
     current.setNext( newNode );       // Do the insertion
   } // else
 } // insert()
- </input></program>
+ </code></program>
     <p>
       Recall that when nodes are linked,
       their <c>next</c> variables are non-<c>null</c>. So when a node's <c>next</c> variable is
@@ -575,11 +577,11 @@ public void insert(PhoneListNode newNode) {
       <c>current</c>, which will always point to the current node.
       It's important to understand the while loop used here:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 PhoneListNode current = head;       // Initializer
 while (current.getNext() != null)   // Entry condition
      current = current.getNext();    // Updater
- </input></program>
+ </code></program>
     <p>
       The loop variable, <c>current</c>, is initialized by setting it to point to the head of the list.
       The entry condition tests whether the <c>next</c> link,
@@ -623,7 +625,7 @@ while (current.getNext() != null)   // Entry condition
       then we use a temporary variable to traverse the list,
       printing each node's data along the way:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void print() {
   if (isEmpty())
      System.out.println("Phone list is empty");
@@ -633,7 +635,7 @@ public void print() {
     current = current.getNext();              //  go to next node
   }
 } // print()
- </input></program>
+ </code></program>
     <p>
       Note the differences between this while loop and the one used in the <c>insert()</c> method.
       In this case,
@@ -671,7 +673,7 @@ public void print() {
       Because the method returns a <c>String</c>, we can return error messages 
       in the first and third cases:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String getPhone(String name) {
   if (isEmpty())                    // Case 1: Empty list
     return "Phone list is empty";
@@ -686,7 +688,7 @@ public String getPhone(String name) {
         return ("Sorry.  No entry for " + name);
   } // else
 } // getPhone()
- </input></program>
+ </code></program>
     <p>
       Note the while loop in this case.
       As in the <c>insert()</c> method, when the loop exits,
@@ -698,16 +700,17 @@ public String getPhone(String name) {
        it is necessary to test whether the name was found or not after the loop is exited.
       Then appropriate action can be taken.
     </p>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
  <exercise xml:id="loop-exit">
    <title>Loop Exit Condition</title>
         <statement>
           <p>
             What if the exit condition for the while loop in <c>getPhone()</c> were stated as
-              <program language="java"><input>
+              <program language="java"><code>
               ((current.getNext() != null) || (!current.getName().equals(name)))
-              </input></program>
+              </code></program>
           </p>
         </statement>
         <choices>
@@ -758,7 +761,7 @@ public String getPhone(String name) {
           whether or not the node matches the one being sought.
       </solution>
     </exercise>     
-  </exercises>
+  
       
  </subsection>
   <subsection>
@@ -781,7 +784,7 @@ public String getPhone(String name) {
     </p>
     <listing xml:id="list-remove">
       <caption>The <c>remove()</c> method.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public String remove(String name) { // Remove an entry by name
   if (isEmpty())                         // Case 1: empty list
     return "Phone list is empty";
@@ -807,7 +810,7 @@ public String remove(String name) { // Remove an entry by name
   } else
     return ("Sorry.  No entry for " + name); // Case 4: node not found
 } // remove()
- </input></program>
+ </code></program>
 </listing>
     <p>
       We use <c>current</c> as the traversal variable.
@@ -842,9 +845,9 @@ public String remove(String name) { // Remove an entry by name
       the new value of
 <c>previous.next</c> will be the current value of <c>current.next</c>. We use the <c>getNext()</c> and setNext() methods to effect this change:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 previous.setNext(current.getNext());
- </input></program>
+ </code></program>
   </subsection>
   <subsection>
     <title>Testing the List</title>
@@ -862,7 +865,7 @@ previous.setNext(current.getNext());
     <listing xml:id="list-testlist">
       <caption>A <c>main()</c> method containing a set of tests for the
 <c>PhoneList</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public static void main(String argv[]) {
                   // Create list and insert nodes
   PhoneList list = new PhoneList();
@@ -903,7 +906,7 @@ public static void main(String argv[]) {
   System.out.println("Phone Directory");
   list.print();
 } // main()
- </input></program>
+ </code></program>
 </listing>
     <p>
       Of course, there are often so many combinations of list operations that exhaustive testing might not be feasible.
@@ -921,7 +924,8 @@ public static void main(String argv[]) {
         test each of the cases identified in each of the removal and insertion methods.
       </p>
     </principle>
-   <exercises>
+   </subsection>
+     <subsection>
    <title>Self-Study Exercises</title>
     <exercise xml-id="test-phonelist">
     <title>PhoneList Test</title>
@@ -931,7 +935,7 @@ public static void main(String argv[]) {
             Experiment with it to see how it works. Then add a new node to the list
             with your name and number. Print the list. Then remove your entry and print again. 
           </p>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
 public class PhoneList {
     private PhoneListNode head;
 
@@ -1084,7 +1088,7 @@ class PhoneListNode {
         return next;
     } // getNext()
 } // PhoneListNode
-          </input></program>
+          </code></program>
       </statement>
     </exercise>
       
@@ -1102,7 +1106,7 @@ class PhoneListNode {
           Executing something like the following method calls will test whether it is possible 
           to insert items into a list after all items have been removed:
           </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Create and insert some nodes
 PhoneList list = new PhoneList();
 list.insert(new PhoneListNode("Roger M", "997-0020"));
@@ -1121,9 +1125,9 @@ System.out.println(list.remove("Stacy K"));
 System.out.println(list.remove("Rich P"));
 list.print();
        // List should be empty
- </input></program>
+ </code></program>
       </solution>
     </exercise>
-  </exercises>
+  
   </subsection>
 </section>

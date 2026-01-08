@@ -69,7 +69,7 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
 Create a game object with 21 sticks
  Create a reader object
  sticksLeft = game:get the number of sticks left
@@ -87,7 +87,7 @@ Create a game object with 21 sticks
         reader: report that the user wins
  else
        reader: report that the computer wins
-    </input>
+    </code>
 </program>
 
     <p>
@@ -145,7 +145,7 @@ Create a game object with 21 sticks
       to the <c>OneRowNim</c>.</caption>
 
 <program language="java">
-    <input>
+    <code>
 public class OneRowNimApp
 { private KeyboardReader reader;
   private OneRowNim game;
@@ -189,7 +189,7 @@ public class OneRowNimApp
     app.run();
   } //main()
 } // OneRowNimApp
-    </input>
+    </code>
 </program>
     </listing>
     <p>
@@ -245,11 +245,11 @@ public class OneRowNimApp
     </p>
 
 <program language="java">
-    <input>
+    <code>
     private OneRowNim game;
     ...
     game = new OneRowNim();
-    </input>
+    </code>
 </program>
 
     <p>
@@ -302,7 +302,7 @@ Let the user move.
       <caption>The <c>OneRowNimGUI</c> class.</caption>
 
 <program language="java">
-    <input>
+    <code>
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -364,7 +364,7 @@ public class OneRowNimGUI extends JFrame implements ActionListener
     } // if
   } // actionPerformed()
 } // OneRowNimGUI
-    </input>
+    </code>
 </program>
 
     </listing>
@@ -400,9 +400,9 @@ public class OneRowNimGUI extends JFrame implements ActionListener
     </p>
 
 <program language="java">
-    <input>
+    <code>
 int userTakes = Integer.parseInt(inField.getText());
-    </input>
+    </code>
 </program>
 
     <p>
@@ -431,13 +431,13 @@ gameOver()</c> and <c>getWinner()</c> to control the interaction with the user.
     </p>
 
 <program language="java">
-    <input>
+    <code>
 if (game.gameOver())
 {  goButton.setEnabled(false);  // End the game
    inField.setEnabled(false);
    ...
 }
-    </input>
+    </code>
 </program>
 
     <p>

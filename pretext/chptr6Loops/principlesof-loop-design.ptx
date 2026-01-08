@@ -102,8 +102,8 @@
     </tabular>
   
   </table>
-
-  <exercises><title>Self-Study Exercise</title>
+</subsection>
+     <subsection><title>Self-Study Exercise</title>
    
     <exercise label="loop-choice"><title>Loop Choices</title>
     <statement>
@@ -150,48 +150,48 @@
   <li>
     <p>
       Printing the names of all the visitors to a Web site could use a counting loop because the exact number of visitors is known.
-<program language="java"><input>
+<program language="java"><code>
 for each name in the visitor's log
    print the name
-</input></program>
+</code></program>
     </p>
   </li>
   <li>
     <p>
       Validating that a user has entered a positive number requires a <c>do-while</c> structure in which you repeatedly read a number and validate it.
-<program language="java"><input>
+<program language="java"><code>
 do
   read a number
   if number is invalid, 
      print error message
 while number is invalid
-</input></program>
+</code></program>
     </p>
   </li>
   <li>
     <p>
       Changing all the backslashes (<m>\backslash</m>) in a Windows Web page address,
       to the slashes (/) used in a Unix Web page address.
-<program language="java"><input>
+<program language="java"><code>
 for each character in the Web page address
    if it is a backslash 
       replace it with slash
-</input></program>
+</code></program>
     </p>
   </li>
   <li>
     <p>
       Finding the largest in a list of numbers requires a <c>while</c> loop to guard against an empty list.
-<program language="java"><input>
+<program language="java"><code>
 initialize maxMPG to smallest possible number
 while there are more cars in the database
    if current car's MPG is greater than maxMPG
       replace maxMPG with it
-</input></program>
+</code></program>
     </p>
   </li></ol></p>
   </solution>
   </exercise>
-  </exercises>
+  
 </subsection>
 </section>

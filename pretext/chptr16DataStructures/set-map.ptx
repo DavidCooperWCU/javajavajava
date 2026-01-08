@@ -74,7 +74,7 @@
     <listing xml:id="listing-settest">
       <caption>A method that demonstrates use of the interface <c>Set&lt;E&gt;</c>
       and the class <c>TreeSet&lt;E&gt;</c>.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public static void testSet() {
   Set&lt;PhoneRecord> theSet = new TreeSet&lt;PhoneRecord>();
   // new HashSet&lt;PhoneRecord>(); could also be used.
@@ -95,7 +95,7 @@ public static void testSet() {
   for (PhoneRecord pr : theSet)
       System.out.println(pr);
     } // testSet
- </input></program>
+ </code></program>
     </listing>
     <p>
       In order for the <c>testSet()</c> method to work as we would like,
@@ -106,7 +106,7 @@ public static void testSet() {
       The <c>name</c> field of <c>PhoneRecord</c> can also be used to define the other two methods discussed above.
       Thus, add the following code to the <c>PhoneRecord</c> class.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean equals(Object ob){
     return name.equals(((PhoneRecord)ob).getName());
   } //equals()
@@ -116,12 +116,12 @@ public int compareTo(Object ob){
 public int hashCode(){
     return name.hashCode();
   } // hashCode()
- </input></program>
+ </code></program>
 
  <activity label="Setdemo"><statement>
   <p>  Run the code below. Try adding a new PhoneRecord to the Set.</p>
   </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   import java.util.*;
   
   public class SetOfPhoneRecords {    
@@ -226,13 +226,13 @@ public int hashCode(){
       } // hashCode()
   
   } // PhoneRecord
-   </input></program>
+   </code></program>
   </activity>
   
     <p>
       The output of the <c>TestSet()</c> method is listed below:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
             Testing TreeSet and Set
             Roger M is contained in theSet is true
             Mary Q is contained in theSet is false
@@ -240,7 +240,7 @@ public int hashCode(){
             Jane M 090-997-1987
             Roger M 090-997-2918
             Stacy K 090-997-9188
- </input></program>
+ </code></program>
     <p>
       Notice that <c>Jane M</c><c>PhoneRecord</c> appears only once in the listing of elements in the set.
     </p>
@@ -290,7 +290,7 @@ pairs of Strings, names and phone numbers, but it could be adapted to store name
     <listing xml:id="listing-maptest">
       <caption>A method that demonstrates use of the interface <c>Map&lt;K,V&gt;</c>
       and the class <c>TreeMap&lt;K,V&gt;</c>.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public static void testMap() {
   Map&lt;String, String> theMap =
      new TreeMap&lt;String,String>();
@@ -306,13 +306,13 @@ public static void testMap() {
   System.out.print("Jane M has phone ");
   System.out.println(theMap.get("Jane M"));
 } // testMap
- </input></program>
+ </code></program>
     </listing>
 
     <activity label="Mapdemo"><statement>
       <p>  Run the code below. Try adding a new name and phone pair to the Map.</p>
       </statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
       import java.util.*;
       
       public class MapOfPhones {    
@@ -337,28 +337,28 @@ public static void testMap() {
           testMap();
         } // main()
       }
-       </input></program>
+       </code></program>
       </activity>
 
     <p>
       The output for this test program is:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Stacy K has phone 090-997-9188
 Jane M has phone 090-233-0000
- </input></program>
+ </code></program>
     <p>
       Notice the the second phone number for <c>Jane M</c> is the one that is stored in 
       the data structure.
     </p>
-
-    <exercises><title>Self-Study Exercise</title>
+</subsection>
+     <subsection><title>Self-Study Exercise</title>
       <exercise label="mapEx">
         <statement>
             <p>
             Using the activity above as a guide, create a Map that translates words from
           English to another language.</p>  </statement>
-            <program language="java" interactive="activecode"><input>
+            <program language="java" interactive="activecode"><code>
               import java.util.*;
 
               public class TranslateMap {
@@ -368,10 +368,10 @@ Jane M has phone 090-233-0000
                 // Write a main method that calls the test method
 
               }
-            </input></program>
+            </code></program>
           <hint><p>For example, you could put the pair cat and gato in the Map to translate cat into Spanish.</p></hint>
             <solution>
-              <program language="java"><input>
+              <program language="java"><code>
                 import java.util.*;
                 
                 public class TranslateMap {  
@@ -393,10 +393,10 @@ Jane M has phone 090-233-0000
                     testMap();
                   } // main()
                 }       
-              </input>
+              </code>
                 </program>
             </solution>
         </exercise>
-        </exercises>  
+          
   </subsection>
 </section>

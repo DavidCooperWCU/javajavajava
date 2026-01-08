@@ -225,7 +225,7 @@ public interface IPlayer {
       The <c>addComputerPlayer()</c> method adds a computer player to the game.
       Its implementation is as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void addComputerPlayer(IPlayer player) {
    if (nComputers == 0)
       computer2 = player;
@@ -235,7 +235,7 @@ public void addComputerPlayer(IPlayer player) {
       return; // No more than 2 players
    ++nComputers;
 }
- </input></program>
+ </code></program>
     <p>
       As we noted earlier,
       the classes that play the various <c>TwoPlayerGame</c>s must implement the <c>IPlayer</c> interface.
@@ -263,11 +263,11 @@ public void addComputerPlayer(IPlayer player) {
       the default assumption is that <c>nComputers</c> equals zero and that <c>computer1</c> 
       and <c>computer2</c> are both <c>null</c>. Here's an example of how it could be used:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  OneRowNim nim = new OneRowNim(11); // 11 sticks
  nim.add(new NimPlayer(nim));       // 2 computer players
  nim.add(new NimPlayerBad(nim));
- </input></program>
+ </code></program>
     <p>
       Note that the <c>NimPlayer()</c> constructor takes a reference to the game as its argument.
       Clearly, our design should not assume that the names of the <c>IPlayer</c> objects 
@@ -283,15 +283,15 @@ public void addComputerPlayer(IPlayer player) {
       For example,
       its implementation in <c>TwoPlayerGame</c> is:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String getRules() {
      return "The rules of this game are: ";
  }
- </input></program>
+ </code></program>
     <p>
       and its redefinition in <c>OneRowNim</c> is:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String getRules() {
   return "\n*** The Rules of One Row Nim ***\n" +
   "(1) A number of sticks between 7 and " + MAX_STICKS +
@@ -303,7 +303,7 @@ public String getRules() {
   "(4) A player who cannot leave a positive\n\t" +
   " number of sticks for the other player loses.\n";
 }
- </input></program>
+ </code></program>
     <p>
       The idea is that each <c>TwoPlayerGame</c> subclass will take responsibility 
       for specifying its own set of rules in a form that can be displayed to the user.
@@ -315,10 +315,10 @@ public String getRules() {
       which we discussed earlier.
       This design will allow us to use code that takes the following form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 TwoPlayerGame game = new OneRowNim();
   System.out.println(game.getRules());
- </input></program>
+ </code></program>
     <p>
       In this example the call to <c>getRules()</c> is polymorphic.
       The dynamic binding mechanism is used to invoke the <c>getRules()</c> method 
@@ -455,7 +455,7 @@ public interface IGame {
     <p>    
     </p>
  <algorithm>
- <program language="java"><input>
+ <program language="java"><code>
 Initialize the game.
 While the game is not over
   Report the current state of the game via the UI.
@@ -463,7 +463,7 @@ While the game is not over
   Get the user's move via the UI.
   Make the move.
   Change to the other player.
-</input></program>
+</code></program>
  </algorithm>>
     <p>
       The play loop sets up an interaction between the game and the UI. The <c>UserInterface</c> 
@@ -471,13 +471,13 @@ While the game is not over
       our games through a variety of UIs, we define <c>UserInterface</c> as the following Java interface:
     </p>
     <listing xml:id="fig-userinterface-code">
- <program language="java" xml:id="userinterface-code"><input>
+ <program language="java" xml:id="userinterface-code"><code>
 public interface UserInterface {
      public String getUserInput();
      public void report(String s);
      public void prompt(String s);
  }
- </input></program>
+ </code></program>
  </listing>
     <p>
       Any object that implements these three methods can serve as a UI for one of our <c>TwoPlayerGame</c>s.
@@ -490,9 +490,9 @@ public interface UserInterface {
       We do this simply by implementing this interface in the <c>KeyboardReader</c> class,
       as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class KeyboardReader implements UserInterface
- </input></program>
+ </code></program>
     <p>
       As it turns out,
       the three methods listed in <c>UserInterface</c> match three of the methods 
@@ -592,7 +592,7 @@ public class KeyboardReader implements UserInterface
     <listing xml:id="fig-revisednim2">
       <caption>The revised  <c>OneRowNim</c> class</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 public class OneRowNim extends TwoPlayerGame implements CLUIPlayableGame {
   public static final int MAX_PICKUP = 3;
   public static final int MAX_STICKS = 11;
@@ -689,7 +689,7 @@ public class OneRowNim extends TwoPlayerGame implements CLUIPlayableGame {
     ui.report(reportGameState());  // The game is now over
   } // play()
 } // OneRowNim class
- </input></program>
+ </code></program>
 </listing>
     <p>
       The <c>gameOver()</c> and <c>getWinner()</c> methods,
@@ -720,7 +720,7 @@ public class OneRowNim extends TwoPlayerGame implements CLUIPlayableGame {
     </p>
 <listing xml:id="orn-play">
 <caption>The <c>play()</c> method controls the game.</caption>
- <program language="java"><input>
+ <program language="java"><code>
   public void play(UserInterface ui) {  // From CLUIPlayableGame interface
     int sticks = 0;
     ui.report(getRules());
@@ -753,7 +753,7 @@ public class OneRowNim extends TwoPlayerGame implements CLUIPlayableGame {
     } // while
     ui.report(reportGameState());  // The game is now over
   } // play()
- </input></program>
+ </code></program>
 </listing>
     <p>
       Let's look now at how the code distinguishes between whether it is a 
@@ -780,11 +780,11 @@ public class OneRowNim extends TwoPlayerGame implements CLUIPlayableGame {
       and returns a <c>String</c> that is meant to represent the <c>IPlayer</c>'s move:
     </p>
    
- <program language="java" highlight="2"><input>
+ <program language="java" highlight="2"><code>
 public interface IPlayer {
      public String makeAMove(String prompt);
 }
- </input></program>
+ </code></program>
  
     <p>
       In <c>OneRowNim</c> the
@@ -875,7 +875,7 @@ public interface IPlayer {
     <listing xml:id="fig-nimbad">
       <caption><c>NimPlayerBad</c> has no strategy and just makes random moves.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 public class NimPlayerBad implements IPlayer {
   private OneRowNim game;
 
@@ -900,7 +900,7 @@ public class NimPlayerBad implements IPlayer {
   } // toString()
 
 } // NimPlayerBad
- </input></program>
+ </code></program>
 </listing>
     <p>
       The implementation of <c>NimPlayerBad</c> is shown in <xref ref="fig-nimbad">Listing</xref>.
@@ -909,9 +909,9 @@ public class NimPlayerBad implements IPlayer {
       to convert that move back into an <c>int</c>. Recall the statement in <c>OneRowNim</c> 
       where <c>makeAMove()</c> is invoked:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 sticks = Integer.parseInt(computer.makeAMove(""));
- </input></program>
+ </code></program>
     <p>
       In this context,
       the <c>computer</c> variable,
@@ -943,9 +943,9 @@ sticks = Integer.parseInt(computer.makeAMove(""));
       This allows our <c>IPlayer</c> objects to report what type of players they are,
       as in the following statement from <c>OneRowNim</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 ui.report("\nPlayer 1 is a " + computer1.toString());
- </input></program>
+ </code></program>
     <p>
       If <c>computer1</c> is a <c>NimPlayerBad</c>, it would report
       <q>Player1 is a NimPlayerBad.</q>
@@ -962,7 +962,7 @@ ui.report("\nPlayer 1 is a " + computer1.toString());
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
      public static void main(String args[]) {
         KeyboardReader kb = new KeyboardReader();
         CLUIPlayableGame game = new OneRowNim();
@@ -975,7 +975,7 @@ ui.report("\nPlayer 1 is a " + computer1.toString());
         }
         game.play(kb);
     } // main()
- </input></program>
+ </code></program>
     <p>
       After creating a <c>KeyboardReader</c> and then creating an instance of <c>OneRowNim</c>, we 
       prompt the user to determine how many computers are playing.
@@ -999,26 +999,26 @@ ui.report("\nPlayer 1 is a " + computer1.toString());
       Therefore, we can use either of these types to represent the game.
       Thus, one alternative way of coding this is as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
     TwoPlayerGame game = new OneRowNim();
     ...
     IPlayer computer = new NimPlayer((OneRowNim)game);
     ...
     ((CLUIPlayableGame)game).play(kb);
- </input></program>
+ </code></program>
     <p>
       Here we use a <c>TwoPlayerGame</c> variable to represent the game.
       However, note that we now have to use a cast expression, <c>(CLUIPlayableGame)</c>, in order 
       to call the <c>play()</c> method.
       If we don't cast <c>game</c> in this way, Java will generate the following syntax error:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  OneRowNim.java:126: cannot resolve symbol
  symbol  : method play (KeyboardReader)
  location: class TwoPlayerGame
         game.play(kb);
            ^
- </input></program>
+ </code></program>
     <p>
       The reason for this error is that <c>play()</c> is not a method in the 
       <c>TwoPlayerGame</c> class,
@@ -1034,7 +1034,7 @@ ui.report("\nPlayer 1 is a " + computer1.toString());
     <p>
       Another alternative for the <c>main()</c> method would be the following:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  CLUIPlayableGame game = new OneRowNim();
  ...
  IPlayer computer = new NimPlayer((OneRowNim)game);
@@ -1042,7 +1042,7 @@ ui.report("\nPlayer 1 is a " + computer1.toString());
  ...
  game.play(kb);
   nim.play(kb);
- </input></program>
+ </code></program>
     <p>
       By representing the game as a <c>CLUIPlayableGame</c> variable,
       we don't need the cast expression to call
@@ -1061,7 +1061,7 @@ ui.report("\nPlayer 1 is a " + computer1.toString());
     <listing xml:id="fig-playnim">
       <caption>A typical run of the <c>OneRowNim</c> using a command-line
       user interface.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 How many computers are playing, 0, 1, or 2? 2
 
 *** The Rules of One Row Nim ***
@@ -1082,7 +1082,7 @@ Sticks left: 4 Who's turn: Player 1 NimPlayerBad takes 1 sticks.
 Sticks left: 3 Who's turn: Player 2 NimPlayerBad takes 2 sticks.
 Sticks left: 1 Who's turn: Player 1 NimPlayerBad takes 1 sticks.
 Sticks left: 0 Game over! Winner is Player 2 Nice game.
- </input></program>
+ </code></program>
 </listing>
     <p>
       Given our object-oriented design for the <c>TwoPlayerGame</c> hierarchy,
@@ -1388,7 +1388,8 @@ public class WordGuesser implements IPlayer {
  </code></program>
 </listing>
 
- <exercises>
+ </subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
       
            
@@ -1853,7 +1854,7 @@ Make sure to have enough numbers so that the game will end.</stdin></program>
           would be identical to the <c>NimPlayerBad</c> class except the <c>move():int</c> 
           method would be replaced with the following implementation:
        </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int move() {
     int sticksLeft = game.getSticks();
     if (sticksLeft % (game.MAX_PICKUP + 1) != 1)
@@ -1863,11 +1864,11 @@ public int move() {
          return 1 + (int)(Math.random() * maxPickup);
     }
  }
- </input></program>
+ </code></program>
  <p>You might also want to modify <c>main()</c> to give the 
   user the choice of which player to use as the computer:
  </p>
-  <program language="java"><input>
+  <program language="java"><code>
   public static void main(String args[]) {
     KeyboardReader kb = new KeyboardReader();
     OneRowNim game = new OneRowNim();
@@ -1887,7 +1888,7 @@ public int move() {
     }
     game.play(kb);
  } // main()
- </input></program>
+ </code></program>
   </solution>
   </exercise>       
 
@@ -2117,6 +2118,6 @@ Make sure to have enough letters so that the game will end.
 
 
 </exercise>
-</exercises>
+
   </subsection>
 </section>

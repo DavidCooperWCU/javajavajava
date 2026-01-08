@@ -4,7 +4,7 @@
     As we saw in the previous section, it is relatively simple to convert the <c>drawBoxes()</c> method
     into an iterative version:
   </p>
-   <program language="java"><input>
+   <program language="java"><code>
     private void drawBoxesIterative(Graphics g, int level, int locX, int locY, int side, int delta) {
         for (int k = level; k >= 0; k--) {
             g.drawRect(locX, locY, side, side); // Draw a square
@@ -22,7 +22,7 @@
             drawBoxes(g, level - 1, newLocX, newLocY, side - 2 * delta, delta);
         } // if
     } // drawBoxes()
-     </input></program>      
+     </code></program>      
   <p>
     However, the same cannot be said for the
     <c>drawGasket()</c> method.
@@ -45,7 +45,7 @@
     <em>N</em> times.
     This method is tail recursive even though its last statement is not a recursive call:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void printHello(int N) {
     if (N > 1) {
       System.out.println("Hello");
@@ -53,7 +53,7 @@ public void printHello(int N) {
     } else
       System.out.println("Hello");
 } // printHello()
- </input></program>
+ </code></program>
   <p>
     This method is tail recursive because the last statement that will be executed,
     in its recursive cases, is the recursive call.
@@ -66,12 +66,12 @@ public void printHello(int N) {
     <q>Hello</q>
     <em>N</em> times:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void printHelloIterative(int N) {
     for (int k = N; k > 0; k--)
         System.out.println("Hello");
 }
- </input></program>
+ </code></program>
   <p>
     In this case, we use the parameter <em>N</em>
     to set the initial value of the loop variable,
@@ -105,13 +105,13 @@ public void printHelloIterative(int N) {
     consider how difficult it would be to draw the Sierpinski gasket using an iterative approach.
     We could start by developing an outer for loop to account for the different levels in the pattern:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = lev; k > 0; k--) {
   drawGasket(g, lev - 1, p1X, p1Y, q1X, q1Y, q2X, q2Y);
   drawGasket(g, lev - 1, p2X, p2Y, q1X, q1Y, q3X, q3Y);
   drawGasket(g, lev - 1, p3X, p3Y, q2X, q2Y, q3X, q3Y);
 }
- </input></program>
+ </code></program>
   <p>
     But now each of the method calls within the body of this loop would have to be replaced by very complex loops.
     That would be a daunting task.
@@ -125,7 +125,8 @@ for (int k = lev; k > 0; k--) {
       try developing a recursive solution to it.
     </p>
   </principle>
-  <exercises>
+  
+     <subsection>
   <title>Self-Study Exercises</title>
         <exercise label="print-reverse">
         <title><c>printReverse()</c> tail recursive?</title>
@@ -133,14 +134,14 @@ for (int k = lev; k > 0; k--) {
           <p>
             True or false, the <c>printReverse()</c> method is tail recursive.
           </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void printReverse(String s) {
     if (s.length() > 0) {      // Recursive case:
       printReverse(s.substring(1));  // Print tail
       System.out.print(s.charAt(0)); // Print first char
     }
 } // printReverse()
- </input></program>          
+ </code></program>          
         </statement>
         <choices>
         <choice correct="no">
@@ -174,7 +175,7 @@ public void printReverse(String s) {
           <p>
             True or false, the <c>countChar()</c> method is tail recursive.
           </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int countChar(String s, char ch) {
     if (s.length() == 0)    // Base case: empty string
       return 0;
@@ -183,7 +184,7 @@ public int countChar(String s, char ch) {
     else                         // Recursive case 2
       return 0 + countChar(s.substring(1), ch); // Head != ch
 } // countChar()
- </input></program>          
+ </code></program>          
         </statement>
         <choices>
         <choice correct="yes">
@@ -211,6 +212,6 @@ public int countChar(String s, char ch) {
         </p>
       </solution>
   </exercise>
-</exercises>
+</subsection>
 
 </section>

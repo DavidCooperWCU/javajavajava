@@ -24,7 +24,7 @@
     the total should be divided by the count to give the average.
     In pseudocode, the algorithm for this problem is as follows:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 initialize runningTotal to 0         // Initialize
 initialize count to 0
 prompt and read the first grade      // Priming read
@@ -35,7 +35,7 @@ while the grade entered is not 9999 {// Sentinel test
 if (count > 0)           // Guard against divide by 0
     divide runningTotal by count
 output the average as the result
- </input></program>
+ </code></program>
   <p>
     Note that in this problem our loop variable, <c>grade</c>,  is read before the loop test is made.
     This is known as a <term>priming read</term>.
@@ -59,14 +59,14 @@ output the average as the result
     Thus, for our initialization step,
     we get the following code: 
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 double runningTotal = 0;
 int count = 0;
 reader.prompt("Input a grade (e.g., 85.3) " +
       "or 9999 to indicate the end of the list >> ");
 double grade =
      reader.getKeyboardDouble(); // Priming input
- </input></program>
+ </code></program>
   <p>
     Within the body of the loop we must add the grade to the running total and increment the counter.
     Since these variables are not tested in the loop entry condition,
@@ -74,7 +74,7 @@ double grade =
     Our loop updater in this case must read the next grade.
     Placing the updater statement at the end of the  loop body will ensure that the loop terminates immediately after the user enters the sentinel value:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 while (grade != 9999) {    // Loop test: sentinel
   runningTotal += grade;
   count++;
@@ -82,7 +82,7 @@ while (grade != 9999) {    // Loop test: sentinel
       "or 9999 to indicate the end of the list >> ");
   grade = reader.getKeyboardDouble(); // Update:input
 } // while
- </input></program>
+ </code></program>
   <p>
     You can see that it is somewhat redundant to repeat the same statements needed to do the initializating and the updating of the <c>grade</c> variable.
     A better design would be to encapsulate  these into a method and then call the method both before and within the loop.
@@ -90,7 +90,7 @@ while (grade != 9999) {    // Loop test: sentinel
     converting it to <c>double</c>, and returning the input value.
     The method doesn't require a parameter:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 private double promptAndRead() {
   reader.prompt("Input a grade (e.g., 85.3) " +
      "or 9999 to indicate the end of the list >> ");
@@ -99,7 +99,7 @@ private double promptAndRead() {
   System.out.println("You input " + grade + "\n");
   return grade;
 }
- </input></program>
+ </code></program>
   <p>
     Note that we have declared this as a <c>private</c> method.
     It will be used to help us perform our task but won't be available to other objects.
@@ -133,7 +133,7 @@ private double promptAndRead() {
     Another advantage of encapsulating the input task in a separate method is that it simplifies the task of calculating the average.
     This task should also be organized into a separate method:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public double inputAndAverageGrades() {
   double runningTotal = 0;
   int count = 0;
@@ -148,7 +148,7 @@ public double inputAndAverageGrades() {
   else
     return 0;         // Special (error) return value
   }
- </input></program>
+ </code></program>
   <p>
     Note that we have declared this as a <c>public</c> method.
     This will be the method you call to calculate your course average.
@@ -176,7 +176,7 @@ public double inputAndAverageGrades() {
   <listing xml:id="fig-avg">
     <caption>A program to compute average grade using a <c>while</c>
     structure.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.io.*;
 public class Average {                            // Console I/O
   private KeyboardReader reader = new KeyboardReader();
@@ -211,7 +211,7 @@ public class Average {                            // Console I/O
       System.out.println("Your average is " + average);
  } // main()
 } // Average
- </input></program>
+ </code></program>
 </listing>
 Try it below. </p>
     <interactive iframe="iframe/repl-average.html" width="100%" aspect="1:1"/>

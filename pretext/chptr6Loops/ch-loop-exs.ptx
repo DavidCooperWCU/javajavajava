@@ -10,7 +10,7 @@
          Match the loop terms to the definitions.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>counting loop</em></premise>
@@ -98,7 +98,7 @@
 	
 	.
 	
-      </matches>
+      </cardsort>
     </exercise>
     <exercisegroup>
     <title>Fill in the Blank</title>
@@ -539,7 +539,7 @@
       <p>
         Write three different loops<mdash/>a <c>for</c> loop,
         a while <c>loop</c>, and a <c>do-while</c> loop<mdash/>to print the following ski-jump design:
- <program language="java"><input>
+ <program language="java"><code>
 #
 # #
 # # #
@@ -547,7 +547,7 @@
 # # # # #
 # # # # # #
 # # # # # # #
- </input></program>
+ </code></program>
       </p>
     </statement>       
  <response />       
@@ -594,7 +594,7 @@
       </p>
     </statement>       
        <program label="jlex_even_method_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -602,7 +602,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -616,7 +616,7 @@
       </p>
     </statement>       
        <program label="jlex_odd_method_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -624,7 +624,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -638,7 +638,7 @@
       </p>
     </statement>       
        <program label="jlex_factors_of_ten_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -646,7 +646,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -660,7 +660,7 @@
       </p>
     </statement>       
        <program label="jlex_repeated_char_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -668,7 +668,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -678,7 +678,7 @@
 
       <p>
         Write a method that uses a nested <c>for</c> loop to print the following multiplication table:
- <program language="java"><input>
+ <program language="java"><code>
    1  2  3  4  5  6  7  8  9
 1  1
 2  2  4
@@ -689,11 +689,11 @@
 7  7 14 21 28 35 42 48
 8  8 16 24 32 40 48 56 64
 9  9 18 27 36 45 54 63 72 81
- </input></program>
+ </code></program>
       </p>
     </statement>       
        <program label="jlex_mult_table_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -701,7 +701,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -712,7 +712,7 @@
       <p>
         Write a method that uses nested <c>for</c> loops to print the patterns that follow.
         Your method should use the following statement to print the patterns: <c>System.out.print('#');</c>.
- <program language="java"><input>
+ <program language="java"><code>
 # # # # # # # #     # # # # # # # #   # # # # # # # #   # # # # # # # #
   # # # # # # #     # # # # # # #       #         #                 #
     # # # # # #     # # # # # #           #     #                 #
@@ -721,11 +721,11 @@
           # # #     # # #                 #     #           #
             # #     # #                 #         #       #
               #     #                 # # # # # # # #   # # # # # # # #
- </input></program>
+ </code></program>
       </p>
     </statement>       
        <program label="jlex_four_pattenrs_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -733,7 +733,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -747,7 +747,7 @@
       </p>
     </statement>       
        <program label="jlex_box_pattern_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -755,7 +755,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -770,7 +770,7 @@
       </p>
     </statement>       
        <program label="jlex_consecutive_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -778,7 +778,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -792,7 +792,7 @@
       </p>
     </statement>       
        <program label="jlex_pos_integers_loop_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -800,7 +800,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -829,7 +829,7 @@
       </p>
     </statement>       
        <program label="jlex_max_guesses_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -837,7 +837,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -861,7 +861,7 @@
       </p>
     </statement>       
        <program label="jlex_half_life_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -869,7 +869,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -887,7 +887,7 @@
       </p>
     </statement>       
        <program label="jlex_leibnitz_pi_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -895,7 +895,7 @@
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -908,9 +908,9 @@
         starts by making a (nonzero) guess at the square root.
         It then uses the original guess to calculate a new guess,
         according to the following formula:
- <program language="java"><input>
+ <program language="java"><code>
 guess = (( N / guess) + guess) / 2;
- </input></program>No matter how wild the original guess is,
+ </code></program>No matter how wild the original guess is,
         if we repeat this calculation,
         the algorithm will eventually find the square root.
         Write a square root method based on this algorithm.
@@ -919,7 +919,7 @@ guess = (( N / guess) + guess) / 2;
       </p>
     </statement>       
        <program label="jlex_newton_sqrt_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -927,7 +927,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -946,7 +946,7 @@ guess = (( N / guess) + guess) / 2;
       </p>
     </statement>       
        <program label="jlex_prime_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -954,7 +954,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -972,7 +972,7 @@ guess = (( N / guess) + guess) / 2;
       </p>
     </statement>       
        <program label="jlex_multiplication_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -980,7 +980,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -992,16 +992,16 @@ guess = (( N / guess) + guess) / 2;
         Write an application that prompts the user for four values and draws corresponding bar graphs using an ASCII character.
         For example,
         if the user entered 15, 12, 9, and 4, the program would draw
- <program language="java"><input>
+ <program language="java"><code>
 ******************
 ************
 *********
 ****
- </input></program>
+ </code></program>
       </p>
     </statement>       
        <program label="jlex_bar_graph_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -1009,7 +1009,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -1021,18 +1021,18 @@ guess = (( N / guess) + guess) / 2;
         Revise the application in the previous problem so that the bar charts are displayed vertically.
         For example,
         if the user inputs 5, 2, 3, and 4, the program should display
- <program language="java"><input>
+ <program language="java"><code>
  **
  **       **
  **    ** **
  ** ** ** **
  ** ** ** **
 -------------
- </input></program>
+ </code></program>
       </p>
     </statement>       
     <program label="jlex_side_bar_graph_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -1040,7 +1040,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -1060,7 +1060,7 @@ guess = (( N / guess) + guess) / 2;
       </p>
     </statement>       
        <program label="jlex_fibonacci_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -1068,7 +1068,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -1083,7 +1083,7 @@ guess = (( N / guess) + guess) / 2;
       </p>
     </statement>       
        <program label="jlex_half_life_years_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -1091,7 +1091,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>
@@ -1106,7 +1106,7 @@ guess = (( N / guess) + guess) / 2;
       </p>
     </statement>       
        <program label="jlex_car_loan_prg" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Program
 	  {
 	     public static void main(String args[])   // Main method
@@ -1114,7 +1114,7 @@ guess = (( N / guess) + guess) / 2;
 
 	     }
 	  }
-	</input>
+	</code>
       </program>
        
  </exercise>

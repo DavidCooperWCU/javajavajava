@@ -79,13 +79,13 @@
       This is an extremely important property.
       To grasp its importance, consider the following debugging problem:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 k = 0;                        // 1. Unstructured code
 System.out.println("k= " + k);// 2. k should equal 0 here
 goto label1;                  // 3.
 label2:
 System.out.println("k= " + k);// 4. k should equal 1 here
- </input></program>
+ </code></program>
     <p>
       In this example a <em>goto</em>
       statement is used to jump to <c>label1</c>, a label that marks a section of code somewhere else in the program.
@@ -100,12 +100,12 @@ System.out.println("k= " + k);// 4. k should equal 1 here
     <p>
       Now contrast the unstructured code with the following well-structured code:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 k = 0;                         // 1. Structured code
 System.out.println("k= " + k); // 2. k should equal 0 here
 someMethod();                  // 3.
 System.out.println("k= " + k); // 4. k should equal 1 here
- </input></program>
+ </code></program>
     <p>
       In this case,
       we can be certain that control will eventually return to line 4.
@@ -127,21 +127,21 @@ System.out.println("k= " + k); // 4. k should equal 1 here
     <figure xml:id="fig-preposts">
       <caption>Using pre- and postconditions to document code.</caption>
       <m>\bullet</m>  \vspace{-18pt}
- <program language="java"><input>
+ <program language="java"><code>
 int k = 0;   // Precondition: k == 0
   k = 5;       // Assignment to k
  // Postcondition: k == 5
- </input></program>
+ </code></program>
       <m>\bullet</m>  \vspace{-18pt}
- <program language="java"><input>
+ <program language="java"><code>
 int k = 0;           // Precondition: k == 0
   while (k &lt; 100) {    // While loop
       k = 2 * k + 2;
   }
   // Postcondition: k >= 100
- </input></program>
+ </code></program>
       <m>\bullet</m>  \vspace{-18pt}
- <program language="java"><input>
+ <program language="java"><code>
 /*
    * factorial(n):
    *   factorial(n) is 1 if n is 0
@@ -161,7 +161,7 @@ int k = 0;           // Precondition: k == 0
           return f;               // Return the factorial
       } // else
   } // factorial()
- </input></program>
+ </code></program>
     </figure>
     <p>
       In the first example,
@@ -179,10 +179,10 @@ int k = 0;           // Precondition: k == 0
       The third example shows how pre- and postconditions can be used to design and document methods.
       The <em>factorial(n)</em> is defined for <m>n \geq 0</m> as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 factorial(n) is 1, if n == 0
 factorial(n) is n * n-1 * n-2 * ... * 1, if n > 0
- </input></program>
+ </code></program>
     <p>
       In other words, the factorial of <em>N</em>
       is defined as the cumulative product of multiplying 1 times 2, times 3, and so on up to <em>N</em>.
@@ -219,7 +219,7 @@ factorial(n) is n * n-1 * n-2 * ... * 1, if n > 0
       In Java, the best way to handle this situation is to <em>throw</em>
       an <c>IllegalArgumentException</c>, as the following example illustrates:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int factorial(int n) {
   if (n &lt; 0)                  // Precondition failure
    throw new IllegalArgumentException("Factorial:"+ n);
@@ -231,7 +231,7 @@ public int factorial(int n) {
       f = f * k;        //     Accumulate the product
     return f;                 // Return the factorial
   }} // factorial()
- </input></program>
+ </code></program>
     <p>
       An <term>exception</term> is an erroneous condition
       (an error)
@@ -243,12 +243,12 @@ public int factorial(int n) {
       we create a new <c>IllegalArgumentException</c> that would report the illegal value of <em>n</em>
       with something like the following error message:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Exception in thread "main" java.lang.IllegalArgumentException:
           Factorial: -1
    at Test.factorial(Param.java:5)
    at Test.main(Param.java:18)
- </input></program>
+ </code></program>
     <p>
       You have undoubtedly already encountered thrown exceptions during program development.
       Java has an extensive hierarchy of <c>Exception</c> s, which we will cover in some depth in Chapter<nbsp/>11.
@@ -263,13 +263,13 @@ Exception in thread "main" java.lang.IllegalArgumentException:
       The failure of the precondition in <c>factorial()</c> points to a problem elsewhere in the program,
       because it is doubtful that the program deliberately passed a negative value to <c>factorial()</c>. The discovery of this error should lead to modifications in that part of the program where <c>factorial()</c> was invoked<mdash/>perhaps to some validation of the user's input:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int num = Integer.parseInt(textIn.getText());
 if (num >= 0)    // If factorial() precondition valid
     factNum = factorial(num);   // Compute factorial
 else
     System.out.println("Error");// Report input error
- </input></program>
+ </code></program>
     <p>
       This would be the traditional way to handle this kind of error.
     </p>
@@ -388,8 +388,8 @@ else
       </p>
     </principle>
   
-    
-    <exercises><title>Self-Study Exercises</title>
+    </subsection>
+     <subsection><title>Self-Study Exercises</title>
       <exercise label="prepostcond1">
         <title>Pre/Post Conditions 1</title>
       <statement>
@@ -397,7 +397,7 @@ else
             Identify the pre- and postconditions on
             <em>j</em> and <em>k</em>
             where indicated in the following code segment:
- <program language="java"><input>
+ <program language="java"><code>
 int j = 0; k = 5;
 do {
     if (k % 5 == 0)  {
@@ -408,7 +408,7 @@ do {
     else k *= k;
   } while (j &lt;= k);
                       // Postcondition
- </input></program>
+ </code></program>
           </p>
         </statement>
         <response></response>
@@ -417,7 +417,7 @@ do {
           Identify the pre- and postconditions on
           <em>j</em> and <em>k</em>
           where indicated in the following code segment:
- <program language="java"><input>
+ <program language="java"><code>
 int j = 0; k = 5;
 do {
     if (k % 5 == 0) {
@@ -428,7 +428,7 @@ do {
     else k *= k;
   } while (j &lt;= k);
                       // Postcondition: j > k
- </input></program>
+ </code></program>
         </p>
       </solution>  
       </exercise>
@@ -440,14 +440,14 @@ do {
             Identify the pre- and postconditions for the following method,
             which computes <m>x^n</m> for
             <m>n \geq 0</m>:
- <program language="java"><input>
+ <program language="java"><code>
 public double power(double x, int n) {
     double pow = 1;
     for (int k = 1; k &lt;= n; k++)
         pow = pow * x;
     return pow;
 } // power()
- </input></program>
+ </code></program>
           </p>
         </statement>
         <response></response>
@@ -455,7 +455,7 @@ public double power(double x, int n) {
           <p>
             Identify the pre- and postconditions for the following method,
             which computes <m>x^n</m> for <m>n >= 0</m>.
-   <program language="java"><input>
+   <program language="java"><code>
    // Precondition: N >= 0
    // Postcondition: power(x,n) == x to the n
    public double power(double x, int n ) {
@@ -464,12 +464,12 @@ public double power(double x, int n) {
            pow = pow * x;
        return pow;
    } // power()
-   </input></program>
+   </code></program>
           </p> 
         </solution>  
         </exercise>
         
-        </exercises>
+      
     
   </subsection>
 </section>

@@ -23,7 +23,7 @@
     To illustrate how it might be used,
     let's look at a simple example.
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
   /**
  * A simple hello program
  * @author Java Java Java
@@ -46,18 +46,18 @@ public class Hello {
         hello.sayHello();
     }
 }
-</input></program>
+</code></program>
   <p>
     The <c>Hello</c> program contains documentation comments.
     To process it we would use the following command:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 javadoc Hello.java
- </input></program>
+ </code></program>
   <p>
 <c>javadoc</c> would generate the following HTML documents:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 Hello.html            -The main documentation file
 allclasses-frame.html -Names and links to all the classes used in
                        Hello
@@ -68,7 +68,7 @@ index.html            -Top-level HTML document for
                        Hello documentation
 index-all.html        -Summary of all methods and variables in
                        Hello
- </input></program>
+ </code></program>
   <p>
     To see how everything looks, 
     <url href="http://turing.cs.trincoll.edu/~ram/jjj/src/hello/Hello.html" visual="">check out the 

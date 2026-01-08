@@ -43,7 +43,7 @@
   <listing xml:id="lst-arraylistdemo">
     <caption>Demonstration of the <c>ArrayList</c> class.</caption>
     
- <program language="java" interactive="activecode"><input>
+ <program label="arraylist-demo" language="java" interactive="activecode"><code>
     import java.util.ArrayList;
     public class ArrayListDemo {
       
@@ -61,7 +61,7 @@
         printArrayList(list);            // Print the elements on multiple lines
       } // main()
     } // ArrayListDemo
- </input></program>
+ </code></program>
   </listing>
 <p>
     <c>ArrayLists</c> 
@@ -71,13 +71,13 @@
     If you don't specify the type, it will default to <c>Object</c>.   
     In the program above, when a number is added to the <c>ArrayList</c>, it will automatically be
     wrapped into an <c>Integer</c> object.
-    <program language="java"><input>
+    <program language="java"><code>
     // ArrayList&lt;Type> 
     ArrayList&lt;Integer> numList = new ArrayList&lt;Integer>(); 
     ArrayList&lt;String> nameList = new ArrayList&lt;String>(); 
     ArrayList&lt;Double> decList = new ArrayList&lt;Double>(); 
     ArrayList objects = new ArrayList(); // a list of Objects
-    </input> </program>
+    </code> </program>
        </p>
 
   <p>

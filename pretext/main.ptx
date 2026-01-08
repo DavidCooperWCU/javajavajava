@@ -5,7 +5,7 @@
     <blurb shelf="">Objects first textbook for Java</blurb>
 <!-- <rename @element="activity" xml:lang="fr-FR">Laboratoire</rename> -->
 
-<document-id>javajavajava</document-id>
+<document-id>javajavajava-2025</document-id>
 
 <!-- Rename Checkpoint for <exercise> to Exercise -->
 <rename element="inlineexercise">Exercise</rename>
@@ -20,7 +20,7 @@
     <subtitle>Object-Oriented Problem Solving, 2024E</subtitle>
    
     <frontmatter>
-      <titlepage>    
+		  <bibinfo>    
         <author>
         <personname>Ralph Morelli</personname> 
         <institution>Trinity College</institution>
@@ -38,6 +38,10 @@
           <institution>West Chester University</institution>
           <email></email>
         </author>
+      </bibinfo>
+
+      <titlepage>
+      <titlepage-items />
       </titlepage>
 
       <preface>

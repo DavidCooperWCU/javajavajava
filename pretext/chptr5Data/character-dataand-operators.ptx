@@ -40,7 +40,7 @@
     </p>
     <figure xml:id="fig-ASCII">
       <caption>ASCII codes for selected characters.</caption>
- <program language="java"><input>
+ <program language="java"><code>
  Code   32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
  Char   SP !  "  #  $  %  &amp;  '  (  )   *  +  ,  -  .  /
  Code   48 49 50 51 52 53 54 55 56 57
@@ -59,7 +59,7 @@
  Char   n   o   p   q   r   s   t   u   v   w   x   y   z
  Code   123 124 125 126
  Char   {   |   }   &#126;
- </input></program>
+ </code></program>
     </figure>
   </introduction>
   <subsection xml:id="char-to-int">
@@ -75,26 +75,26 @@
       unless we explicitly tell Java to treat it as  an integer.
       So if we display a literal's value
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
      System.out.println('a');
-    </input></program>
+    </code></program>
     <p>
       the letter <sq>a</sq> will be displayed.
       Similarly, if we assign <sq>a</sq> to a
       <c>char</c> variable and then display the variable's value,
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       char ch = 'a';
       System.out.println(ch);         // Displays 'a'
-    </input></program>
+    </code></program>
     <p>
       the letter <sq>a</sq> will be shown.
       If, on the other hand, we wish to output a character's integer value,
       we must use an explicit cast operator as follows:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
      System.out.println((int)'a') ;   // Displays 97
-    </input></program>
+    </code></program>
     <p>
       A <term>cast operation</term>,
       such as <c>(int)</c>, converts one type of data ('a') into another (97).
@@ -102,10 +102,10 @@
       Similarly, if we wish to store a character's integer value in a variable,
       we can <em>cast</em> the <c>char</c> into an <c>int</c> as follows:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       int k = (int)'a';       // Converts 'a' to 97
       System.out.println(k);  // Displays 97
-    </input></program>
+    </code></program>
     <p>
       As these examples show, a <em>cast</em>
       is a type conversion operator.  Java allows a wide variety of both 
@@ -124,11 +124,11 @@
       in the following assignment a <c>char</c> is converted 
       to an <c>int</c> even though no explicit cast operator is used:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       char ch;
       int k;
       k = ch; // convert a char into an int
-    </input></program>
+    </code></program>
     <p>
       Java permits this conversion because no information will be lost.
       A  character <c>char</c> is represented in 16 bits whereas an 
@@ -146,11 +146,11 @@
       On the other hand,
       trying to assign an <c>int</c> value to a <c>char</c> variable leads to a syntax error:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       char ch;
       int k;
       ch = k;    // Syntax error: can't assign int to char
-    </input></program>
+    </code></program>
     <p>
       Trying to assign a 32-bit <c>int</c> to 16-bit <c>char</c> is like 
       trying to cram a big object into an undersized box.
@@ -158,9 +158,9 @@
       Java will allow us to assign an <c>int</c> value to a <c>char</c> variable,
       but only if we perform an explicit cast on it:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       ch = (char)k; // Explicit cast of int k into char ch
-    </input></program>
+    </code></program>
     <p>
       The <c>(char)</c> cast operation performs a careful
       <q>shrinking</q>
@@ -188,16 +188,16 @@
       Thus, parentheses must be used to cast the expression <em>m + n</em>
       into a <c>char</c>:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
      char ch = (char)(m + n);
-    </input></program>
+    </code></program>
     <p>
       The following statement would cause a syntax error because the cast 
       operator would only be applied to <c>m</c>:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       char ch = (char)m + n; // Error: right side is an int
-    </input></program>
+    </code></program>
     <p>
       In the expression on the right-hand side,
       the character produced by <c>(char)m</c> will be promoted to an 
@@ -205,8 +205,9 @@
       result will still be an <c>int</c>. Therefore,
       it cannot be assigned to a <c>char</c> without an explicit cast.
     </p>
- <!-- </subsection> -->
-  <exercises><title>Self-Study Exercises</title>
+ 
+  </subsection>
+     <subsection><title>Self-Study Exercises</title>
     
     <exercise label="valid-cast">
       <statement><p>
@@ -215,13 +216,13 @@
       <c>char</c>.  Determine in each of the  cases that follow whether the
      assignment statements are valid. If not, modify the statement to make
      it valid.
-     <program language="java"><input>
+     <program language="java"><code>
      m = n;        
      m = ch1;       
      ch2 = n;       
      ch1 = ch2;     
      ch1 = m - n; 
-    </input></program>
+    </code></program>
     </p></statement>
     <response></response>
   <solution><p><ul>
@@ -232,7 +233,7 @@
  <li> ch1 = (char)(m-n);</li>
   </ul></p></solution>
 </exercise>
-</exercises>
+
 </subsection>
   <subsection>
     <title>Lexical Ordering</title>

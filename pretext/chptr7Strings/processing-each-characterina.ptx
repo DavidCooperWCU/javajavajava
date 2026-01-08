@@ -26,7 +26,7 @@
     <p>
 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Precondition:  str is not null
 // Postcondition: the letters in str will have been printed
 public void printLetters(String str)
@@ -34,7 +34,7 @@ public void printLetters(String str)
   for (int k = 0; k &lt; str.length(); k++)// For each char
     System.out.println(str.charAt(k));  //  Print it
 }
- </input></program>
+ </code></program>
     <p>
       Note that our loop bound is <c>k &lt; str.length()</c>, since
       the index of the last character of any <c>String</c> is
@@ -91,7 +91,7 @@ public void printLetters(String str)
     <listing xml:id="lst-countchar">
       <caption>A method to count the occurrence of a particular
       character in a string.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 // Precondition: Neither str nor ch are null
 // Postcondition: countchar() == the number of ch in str
 public int countChar(String str, char ch)
@@ -102,7 +102,7 @@ public int countChar(String str, char ch)
       counter++;                          //   count it
   return counter;                  // Return the result
 }
- </input></program>
+ </code></program>
     </listing>
     <p>
       Begin by initializing the local variable, <c>counter</c>, to  0.
@@ -136,7 +136,7 @@ public int countChar(String str, char ch)
       That way we can just append each character,
       left to right, in the result string:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 /*
   * Pre:  s is any non null string
   * Post: s is returned in reverse order
@@ -149,7 +149,7 @@ public String reverse(String s)
     } //for
     return result.toString();
 } // reverse()
- </input></program>
+ </code></program>
     <p>
       Note that as in the other string-manipulation algorithms <mdash/> for example,
       <c>keywordSearch()</c> <mdash/> we should us a <c>StringBuffer</c> to store
@@ -180,7 +180,7 @@ public String reverse(String s)
     <p>
 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 /*
  * Pre:  s is any non null string
  * Post: s is returned with only its first letter capitalized
@@ -197,7 +197,7 @@ public String capitalize(String s)
   } //for
   return result.toString();
 } // capitalize()
- </input></program>
+ </code></program>
     <exercises>
     <title>Self-Study Exercises</title>
       <exercise label="string-processor">
@@ -211,7 +211,7 @@ public String capitalize(String s)
           </ol>
       </statement>
 
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
 
     public class StringProcessor {
 
@@ -239,9 +239,9 @@ public String capitalize(String s)
 
         } // main()
     } // StringProcessor
-    </input></program>
+    </code></program>
     <solution>
-        <program language="java"><input>
+        <program language="java"><code>
     public static String removeBlanks(String s) {
       StringBuffer sb = new StringBuffer();
       for (int k = 0; k &lt; s.length(); k++) {
@@ -251,7 +251,7 @@ public String capitalize(String s)
       }
       return sb.toString();
     }
-        </input></program>
+        </code></program>
     </solution>
     </exercise>
   </exercises>
@@ -307,10 +307,10 @@ public String capitalize(String s)
       If you want to use one of these methods to convert a string,
       you must reassign its result back to the original string:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String s = new String("hello world");
 s = s.toUpperCase(); // s now equals "HELLO WORLD"
- </input></program>
+ </code></program>
     <p>
     </p>
   </subsection>

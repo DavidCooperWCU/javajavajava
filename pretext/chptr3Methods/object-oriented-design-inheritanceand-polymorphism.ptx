@@ -52,14 +52,14 @@
     but if it is an instance of <c>OneRowNim</c>, it will return a the description of its state that we defined above.
     The following code segment illustrates this point:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 Object obj;           // obj can refer to any Object
 obj = new Student("12345");// obj refers to a Student
 System.out.println(obj.toString()); // Prints "12345"
 obj = new OneRowNim(11); // obj refers to a OneRowNim
 System.out.println(obj.toString());
 // Prints: nSticks = 11, player = 1
- </input></program>
+ </code></program>
   <p>
     In this case,
     the variable <c>obj</c> is used to refer to a

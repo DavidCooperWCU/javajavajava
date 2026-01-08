@@ -131,9 +131,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
 public class GreeterApp extends Object { ... }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -165,11 +165,11 @@ public class GreeterApp extends Object { ... }
     </p>
 
 <program language="java">
-    <input>
+    <code>
  public class JFrame extends Frame { ... }
  public class Frame extends Window { ... }
  public class Window extends Container { ... }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -229,7 +229,7 @@ public class GreeterApp extends Object { ... }
       <caption>A top-level window with a title.</caption>
 
 <program language="java">
-    <input>
+    <code>
 import javax.swing.*;
 public class SimpleGUI extends JFrame
 {
@@ -243,7 +243,7 @@ public class SimpleGUI extends JFrame
     {   new SimpleGUI("My GUI");
     } // main()
   } // SimpleGUI class
-    </input>
+    </code>
 </program>
 
     </listing>
@@ -358,7 +358,7 @@ public class SimpleGUI extends JFrame
     </p>
 
 <program language="java">
-    <input>
+    <code>
 // Declare instance variables for the components
 private JLabel prompt;
 private JTextField inField;
@@ -370,7 +370,7 @@ prompt = new JLabel("Please type your name here: ");
 inField = new JTextField(10);   // 10 chars wide
 display = new JTextArea(5, 20);// 5 rows x 20 columns
 goButton = new JButton("Click here for a greeting!");
-    </input>
+    </code>
 </program>
 
     <p>
@@ -408,11 +408,11 @@ goButton = new JButton("Click here for a greeting!");
     </p>
 
 <program language="java">
-    <input>
+    <code>
 add(Component comp)  // add comp to end of  container
 add(Component comp, int index)  // add comp at index
 add(String region, Component comp) //add comp at region
-    </input>
+    </code>
 </program>
 
     <p>
@@ -424,9 +424,9 @@ add(String region, Component comp) //add comp at region
       components are added in order:
       </p>
       <program language="java">
-        <input>
+        <code>
         setLayout(new FlowLayout(FlowLayout.LEFT));
-         </input>
+         </code>
     </program>
     
      
@@ -447,10 +447,10 @@ region, Component comp)</c> method,
     </p>
 
 <program language="java">
-    <input>
+    <code>
 Container contentPane = getContentPane(); // Get pane
 contentPane.add("Center",display); // Add JTextArea
-    </input>
+    </code>
 </program>
 
     <p>
@@ -466,13 +466,13 @@ contentPane.add("Center",display); // Add JTextArea
     </p>
 
 <program language="java">
-    <input>
+    <code>
 JPanel inputPanel = new JPanel();
 inputPanel.add(prompt);   // Add JLabel to panel
 inputPanel.add(inField);  // Add JTextField to panel
 inputPanel.add(goButton); // Add JButton to  panel
 contentPane.add("South", inputPanel); // Add to JFrame
-    </input>
+    </code>
 </program>
 
     <p>
@@ -555,10 +555,10 @@ Repeat forever or until the program is stopped
     </p>
 
 <program language="java">
-    <input>
+    <code>
 String name = inField.getText();
 display.setText("Hello " + name + "\n");
-    </input>
+    </code>
 </program>
 
     <p>
@@ -601,13 +601,13 @@ display.setText("Hello " + name + "\n");
     </p>
 
 <program language="java">
-    <input>
+    <code>
 public abstract interface ActionListener
                                 extends EventListener
 {    
   public abstract void actionPerformed(ActionEvent e);
 }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -652,13 +652,13 @@ public abstract interface ActionListener
     </p>
 
 <program language="java">
-    <input>
+    <code>
 public void actionPerformed(ActionEvent e)
 { 
   String name = inField.getText();
   display.setText("Hello " + name + "\n");
  }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -678,7 +678,7 @@ public void actionPerformed(ActionEvent e)
     </p>
 
 <program language="java">
-    <input>
+    <code>
 public class GreeterGUI extends Frame
                                implements ActionListener
 { 
@@ -700,7 +700,7 @@ public class GreeterGUI extends Frame
   }
   ...
 }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -715,9 +715,9 @@ public class GreeterGUI extends Frame
     </p>
 
 <program language="java">
-    <input>
+    <code>
 goButton.addActionListener(this)
-    </input>
+    </code>
 </program>
 
     <p>
@@ -752,7 +752,7 @@ goButton.addActionListener(this)
       <caption>Definition of the <c>GreeterGUI</c> class.</caption>
 
 <program language="java">
-    <input>
+    <code>
     import javax.swing.*;
     import java.awt.*;
     import java.awt.event.*;
@@ -797,7 +797,7 @@ goButton.addActionListener(this)
         display.setText("Hello " + name + "\n");
       } 
     }    
-    </input>
+    </code>
 </program>
     </listing>
  
@@ -878,14 +878,14 @@ goButton.addActionListener(this)
     </p>
 
 <program language="java">
-    <input>
+    <code>
 public class Main
 {  public static void main(String args[])
    {
       GreeterGUI = new GreeterGUI();
    }
 }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -893,7 +893,8 @@ public class Main
 <c>GreeterGUI</c>.       If you prefer,
       this same <c>main()</c> method can be incorporated directly into the <c>GreeterGUI</c> class.
     </p>
-    <exercises>
+    </subsection>
+     <subsection>
       <title>Self-Study Exercises</title>
       
       <exercise label="greeterGUIEx">
@@ -917,15 +918,15 @@ public class Main
               to be a an actionlistener.
   
   <program language="java">
-      <input>
+      <code>
       inField.addActionListener(this);
-      </input>
+      </code>
   </program>
   </p>
           </solution>
           </exercise>
        
-      </exercises>
+      
 
   </subsection>
 </section>

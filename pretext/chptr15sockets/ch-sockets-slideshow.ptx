@@ -14,13 +14,13 @@
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
   http://www.cs.trincoll.edu/&#126;ram/jjj/labs/ch09/slideshow/demo/demo0.gif
   http://www.cs.trincoll.edu/&#126;ram/jjj/labs/ch09/slideshow/demo/demo1.gif
   http://www.cs.trincoll.edu/&#126;ram/jjj/labs/ch09/slideshow/demo/demo2.gif
   http://www.cs.trincoll.edu/&#126;ram/jjj/labs/ch09/slideshow/demo/demo3.gif
 
-</input></program>
+</code></program>
   <!-- http://www.cs.trincoll.edu/&#126;ram/jjj/slideshow/slide0.gif
 http://www.cs.trincoll.edu/&#126;ram/jjj/slideshow/slide1.gif
 http://www.cs.trincoll.edu/&#126;ramjjj/slideshow/slide2.gif-->
@@ -38,12 +38,12 @@ http://www.cs.trincoll.edu/&#126;ramjjj/slideshow/slide2.gif-->
       It just needs to display an image every 5 seconds.
       It can use a simple <c>paint()</c> method to display an image each time it is repainted:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void paint(Graphics g) {
     if (currentImage != null)
         g.drawImage(currentImage, 10, 10, this);
 }
- </input></program>
+ </code></program>
     <p>
       The assumption here is that the <c>currentImage</c> instance variable will be set initially to <c>null</c>. Each time an image is downloaded,
       it will be set to refer to that image.
@@ -63,10 +63,10 @@ public void paint(Graphics g) {
       One way to do this is to set up a loop that does nothing for 
       about 5 seconds:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = 0; k &lt; 1000000; k++ ) 
     ;// Busy waiting
- </input></program>
+ </code></program>
     <p>
       However, this isn't a very good solution.
       As we saw in Chapter<nbsp/>14,
@@ -138,13 +138,13 @@ for (int k = 0; k &lt; 1000000; k++ )
 <c>currentImage</c>, to keep track of the current image being displayed.
       Thus, our frame needs the following instance variables:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private static final int NIMGS = 4;
 private Image[] slide = new Image[NIMGS];
 private Image currentImage = null;
 private int nextImg = 0;
 private String baseURL = "http://www.cs.trincoll.edu/~ram/jjj/labs/ch09/slideshow/demo/";
- </input></program>
+ </code></program>
 
 
     <p>
@@ -156,13 +156,13 @@ private String baseURL = "http://www.cs.trincoll.edu/~ram/jjj/labs/ch09/slidesho
       because the frame already contains all the necessary information to display the next slide.
       Thus, there's no need for information to be passed back and forth between <c>Timer</c> and this method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void nextSlide() {
     currentImage = slide[nextImg];
     nextImg = (nextImg + 1) % NIMGS;
     repaint();
  }// nextSlide()
- </input></program>
+ </code></program>
     <p>
       The method's algorithm is very simple.
       It sets
@@ -197,7 +197,7 @@ public void nextSlide() {
       downloading Web resources for an application requires the use of the <c>javax.imageio.ImageIO.read()</c> method.
       Here we just place these method calls in a loop:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k=0; k &lt; NIMGS; k++) {
   try {
     slide[k] = ImageIO.read( new URL(baseURL +  "demo" + k + ".gif"));
@@ -209,7 +209,7 @@ for (int k=0; k &lt; NIMGS; k++) {
      System.out.println("I/O Exception " + e);
   }
 }
- </input></program>
+ </code></program>
     <p>
       Note here how we convert the loop variable <em>k</em>
       into a <c>String</c> and concatenate it right into the URL specification.
@@ -229,10 +229,10 @@ for (int k=0; k &lt; NIMGS; k++) {
     <p>
       The task of starting the <c>Timer</c> thread involves creating an instance of the <c>Timer</c> class and calling its <c>start()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Thread timer = new Thread(new Timer(this));
 timer.start();
- </input></program>
+ </code></program>
     <p>
       Note that <c>Timer</c> is passed a reference to
 <c>this</c> frame.
@@ -263,7 +263,7 @@ timer.start();
     </p>
     <listing xml:id="list-slideframe">
       <caption>The <c>SlideShowFrame</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import javax.swing.*;
 import javax.imageio.ImageIO;
@@ -307,7 +307,7 @@ public class SlideShowFrame extends JFrame  {
         setVisible(true);
     }// constructor
   }// SlideShowFrame
- </input></program>
+ </code></program>
 </listing>
   </subsection>
   <subsection>
@@ -321,12 +321,12 @@ public class SlideShowFrame extends JFrame  {
 <c>SlideShowFrame.nextSlide()</c> method and then sleep for 5 seconds.
       So its main algorithm will be:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 while (true) {
     frame.nextSlide();
     sleep( 5000 );
 }
- </input></program>
+ </code></program>
     <p>
       However, recall that <c>Thread.sleep()</c> throws the
 <c>InterruptedException</c>. This means that we'll have to embed this while loop in a <c>try/catch</c> block.
@@ -346,7 +346,7 @@ while (true) {
     </p>
     <listing xml:id="list-timerthread">
       <caption>The <c>Timer</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Timer implements Runnable {
     private SlideShowFrame frame;
     public Timer( SlideShowFrame app ) {
@@ -363,7 +363,7 @@ public class Timer implements Runnable {
         }
     }// run()
   }// Timer
- </input></program>
+ </code></program>
     </listing>
   
     <activity>
@@ -372,8 +372,8 @@ public class Timer implements Runnable {
       <interactive iframe="iframe/repl-slideshow1.html" width="100%" aspect="1:1"/>
 -</statement>
     </activity>
-
-    <exercises>
+</subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
      
     <exercise label="slideshowEx"><title>Create Your Own Slideshow</title><statement>
@@ -382,11 +382,11 @@ public class Timer implements Runnable {
         numbered consecutively. You can change the code to use local files in the repl 
         instead of a URL with the following code in the loop 
         to read in the images in <c>SlideShowFrame()</c> constructor:
-        <program language="java"><input>
+        <program language="java"><code>
           // Use File for local file in replit project instead of URL
           File imageFile = new File("image" + k + ".jpg");  
           slide[k] = ImageIO.read(imageFile);
-        </input></program>
+        </code></program>
         You can change the Timer sleep amount to control the speed of the animation.
       </p>
       <interactive iframe="iframe/repl-slideshow1.html" width="100%" aspect="1:1"/>
@@ -413,12 +413,12 @@ public class Timer implements Runnable {
           <solution>
             <p>
               To play sounds along with slides in the <c>SlideShowFrame</c>, you would make the following modifications to the code:
-   <program language="java"><input>
+   <program language="java"><code>
   private Clip soundClip[] = new Clip[NIMGS];
   private Clip currentClip = null;
-   </input></program>Declare an array of <c>URL</c> s to store the URLs of the audio files you want to play.
+   </code></program>Declare an array of <c>URL</c> s to store the URLs of the audio files you want to play.
               Assign Clips to the array at the same time you input the images:
-   <program language="java"><input>
+   <program language="java"><code>
   for (int k=0; k &lt; NIMGS; k++) {
     url =
      new URL( "http://www.cs.trincoll.edu/&#126;ram/jjj/slide" +
@@ -433,9 +433,9 @@ public class Timer implements Runnable {
                  audio.getFormat());
     soundClip[k] = (Clip) AudioSystem.getLine(info);
   }
-   </input></program>
+   </code></program>
    Change the nextSlide() code to the following
-   <program language="java"><input>
+   <program language="java"><code>
   public void nextSlide() {
       currentClip.stop(); // stop sound playback
       currentClip = soundClip[nextImg]; // get next soundClip
@@ -444,19 +444,19 @@ public class Timer implements Runnable {
       nextImg = ( nextImg + 1) % NIMGS;
       repaint ();
     }
-   </input></program>Each time an image is displayed in <c>paint()</c>, play the corresponding sound by using the URL from the array:
-   <program language="java"><input>
+   </code></program>Each time an image is displayed in <c>paint()</c>, play the corresponding sound by using the URL from the array:
+   <program language="java"><code>
   public void paint(Graphics g) {
       if (currentImage != null) {
           g.drawImage(currentImage,10,10,this);
           currentClip.start();
       }
     }
-   </input></program>
+   </code></program>
             </p>
           </solution>
           </exercise>
-        </exercises>
+        
         
   </subsection>
 </section>

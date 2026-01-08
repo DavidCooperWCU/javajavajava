@@ -14,7 +14,7 @@
           Explain the difference between each of the following pairs of terms.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>data structure</em></premise>
@@ -82,7 +82,7 @@
 	  object as well as methods for accessing properties such as
 	  the pixel width of a particular letter.</response>
 	</match>
-      </matches>
+      </cardsort>
     </exercise>
 
     <exercisegroup>
@@ -176,11 +176,11 @@
                 the first
                 <q>to</q>
                 in the string
- <program language="java"><input>
+ <program language="java"><code>
 str.substring(0, 2)                            // Answer 1
 str.substring(
      str.indexOf("to"), str.indexOf("to") + 2) // Answer 2
- </input></program>
+ </code></program>
               </p>
             </statement>       
  <response />       
@@ -374,7 +374,7 @@ str.substring(
     fashion, you should test it. Here's a simple application
     program that you can use for this purpose:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 public class MethodTester {
     public static String repeat(String s) {
         return s + s;
@@ -383,7 +383,7 @@ public class MethodTester {
         System.out.println("Yo repeated is " + repeat("Yo"));
     }
 }
-</input></program>
+</code></program>
     <p>
         Just replace
         the <c> repeat()</c> method with your method. Note that
@@ -401,7 +401,7 @@ public class MethodTester {
         </p>
       </statement>       
  <program label="jstx_eq_no_case_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -410,7 +410,7 @@ public class MethodTester {
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -424,7 +424,7 @@ public class MethodTester {
         </p>
       </statement>       
  <program label="jstx_str_eq_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -433,7 +433,7 @@ public class MethodTester {
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -449,7 +449,7 @@ public class MethodTester {
         </p>
       </statement>       
  <program label="jstx_str_lower_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -458,7 +458,7 @@ public class MethodTester {
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -478,7 +478,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
         </p>
       </statement>       
  <program label="jstx_five_blocks_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -487,7 +487,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -508,7 +508,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
         </p>
       </statement>       
  <program label="jstx_analyze_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static double[] analyze(String s) {
 		    return null;
@@ -518,7 +518,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
 		           "fox jumped over the lackadaisical zebra!");
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -541,7 +541,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
         </p>
       </statement>       
  <program label="jstx_wordify_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String wordify(String s) {
 		    return s;
@@ -551,7 +551,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
 		                       wordify("1 2 3 4"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -576,7 +576,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
         </p>
       </statement>       
  <program label="jstx_palindrome_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static boolean isPalindrome(String s) {
 		    return false;
@@ -586,7 +586,7 @@ Blocked : Thisi showw ewoul dordi naril ywrit easen tence.
 		                        isPalindrome("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -613,7 +613,7 @@ XXXXXXXX X
         </p>
       </statement>       
  <program label="jstx_maze_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -622,7 +622,7 @@ XXXXXXXX X
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -640,7 +640,7 @@ XXXXXXXX X
         </p>
       </statement>       
  <program label="jstx_mailing_label_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -649,7 +649,7 @@ XXXXXXXX X
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -677,7 +677,7 @@ XXXXXXXX X
         </p>
     </statement>       
  <program label="jstx_time_bomb_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String disclose(String guessed, String
 		                              secret, char guess) {
@@ -688,7 +688,7 @@ XXXXXXXX X
 		    disclose("*****","hello",'e'));
 		}
 	    }
-</input>
+</code>
 </program>    
        
  </exercise>
@@ -713,7 +713,7 @@ XXXXXXXX X
         </p>
     </statement>       
  <program label="jstx_global_replace_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class MethodTester {
 		public static String repeat(String s) {
 		    return s + s;
@@ -722,7 +722,7 @@ XXXXXXXX X
 		    System.out.println("Yo repeated is " + repeat("Yo"));
 		}
 	    }
-</input>
+</code>
  </program>
  
        
@@ -745,13 +745,13 @@ XXXXXXXX X
         </p>
     </statement>       
  <program label="jstx_secret_letter_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class ComputerGuesser {
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
        
     </exercise>
@@ -765,7 +765,7 @@ XXXXXXXX X
           Design a <c>List</c> class that uses a comma-delimited <c>String</c> <mdash/> such as,
           <q>a,b,c,d,12,dog</q> <mdash/> to implement a list.
           Implement the following methods for this class:
- <program language="java"><input>
+ <program language="java"><code>
 void addItem( Object o );      // Use Object.toString()
 String getItem(int position);
 String toString();
@@ -775,17 +775,17 @@ int getPosition(String item);
 String getHead();              // First element
 List getTail();                // All but the first element
 int length();                  // Number of items
- </input></program>
+ </code></program>
         </p>
     </statement>       
  <program label="jstx_list_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class List {
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>           
  </exercise>
     <exercise label="jstx_code_string_backed_directory">
@@ -806,13 +806,13 @@ mom:860-192-9876::bill g:654-0987-1234::mary lancelot:123-842-1100
         </p>
       </statement>       
   <program label="jstx_phone_list_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class PhoneList {
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>          
  </exercise>
       <exercise label="jstx_code_message_display">

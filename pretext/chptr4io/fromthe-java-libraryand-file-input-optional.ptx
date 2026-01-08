@@ -50,9 +50,9 @@
     </p>
 
 <program language="java">
-    <input>
+    <code>
 File theFile = new File("riddles.txt");
-    </input>
+    </code>
 </program>
 
    
@@ -74,7 +74,7 @@ File theFile = new File("riddles.txt");
     </figure>
 
 <program language="java">
-    <input>
+    <code>
 try
 {   
   File theFile = new File("riddles.txt");
@@ -86,7 +86,7 @@ catch (IOException e)
   e.printStackTrace();
 
 } //catch()
-    </input>
+    </code>
 </program>
 
     <p>
@@ -118,7 +118,7 @@ catch (IOException e)
       <caption>A program which reads riddles from a file and displays them.</caption>
 
 <program language="java">
-    <input>
+    <code>
 import java.io.*;
 import java.util.Scanner;
 public class RiddleFileReader
@@ -163,7 +163,7 @@ public class RiddleFileReader
        } // while
    } //main()
 }  //RiddleFileReader class
-    </input>
+    </code>
 </program>
     </listing>
    
@@ -172,11 +172,11 @@ public class RiddleFileReader
   a value when they are declared. 
 </p>
 <program language="java">
-    <input>
+    <code>
 String ques = null;
 String ans = null;
 Riddle theRiddle = null;
-    </input>
+    </code>
 </program>
 
     <p>
@@ -186,14 +186,14 @@ Riddle theRiddle = null;
     </p>
 
 <program language="java">
-    <input>
+    <code>
 if (fileScan.hasNext())
     ques = fileScan.next();
 if (fileScan.hasNext())
 {   ans =  fileScan.next();
     theRiddle = new Riddle(ques, ans);
 }
-    </input>
+    </code>
 </program>
 
     <p>
@@ -230,7 +230,8 @@ Input any letter to see answer:
       Files are covered in depth in Chapter<nbsp/>11.
       Information on writing data to a file and reading data from a file without using the <c>Scanner</c> class can be found in that chapter.
     </p>
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises</title>
       <exercise label="numberFileEx">
         <title>NumberFileReader</title>
@@ -250,7 +251,7 @@ Input any letter to see answer:
               Java code that prints out the sum of the squares of a set of integers read from a file named "numbers.txt":
   
   <program language="java">
-      <input>
+      <code>
   import java.io.*;
   import java.util.Scanner;
   public class NumberFileReader
@@ -278,11 +279,11 @@ Input any letter to see answer:
           nfr.readNumbers()
       } //main()
   }  //NumberFileReader
-      </input>
+      </code>
   </program></p>
           </solution>
         </exercise>
-        </exercises>
+       
 
   </subsection>
 </section>

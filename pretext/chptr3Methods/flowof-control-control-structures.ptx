@@ -11,12 +11,12 @@
     <p>
       A second problem is with the definition of <c>takeSticks()</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
   public void takeSticks(int num)
   {   nSticks - num;
       player = 3 - player;
   }
- </input></program>
+ </code></program>
     <p>
       It is possible to call this method with an argument greater than 3 or less than 1.
       The call <c>game.takeSticks(5)</c> will remove 5 sticks even though the rules of One Row Nim say that you must remove 1, 2, or 3.
@@ -42,10 +42,10 @@
         The <term>if statement</term><idx><h>if statement</h></idx> has the following syntax:
       </p>
       <p>
-        <program language="java"><input>
+        <program language="java"><code>
         if (boolean expression) 
             contained statement;
-      </input></program>
+      </code></program>
       </p>
     </principle>
     <p>
@@ -60,24 +60,24 @@
       the following are examples of valid if statements.   For readability,
       we usually write an if statement with its contained statement indented on the next line:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (true) 
    System.out.println("Hello");
 if (nSticks &lt;= 0) 
    System.out.println("game is over");
- </input></program>
+ </code></program>
     
     
     <p>
       The following are all examples of syntax errors involving the if statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if true                   // Parentheses are missing
    System.out.println("Hello");
 if (nSticks &lt;= 0) return   // Semicolon missing
 if ("true") return;  // "true" is not a boolean
 if (true) "Hello";    // "Hello" is  not a statement
- </input></program>
+ </code></program>
     <p>
       Semantically, the if statement
       has the following interpretation: First,
@@ -99,7 +99,7 @@ if (true) "Hello";    // "Hello" is  not a statement
     <activity label="ifRainEx">
       <statement><p>Try the following code. Try changing the boolean isRaining to <c>false</c> and run again. 
         What does it print out? Trace through the code with Show CodeLens.</p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
       public class RainMonitor
       {
          public static void main(String[] args)
@@ -110,7 +110,7 @@ if (true) "Hello";    // "Hello" is  not a statement
            System.out.println("Drive carefully");
          }
       }
-     </input>
+     </code>
      <tests>
       import static org.junit.Assert.*;
       import org.junit.*;
@@ -152,7 +152,7 @@ if (true) "Hello";    // "Hello" is  not a statement
       <p>As another example,
       consider the definition of a <c>getPlayerString()</c> method for the <c>OneRowNim</c> class. 
 </p>    
- <program language="java"><input>
+ <program language="java"><code>
 public String getPlayerString()
 {
   if (player == 1)
@@ -161,7 +161,7 @@ public String getPlayerString()
     return "Player Two"; // Exit the method
   return "Player error";   // Exit the method
 }
- </input></program>
+ </code></program>
 
 
 
@@ -197,7 +197,7 @@ public String getPlayerString()
     <activity label="ifNumEx">
       <statement><p>Run the following active code a couple times until you see all the possible outputs. It prints out whether a random number is positive or equal to 0. Add another if statement that tests if it is a negative number.
       </p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
     public class TestNumbers
     {
        public static void main(String[] args)
@@ -221,7 +221,7 @@ public String getPlayerString()
     
        }
     }
-  </input>
+  </code>
    </program>
     </activity>
     </subsection>
@@ -229,7 +229,7 @@ public String getPlayerString()
     <p>
       The following example shows the more common case where the statement contained in an if statement can be a compound statement: 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (player == 1)
 {   
     String s = "Player One";
@@ -237,7 +237,7 @@ if (player == 1)
     System.out.println(" plays next");
     System.out.println("The game is not over");
 }
- </input></program>
+ </code></program>
     <p>
       If <c>player == 1</c> is true,
       then all four statements in the contained compound statement will be executed.
@@ -259,11 +259,11 @@ if (player == 1)
       For example,
       the following if statement still has only one statement in its if clause:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (condition1)
    System.out.println("One");
    System.out.println("Two"); //Not part of if statement
- </input></program>
+ </code></program>
     <p>
       This segment will always print
       <q>Two</q>
@@ -271,12 +271,12 @@ if (condition1)
       To include it in the if statement,
       you must enclose both <c>println()</c> statements within braces:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (condition1)
 {  System.out.println("One");
    System.out.println("Two");
 }
- </input></program>
+ </code></program>
     
   </subsection>
   
@@ -290,12 +290,12 @@ if (condition1)
       as the result of one boolean expression.
       For example, the statement
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (player == 1)
     System.out.println("Player One");
 else
     System.out.println("Player Two");
- </input></program>
+ </code></program>
     <p>
       will print
       <q>Player One</q>
@@ -310,12 +310,12 @@ else
         has the following syntax:
       </p>
       <p>
-        <program language="java"><input>
+        <program language="java"><code>
         if (boolean expression) 
            statement1;       
         else
            statement2; 
-           </input></program>
+           </code></program>
       </p>
     </principle>
     <p>
@@ -388,7 +388,7 @@ else
       It prints out the English word for a random number between 0-2. 
       Change the random range to 4 and add another if statement to print out "three".
     </p></statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
   public class PrintNumbers
   {
      public static void main(String[] args)
@@ -407,7 +407,7 @@ else
             System.out.println("Error: Unknown value");
      }
   }
- </input></program>
+ </code></program>
     </activity>
     <p>
       Note that the multiway structure has a single entry point and that only one of the four possible alternatives is  executed.
@@ -418,13 +418,13 @@ else
       Although it does not represent a significant change,
       we could rewrite our <c>takeStick()</c> method to make use of the if-else instead of the somewhat obscure statement :
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 player = 3 - player;
- </input></program>
+ </code></program>
     <p>
       to change the value of player from <m>1</m> to <m>2</m> or vice versa:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String takeSticks(int num)
 {   
   nSticks = nSticks - num;
@@ -433,7 +433,7 @@ public String takeSticks(int num)
   else
     player = 1;   // From 2 to 1
   }
- </input></program>
+ </code></program>
     <p>
       In some respects this version of <c>takeSticks()</c> involves four lines of code instead of one but is simpler to understand.
       The <c>if</c>-statement tests whether the value of <c>player</c> is <m>1</m>.
@@ -443,8 +443,8 @@ public String takeSticks(int num)
       Both versions of the code will give precisely the same result,
       a programmer could choose to write the code either way.
     </p>
-   
-   <exercises><title>Self-Study Exercises</title>
+   </subsection>
+   <subsection><title>Self-Study Exercises</title>
        
     <exercise label="ifFlowChartEx">
       <title>Flow Chart</title>
@@ -452,7 +452,7 @@ public String takeSticks(int num)
     <p>
             Consider the following method with
 <c>boolean</c> parameter.
- <program language="java"><input>
+ <program language="java"><code>
 public String getStatus(boolean isDone)
 {   
   if (isDone)
@@ -460,7 +460,7 @@ public String getStatus(boolean isDone)
    else
         return "Not Done";
  }
- </input></program>
+ </code></program>
  Draw a flowchart for the if-else version of the <c>getStatus()</c> method,
             using the figures in this section as a guide.
             The if-else structure should be drawn exactly as shown in <xref ref="fig-ifelsechart">Figure</xref>.
@@ -490,7 +490,7 @@ public String getStatus(boolean isDone)
           <title>If Debug</title>
           <statement><p> Identify the errors in the following statements and fix them in the activecode below.
           </p></statement>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
             public class PrintHeavyLight
             {
                public static void main(String[] args)
@@ -508,9 +508,9 @@ public String getStatus(boolean isDone)
                       System.out.println("Short");
                }
               }
- </input></program>
+ </code></program>
  <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     if (isHeavy == true)
          System.out.println("Heavy") ;
     else ;  // Error (remove this semicolon)
@@ -519,7 +519,7 @@ public String getStatus(boolean isDone)
          System.out.println("Long")
     else   // Error (end line above with semicolon)
          System.out.println("Short");
-     </input></program>
+     </code></program>
  </solution>
   </exercise>        
   
@@ -533,7 +533,7 @@ public String getStatus(boolean isDone)
               <q>Error</q>
               when the value of <c>player</c> is respectively 1, 2, 3, or any other value.
             </p></statement>
-            <program language="java" interactive="activecode"><input>
+            <program language="java" interactive="activecode"><code>
               public class Game
               {
                  private int player = 1;
@@ -563,8 +563,8 @@ public String getStatus(boolean isDone)
                     System.out.println("Is there a player 4? " + g.getPlayerName(); 
                  }
                 }
-   </input></program>
-   <solution> <program language="java"><input>
+   </code></program>
+   <solution> <program language="java"><code>
     public String getPlayerName()
     {    if (player == 1)
              return "Ann";
@@ -575,9 +575,9 @@ public String getStatus(boolean isDone)
          else
              return "Error";
     }
-     </input></program></solution>
+     </code></program></solution>
         </exercise>
-  </exercises>
+ 
   </subsection>
 
   <subsection xml:id="while-loops">
@@ -624,7 +624,7 @@ public String getStatus(boolean isDone)
         Click on the CodeLens button to trace through it. 
         Change the main method to change num and run again.
       </p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
   public class Sum
   {
     public int sumSquares(int max)
@@ -644,7 +644,7 @@ public String getStatus(boolean isDone)
        System.out.println( "The sumSquares of " + num + " is " +  s.sumSquares(num) );
     }
   }
- </input></program>
+ </code></program>
  </activity>
     <p>
       Note that in this example,
@@ -665,12 +665,12 @@ public String getStatus(boolean isDone)
         The <term>while statement</term> has the following syntax:
       </p>
       <p>
-        <program language="java"><input>
+        <program language="java"><code>
           while ( loop entry condition ) 
            {
               loop body; 
            }
-          </input></program>
+          </code></program>
       </p>
     </principle>
  
@@ -702,13 +702,13 @@ public String getStatus(boolean isDone)
           <idx><h>while structure</h></idx>
       would take the following form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 InitializerStatements;         // Initializer
 while (loop entry condition) { // Bound test
      Statements;                // Loop body
      UpdaterStatements;         // Updater
 }
- </input></program>
+ </code></program>
     <p>
       As its form suggests,
       the while structure is designed so that on some conditions the loop body will never be executed.
@@ -736,8 +736,8 @@ while (loop entry condition) { // Bound test
       The semantics of the while structure are shown in <xref ref="fig-whileflow">Figure</xref>.
     </p>
   
-  
-<exercises><title>While Loop Self-Study Exercises</title>
+</subsection>  
+<subsection><title>While Loop Self-Study Exercises</title>
      
  <p> Modify the definition of the
 <c>sumSquares()</c> method to define a method named <c>sumCubes()</c> that sums the cubes of integers 
@@ -753,7 +753,7 @@ Thus the method call <c>sumCubes(2,3)</c> should return <m>35</m> since <m>2*2*2
         <c>sumCubes(min, max)</c> that sums the cubes of integers 
         from a minimum value up to a maximum value and returns that sum. 
       </p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
   public class SumC
   {
     public int sumSquares(int max)
@@ -781,9 +781,9 @@ Thus the method call <c>sumCubes(2,3)</c> should return <m>35</m> since <m>2*2*2
        System.out.println( "The sumCubes of 2 to 3 should be 35. Your method returns: " + s.sumCubes(2,3) );
     }
   }
- </input></program>
+ </code></program>
  <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     public int sumCubes(int min, int max)
     {
         int num = min;
@@ -795,10 +795,10 @@ Thus the method call <c>sumCubes(2,3)</c> should return <m>35</m> since <m>2*2*2
         } //while
         return sum;           // Return the sum
     }
-     </input></program>
+     </code></program>
           
  </solution>
 </exercise>
-</exercises>
+
   </subsection>
 </section>

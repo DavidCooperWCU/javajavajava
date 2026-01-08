@@ -42,18 +42,18 @@ Year 8  37,926.96   41,085.02   44,505.94   48,211.60
       the outer loop can iterate seven times,
       through the values 2, 3, \dots 8   :
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int years = 2; years &lt;= 8; years++)
- </input></program>
+ </code></program>
     <p>
       The inner loop should iterate through each of the interest rates, 8 through 11:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int years = 2; years &lt;= 8; years++) {
    for (int rate = 8; rate &lt;= 11; rate++) {
    } // for 
 } // for years
- </input></program>
+ </code></program>
     <p>
       The financing calculation should be placed in the body of the inner loop together 
       with a statement to print one cell
@@ -63,11 +63,11 @@ for (int years = 2; years &lt;= 8; years++) {
       in the formula is <c>carPriceWithLoan</c>, and the variable we use for the 
       actual price of the car is <c>carPrice</c>. Then our inner loop body is
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 carPriceWithLoan = carPrice *
      Math.pow(1 + rate/100.0/365.0, years * 365.0);
 System.out.print(dollars.format(carPriceWithLoan) +"\t");
- </input></program>
+ </code></program>
     <p>
       Note that the rate is divided by both 100.0
       (to make it a percentage)
@@ -92,7 +92,7 @@ System.out.print(dollars.format(carPriceWithLoan) +"\t");
     </p>
     <figure xml:id="fig-carloan">
       <caption>The <c>CarLoan</c> application.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.text.NumberFormat;   // For formatting $nn.dd or n%
 public class CarLoan {
   public static void main(String args[]) {
@@ -116,12 +116,12 @@ public class CarLoan {
       System.out.println();                     // Start a new row
     } // for years
   } // main()} // CarLoan
- </input></program>
+ </code></program>
     </figure>
 
 <activity label="carloan">
       <statement><p>Try running the car loan program below. Change the amount of the loan and the interest rates in main and try it again.</p></statement>
-      <program language="java"  interactive="activecode"><input>
+      <program language="java"  interactive="activecode"><code>
         import java.text.NumberFormat;   // For formatting $nn.dd or n%
         public class CarLoan {
           public static void main(String args[]) {
@@ -145,7 +145,7 @@ public class CarLoan {
               System.out.println();                     // Start a new row
             } // for years
           } // main()} // CarLoan
-         </input></program>    
+         </code></program>    
     </activity>
   </subsection>
 </section>

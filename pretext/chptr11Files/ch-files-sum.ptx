@@ -168,12 +168,12 @@
         <p>
           Because <c>FileWriter</c> contains a constructor that takes a file name argument, <c>FileWriter(String)</c>, it can be used with
 <c>PrintWriter</c> to perform output to a text file:
- <program language="java"><input>
+ <program language="java"><code>
 PrintWriter outStream =     //  Create output stream
     new PrintWriter(new FileWriter(fileName)); // Open file
 outStream.print (display.getText());// Display text
 outStream.close();                  // Close output stream
- </input></program>
+ </code></program>
         </p>
       </li>
       <li>
@@ -193,7 +193,7 @@ outStream.close();                  // Close output stream
       </li>
       <li>
         <p>
-           <program language="java"><input>
+           <program language="java"><code>
 public void getFileAttributes(String fileName) {
     File file = new File (fileName);
     System.out.println(filename);
@@ -204,7 +204,7 @@ public void getFileAttributes(String fileName) {
         System.out.println("Directory");
     else
         System.out.println("Not a Directory");} // getFileAttributes()
- </input></program>
+ </code></program>
         </p>
       </li>
       <li>

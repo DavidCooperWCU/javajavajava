@@ -92,7 +92,7 @@
     </p>
    <listing xml:id="listing-stackadt">
       <caption>The <c>Stack</c>ADT.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Stack extends List {
      public Stack() {
          super();          // Initialize the list
@@ -104,7 +104,7 @@ public class Stack extends List {
          return removeFirst();
      }
 } // Stack
- </input></program>
+ </code></program>
     </listing>
     <p>
       Do we have to make any changes to the <c>List</c> class in order to use it this way?
@@ -136,8 +136,8 @@ public class Stack extends List {
         Use <c>public</c> to define the ADT's interface.
       </p>
     </principle>
-    
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
         <exercise label="stack-reversestr">
     <title>Stack Reverse String</title>
@@ -149,7 +149,7 @@ public class Stack extends List {
             constructor has been deprecated. To create a <c>Character</c> object,
             you can use the static method <c>Character.valueOf(char)</c> instead.)
           </p>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
 public class Stack extends List {
     public Stack() {
         super(); // Initialize the list
@@ -240,7 +240,7 @@ class List {
         return current.getData();
     } // removeLast()
 } // List
-</input></program>
+</code></program>
       </statement>
       <hint>
       <p>Your algorithm should loop through the string pushing each character onto the stack.
@@ -249,7 +249,7 @@ class List {
       </p>
       </hint>
       <solution>
-<program language="java"><input>
+<program language="java"><code>
     public static void main(String argv[]) {
         Stack stack = new Stack();
         String string = "Hello this is a test string";
@@ -264,7 +264,7 @@ class List {
         }
         System.out.println("Reversed String: " + reversed);
     } // main()
-</input></program>
+</code></program>
       </solution>
     </exercise>
     <exercise label="stack-peek">
@@ -281,14 +281,14 @@ class List {
       <solution>
         <p>
           The <c>peek()</c> method should just return the first node without deleting it:
- <program language="java"><input>
+ <program language="java"><code>
 public Object peek() {
      return head;
 }
- </input></program>
+ </code></program>
         </p>
       </solution>
     </exercise>    
- </exercises>
+ 
   </subsection>
 </section>

@@ -193,7 +193,7 @@
     <listing xml:id="fig-intfieldprog">
       <caption>A <c>NumberFormatException</c> might be thrown by
       the <c>Integer.parseInt()</c> method in  <c>IntField.getInt()</c>.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 public class IntField extends JTextField {
     public IntField () {
@@ -206,7 +206,7 @@ public class IntField extends JTextField {
         return Integer.parseInt(getText());
     } // getInt()
   } // IntField
- </input></program>
+ </code></program>
 </listing>
     <p>
       Note that the constructor methods use <c>super</c> to call the
@@ -239,7 +239,7 @@ public class IntField extends JTextField {
       the calling method is likely to be an <c>actionPerformed()</c> method,
       such as the following:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void actionPerformed(ActionEvent e) {
   try {
     userInt = intField.getInt();
@@ -251,7 +251,7 @@ public void actionPerformed(ActionEvent e) {
       repaint();
   }
 } // actionPerformed()
- </input></program>
+ </code></program>
     <p>
       The call to <c>getInt()</c> is embedded in a <c>try/catch</c> block.
       This leads to the design summarized in <xref ref="fig-numformat-exception">Figure</xref>.
@@ -337,9 +337,9 @@ public void actionPerformed(ActionEvent e) {
       <q>on the fly.</q>
       Suppose you have a program that contains an array of <c>String</c> s, which is initially created with just two elements.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String list[] = new String[2];
- </input></program> 
+ </code></program> 
     <p>
       If an attempt is made to add more than two elements to the array,
       an <c>ArrayIndexOutOfBoundsException</c> will be raised.
@@ -356,13 +356,13 @@ String list[] = new String[2];
       So, we are creating a <c>void</c> method with one parameter,
       the <c>String</c> to be inserted:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void insertString(String str) {
      // Might throw ArrayIndexOutOfBoundsException
     list[count] = str;
     ++count;
   }
- </input></program>
+ </code></program>
     <p>
       The comment notes where an exception might be thrown.
     </p>
@@ -377,7 +377,7 @@ private void insertString(String str) {
       so that it points to the new array.
       Thus, we could use the following <c>try/catch</c> block to handle this exception:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void insertString(String str) {
     try {
         list[count] = str;
@@ -392,7 +392,7 @@ private void insertString(String str) {
         count++;        // Increase the count
     }
   } // insertString()
- </input></program>
+ </code></program>
     <p>
       The effect of the <c>catch</c> clause is to create a new array,
       still referred to as <c>list</c>, but that contains one more element than the original array.
@@ -448,7 +448,7 @@ private void insertString(String str) {
       <caption><c>FixArrayBound</c> increases the size of the array when
       a <c>ArrayIndexOutOfBoundsException</c> is raised.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -503,7 +503,7 @@ public static void main( String args[] ) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
     } // main()
   } // FixArrayBound
- </input></program>
+ </code></program>
 </listing>
     <p>
       Unfortunately, this is not a well-designed program.

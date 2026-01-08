@@ -19,7 +19,7 @@
 	  Thread concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>blocked</em></premise>
@@ -94,7 +94,7 @@
           <response>a part of code that should be executed in a mutually exclusive manner by a group of threads.</response>
 	</match>
 
-      </matches>
+      </cardsort>
       </exercise>
 
          <exercisegroup>

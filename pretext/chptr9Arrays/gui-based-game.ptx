@@ -97,9 +97,9 @@
       a <c>String</c> representing the user's move to the game and receive in 
       return a <c>String</c> representing the game object's response to the move:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 submitUserMove(String move): String;
- </input></program>
+ </code></program>
     <p>
       In addition to this method,
       a GUI interface could use the <c>reportGameState()</c> 
@@ -107,11 +107,11 @@ submitUserMove(String move): String;
       The design shown in <xref ref="fig-GUIplayable">Figure</xref> leads to the following 
       definition for the <c>GUIPlayableGame</c> interface:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public interface GUIPlayableGame extends IGame {
     public String submitUserMove(String theMove);
 }
- </input></program>
+ </code></program>
     <p>
       Because it extends <c>IGame</c>, this interface inherits the
       <c>getGamePrompt()</c> and <c>reportGameState()</c> from the <c>IGame</c> interface.
@@ -140,11 +140,11 @@ public interface GUIPlayableGame extends IGame {
       track of where the blank space is in the array.
       This leads to the following class-level declarations:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  private char puzzle[] = {'R','R','R',' ','L','L','L'};
  private String solution = "LLL RRR";
  private int blankAt = 3;
- </input></program>
+ </code></program>
     <p>
       Note how we initialize the <c>puzzle</c> array with the initial configuration 
       of seven characters.
@@ -154,24 +154,24 @@ public interface GUIPlayableGame extends IGame {
       Because a puzzle is a one-person game and our sliding tile puzzle will be played by a human,
       this leads to a very simple constructor definition:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public SlidingTilePuzzle() {
      super(1);
 }
- </input></program>
+ </code></program>
     <p>
       We call the <c>super()</c> constructor (<c>ComputerGame()</c>) to create a one-person game.
     </p>
     <p>
       The puzzle's state needs to be communicated to the GUI as a <c>String</c>. This is the purpose of the <c>reportGameState()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String reportGameState() {
      StringBuffer sb = new StringBuffer();
      sb.append(puzzle);
      return sb.toString();
  }
- </input></program>
+ </code></program>
     <p>
       We use a <c>StringBuffer()</c> to convert the puzzle,
       a <c>char</c> array,
@@ -180,7 +180,7 @@ public String reportGameState() {
     <p>
       The most important method for communicating with the GUI is the <c>submitUserMove()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String submitUserMove(String usermove) {
   int tile = Integer.parseInt(usermove);
   char ch = puzzle[tile];
@@ -192,7 +192,7 @@ public String submitUserMove(String usermove) {
     return "That's an illegal move.\n";
   return "That move is legal.\n";
 }
- </input></program>
+ </code></program>
     <p>
       This is the method that processes the user's move,
       which is communicated through the GUI. As we saw,
@@ -230,7 +230,7 @@ public String submitUserMove(String usermove) {
     </p>
     <listing xml:id="lst-puzzlecode">
       <caption>Implementation of the <c>SlidingTilePuzzle</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class SlidingTilePuzzle extends ComputerGame
                             implements GUIPlayableGame {
   private char puzzle[] = {'R','R','R',' ','L','L','L'};
@@ -275,7 +275,7 @@ public class SlidingTilePuzzle extends ComputerGame
     blankAt = ti;   // Reset the blank
   }
 } //SlidingTilePuzzle
- </input></program>
+ </code></program>
     </listing>
 </subsection>
 <subsection xml:id="sec-slidingGUI">
@@ -319,15 +319,15 @@ public class SlidingTilePuzzle extends ComputerGame
       Note how an instance of the <c>SlidingTilePuzzle</c> is created in the constructor,
       and how its state is retrieved and stored in the <c>puzzleState</c> variable:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 puzzleState = sliding.reportGameState();
- </input></program>
+ </code></program>
     <p>
       The <c>labelButtons()</c> method transfers the letters in <c>puzzleState</c> onto the buttons.
     </p>
     <listing xml:id="lst-GUIsource">
       <caption>Implementation of the <c>SlidingGUI</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -391,7 +391,7 @@ public class SlidingGUI extends JFrame implements ActionListener {
     new SlidingGUI("Sliding Tile Puzzle");
   } // main()
 } // SlidingGUI
- </input></program>
+ </code></program>
     </listing>
     <p>
       The most important method in the GUI is the <c>actionPerformed()</c> method.
@@ -409,10 +409,10 @@ public class SlidingGUI extends JFrame implements ActionListener {
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (e.getSource() == tile[k])
   result = ((GUIPlayableGame)sliding).submitUserMove(""+ k);
- </input></program>
+ </code></program>
     <p>
       The cast operation is necessary here because we declared
       <c>sliding</c> as a <c>SlidingTilePuzzle</c> rather than as 
@@ -425,10 +425,10 @@ if (e.getSource() == tile[k])
       If <c>result</c> contains the word
       <q>illegal</q>, the computer beeps to signal an error:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (result.indexOf("illegal") != -1)
     java.awt.Toolkit.getDefaultToolkit().beep();
- </input></program>
+ </code></program>
     <p>
       The <c>java.awt.Toolkit</c> is a class that contains lots of useful methods,
       including the <c>beep()</c> method.
@@ -441,9 +441,9 @@ if (result.indexOf("illegal") != -1)
       Finally, the <c>main()</c> for a GUI is very simple,
       consisting of a single line of code:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 new SlidingGUI("Sliding Tile Puzzle");
- </input></program>
+ </code></program>
     <p>
       Once a <c>SlidingGUI</c> is created,
       with the title of

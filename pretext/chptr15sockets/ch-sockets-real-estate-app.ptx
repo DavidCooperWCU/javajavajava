@@ -73,7 +73,7 @@ colonial
       regardless of whether it's a text file, image file, audio file,
       or whatever, you would use the following general algorithm:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 InputStream data;
 try {
     URL url = new URL(fileURL);          // Create a URL
@@ -85,7 +85,7 @@ try {
   }   catch( IOException e ) {
     System.out.println(e.getMessage()); // Thrown by openStream()
   }
- </input></program>
+ </code></program>
     <p>
       The algorithm consists of four basic steps:
       <ul>
@@ -133,7 +133,7 @@ try {
 <c>readLine()</c> method that returns either a <c>String</c> storing the line or the value <c>null</c> when it reaches the end of file.
       The following method shows how you would read a text file into the program's <c>JTextArea</c>, which is named <c>display</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void readTextIntoDisplay(URL url)
                                      throws IOException {
   BufferedReader data
@@ -147,7 +147,7 @@ private void readTextIntoDisplay(URL url)
   }
   data.close();
 }// readTextIntoDisplay()
- </input></program>
+ </code></program>
     <p>
       The method is passed the file's URL and it uses the
 <c>URL.openStream()</c> method to open the input stream.
@@ -160,13 +160,13 @@ private void readTextIntoDisplay(URL url)
       For example,
       if we use a <c>JComboBox</c> menu named <c>homeChoice</c>, we would simply add each line to it:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String line = data.readLine();
 while (line != null) {
     homeChoice.addItem(line);
     line = data.readLine();
   }
- </input></program>
+ </code></program>
   </subsection>
   <subsection>  
     <title>Interface Design</title>
@@ -227,9 +227,9 @@ while (line != null) {
       <!-- <p>The constants used by this application include the URL string for the data file.
       Also, because all the images and data files will start with the same prefix,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 http://java.trincoll.edu/&#126;jjjava/homes/
- </input></program> 
+ </code></program> 
     <p>
       we should make this a constant in the program. -->
 <p>
@@ -239,7 +239,7 @@ http://java.trincoll.edu/&#126;jjjava/homes/
     </p>
     <listing xml:id="list-realviewer1">
       <caption>The <c>RealEstateViewer</c>, Version 1.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import java.net.*;
@@ -266,7 +266,7 @@ public class RealEstateViewer extends JFrame
     viewer.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }// main()
 }// RealEstateViewer
- </input></program>
+ </code></program>
 </listing>
     
     
@@ -291,7 +291,7 @@ public class RealEstateViewer extends JFrame
     </p>
     <listing xml:id="list-imagepanel">
       <caption>The <c>ImagePanel</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.*;
 public class ImagePanel extends JPanel {
@@ -304,7 +304,7 @@ public class ImagePanel extends JPanel {
             g.drawImage(frame.currentImage, 0, 0, this);
     }
   }// ImagePanel
- </input></program>
+ </code></program>
 </listing>
   </subsection>
   <subsection>
@@ -321,7 +321,7 @@ required by the application.
       The constructor method should be responsible for creating the user interface,
       most of which will involve the routine tasks of registering a listener for the <c>homeChoice</c> menu and setting up an appropriate layout that implements the design we developed for the user interface:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public RealEstateViewer () {
     super("Home Viewer Application");// Set window title
     homeChoice.addItemListener( this);
@@ -332,7 +332,7 @@ public RealEstateViewer () {
     initHomeChoices();      // Set up choice box
     showCurrentSelection(); // Display current home
   }
- </input></program>
+ </code></program>
     <p>
       Note the last two statements of the method.
       The first sets up the <c>JComboBox</c> by reading its contents from a file stored in the company's database.
@@ -347,11 +347,11 @@ public RealEstateViewer () {
       Its task is to download and display information about the current menu selection.
       To do this, it can simply call the <c>showCurrentSelection()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void itemStateChanged(ItemEvent evt) {
     showCurrentSelection();
   }
- </input></program>
+ </code></program>
   </subsection>
   <subsection>
     <title>Downloading the Menu Items</title>
@@ -361,7 +361,7 @@ public void itemStateChanged(ItemEvent evt) {
       one home per line.
       The <c>initHomeChoices()</c> method downloads the text and uses its contents to set up the items in the <c>homeChoice</c><c>JComboBox</c> menu:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void initHomeChoices() {
   try {
     URL url = new URL(dataFileURL);
@@ -379,7 +379,7 @@ private void initHomeChoices() {
     System.out.println( "ERROR: " + e.getMessage());
   }
 }// initHomeChoices()
- </input></program>
+ </code></program>
     <p>
       It uses the algorithm we developed earlier for downloading a text file.
       Each line of the text file represents a menu item, so,
@@ -432,7 +432,7 @@ private void initHomeChoices() {
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void showCurrentSelection() {
   URL url = null;
                               // Get user's choice
@@ -451,7 +451,7 @@ private void showCurrentSelection() {
     System.out.println("ERROR: " + e.getMessage()) ;
   } // Try/catch block
 } // showCurrentSelection()
- </input></program>
+ </code></program>
     <p>
       Note that we have also elected to handle both the
 <c>MalformedURLException</c> and <c>IOException</c> in this method.
@@ -475,7 +475,7 @@ private void showCurrentSelection() {
     </figure>
     <listing xml:id="list-realestateclass">
       <caption>The <c>RealEstateViewer</c> class</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import java.net.*;
@@ -565,7 +565,7 @@ private void readTextIntoDisplay(URL url) throws IOException {
     viewer.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }// main()
 }// RealEstateViewer
- </input></program>
+ </code></program>
 </listing>
 
 
@@ -618,18 +618,18 @@ private void readTextIntoDisplay(URL url) throws IOException {
           You can change the code to use local files in the repl instead of a URL with the 
           following code in the loop 
           to read in the images in <c>initHomeChoices()</c>: 
-          <program language="java"><input>
+          <program language="java"><code>
               // instead of the arg. new InputStreamReader(url.openStream()
               BufferedReader data = new BufferedReader(new FileReader(filename));	 
               // catch FileNotFoundFoundException 
-          </input></program>
+          </code></program>
           You will also need to change the URL argument into a String argument in <c>readTextIntoDisplay(String filename)</c> and use 
           the FileReader above, and use the File class to read in the image file in <c>readTextIntoDisplay()</c>:
-          <program language="java"><input>
+          <program language="java"><code>
             // read in local file instead of url
             File imageFile = new File(base + choice + ".jpg");  
             currentImage = ImageIO.read(imageFile);
-        </input></program>
+        </code></program>
         </p>
         <interactive iframe="iframe/repl-real-estate-app.html" width="100%" aspect="1:1"/>
       </statement>

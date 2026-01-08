@@ -61,7 +61,7 @@
 
   <listing xml:id="lst-togglebutton">
     <caption>Definition of the <c>ToggleButton</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -82,7 +82,7 @@ public class ToggleButton extends JButton
     setText(label1);
   } // actionPerformed()
 } // ToggleButton
- </input></program>
+ </code></program>
 </listing>
 <!--
   <p>
@@ -116,11 +116,11 @@ public class ToggleButton extends JButton
   </p>
   <algorithm>
     <title>Algorithm to Swap var1 and var2</title>    
-    <program language="java"><input>
+    <program language="java"><code>
       temp = var1
       var1 = var2
       var2 = temp
-    </input></program>
+    </code></program>
   </algorithm>
   <p>
     Consider the following trace of the algorithm, where var1 and var2 are integers:  
@@ -182,7 +182,8 @@ public class ToggleButton extends JButton
 <c>ToggleButton</c>'s label.
   </p>
 -->
-<exercises>
+</subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
   <exercise label="swap-error">
     <title>Swap Error</title>
@@ -190,7 +191,7 @@ public class ToggleButton extends JButton
       <p>The following program has an error in it. It's supposed to swap var1 in var2. 
         First run it to see the error. Then fix the error and run it again.
       </p>
-    <program language="java" interactive=""><input>
+    <program language="java" interactive="activecode"><code>
       public class Swap {
         public static void main(String args[]) {
           String var1 = "on", var2 = "off";
@@ -200,11 +201,11 @@ public class ToggleButton extends JButton
           System.out.println("var1=" + var1 + " var2=" + var2);
         }
       }
-    </input>
+    </code>
     </program>
     </statement>
   <solution>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
     public class Swap {
       public static void main(String args[]) {
         String var1 = "on", var2 = "off";
@@ -216,11 +217,11 @@ public class ToggleButton extends JButton
         System.out.println("var1=" + var1 + " var2=" + var2);
       }
     }
-  </input>
+  </code>
 </program>
   </solution>
 </exercise>
-</exercises>
+
 </subsection>
 <subsection>
   <title>The LightSwitch app</title> 
@@ -261,7 +262,7 @@ public class ToggleButton extends JButton
   </p>
   <listing xml:id="fig-toggletest">
     <caption>Definition of the <c>LightSwitch</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -286,7 +287,7 @@ public class LightSwitchTester extends JFrame
       f.setVisible(true);
    }
 } // LightSwitchTester
- </input></program>
+ </code></program>
 </listing>
   <p>
     When <c>lightSwitch</c> is clicked,
@@ -325,7 +326,8 @@ public class LightSwitchTester extends JFrame
       plus it can toggle its own label.
     </p>
   </principle>
-  <exercises>
+ </subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
     <ol>
       <li>
@@ -339,7 +341,7 @@ public class LightSwitchTester extends JFrame
         </p>
       </li>
     </ol>
-  </exercises>
+  
   </subsection>
   
 </section>

@@ -27,12 +27,12 @@
     the <c>IntFieldTester</c> class makes use of a simple message dialog to report an input error to the user.
     This dialog was created by the following code segment in the program (see <xref ref="fig-intbound">Figure</xref>):
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 catch (NumberFormatException e) {
   JOptionPane.showMessageDialog(this,
     "The input must be an integer.  Please reenter.");
   }
- </input></program>
+ </code></program>
   <p>
     This method call displays the window shown in <xref ref="fig-errmsg">Figure</xref>.
     It contains the error message and an OK button that is used to close the window.
@@ -73,21 +73,21 @@ catch (NumberFormatException e) {
     
     Among the basic message types available for the icon in <c>JOptionPane</c> are the following:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 JOptionPane.PLAIN_MESSAGE
 JOptionPane.INFORMATIONAL_MESSAGE     // Default
 JOptionPane.WARNING_MESSAGE
 JOptionPane.QUESTION_MESSAGE
 JOptionPane.ERROR_MESSAGE
- </input></program>
+ </code></program>
   <p>
     To set the dialog to anything other than the default (informational) type,
     you can use the following version of
 <c>showMessageDialog()</c>:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 showMessageDialog(Component comp, Object message, String title, int msgType);
- </input></program>
+ </code></program>
   <p>
     The first parameter is a reference to the parent window.
     The second is the message string.
@@ -96,14 +96,14 @@ showMessageDialog(Component comp, Object message, String title, int msgType);
     For example,
     we can change our dialog to an error dialog with the following statement:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 catch (IntOutOfRangeException e) {
     JOptionPane.showMessageDialog(this,
             e.getMessage(),
             "Error dialog",
             JOptionPane.ERROR_MESSAGE);
           }
- </input></program>
+ </code></program>
   <p>
     This would produce the dialog shown in <xref ref="fig-errmsg2">Figure</xref>.
   </p>

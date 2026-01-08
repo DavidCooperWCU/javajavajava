@@ -94,19 +94,19 @@
           <p>
             An <em>array declaration</em> provides the name and type of the array.
             An array instantiation uses the keyword <c>new</c> and causes the compiler to allocate memory for the array's elements:
- <program language="java"><input>
+ <program language="java"><code>
 int arr[]; // Declare a one-dimensional array variable
 arr = new int[15];// Allocate 15 int locations for it
- </input></program>
+ </code></program>
           </p>
         </li>
         <li>
           <p>
             Multidimensional arrays have arrays as their components:
- <program language="java"><input>
+ <program language="java"><code>
 int twoDarr[][]; // Declare a two-dimensional array variable
 twoDarr = new int[10][15]; // Allocate 150 int locations
- </input></program>
+ </code></program>
           </p>
         </li>
         <li>

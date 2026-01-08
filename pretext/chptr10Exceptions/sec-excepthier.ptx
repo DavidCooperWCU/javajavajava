@@ -121,8 +121,8 @@
       </tabular>
     </table>
  
-
-    <exercises><title>Self-Study Exercise</title>
+</subsection>
+     <subsection><title>Self-Study Exercise</title>
     
    
 
@@ -135,7 +135,7 @@
       <feedback>
           <p></p>
       </feedback>
-      <matches>
+      <cardsort>
           <match>
               <premise> Integer.parseInt("26.2");  
               </premise>
@@ -149,7 +149,7 @@
               <premise>String s = "hello"; s.charAt(5);</premise>
               <response>StringIndexOutOfBoundsException</response>
           </match>         
-      </matches>
+      </cardsort>
      <solution><p> <ol>
       <li>
         <p>
@@ -168,7 +168,7 @@
       </li>
     </ol></p></solution>
     </exercise>
-</exercises>
+
     </subsection>
   
     <subsection>
@@ -215,7 +215,7 @@
         then both methods must have a <c>throws</c> clause.
         For example, consider the following program:
       </p>
- <program language="java" interactive="activecode" stdin="yes"><input>
+ <program language="java" interactive="activecode" stdin="yes"><code>
 import java.io.*;
 public class Example {
     BufferedReader input = new BufferedReader
@@ -230,7 +230,7 @@ public class Example {
         ex.doRead();
     }
   }
- </input></program>
+ </code></program>
       <p>
         In this case,
         the <c>doRead()</c> method contains a

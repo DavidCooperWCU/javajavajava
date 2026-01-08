@@ -9,9 +9,9 @@
   <p>
     The <c>Graphics</c> class has a public instance method with the header:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public  void  drawLine(int x1, int y1, int x2, int y2)
- </input></program>
+ </code></program>
   <p>
     The method call <c>g.drawLine(x1, y1, x2, y2)</c> draws a line from the point <m>(x1,y1)</m> to <m>(x2,y2)</m> where <m>(x,y)</m> refers to a point that is <m>x</m> pixels from the left edge of the area that <c>g</c> is drawing in and <m>y</m> pixels from the top edge.
     Thus <c>g.drawLine(10, 10, 10, 60)</c> draws a vertical line segment that is 50 pixels long and is 10 pixels from the left edge of the drawing area, that is,
@@ -28,14 +28,14 @@ public  void  drawLine(int x1, int y1, int x2, int y2)
     Thus the method must have a <c>Graphics</c> parameter and it will be called in the <c>paint()</c> method using the <c>Graphics</c> object there as an argument.
     Thus the header of the method should look like:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void drawSticks(Graphics g,int x,int y,int num)
- </input></program>
+ </code></program>
   <p>The body of the method could use a while loop with a counter variable <c>k</c> to draw <c>num</c> lines.
     The counter <c>k</c> is initialized to 0 before the loop and incremented at the end of the loop. The loop 
     runs as long as <c>k &lt; num</c>.</p>
 
-    <program language="java"><input>
+    <program language="java"><code>
         public void drawSticks(Graphics g, int x, int y, int num)
         {   
             int k = 0;
@@ -46,7 +46,7 @@ public void drawSticks(Graphics g,int x,int y,int num)
             } // while
         } // drawSticks()
       
-       </input></program>   
+       </code></program>   
        <activity label="draw-sticks">
         <statement><p>
    Run the program below listed in <xref ref="fig-drawsticksprog">Listing</xref>. 
@@ -55,7 +55,7 @@ public void drawSticks(Graphics g,int x,int y,int num)
   
   <listing xml:id="fig-drawsticksprog">
     <caption>A Canvas Class with a method for drawing a set of sticks.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 /** DrawSticksCanvas demonstrates some graphics commands.
  *It draws a set of 12 vertical lines and a set of 7 lines.
  */
@@ -93,11 +93,11 @@ public class DrawSticksCanvas extends Canvas
       f.setVisible(true);
   }
 } // DrawSticksCanvas
- </input></program>
+ </code></program>
 </listing>
  </statement>
 <program label="drawsticks_canvas_practice_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-  <input>
+  <code>
     <![CDATA[
 import java.awt.*;
 import javax.swing.*;
@@ -135,7 +135,7 @@ public class DrawSticksCanvas extends Canvas
 
 } // DrawSticksCanvas
 ]]>
-    </input>
+    </code>
 </program>
        </activity>
 

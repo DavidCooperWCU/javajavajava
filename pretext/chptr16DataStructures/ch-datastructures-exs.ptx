@@ -18,7 +18,7 @@
 	  Data Structures  concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>stack</em></premise>
@@ -81,7 +81,7 @@
           <response>a part of a linked list that holds one piece of data and may have a link out to one or more other nodes.</response>
 	</match>
 
-      </matches>
+      </cardsort>
       </exercise>
    <exercisegroup>
     <title>Fill in the Blanks</title>
@@ -332,13 +332,13 @@
       </p>
     </statement>
       <program label="jdsx_remove_at_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -358,13 +358,13 @@
       </p>
     </statement>
       <program label="jdsx_insert_at_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -379,13 +379,13 @@
       </p>
     </statement>
       <program label="jdsx_remove_all_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -399,13 +399,13 @@
       </p>
     </statement>
       <program label="jdsx_size_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -420,13 +420,13 @@
       </p>
     </statement>
       <program label="jdsx_contains_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -443,13 +443,13 @@
       </p>
     </statement>
       <program label="jdsx_tail_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -464,13 +464,13 @@
       </p>
     </statement>
       <program label="jdsx_average_numbers_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -486,13 +486,13 @@
       </p>
     </statement>
       <program label="jdsx_student_list_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -509,13 +509,13 @@
       </p>
     </statement>
       <program label="jdsx_copy_list_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -529,13 +529,13 @@
       </p>
     </statement>
       <program label="jdsx_palindrome_stack_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -550,13 +550,13 @@
       </p>
     </statement>
       <program label="jdsx_matching_parens_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -570,13 +570,13 @@
       </p>
     </statement>
       <program label="jdsx_matching_brackets_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -591,13 +591,13 @@
       </p>
     </statement>
       <program label="jdsx_append_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -612,13 +612,13 @@
       </p>
     </statement>
       <program label="jdsx_al_stack_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -632,13 +632,13 @@
       </p>
     </statement>
       <program label="jdsx_al_queue_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -654,13 +654,13 @@
       </p>
     </statement>
       <program label="jdsx_linked_list_students_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -674,13 +674,13 @@
       </p>
     </statement>
       <program label="jdsx_insert_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -694,13 +694,13 @@
       </p>
     </statement>
       <program label="jdsx_phone_tree_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -723,13 +723,13 @@
     </p>
     </statement>
       <program label="jdsx_list_class_design_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -744,13 +744,13 @@
       </p>
     </statement>
       <program label="jdsx_resize_array_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -779,13 +779,13 @@
       </p>
     </statement>
       <program label="jdsx_print_lookup_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>

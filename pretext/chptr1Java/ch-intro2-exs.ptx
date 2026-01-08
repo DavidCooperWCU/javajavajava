@@ -121,7 +121,7 @@
           Explain the difference between each of the following pairs of concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>single-line</em> comment</premise>
@@ -225,7 +225,7 @@
 	
 	.
 	
-      </matches>
+      </cardsort>
     </exercise>
 
     <exercisegroup>
@@ -1096,7 +1096,7 @@
 	</p>
       </statement>
       <program label="jpdd_code_rectangle_class_task" interactive="activecode" language="java">
-	<input>
+	<code>
 
 	  public class Rectangle {
 
@@ -1118,7 +1118,7 @@
 
 	  } 
 
-        </input>
+        </code>
 	<tests>
           <![CDATA[
 import static org.junit.Assert.*;
@@ -1266,7 +1266,7 @@ public class RunestoneTests extends CodeTestHelper
 	</p>
       </statement>
       <program label="jpdd_nursery_rhyme" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class NurseryRhyme
 	  {
 	  public static void main(String args[])   // Main method
@@ -1283,7 +1283,7 @@ public class RunestoneTests extends CodeTestHelper
           System.out.println("E I E I O.");
 	  }  // End of main
 	  }  // End of NurseryRhyme
-	</input>
+	</code>
 	<tests>
 	  <![CDATA[
 		   import static org.junit.Assert.*;
@@ -1373,7 +1373,7 @@ assertTrue(passed);
 	</p>
       </statement>
       <program label="jpdd_patterns" interactive="activecode" language="java">
-	<input>
+	<code>
 
 
 public class Patterns {
@@ -1384,7 +1384,7 @@ public class Patterns {
 
 
 
-	</input>
+	</code>
 	<tests>
 	  <![CDATA[
 import static org.junit.Assert.*;
@@ -1663,14 +1663,14 @@ protected Class<?>[] getArgumentTypes(Object[] args) {
 	</cd>
       </statement>
       <program label="jpdd_initials" interactive="activecode" language="java">
-	<input>
+	<code>
 public class Initials {
     public static void main(String[] args) {
         // TODO: add code to print your initials as block letters.
 
     }
 }
-	</input>
+	</code>
       </program>
     </exercise>
     <!-- Problem 22 -->
@@ -1686,11 +1686,11 @@ public class Initials {
 	</p>
       </statement>
       <program label="jpdd_temperature" interactive="activecode" language="java">
-	<input>
+	<code>
 	  public class Temperature {
 
 	  }
-	</input>
+	</code>
 	<tests>
           <![CDATA[
 import static org.junit.Assert.*;
@@ -2010,7 +2010,7 @@ num2 = num1 + num2;
       </p>
     </statement>
     <program label="jpdd_person_class" interactive="activecode" language="java">
-      <input>
+      <code>
 
 	  public class Person {
 
@@ -2020,7 +2020,7 @@ num2 = num1 + num2;
 
 
 
-      </input>
+      </code>
 	<tests>
           <![CDATA[
 import static org.junit.Assert.*;

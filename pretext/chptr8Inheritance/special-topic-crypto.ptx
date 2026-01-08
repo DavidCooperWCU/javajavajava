@@ -23,10 +23,10 @@
     letters of the alphabet are <em>shifted</em> by three letters,
     wrapping around at the end of the alphabet:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 PlainText:     abcdefghijklmnopqrstuvwxyz
 CaesarShifted: defghijklmnopqrstuvwxyzabc
- </input></program>
+ </code></program>
   <p>
     When <term>encrypting</term> a message,
     you take each letter of the message and replace it with its corresponding letter from
@@ -51,10 +51,10 @@ CaesarShifted: defghijklmnopqrstuvwxyzabc
         <idx><h>keyword, cipher</h></idx>
     </em> to create a ciphertext alphabet:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 PlainText:  abcdefghijklmnopqrstuvwxyz
 Ciphertext: xylophneabcdfgijkmqrstuvwz
- </input></program>
+ </code></program>
   <p>
     In this example, the keyword
     <q>xylophone,</q>

@@ -16,7 +16,7 @@
   </figure>
     It would be coded as follows:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 /**
   *  IntOutOfRangeException reports an exception when
   *    an integer exceeds its bound.
@@ -26,7 +26,7 @@ public class IntOutOfRangeException extends Exception {
       super("The input value exceeds the bound " + Bound);
     }
   }
- </input></program>
+ </code></program>
   <p>
     The class extends <c>Exception</c> and consists entirely of a constructor method that calls the superclass constructor.
     The argument passed to the superclass constructor is the message that will be returned by <c>getMessage()</c> when an instance of this exception is created.
@@ -34,7 +34,7 @@ public class IntOutOfRangeException extends Exception {
 
   <activity label="intExceptActivity">
     <statement>Try the <c>num</c> values 10 and 11 below to see this exception in action.</statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
     public class IntOutOfRangeException extends Exception 
     {
       public IntOutOfRangeException (int Bound) 
@@ -53,7 +53,7 @@ public class IntOutOfRangeException extends Exception {
           
       }
   }
-</input>  </program>
+</code>  </program>
   </activity>
  
 </subsection>
@@ -74,7 +74,7 @@ public class IntOutOfRangeException extends Exception {
   <p>
     This leads to the following revision of <c>IntField</c>:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class IntField extends JTextField {
     private int bound = Integer.MAX_VALUE;
     public IntField(int size, int max) {
@@ -83,7 +83,7 @@ public class IntField extends JTextField {
     }
    // The rest of the class is unchanged for now
   } // IntField
- </input></program>
+ </code></program>
   <p>
     Our new constructor has the signature <c>IntField(int,int)</c>, which doesn't duplicate any of <c>JTextField</c>'s constructors.
     This is good design, because in extending a class,
@@ -119,7 +119,7 @@ public class IntField extends JTextField {
   <listing xml:id="fig-intfield2">
     <caption>The revised <c>IntField</c> class containing the
     revised <c>getInt()</c> method.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 public class IntField extends JTextField {
     private int bound = Integer.MAX_VALUE;
@@ -138,7 +138,7 @@ public class IntField extends JTextField {
         return num;
     } // getInt()
 } // IntField
- </input></program>
+ </code></program>
 </listing>
   <p>
     The <c>IntFieldTester</c> class (<xref ref="fig-intbound">Listing</xref>) 
@@ -155,7 +155,7 @@ public class IntField extends JTextField {
   </p>
   <listing xml:id="fig-intbound">
     <caption>An application that uses an <c>IntField</c> object to process integers.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -200,7 +200,7 @@ public class IntFieldTester extends JPanel
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // main()
 } // IntFieldTester
- </input></program>
+ </code></program>
   </listing>>
   
  
@@ -211,7 +211,8 @@ public class IntFieldTester extends JPanel
 </statement>
 </activity>
 
-  <exercises><title>Self-Study Exercises</title>
+  </subsection>
+     <subsection><title>Self-Study Exercises</title>
    
     <exercise label="fieldEmpty"><title>FieldIsEmptyException</title>
       <statement>
@@ -220,7 +221,7 @@ public class IntFieldTester extends JPanel
           to be thrown if the user forgets to enter a value into a <c>IntField</c>.
         </p>
       </statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
         /**
         *  FieldIsEmptyException reports an exception when
         *    the input field is empty
@@ -241,16 +242,16 @@ public class IntFieldTester extends JPanel
               
           }
       }
-      </input></program>
+      </code></program>
         <solution>
         <p>
-          <program language="java"><input>
+          <program language="java"><code>
 public class FieldIsEmptyException extends Exception {
    public FieldIsEmptyException () {
        super("The input field is empty ");
    }
  }
-</input></program>
+</code></program>
        </p></solution>    
        </exercise>
     
@@ -266,7 +267,7 @@ public class FieldIsEmptyException extends Exception {
   </statement>
     <solution>
       <p>
-        <program language="java"><input>
+        <program language="java"><code>
 public int getInt() {
  int num = 0;
  try {
@@ -287,11 +288,11 @@ public int getInt() {
  }
  return num;
 }
-</input></program>
+</code></program>
      </p>
     </solution>  
     </exercise>
-    </exercises>
+    
 
   </subsection>
 </section>

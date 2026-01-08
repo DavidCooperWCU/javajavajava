@@ -11,7 +11,7 @@
     <feedback>
       <p>Review the chapter vocabulary in the Summary.</p>
     </feedback>
-    <matches>
+    <cardsort>
       <match>
         <premise>method signature</premise>
         <response>A method's name, number, type, and order of parameters
@@ -34,7 +34,7 @@
         <response>The return type for a method that returns no value</response>
       </match>
       
-    </matches>
+    </cardsort>
   </exercise>
 
   <exercise label="matching-methods2">
@@ -45,7 +45,7 @@
     <feedback>
       <p>Review the chapter vocabulary in the Summary.</p>
     </feedback>
-    <matches>
+    <cardsort>
       <match>
         <premise>inheritance</premise>
         <response>Allows the use of a superclass method in a subclass</response>
@@ -60,7 +60,7 @@
 	</response>
       </match> 
       
-    </matches>
+    </cardsort>
   </exercise>
 
   <exercise label="matching-scope">
@@ -71,7 +71,7 @@
     <feedback>
       <p>Review the chapter summary.</p>
     </feedback>
-    <matches>
+    <cardsort>
       <match>
         <premise>local scope</premise>
         <response>A method's parameters have this scope</response>
@@ -88,7 +88,7 @@
         <premise>public</premise>
         <response>The methods that make up an object's interface should have this type of access.</response>
       </match>
-    </matches>
+    </cardsort>
   </exercise>
   <exercise label="matching-ifs">
     <title>Matching Problem for Control Structures</title>
@@ -98,7 +98,7 @@
     <feedback>
       <p>Review the chapter summary.</p>
     </feedback>
-    <matches>
+    <cardsort>
       <match>
         <premise>selection statements</premise>
         <response>if statements and if-else statements</response>
@@ -111,7 +111,7 @@
         <premise>the closest unmatched if in the same block of statements</premise>
         <response>an else clause matches with</response>
       </match>
-    </matches>
+    </cardsort>
   </exercise>
   </subsection>
 
@@ -123,7 +123,7 @@
   
   <exercise label="ifDebug1">
     <statement><p>Debug the following program.</p></statement>
-    <program language="java" interactive='activecode'><input>
+    <program language="java" interactive='activecode'><code>
       public class Debug
       {
       public static void main (String argv[])
@@ -134,12 +134,12 @@
       System.out.println("Not walking");
       }
       }
-    </input></program>
+    </code></program>
   </exercise>
   
   <exercise label="ifDebug2">
     <statement><p>Debug the following program.</p></statement>
-    <program language="java"  interactive='activecode'><input>
+    <program language="java"  interactive='activecode'><code>
       public class Debug
       {
       public static void main (String argv[])
@@ -150,12 +150,12 @@
       System.out.println("Not walking");
       }
       }
-    </input></program>
+    </code></program>
   </exercise>
   
   <exercise label="ifDebug3">
     <statement><p>Debug the following program.</p></statement>
-    <program language="java" xml:id="ifEx3" interactive='activecode'><input>
+    <program language="java" xml:id="ifEx3" interactive='activecode'><code>
       public class Debug
       {
       public static void main (String argv[])
@@ -166,12 +166,12 @@
       System.out.println("Not walking")
       }
       }
-    </input></program>
+    </code></program>
   </exercise>
   
   <exercise label="ifDebug4">
     <statement><p>Debug the following program.</p></statement>
-    <program language="java"  interactive='activecode'><input>
+    <program language="java"  interactive='activecode'><code>
       public class Debug
       {
       public static void main (String argv[])
@@ -182,7 +182,7 @@
       System.out.println("Not walking");
       }
       }
-  </input></program></exercise>
+  </code></program></exercise>
 
   </subsection>
 
@@ -283,11 +283,11 @@
   <exercise label="jmex_trace_if_else_1">
     <statement>
       <p>
-	<program language="java"><input>
+	<program language="java"><code>
 	  if (isWalking == false)
 	  System.out.println("One");
 	  System.out.println("Two");
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />
@@ -295,11 +295,11 @@
   <exercise label="jmex_trace_if_else_2">
     <statement>
       <p>
-	<program language="java"><input>
+	<program language="java"><code>
 	  if (isWalking == true)
 	  System.out.println("One");
 	  System.out.println("Two");
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />
@@ -307,13 +307,13 @@
   <exercise label="jmex_trace_if_else_3">
     <statement>
       <p>
-	<program language="java"><input>
+	<program language="java"><code>
 	  if (isWalking == false)
 	  {
 	  System.out.println("One");
 	  System.out.println("Two");
 	  }
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />
@@ -321,7 +321,7 @@
   <exercise label="jmex_trace_if_else_4">
     <statement>
       <p>
-	<program language="java"><input>
+	<program language="java"><code>
 	  if (isWalking == false)
 	  if (isTalking == true)
 	  System.out.println("One");
@@ -329,7 +329,7 @@
 	  System.out.println("Two");
 	  else
 	  System.out.println("Three");
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />
@@ -340,7 +340,7 @@
       <p>
 	Show what the output would be if the following version of
 	<c>main()</c> were executed:
-	<program language="java"><input>
+	<program language="java"><code>
 	  public static void main(String argv[])
 	  {
 	  System.out.println("main() is starting");
@@ -355,7 +355,7 @@
 	  game2.report();
 	  System.out.println("main() is finished");
 	  }
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />
@@ -364,7 +364,7 @@
     <statement>
       <p>
 	Determine the output of the following program:
-	<program language="java"><input>
+	<program language="java"><code>
 	  public class Mystery
 	  {
 	  public String myMethod(String s)
@@ -377,7 +377,7 @@
 	  System.out.println( mystery.myMethod(" dolly");
 	  }
 	  }
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />
@@ -465,14 +465,14 @@
       </p>
     </statement>
     <program label="jmex_twelve_days_prg_main" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
       public class TwelveDays {
           public static void main(String[] args) {
 
           }
 	
       }
-      </input>
+      </code>
       </program>
 
   </exercise>
@@ -508,16 +508,16 @@
 	That is, create a limerick template that will take any five words or phrases and produce a limerick.
 	For example,
 	if you call
-	<program language="java"><input>
+	<program language="java"><code>
 	  limerick("Jones","stones","rained","pained","bones");
-	  </input></program>your method might print (something better than)
-	  <program language="java"><input>
+	  </code></program>your method might print (something better than)
+	  <program language="java"><code>
 	    There once a person named Jones
 	    Who had a great liking for stones,
 	    But whenever it rained,
 	    Jones' expression was pained,
 	    Because stones weren't good for the bones.
-	  </input></program>
+	  </code></program>
       </p>
     </statement>
     <response />
@@ -535,11 +535,11 @@
       </p>
     </statement>
           <program label="jmex_donor_class" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
 	public class Donor {
 
 	}
-      </input>
+      </code>
       	<tests>
           <![CDATA[
 import static org.junit.Assert.*;
@@ -765,14 +765,14 @@ errorMessage = "Couldn't call constructor";
       </p>
     </statement>
         <program label="jmex_copy_monitor_prg_main" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
       public class CopyMonitor {
           public static void main(String[] args) {
 
           }
 	
       }
-      </input>
+      </code>
       </program>
 
 
@@ -794,14 +794,14 @@ errorMessage = "Couldn't call constructor";
       </p>
     </statement>
       <program label="jmex_old_mcdonald_prg_main" language="java"
-	       interactive="activecode"><input>
+	       interactive="activecode"><code>
       public class OldMacDonald {
           public static void main(String[] args) {
 
           }
 	
       }
-      </input>
+      </code>
       </program>
   </exercise>
   <exercise label="jmex_draw_uml_a_b_inheritence" attachment="yes">
@@ -821,7 +821,7 @@ errorMessage = "Couldn't call constructor";
     <statement>
       <p>
 	Consider the definition of the class <c>C</c>. Define a subclass of <c>C</c> named <c>B</c> that overrides method <c>m1()</c> so that it returns the difference between <c>m</c> and <c>n</c> instead of their sum.
-	<program language="java"><input>
+	<program language="java"><code>
 	  public class C {
 	  private int m;
 	  private int n;
@@ -833,7 +833,7 @@ errorMessage = "Couldn't call constructor";
 	  return m+n;
 	  }
 	  }
-	</input></program>
+	</code></program>
       </p>
     </statement>
     <response />

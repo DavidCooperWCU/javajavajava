@@ -25,12 +25,12 @@
     so there won't be any need for inputting the URL.<nbsp/>We want to implement something like the following algorithm:
   </p>
   <algorithm>
- <program language="java"><input>
+ <program language="java"><code>
 Repeat forever
     Generate the URL for the next slide.
     Use the URL to download the image or document.
     Display the image or document.
- </input></program>
+ </code></program>
 </algorithm>  <p>
     A URL specification is just a <c>String</c>, such as, <url href="http://www.cs.trincoll.edu/&#126;ram/jjj/labs/ch09/slideshow/demo/demo0.gif" visual="">"http://www.cs.trincoll.edu/&#126;ram/jjj/labs/ch09/slideshow/demo/demo0.gif"</url>
     which describes how to retrieve the resource.

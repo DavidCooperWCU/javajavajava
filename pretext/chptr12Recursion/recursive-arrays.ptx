@@ -33,7 +33,7 @@
       thereby indicating that the key was not contained in the array.
       The iterative version of this method has the following general form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 /**
   * Performs a sequential search of an integer array
   * @param arr is the array of integers
@@ -46,7 +46,7 @@
 public int sequentialSearch(int arr[], int key) {
     return -1;           // failure if this is reached
 }
- </input></program>
+ </code></program>
     <p>
       If we divide the array into its head and tail,
       then one way to describe a recursive search algorithm is as follows:
@@ -54,12 +54,12 @@ public int sequentialSearch(int arr[], int key) {
 
 <algorithm>
 <title>Recursive search algorithm</title>
- <program language="java"><input>
+ <program language="java"><code>
 If the array is empty, return -1
 If the array's head matches the key, return its index
 If the array's head doesn't match the key,
  return the result of searching the tail of the array
- </input></program>
+ </code></program>
 </algorithm>
     <p>
       This algorithm clearly resembles the approach we used in recursive string 
@@ -106,7 +106,7 @@ If the array's head doesn't match the key,
       <caption>The recursive search method takes three parameters.  The
       <em>head</em> parameter points to the beginning of that portion of the
       array that is being searched.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 /**
    * search(arr,head,key)---Recursively search arr for key
    *  starting at head
@@ -121,7 +121,7 @@ private int search(int arr[], int head, int key)  {
    return head;
  else               // Recursive: search the tail
    return search(arr, head + 1, key);}
- </input></program>
+ </code></program>
     </listing>
     <p>
       This leads to the definition for recursive search shown in <xref ref="fig-rsearch">Listing</xref>.
@@ -191,7 +191,7 @@ private int search(int arr[], int head, int key)  {
       <caption>Information hiding principle: The <c>public</c><c>search()</c>
       method calls the <c>private</c>, recursive <c>search()</c>, thereby hiding the
       fact that a recursive algorithm is used.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Searcher {
   /**
    * search(arr,key) -- searches arr for key.
@@ -220,7 +220,7 @@ public class Searcher {
   } // search()
 
 } // Searcher
- </input></program>
+ </code></program>
     </listing>
 
     <principle>
@@ -232,7 +232,8 @@ public class Searcher {
         Users of a class or method should be shown only those details that they need to know.
       </p>
     </principle>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
     <exercise label="search">
     <title>Recursive search</title>
@@ -243,7 +244,7 @@ public class Searcher {
             initialize its elements to the even numbers from 0 to 18,
             and then use a for loop to search the array for each of the numbers from 0 to 20.
           </p>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Searcher {
   /**
    * search(arr,key) -- searches arr for key.
@@ -272,10 +273,10 @@ public class Searcher {
   } // search()
 
 } // Searcher
- </input></program>               
+ </code></program>               
       </statement> 
       <solution>
- <program language="java"><input>     
+ <program language="java"><code>     
   public static void main(String args[]) {
     int numbers[] = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
     Searcher searcher = new Searcher();
@@ -287,10 +288,10 @@ public class Searcher {
           System.out.println(k + " is not in the array ");
     } // for
   } // main()      
-   </input></program>      
+   </code></program>      
   </solution>
     </exercise>
-  </exercises>
+  
  </subsection>
 
   <subsection xml:id="recursive-sort">
@@ -363,7 +364,7 @@ public class Searcher {
     <listing xml:id="fig-selectionsort">
       <caption>The <c>selection-</c><c>Sort()</c> method uses the <c>findMax()</c>
       and <c>swap()</c> methods to help it sort an array.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 /**
   * selectionSort(arr,last)--Recursively sort arr starting
   *   at last element
@@ -378,7 +379,7 @@ private void selectionSort(int arr[], int last) {
     selectionSort(arr, last - 1);    // Move down the array
   }
 } // selectionSort()
- </input></program>
+ </code></program>
     </listing>
     <p>
       Note how simply the <c>selectionSort()</c> method can be coded.
@@ -388,7 +389,7 @@ private void selectionSort(int arr[], int last) {
       but we also already defined a <c>swap()</c> method in Chapter<nbsp/>9.
       So here is a good example of reusing code:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 /**
   * swap(arr, el1 el2) swaps el1 and el2 in the array, arr
   * Pre: arr is non null, 0 &lt;= el1 &lt; arr.length,
@@ -400,7 +401,7 @@ private void swap(int arr[], int el1, int el2)  {
   arr[el1] = arr[el2]; // Overwrite first with second
   arr[el2] = temp;     // Overwrite second with first(temp)
 } // swap()
- </input></program>
+ </code></program>
     <p>
       The definition of the <c>findMax()</c> method is left as a self-study exercise.
     </p>
@@ -411,8 +412,8 @@ private void swap(int arr[], int el1, int el2)  {
         especially if you already have methods for solving one or more of the subtasks.
       </p>
     </principle>
-
-    <exercises>
+</subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
     <exercise label="findmax">
     <title>Find Max</title>
@@ -422,7 +423,7 @@ private void swap(int arr[], int el1, int el2)  {
             <c>selectionSort()</c>. Its goal is to return the location (index) of the 
             largest integer between <c>arr[0]</c> and <c>arr[N]</c>.
           </p>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
     public class Main {
 
       // Define findMax() method. Make it static.
@@ -436,10 +437,10 @@ private void swap(int arr[], int el1, int el2)  {
       } // main()      
 
     }
-    </input></program>
+    </code></program>
     </statement>
     <solution>
- <program language="java"><input>
+ <program language="java"><code>
   /** findMax (arr,N) returns the index of the largest
     *  value between arr[0] and arr[N], N >= 0.
     *  Pre: 0 &lt;= N &lt;= arr.length -1
@@ -452,7 +453,7 @@ private void swap(int arr[], int el1, int el2)  {
               maxSoFar = k;
       return maxSoFar;
   } // findMax()
- </input></program>    
+ </code></program>    
     </solution>
     </exercise>
 
@@ -466,7 +467,7 @@ private void swap(int arr[], int el1, int el2)  {
             where <c>arr</c> is the name of the array to be sorted.
             Define the <c>sort()</c> method.
           </p>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
     public class Sorter {
 
       // Define findMax() method. Make it static.
@@ -504,10 +505,10 @@ private void swap(int arr[], int el1, int el2)  {
 
       } // main()      
     }    
-    </input></program>
+    </code></program>
     </statement>
      <solution>
-      <program language="java"><input>
+      <program language="java"><code>
       /** sort(arr) sorts the int array, arr
       *  Pre: arr is not null
       *  Post: arr will be arranged so that arr[j] &lt;= arr[k]
@@ -516,9 +517,9 @@ private void swap(int arr[], int el1, int el2)  {
       public void sort(int arr[]) {
           selectionSort(arr, arr.length - 1); // Call the recursive method
       }
-      </input></program>
+      </code></program>
     </solution>
   As we can now </exercise>
-  </exercises>
+  
   </subsection>
 </section>

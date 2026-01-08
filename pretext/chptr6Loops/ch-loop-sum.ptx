@@ -110,12 +110,12 @@
           The <c>for</c> statement
             <idx><h>for statement</h></idx>
           has the following syntax:
- <program language="java"><input>
+ <program language="java"><code>
 for (  initializer ;  loop entry condition ; updater )
 {  
     for loop body 
 } 
- </input></program>
+ </code></program>
  
  A summary of various loop bounds:
           <tabular>
@@ -142,23 +142,23 @@ for (  initializer ;  loop entry condition ; updater )
       <li>
         <p>
           The <c>while</c> statement takes the following form:
- <program language="java"><input>
+ <program language="java"><code>
  while ( loop entry condition )
  {
      loop body
  } 
- </input></program>
+ </code></program>
         </p>
       </li>
       <li>
         <p>
           The <c>do-while</c> statement has the following general form:
- <program language="java"><input>
+ <program language="java"><code>
 do
 { 
     loop body 
 } while ( loop condition );
- </input></program>
+ </code></program>
         </p>
       </li>
       <li>

@@ -16,9 +16,9 @@
       One way to organize these data would be to create a one-dimensional array,
       consisting of 365 elements:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 double rainfall[] = new double[365];
- </input></program>
+ </code></program>
     <p>
       However, with this representation,
       it would make it very difficult to calculate the average rainfall within a given month,
@@ -30,9 +30,9 @@ double rainfall[] = new double[365];
       The following statement declares the array variable <c>rainfall</c> and creates a 
       12 by 31 array object as its reference:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 double rainfall[][] = new double[12][31];
- </input></program>
+ </code></program>
     <p>
       Thus, <c>rainfall</c> is an
       <em>array of arrays</em>.
@@ -55,9 +55,9 @@ double rainfall[][] = new double[12][31];
       We can easily remedy this problem by just defining our array to have an extra 
       month and an extra day each month:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 double rainfall[][] = new double[13][32];
- </input></program>
+ </code></program>
     <p>
       This representation creates an array with 13 months,
       indexed from 0 to 12, with 32 days per month, indexed from 0 to 31.
@@ -99,10 +99,10 @@ double rainfall[][] = new double[13][32];
       Thus, the following statements assign 1.15 to the <c>rainfall</c> element 
       representing January 5, and then print its  value:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 rainfall[1][5] = 1.15;   // Rainfall for January 5
 System.out.println( rainfall[1][5] );
- </input></program>
+ </code></program>
     <p>
       Just as in the case of one-dimensional arrays,
       it is an error to attempt to reference an element that is not in the array.
@@ -110,11 +110,11 @@ System.out.println( rainfall[1][5] );
 <c>IndexOutOfBoundsException</c>:
           <idx><h>IndexOutOfBoundsException</h></idx>
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 rainfall[13][32] = 0.15 ;  // No such element
 rainfall[11][33] = 1.3;    // No such column
 rainfall[14][30] = 0.74;   // No such row
- </input></program>
+ </code></program>
     <p>
       If the initial values of an array's elements are supposed to be zero,
       there is no need to initialize the elements.
@@ -124,12 +124,12 @@ rainfall[14][30] = 0.74;   // No such row
       To illustrate this algorithm,
       let's use a nested for loop to initialize each element of the <c>rainfall</c> array to 0:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Note that both loops are unit indexed.
 for (int month = 1; month &lt; rainfall.length; month++)
   for (int day = 1; day &lt; rainfall[month].length; day++)
      rainfall[month][day] = 0.0;
- </input></program>
+ </code></program>
     <p>
       Note that both for loops use unit indexing.
       This is in keeping with our decision to leave month 0 and day 0 unused.
@@ -254,7 +254,8 @@ for (int month = 1; month &lt; rainfall.length; month++)
         </row>
       </tabular>
     </table>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
 
      <exercise label="twoD-array">
@@ -282,7 +283,7 @@ for (int month = 1; month &lt; rainfall.length; month++)
         </li>
       </ol>
       </statement>
-        <program language="java" interactive="activecode"><input>
+        <program language="java" interactive="activecode"><code>
 	          <![CDATA[
           public class TwoDArray
           {                   
@@ -303,9 +304,9 @@ for (int month = 1; month &lt; rainfall.length; month++)
             }
           }
 	  ]]>
-     </input></program>
+     </code></program>
     <solution>
-        <program language="java" interactive="activecode"><input>
+        <program language="java" interactive="activecode"><code>
 	          <![CDATA[
           public class TwoDArray {                   
             public static void main(String[] args) {
@@ -324,10 +325,10 @@ for (int month = 1; month &lt; rainfall.length; month++)
             }
           }
 	  ]]>
-     </input></program>    
+     </code></program>    
     </solution>
   </exercise>
-  </exercises>
+  
   </subsection>
   
   <subsection>
@@ -339,13 +340,13 @@ for (int month = 1; month &lt; rainfall.length; month++)
         First, we want a method to initialize the array.
         This method will simply incorporate the nested loop algorithm we developed previously:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void initRain (double rain[][]) {
     for (int month = 1; month &lt; rain.length; month++)
         for (int day = 1; day &lt; rain[month].length; day++)
             rain[month][day] = 0.0;
 } // initRain()
- </input></program>
+ </code></program>
       <p>
         Note how we declare the parameter for a multidimensional array.
         In addition to the element type (<c>double</c>), and the name of  
@@ -387,7 +388,7 @@ public void initRain (double rain[][]) {
         adding each element to a running total.
         When the loops exits, the total will be divided by 365 and returned:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public double avgDailyRain(double rain[][]) {
     double total = 0;
     for (int month = 1; month &lt; rain.length; month++)
@@ -395,7 +396,7 @@ public double avgDailyRain(double rain[][]) {
             total += rain[month][day];
     return total/365;
 } // avgDailyRain()
- </input></program>
+ </code></program>
 </subsubsection>
 <subsubsection>
   <title>The <c>avgRainForMonth()</c> Method</title>
@@ -410,11 +411,11 @@ public double avgDailyRain(double rain[][]) {
         suppose we are calculating the average for January,
         which is represented in our array as month 1:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 double total = 0;
 for (int day = 1; day &lt; rainfall[1].length; day++)
     total = total + rainfall[1][day];
- </input></program>
+ </code></program>
       <p>
         Thus, the month subscript is held constant (at 1) while the day subscript iterates from 1 to 31.
         Of course, in our method we would use a parameter to represent the month,  
@@ -427,7 +428,7 @@ for (int day = 1; day &lt; rainfall[1].length; day++)
         but  perhaps the easiest is to let the number of days for that month be specified as a third parameter.
         That way, the month itself and the number of days for the month are supplied by the user of the method:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public double avgRainForMonth(double rain[][],
                            int month, int nDays) {
     double total = 0;
@@ -435,16 +436,16 @@ public double avgRainForMonth(double rain[][],
         total = total + rain[month][day];
     return total/nDays;
 } // avgRainForMonth()
- </input></program>
+ </code></program>
       <p>
         Given this definition,
         we can call this method to calculate and print the average daily 
         rainfall for March as in the following statement:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.println("March: " +
                          avgRainForMonth(rainfall,3,31));
- </input></program>
+ </code></program>
       <p>
         Note that when passing the entire two-dimensional array to the method,
         we just use the name of the array.
@@ -467,7 +468,7 @@ System.out.println("March: " +
       the month, which is array of days,
       and the number of days in that month:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public double avgRainForMonth(double monthRain[],
                                           int nDays) {
     double total = 0;
@@ -475,16 +476,16 @@ public double avgRainForMonth(double monthRain[],
         total = total + monthRain[day];
     return total/nDays;
 } // avgRainForMonth()
- </input></program>
+ </code></program>
     <p>
       Given this definition,
       we can call it to calculate and print the average daily rainfall for 
       March as in the following statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.println("March: " +
                       avgRainForMonth(rainfall[3],31));
- </input></program>
+ </code></program>
     <p>
       In this case,
       we're passing an array of <c>double</c> to the method,
@@ -537,15 +538,15 @@ System.out.println("March: " +
       It creates the <c>rainfall</c> array in the <c>main()</c> method.
       It then initializes the array and prints out average daily rainfall and average 
       daily rainfall for the month of March.
-  <program language="java"><input>
+  <program language="java"><code>
 rain[month][day] = Math.random() * 2.0;
- </input></program>    
+ </code></program>    
  </p>
  
 <listing xml:id="lst-rainfallclass">
   <caption>Definition of the <c>Rainfall</c> class.</caption>
       
- <program language="java" interactive="activecode"><input>
+ <program label="two-d-rainfall" language="java" interactive="activecode"><code>
 public class Rainfall {
   /**
    * Initializes the rainfall array
@@ -601,7 +602,7 @@ public class Rainfall {
                       +  data.avgRainForMonth(rainfall[3],31));
   } // main()
 }//Rainfall
- </input></program>
+ </code></program>
 </listing>
 
     <p>
@@ -626,7 +627,8 @@ public class Rainfall {
         The data can be scaled to fit within the range that the actual data are expected to have.
       </p>
     </principle>
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises</title>
    <exercise label="newspaper">
     <title>Newspaper sales</title>
@@ -653,7 +655,7 @@ public class Rainfall {
         </li>
       </ol>
     </statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
       public class Newspapers {                   
         public static void main(String[] args) {
           // Declare a 52 x 7 int array
@@ -671,14 +673,14 @@ public class Rainfall {
                     
         }
       }
-    </input></program>
+    </code></program>
     <hint>
       <p>To generate random integers between 50 and 200, use: 
-      <program language="java"><input>50 + (int)(Math.random()*150)</input></program>
+      <program language="java"><code>50 + (int)(Math.random()*150)</code></program>
       </p>
     </hint>
     <solution>
-        <program language="java" interactive="activecode"><input>
+        <program language="java" interactive="activecode"><code>
       public class Newspapers {                   
         public static void main(String[] args) {
           // Declare a 52 x 7 int array
@@ -699,9 +701,9 @@ public class Rainfall {
           System.out.println("Sunday avg = " + sum/52);                              
         }
       }
-    </input></program>
+    </code></program>
     </solution>
   </exercise>
-  </exercises>
+  
   </subsection>
 </section>

@@ -12,7 +12,7 @@
 	  Exception concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>throwing an exception</em></premise>
@@ -80,7 +80,7 @@
           <response>a statement that invokes a particular method.</response>
 	</match>
 	
-      </matches>
+      </cardsort>
       </exercise>
 
     <exercisegroup>
@@ -359,7 +359,7 @@
 
       <p>
         Suppose the following <c>ExerciseExample</c> program is currently executing the if statement in <c>method2()</c>:
- <program language="java"><input>
+ <program language="java"><code>
 public class ExerciseExample {
   public void method1(int M) {
     try {
@@ -379,7 +379,7 @@ public class ExerciseExample {
     ex.method1(500);
   }
 } // ExerciseExample
- </input></program>Draw a picture of the method call stack that represents this situation.
+ </code></program>Draw a picture of the method call stack that represents this situation.
       </p>
     </statement>
       <response />

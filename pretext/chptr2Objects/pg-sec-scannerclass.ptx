@@ -72,18 +72,18 @@
       Because the Scanner class is in the <c>java.util</c> package we need 
       to import it as follows when we want to use it:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 import java.util.Scanner;
- </input></program>
+ </code></program>
     <p>
       To use a <c>Scanner</c> object for keyboard input,
       we must create an instance and associate it with <c>System.in</c>. 
       The following statement will
       declare and instantiate an object that can be used for keyboard input:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Scanner sc = new Scanner(System.in);
- </input></program>
+ </code></program>
     <p>
       After we create a <c>Scanner</c> object,
       we can make a call to <c>nextInt()</c>, <c>nextDouble()</c>, or <c>next()</c>, 
@@ -94,7 +94,7 @@ Scanner sc = new Scanner(System.in);
     </p>
     <listing xml:id="list-scannerprog">
       <caption>A very brief program with a Scanner object used for keyboard input</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.util.Scanner;
 public class TestScanner
 {
@@ -106,7 +106,7 @@ public class TestScanner
     System.out.println(num + " squared = " + num * num);
   } //main()
 } // TestScanner class
- </input></program>
+ </code></program>
 </listing>
     <p>
       When the <c>nextInt()</c>
@@ -130,7 +130,7 @@ Input an integer:123
       for interactive programs.
       For example, the code
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Scanner sc = new Scanner(System.in);
 Riddle riddle = new Riddle(
   "What is black and white and red all over?",
@@ -141,7 +141,7 @@ System.out.print("To see the answer, ");  // Prompt
 System.out.println("type a letter and enter.");
 String str = sc.next();         // Wait for input
 System.out.println(riddle.getAnswer());
- </input></program>
+ </code></program>
     <p>
       will display a riddle question and prompt the user to type a letter and to 
       hit the enter key to see the answer.
@@ -165,10 +165,10 @@ System.out.println(riddle.getAnswer());
       a problem when using a <c>Scanner</c> to read a string that contains spaces. 
       For example, consider the following code segment:
     </p>
-      <program language="java"><input>
+      <program language="java"><code>
         System.out.print("Input the name of the first president of the USA:");
         String str = sc.next();
-      </input></program>
+      </code></program>
 <!--
       has a set of character strings that separate or <term>delimit</term>
       the chunks of data that it is looking for.
@@ -178,11 +178,11 @@ System.out.println(riddle.getAnswer());
       This will allow a user to input several integers separated by spaces before hitting the enter key.
       This might be handled by code like:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.print("Input two integers and an enter:");
 int num1 = sc.nextInt();
 int num2 = sc.nextInt();
- </input></program>
+ </code></program>
     <p>
       White space as delimiters also means that the <c>next()</c> method cannot return an empty string nor can it return a string that contains any spaces.
       For example, consider the code:
@@ -201,9 +201,9 @@ int num2 = sc.nextInt();
       only carriage returns and enter keys as its delimiters.
       For example, the following statement, which works on most Windows systems,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 sc = sc.useDelimiter("\r\n");
- </input></program>
+ </code></program>
     <p>
       will enable the <c>next()</c> method to input strings that contain spaces. It will
       accept all keyboard input up to but not including the enter key. (The <q>\r</q> and
@@ -228,8 +228,8 @@ sc = sc.useDelimiter("\r\n");
       But it's important to realize that our strategy for handling keyboard input with
       the <c>Scanner</c> class is a temporary solution.
     </p>
-<!--  </subsection>
-
+  </subsection>
+<!--
   <subsection xml:id="fig-kbreaderuml">
     <title>Keyboard Input with the <c>KeyboardReader</c>Class</title>
     <p>
@@ -251,7 +251,7 @@ sc = sc.useDelimiter("\r\n");
     </p>
     <figure xml:id="fig-kbreaderprog">
       <caption>A very brief program with a KeyboardReader object used for keyboard input.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class TestKeyboardReader
 {
   public static void main(String[] args)
@@ -261,7 +261,7 @@ public class TestKeyboardReader
     int num = kb.getKeyboardInteger(); // Read an integer
     System.out.println(num + " squared = " + num*num);
   } //main()} // TestKeyboardReader class
- </input></program>
+ </code></program>
     </figure>
     <p>
       reads an integer from the keyboard and squares it just like the <c>TestScanner</c> class.
@@ -271,7 +271,7 @@ public class TestKeyboardReader
     </p>
   </subsection>
 -->
-  <exercises>
+  <subsection>
   <title>Self-Study Exercise</title>
     <exercise label="testScanner">
       <title>TestScanner for Decimals</title>
@@ -303,7 +303,7 @@ public class TestScanner
           <solution>
             <p>
               A main method that reads and squares a real number is given below. 
-          <program language="java"><input>
+          <program language="java"><code>
          public static void main(String[] args)
          {               // Create Scanner object
            Scanner sc = Scanner.create(System.in);
@@ -311,11 +311,11 @@ public class TestScanner
            double realNum= sc.nextDouble();      // Read a double
            System.out.println(num + " squared = " + realNum*realNum);
          } //main()
-          </input></program>
+          </code></program>
                  </p>
           </solution>
         </exercise>
-      </exercises>
+
     
 
   </subsection>

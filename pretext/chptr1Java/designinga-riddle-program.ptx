@@ -407,13 +407,13 @@
       Here's an algorithm that a program could use:
     </p>
     <algorithm>
-      <program language="java"><input>
+      <program language="java"><code>
        1. Set the initial value of the sum to 0.
        2. If there are no more numbers to total, go to step 5.
        3. Add the next number to the sum.
        4. Go to step 2.
        5. Report the sum.
-      </input></program>
+      </code></program>
     </algorithm>
     <p>
       Note that each step in this algorithm is simple and easy to follow.
@@ -429,12 +429,12 @@
     </p>
 
     <algorithm>
-     <program language="java"><input>
+     <program language="java"><code>
     sum = 0
     while (more numbers remain)
 	    add next number to sum
     print the sum
-     </input></program>
+     </code></program>
     </algorithm>
     <p>
       While it is unlikely that experienced programmers would need to write out 
@@ -516,7 +516,7 @@
  <caption>The <c>Riddle</c> class definition.</caption>
 
 <program language="java">
-<input>
+<code>
     public class Riddle extends Object  // Class header
     {                                   // Begin class body
        private String question;       // Instance variables
@@ -535,7 +535,7 @@
 	       return answer;
        } //getAnswer() 
     } // Riddle class                // End class body
-    </input></program>
+    </code></program>
 </listing>
 <!--    </figure> -->
 
@@ -544,7 +544,7 @@
 <activity label="RiddleEx">
       <statement><p>Run the following code. 
         Try changing the Riddle question and answer in the main method and run again.</p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
 public class Riddle extends Object  // Class header
 {                                   // Begin class body
     private String question;       // Instance variables
@@ -570,7 +570,7 @@ public class Riddle extends Object  // Class header
         System.out.println( r.getAnswer() );
     }
 } // end of Riddle class
-    </input></program></activity>
+    </code></program></activity>
 
   </subsection>
   <subsection>
@@ -585,10 +585,10 @@ public class Riddle extends Object  // Class header
       An example of a Java syntax rule is that a Java statement must end with a semicolon.
       For example:
     </p>
-  <program language="java"><input>
+  <program language="java"><code>
     sum = 0;
     sum = 0  // Syntax error, missing semicolon
-  </input></program>
+  </code></program>
      <p>
       This is comparable to a grammatical error in English:
     </p>
@@ -608,9 +608,9 @@ public class Riddle extends Object  // Class header
       The semantics of a programming statement refers to what it does <mdash/> to its
       effect on the program. For example, the meaning of the following statement,
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
     sum = 10 + 15;
-  </input></program>
+  </code></program>
     <p>
       is to add 10 and 15 and store their sum in the variable <c>sum</c>.
     </p>
@@ -664,9 +664,9 @@ public class Riddle extends Object  // Class header
       For example,
       suppose that a program contains the following statement for calculating the area of a rectangle:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
     area = length + width;
-    </input></program>
+    </code></program>
     <p>
       Because we are adding length and width instead of multiplying them,
       the area calculation will be incorrect.

@@ -38,7 +38,7 @@
       For example, in the following code fragment,
       we use <c>isDone</c> to mark when a particular process is completed:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 boolean isDone = false; // Initialize the flag
 ...                     // Do some processing task
 isDone = true;          // Set flag when the task done
@@ -47,7 +47,7 @@ if (isDone)             // Check if finished the task
 ...                     //  If so, do something
 else
 ...                     //  Or, do something else
- </input></program>
+ </code></program>
 </introduction>
 <subsection xml:id="boolean-operators">
 <title>Boolean (or Logical) Operations</title>
@@ -79,7 +79,7 @@ and certain actions or operations that can be performed on those data.
     Change the values of the two boolean variables to figure when the or-expression is true.
   </p></statement>
   <program language="java" interactive="activecode">
-    <input>
+    <code>
     public class Test1
     {
        public static void main(String[] args)
@@ -93,7 +93,7 @@ and certain actions or operations that can be performed on those data.
              System.out.println("We cannot go to the party! :-(");
        }
     }
-  </input>
+  </code>
   </program>
 </activity>
 
@@ -264,8 +264,9 @@ and certain actions or operations that can be performed on those data.
   is false, and vice versa.
 </p>
 
-
-<exercises xml:id="self-study-exercisesA16"><title>Self-Study Exercises</title>
+</subsection>
+   
+<subsection xml:id="self-study-exercisesA16"><title>Self-Study Exercises</title>
 
   <p>Evaluate the following boolean expressions and figure out whether they are true or false.</p>
   <exercise label="boolTF1">
@@ -347,7 +348,7 @@ and certain actions or operations that can be performed on those data.
                    
                     <solution><p>false</p></solution>
                     </exercise>
-</exercises>
+
 
 </subsection>
 <subsection>
@@ -358,9 +359,9 @@ and certain actions or operations that can be performed on those data.
       carried out by the computer.
       For example, what is the value of the following expression?
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 true || true &amp;&amp; false
- </input></program>
+ </code></program>
 <p>
       The value of this expression depends on whether we evaluate the
 <m>\mid\mid</m> first or the &amp;&amp; first.
@@ -371,12 +372,12 @@ true || true &amp;&amp; false
       In the following example,
       we use parentheses to force one operation to be done before the other:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 EXPRESSION                EVALUATION
 ----------                ----------
 ( true || true )  &amp;&amp;  false ==> true  &amp;&amp;  false ==> false
 true || ( true  &amp;&amp;  false ) ==> true || false ==> true
- </input></program>
+ </code></program>
 <p>
       As these evaluations show,
       we can use parentheses to force one operator or the other to be evaluated first.
@@ -449,26 +450,26 @@ true || ( true  &amp;&amp;  false ) ==> true || false ==> true
       expression and then evaluate it.
       For example, to evaluate the complex expression
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 true || !false ^ false &amp;&amp; true
- </input></program>
+ </code></program>
 <p>
       we would first parenthesize it according to the rules
       in  <xref ref="tab-boolprec">Table</xref>, which gives the following expression:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 true || (((!false) ^ false) &amp;&amp; true)
- </input></program>
+ </code></program>
 <p>
       We can then evaluate this fully parenthesized expression,
       step by step, starting at the innermost parentheses:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 Step 1. true || ((true ^ false) &amp;&amp; true)
 Step 2. true || (true &amp;&amp; true)
 Step 3. true || true
 Step 4. true
- </input></program>
+ </code></program>
 <principle>
 <title>PROGRAMMING TIP: Parentheses</title>
 <p>
@@ -490,21 +491,21 @@ Step 4. true
       The binary boolean operators all associate from left to right.
       Thus, the expressions
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 true ^ true ^ true   // Same as: (true ^ true) ^ true
 true &amp;&amp; true &amp;&amp; true // Same as: (true &amp;&amp; true) &amp;&amp; true
 true || true || true // Same as: (true || true) || true
- </input></program>
+ </code></program>
 <p>
       would be evaluated as follows:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 EXPRESSION               EVALUATION
 ----------------         -----------------
 (true ^ true)  ^ true    ==> false ^ true  ==> true
 (true &amp;&amp; true)  &amp;&amp; true  ==> true  &amp;&amp; true ==> true
 (true || true)  || true  ==> true  || true ==> true
- </input></program>
+ </code></program>
 </subsection>
 <subsection xml:id="short-circuit-evaluation">
 <title>Short-Circuit Evaluation</title>
@@ -517,18 +518,18 @@ EXPRESSION               EVALUATION
       regardless of whether it contains additional operators and operands.
       For example, in the expression
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 expr1 &amp;&amp; expr2
- </input></program>
+ </code></program>
 <p>
       if <c>expr1</c> is false,
       then the AND expression must be false,
       so <c>expr2</c> need not evaluated.
       Similarly, in the expression
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 expr1 || expr2
- </input></program>
+ </code></program>
 <p>
       if <c>expr1</c> is true,
       then the OR expression must be true,
@@ -547,21 +548,21 @@ expr1 || expr2
       if we declare a <c>OneRowNim</c> variable without instantiating it and then try to use it,
       a null pointer exception will result:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim game;        // Uninstantiated Reference
 if (!game.gameOver())  // Null pointer exception
     game.takeSticks(num);
- </input></program>
+ </code></program>
 <p>
       In this code,
       a null pointer exception results when we use <c>game</c> in the 
       method call <c>game.gameOver()</c>. We can use short-circuit 
       evaluation to prevent the exception from occurring:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 if ((game != null) &amp;&amp; (!game.gameOver())
     game.takeSticks(num);
- </input></program>
+ </code></program>
 <p>
       In this case,
       because <c>game != null</c> is false,
@@ -569,12 +570,13 @@ if ((game != null) &amp;&amp; (!game.gameOver())
       thus avoiding the exception.
 </p>
 
-<exercises><title>Self-Study Exercises</title>
+</subsection>
+<subsection><title>Self-Study Exercises</title>
 <p> Suppose the following variable declarations are made:
-<program language="java"><input>
+<program language="java"><code>
  boolean A = true, B = true, C = true;
  boolean X = false, Y = false, Z = false;
-</input></program>
+</code></program>
 Given these declarations, evaluate each of the following expressions  (don't forget to take operator precedence and
  associativity into account):</p>
 
@@ -666,6 +668,6 @@ A ^ X || C
                   <solution><p>false</p></solution>
                   </exercise>
       
-</exercises>
+
 </subsection>
 </section>

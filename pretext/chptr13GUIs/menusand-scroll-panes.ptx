@@ -57,10 +57,10 @@ on a menu bar that is associated with a <c>JPopupMenu</c>, a small window that p
       First, you create a menu bar and make it the menu bar for the application's
 <c>JFrame</c> or for the <c>JApplet</c>. This is usually done in the application's constructor or in the applet's <c>init()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 JMenuBar mBar = new JMenuBar();// Create menu bar
 this.setJMenuBar(mBar);   // Add it to this window
- </input></program>
+ </code></program>
     <p>
       The next step involves creating and adding menus and menu items to the menu bar.
       This is also usually done in the constructor or the <c>init()</c> method.
@@ -77,7 +77,7 @@ this.setJMenuBar(mBar);   // Add it to this window
     <p>
       Here's the definition of the file menu for our simple text editor:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void initFileMenu() {
     fileMenu = new JMenu("File");   // Create menu
     mBar.add(fileMenu);      // Add it to menu bar
@@ -94,7 +94,7 @@ private void initFileMenu() {
     quitItem.addActionListener(this);
     fileMenu.add(quitItem);
   } // initFileMenu()
- </input></program>
+ </code></program>
     <p>
       The first two statements in the method create the file menu and add it to the menu bar.
       The rest of the statements create the individual menu items that make up the file menu.
@@ -169,7 +169,7 @@ private void initFileMenu() {
       and the recent cuts menu drops down and to the right of where its arrow points.
       The following method was used to create the edit menu:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void initEditMenu() {
   editMenu = new JMenu("Edit"); // Create edit menu
   mBar.add(editMenu);            // Add to menu bar
@@ -190,7 +190,7 @@ private void initEditMenu() {
   cutsMenu = new JMenu("Recent Cuts");//Cuts submenu
   editMenu.add(cutsMenu);
 } // initEditMenu()
- </input></program>
+ </code></program>
     <p>
       The main difference between this method and the one used to create the file menu is that here we insert an entire submenu as one of the items in the edit menu.
       The <c>cutsMenu</c> will be used to hold the strings that are cut from the document.
@@ -225,7 +225,7 @@ private void initEditMenu() {
         The following <c>actionPerformed()</c> method is used to handle the menu 
         selections for the text editor:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void actionPerformed(ActionEvent e) {
   JMenuItem m  = (JMenuItem)e.getSource(); // Get selected menu item
   if ( m == quitItem ) {                   // Quit
@@ -247,7 +247,7 @@ public void actionPerformed(ActionEvent e) {
     scratchPad = item.getActionCommand(); // Put cut back in scratchpad
   }
 } // actionPerformed()
- </input></program>
+ </code></program>
       <p>
         The method begins by getting the source of the <c>ActionEvent</c> and casting it into a <c>JMenuItem</c>. It then checks each case of the if-else structure.
         Because the actions taken by this program are fairly short,
@@ -303,7 +303,7 @@ public void actionPerformed(ActionEvent e) {
         from first to last.
         That way the most recent cut will appear first in the menu:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 private void addRecentCut(String cut) {
   recentCuts.add(0,cut);
   cutsMenu.removeAll();
@@ -314,7 +314,7 @@ private void addRecentCut(String cut) {
     item.addActionListener(this);
   }
 } // addRecentCut()
- </input></program>
+ </code></program>
       <p>
         The <c>recentCuts ArrayList</c> stores the cut strings.
         Note the use of the <c>insertElementAt()</c> method to insert strings into the vector and the <c>elementAt()</c> method to get strings from the vector.
@@ -355,7 +355,7 @@ private void addRecentCut(String cut) {
     </figure>
     <listing xml:id="listing-texteditor">
       <caption>A menu-based <c>SimpleTextEditor</c> application</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -452,7 +452,7 @@ public class SimpleTextEditor extends JFrame implements ActionListener{
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } // main()
 } // SimpleTextEditor
- </input></program>
+ </code></program>
 </listing>
     
 </subsection>
@@ -460,9 +460,9 @@ public class SimpleTextEditor extends JFrame implements ActionListener{
       <title>Adding Scrollbars to a Text Area</title>
     <p> Note how simple it is to add  scrollbars to the text area:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 this.getContentPane().add(new JScrollPane(display));
- </input></program>
+ </code></program>
     <p>
       This statement creates a <c>JScrollPane</c> and adds it to the application's container.
       A <c>JScrollPane</c> is one of Swing's scrollbar classes.
@@ -481,10 +481,10 @@ this.getContentPane().add(new JScrollPane(display));
       This refers to the scrollable component,
       in this case to the <c>JTextArea</c>. Another constructor that you might use takes the following form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public JScrollPane(Component comp, int vsbPolicy,
                                      int hsbPolicy);
- </input></program>
+ </code></program>
     <p>
       The two integers refer to the vertical and horizontal scrolling policies.
       These cover properties such as whether the scrollbars are always present or just as needed.
@@ -515,7 +515,7 @@ public JScrollPane(Component comp, int vsbPolicy,
               Solution: Check the size of the vector after inserting the cut.
               If it exceeds ten,
               remove the last element in the vector.
-     <program language="java"><input>
+     <program language="java"><code>
     private void addRecentCut(String cut) {
       recentCuts.add(0,cut);
       if (recentCuts.size() > 10) { // If more than 10 cuts
@@ -529,7 +529,7 @@ public JScrollPane(Component comp, int vsbPolicy,
         item.addActionListener(this);
       }
     } // addRecentCut()
-     </input></program>
+     </code></program>
             </p>
           </solution>
           </exercise>
@@ -549,7 +549,7 @@ public JScrollPane(Component comp, int vsbPolicy,
     Solution: Use the <c>indexOf()</c> method to search for the cut.
     If it's already there,
     don't insert the cut.
-<program language="java"><input>
+<program language="java"><code>
 private void addRecentCut(String cut) {
 if (recentCuts.indexOf(cut) == -1) {// If not already cut
 recentCuts.add(0,cut);
@@ -565,7 +565,7 @@ for (int k = 0; k &lt; recentCuts.size(); k++) {
   }
  } // if not already cut
 } // addRecentCut()
-</input></program>
+</code></program>
   </p>
 </solution>
           </exercise>

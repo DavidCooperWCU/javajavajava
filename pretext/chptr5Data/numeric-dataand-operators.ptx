@@ -145,7 +145,8 @@
       </p>
     </principle>
 
-  <exercises><title>Self-Study Exercises</title>
+  </subsection>
+     <subsection><title>Self-Study Exercises</title>
     <exercise label="fillin-binary">
       <title>Fill-In Binary</title>
       <statement>
@@ -224,7 +225,7 @@
                                     <solution><p>double</p></solution>
                                   </exercise>    
   
-  </exercises>
+  
   </subsection>
   <subsection>
     <title>Arithmetic Operators</title>
@@ -285,12 +286,12 @@
         there are some important differences between their use in algebra and their use in a Java program.
         Consider the following list of expressions:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 3 / 2     ==>  value 1     An integer result
 3.0 / 2.0 ==>  value 1.5   A floating-point result
 3 / 2.0   ==>  value 1.5   A floating-point result
 3.0 / 2   ==>  value 1.5   A floating-point result
- </input></program>
+ </code></program>
       <p>
         In each of these cases we are dividing the quantity 3 by the quantity<nbsp/>2.
         However, different results are obtained depending on the <em>type</em>
@@ -338,12 +339,12 @@
         is divided by <em>n</em>.
         Here are several examples:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
  7 % 5   ==> 7 mod 5 equals 2
  5 % 7   ==> 5 mod 7 equals 5
 -7 % 5   ==> -7 mod 5 equals -2
  7 % -5  ==> 7 mod -5 equals 2
- </input></program>
+ </code></program>
       <p>
         The best way to interpret these examples is to perform long division on the operands keeping both the quotient and the remainder.
         For example, when you do long division on <m>-7 \div 5</m>,
@@ -359,10 +360,10 @@
         we use it when we want to determine whether an integer is even or odd.
         Numbers that leave a 0 remainder when divided by 2 are even:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (N % 2 == 0)
     System.out.println(N + " is even");
- </input></program>
+ </code></program>
       <p>
         More generally,
         we could use the mod operator to define divisibility by 3, 4, 10, or by any number.
@@ -372,7 +373,7 @@ if (N % 2 == 0)
        <statement><p>Try the expressions containing the % operator below to see how they can be used to check for even or odd numbers. 
         All even numbers are divisible (with no remainder) by 2. Add another if statement
       that checks whether age2 is even using the % operator. Then, test if it's divisible by 3.</p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
         public class BoolMod
         {
            public static void main(String[] args)
@@ -388,10 +389,11 @@ if (N % 2 == 0)
                 System.out.println(age1 + " is odd");   
            }
         }
-      </input></program>
+      </code></program>
       </activity>
 
-<exercises>
+</subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
   
 
@@ -403,7 +405,7 @@ if (N % 2 == 0)
   <feedback>
       <p></p>
   </feedback>
-  <matches>
+  <cardsort>
       <match>
           <premise>10 / 2</premise>
           <response>5</response>
@@ -429,7 +431,7 @@ if (N % 2 == 0)
         <response>6</response>
       </match>
      
-  </matches>
+  </cardsort>
  <solution><p>5, 4, 0, 1, 2, 6</p></solution>
 </exercise>
 
@@ -442,7 +444,7 @@ if (N % 2 == 0)
   <feedback>
       <p></p>
   </feedback>
-  <matches>
+  <cardsort>
       <match>
           <premise>8 / 2.0</premise>
           <response>4.0</response>
@@ -463,10 +465,10 @@ if (N % 2 == 0)
         <premise>8.0 / 6.0</premise>
         <response>1.33</response>
       </match>
-  </matches>
+  </cardsort>
   <solution><p>4.0, 4.5, 0, 0.0, 1.33</p></solution>
 </exercise>
-</exercises>
+
 
 </subsection>
 
@@ -508,11 +510,11 @@ if (N % 2 == 0)
         some operands must be converted before the expression can be evaluated.
         Consider the following example:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 byte n = 125;
 short m = 32000;
 n * m;
- </input></program>
+ </code></program>
       <p>
         In this case,
         <em>(n * m)</em> involves two different integer 
@@ -583,16 +585,17 @@ n * m;
       </table>
 
 
-<exercises>
+</subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
 <exercise label="eval-type-promotion">
   <title>Evaluate Type Promotion</title>
   <statement>
       <p>
         Suppose that the following variable declarations are made:
-<program language="java"><input>
+<program language="java"><code>
     byte m = 3;  short n = 4;  int p = 5;  long q = 6;  double r = 7.0;
-      </input></program>
+      </code></program>
         
       Use type promotion rules to determine
        the type of  expression and then evaluate each of the following
@@ -602,7 +605,7 @@ n * m;
   <feedback>
       <p></p>
   </feedback>
-  <matches>
+  <cardsort>
       <match>
           <premise> m + n     </premise>
           <response>7 (int)</response>
@@ -623,10 +626,10 @@ n * m;
         <premise>r - m</premise>
         <response>4.0 (double)</response>
       </match>
-  </matches>
+  </cardsort>
   <solution><p>7 (int), 30 (long), 14.0 (double), 90 (long), 4.0 (double)</p></solution>
 </exercise>
-</exercises>
+
   </subsection>
 
   <subsection xml:id="op-precedence">
@@ -670,9 +673,9 @@ n * m;
       Operators at the same level in the precedence hierarchy are evaluated from left to right.
       For example, consider the following expression:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 9 + 6 - 3 * 6 / 2
- </input></program>
+ </code></program>
     <p>
       In this case,
       the first operation to be applied will be the multiplication (*), followed by division (/), followed by addition (+), and then finally the subtraction
@@ -680,13 +683,13 @@ n * m;
       We can use parentheses to clarify the order of evaluation.
       A parenthesized expression is evaluated outward from the innermost set of parentheses:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Step 1.  ( (9 + 6) - ((3 * 6) / 2 ) )
 Step 2.  ( (9 + 6) - (18 / 2 ) )
 Step 3.  ( (9 + 6) - 9 )
 Step 4.  ( 15 - 9 )
 Step 5.  6
- </input></program>
+ </code></program>
     <p>
       Parentheses can
       (and should)
@@ -694,17 +697,17 @@ Step 5.  6
       For example,
       addition will be performed before multiplication in the following expression:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 (a + b) * c
- </input></program>
+ </code></program>
     <p>
       Another reason to use parentheses is that Java's precedence and promotion rules will sometimes lead to expressions that look fine but contain subtle errors.
       For example, consider the following expressions:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.println(5/3/2.0);   // 0.5
 System.out.println(5/(3/2.0)); // 3.33
- </input></program>
+ </code></program>
     <p>
       The first gives a result of 0.5, but the use of parentheses in the second gives a result of 3.33.
       If the second is the expected interpretation,
@@ -718,7 +721,8 @@ System.out.println(5/(3/2.0)); // 3.33
       </p>
     </principle>
 
-  <exercises>
+ </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>  
  
   <exercise label="eval-expr1">
@@ -730,7 +734,7 @@ System.out.println(5/(3/2.0)); // 3.33
     <feedback>
         <p></p>
     </feedback>
-    <matches>
+    <cardsort>
         <match>
             <premise>4 + 5.0 * 6 </premise>
             <response>34.0</response>
@@ -747,7 +751,7 @@ System.out.println(5/(3/2.0)); // 3.33
             <premise>  (4 + 5) / 6 </premise>
             <response>1</response>
         </match>
-    </matches>
+    </cardsort>
     <solution><p>34.0, 54, 4, 1</p></solution>
   </exercise>
   
@@ -760,7 +764,7 @@ System.out.println(5/(3/2.0)); // 3.33
     <feedback>
         <p></p>
     </feedback>
-    <matches>
+    <cardsort>
         <match>
           <premise>  4 + 5 % 3</premise>
           <response>6</response>
@@ -777,10 +781,10 @@ System.out.println(5/(3/2.0)); // 3.33
           <premise>  5.0 / 2 * 3 </premise>
           <response>7.5</response>
         </match>
-    </matches>
+    </cardsort>
     <statement><p>6, 0, 2, 7.5</p></statement>
   </exercise>
-  </exercises>
+ 
      
 
   </subsection>
@@ -794,10 +798,10 @@ System.out.println(5/(3/2.0)); // 3.33
       <em>++</em> to increment the value of the integer variable <em>k</em>.
       The expression <em>k++</em> is equivalent to the following Java statements:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int k;
 k = k + 1;// Add 1 to k and assign the result back to k
- </input></program>
+ </code></program>
     <p>
       The unary <em>++</em> operator applies to a single integer operand,
       in this case to the variable <em>k</em>.
@@ -830,10 +834,10 @@ k = k + 1;// Add 1 to k and assign the result back to k
       there is a significant difference between preincrement and postincrement.
       For example, in the following code segment,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int j = 0, k = 0;   // Initially both j and k are 0
 j = ++k;            // Final values of both j and k are 1
- </input></program>
+ </code></program>
     <p>
       the variable <em>k</em> is incremented <em>before</em>
        its value is assigned to <em>j</em>.
@@ -841,18 +845,18 @@ j = ++k;            // Final values of both j and k are 1
       <em>j</em> will equal 1 and <em>k</em> will equal 1.
       The sequence is equivalent to
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int j = 0, k = 0;   // Initially both j and k are 0
 k = k + 1;
 j = k;              // Final values of both j and k are 1
- </input></program>
+ </code></program>
     <p>
       However, in the following example,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int i = 0, k = 0; // Initially both i and k are 0
 i = k++;          // Final value of i is 0 and k is 1
- </input></program>
+ </code></program>
     <p>
       the variable <em>k</em> is incremented <em>after</em>
       its value is assigned to <em>i</em>.
@@ -861,11 +865,11 @@ i = k++;          // Final value of i is 0 and k is 1
       <em>k</em> will have the value 1.
       The preceding sequence is equivalent to
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int i = 0, k = 0;   // Initially both i and k are 0
 i = k;
 k = k + 1;          // Final value of i is 0 and k is 1
- </input></program>
+ </code></program>
     <p>
       In addition to the increment operator, Java also supplies the
       <em> decrement<idx><h>decrement operator <ndash/></h></idx>
@@ -941,8 +945,8 @@ k = k + 1;          // Final value of i is 0 and k is 1
         as we'll see later.
       </p>
     </principle>
-
-    <exercises xml:id="self-study-exercisesD16">
+</subsection>
+     <subsection xml:id="self-study-exercisesD16">
 <title>Self-Study Exercises </title> 
 
 <exercise label="eval-inc">
@@ -957,7 +961,7 @@ k = k + 1;          // Final value of i is 0 and k is 1
   <feedback>
       <p></p>
   </feedback>
-  <matches>
+  <cardsort>
       <match>
           <premise>k = j;    </premise>
           <response> k==5, j==5   </response>
@@ -978,7 +982,7 @@ k = k + 1;          // Final value of i is 0 and k is 1
         <premise>   k = --j;</premise>
         <response> k==4, j==4</response>
       </match>
-  </matches>
+  </cardsort>
 </exercise>
 <solution><p><ul>
   <li>k==5, j==5</li>
@@ -987,7 +991,7 @@ k = k + 1;          // Final value of i is 0 and k is 1
   <li>k==5, j==4</li>
   <li> k==4, j==4</li>
 </ul></p></solution>
-</exercises>
+
 
   </subsection>
   <subsection xml:id="assignment-operators">
@@ -1002,27 +1006,27 @@ k = k + 1;          // Final value of i is 0 and k is 1
       the <c>+=</c> operator allows you to combine addition and assignment into one expression.
       The statement
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 k += 3;
- </input></program>
+ </code></program>
     <p>
       is equivalent to the statement
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 k = k + 3;
- </input></program>
+ </code></program>
     <p>
       Similarly, the statement
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 r += 3.5 + 2.0 * 9.3 ;
- </input></program>
+ </code></program>
     <p>
       is equivalent to
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
- </input></program>
+ </code></program>
     <p>
       As these examples illustrate,
       when using the <c>+=</c> operator,
@@ -1090,7 +1094,7 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
       <statement><p>Run the code below to see what the ++ and shorcut operators do. Click on the 
         Show Code Lens button to trace through the code and the variable values change in the visualizer. </p></statement>
        <program language="java" interactive="activecode">
-        <input>
+        <code>
         public class Test2
         {
            public static void main(String[] args)
@@ -1106,11 +1110,12 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
              System.out.println(score);
            }
         }          
-      </input>
+      </code>
        </program>
       </activity>
 
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises </title> 
 
 
@@ -1126,7 +1131,7 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
   <feedback>
       <p></p>
   </feedback>
-  <matches>
+  <cardsort>
       <match>
           <premise>k += j; </premise>
           <response>  k==15, j==5    </response>
@@ -1147,7 +1152,7 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
         <premise>  k %= j - 3; </premise>
         <response> k==0, j==5</response>
       </match>
-  </matches>
+  </cardsort>
   <solution><p><ul>
     <li>k==15, j==5</li>
     <li>k==5, j==6</li>
@@ -1160,7 +1165,7 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
  <statement><p> Write four different statements that add 1 to the
    variable <c>k</c> (which has been declared as an int).</p></statement>
 </exercise>
-</exercises>
+
 
   </subsection>
   <subsection xml:id="relationals">
@@ -1237,7 +1242,7 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
     <activity label="relOpDemo">
       <statement><p>Run the code below and try changing the value of x to get each of the three possible lines in the conditional to print.</p></statement>
      <program language="java" interactive="activecode">
-      <input>
+      <code>
       public class TestElseIf
       {
         public static void main(String[] args)
@@ -1257,7 +1262,7 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
           }
         }
       }
-     </input>
+     </code>
      </program>
     </activity>
     <p>
@@ -1321,39 +1326,39 @@ r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
       To take an example,
       let us evaluate the following complex expression:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 9 + 6 &lt;= 25 * 4 + 2
- </input></program>
+ </code></program>
     <p>
       To clarify the implicit operator precedence,
       we first parenthesize the expression
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 ( 9 + 6 ) &lt;= ( (25 * 4 ) + 2 )
- </input></program>
+ </code></program>
     <p>
       and then evaluate it step by step:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Step 1. ( 9 + 6 ) &lt;= ( (25 * 4 ) + 2 )
 Step 2. ( 9 + 6 ) &lt;= ( 100 + 2 )
 Step 3. 15 &lt;= 102
 Step 4. true
- </input></program>
+ </code></program>
     <p>
       The following expression is an example of an ill-formed expression:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 9 + 6 &lt;= 25 * 4 == 2
- </input></program>
+ </code></program>
     <p>
       That the expression is ill formed becomes obvious if we parenthesize it and then attempt to evaluate it:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Step 1. ( ( 9 + 6 )  &lt;= ( 25 * 4 ) ) == 2
 Step 2. ( 15  &lt;= 100 ) == 2
 Step 3. true == 2      // Syntax error results here
- </input></program>
+ </code></program>
     <p>
       The problem here is that the expression
 <c>true == 2</c> is an attempt to compare an <c>int</c> and a
@@ -1364,7 +1369,8 @@ Step 3. true == 2      // Syntax error results here
       This is another example of Java's strong type checking.
     </p>
     
-    <exercises>
+   </subsection>
+     <subsection>
       <title>Self-Study Exercises </title> 
       
       
@@ -1380,7 +1386,7 @@ Step 3. true == 2      // Syntax error results here
         <feedback>
             <p></p>
         </feedback>
-        <matches>
+        <cardsort>
             <match>
                 <premise>m = j++ + k; </premise>
                 <response>  m = 5   </response>
@@ -1401,7 +1407,7 @@ Step 3. true == 2      // Syntax error results here
               <premise>   m *= ++j + ++k;  </premise>
               <response>  m = 70</response>
             </match>
-        </matches>              
+        </cardsort>              
         <solution><p><ul>
           <li>m = 5</li>
           <li>m = 6</li>
@@ -1421,7 +1427,7 @@ Step 3. true == 2      // Syntax error results here
         <feedback>
             <p></p>
         </feedback>
-        <matches>
+        <cardsort>
             <match>
                 <premise>4 + 5 ==  6 * 2 </premise>
                 <response>  false   </response>
@@ -1434,7 +1440,7 @@ Step 3. true == 2      // Syntax error results here
                 <premise>(4 = 5) / 6   </premise>
                 <response> illegal </response>
             </match>
-            </matches>
+            </cardsort>
             </exercise>
             <exercise label="eval-tf2">
               <title>Evaluate True/False/Illegal</title>
@@ -1446,7 +1452,7 @@ Step 3. true == 2      // Syntax error results here
               <feedback>
                   <p></p>
               </feedback>
-              <matches>
+              <cardsort>
                   <match>
                       <premise>(4 + 5) &lt;= 6 / 3          </premise>
                       <response>  false   </response>
@@ -1459,11 +1465,11 @@ Step 3. true == 2      // Syntax error results here
                       <premise>(4 + 5) % 3 = 10 -4   </premise>
                       <response> illegal </response>
                   </match>
-                  </matches>
+                  </cardsort>
                   </exercise>
 
                   <!-- Extra false exercise 9 % 2 * 7 / 3 > 17 -->
-      </exercises>
+      
       
     
   </subsection>    

@@ -60,9 +60,9 @@
       This would be a name whose path starts at the root directory of the file system.
       For example,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 /root/java/examples/datafiles/data.txt
- </input></program>
+ </code></program>
     <p>
       would be the absolute path name for the file named <c>data.txt</c> on a Linux system.
       When you supply the name of a file to one of the stream constructors,
@@ -113,7 +113,7 @@
       return <c>true</c> if a readable file with that name exists.
       Otherwise, the method will throw an exception and return <c>false</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private boolean isReadableFile(String fileName) {
   try {
     File file = new File(fileName);
@@ -133,7 +133,7 @@ private boolean isReadableFile(String fileName) {
     return false;
   }
 } // isReadableFile
- </input></program>
+ </code></program>
     <p>
       The method simply creates a <c>File</c> instance and uses its <c>exists()</c> 
       and <c>canRead()</c> methods to check whether its name is valid.
@@ -149,7 +149,7 @@ private boolean isReadableFile(String fileName) {
       Also, a file might be designated as unwriteable in order to protect it from being inadvertently overwritten.
       We should check that the file is writeable before attempting to write to it:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private boolean isWriteableFile(String fileName) {
   try {
     File file = new File (fileName);
@@ -165,7 +165,7 @@ private boolean isWriteableFile(String fileName) {
     return false;
   }
 } // isWriteableFile()
- </input></program>
+ </code></program>
     <p>
       The first check in this code tests that the user has not forgotten to provide a name for the output file.
       It is unlikely that the user wants to name the file with the empty string.
@@ -173,7 +173,8 @@ private boolean isWriteableFile(String fileName) {
       If so, we use the <c>canWrite()</c> method to test whether the file is writeable.
       Both kinds of errors result in <c>IOException</c>s.
     </p>
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
       <exercise label="file-info">
         <title>File Info</title>
@@ -185,7 +186,7 @@ private boolean isWriteableFile(String fileName) {
             prints the following information about the file:
             its absolute path, its length, and whether it is a directory or a file. The <c>main()</c> program is completed for you.
           </p>
-        <program language="java" interactive="activecode"><input>
+        <program language="java" interactive="activecode"><code>
         public class Main {
             // Complete this method
             public static void getFileAttributes(String filename) {
@@ -198,10 +199,10 @@ private boolean isWriteableFile(String fileName) {
             }
 
         }
-        </input></program>
+        </code></program>
         </statement>
         <solution>
-<program language="java"><input>
+<program language="java"><code>
 public void getFileAttributes(String fileName) {
     File file = new File (fileName);
     System.out.println(filename);
@@ -213,9 +214,9 @@ public void getFileAttributes(String fileName) {
     else
         System.out.println("Not a Directory");
 } // getFileAttributes()
- </input></program>
+ </code></program>
         </solution>
       </exercise>
-    </exercises>
+    
   </subsection>
 </section>

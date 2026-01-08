@@ -24,12 +24,12 @@
     </p>
  <algorithm>
   <title>Rounding to 2 decimal places</title>
-  <program language="java"><input>
+  <program language="java"><code>
 1. Multiply the number by 100, giving 7519.9999.
 2. Add 0.5 to the number giving 7520.4999.
 3. Drop the fractional part giving 7520
 4. Divide the result by 100, giving 75.20
- </input></program>
+ </code></program>
  </algorithm>
     <p>
       Step 3 of this algorithm can be done using the <c>Math.floor(R)</c> method,
@@ -39,9 +39,9 @@
       If the number to be rounded is stored in the <c>double</c> variable <em>R</em>,
       then the following expression will round <c>R</c> to two decimal places:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 R = Math.floor(R * 100.0 + 0.5) / 100.0;
- </input></program>
+ </code></program>
     <p>
       Alternatively,
       we could use the <c>Math.round()</c> method ( <xref ref="tab-math">Table</xref>).
@@ -50,9 +50,9 @@ R = Math.floor(R * 100.0 + 0.5) / 100.0;
       rounds to 66.
       The following expression uses it to round to two decimal places:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 R = Math.round(100.0 * R) / 100.0;
- </input></program>
+ </code></program>
     <p>
       Note that it is important here to divide by <m>100.0</m> and not by <m>100</m>.
       Otherwise, the division will give an integer result and we'll lose the decimal places.
@@ -69,7 +69,7 @@ R = Math.round(100.0 * R) / 100.0;
     <statement><p>Try the following demo of these math operations to round a decimal value. 
       Try changing the value of r and try again.  </p></statement>
       <program language="java" interactive="activecode">
-     <input>
+     <code>
      public class RoundingDemo 
      {
       public static void main(String[] args) 
@@ -84,7 +84,7 @@ R = Math.round(100.0 * R) / 100.0;
             System.out.println("Math.round: " + rRounded);
       }
   }
-    </input>
+    </code>
     </program>
     </activity>
 
@@ -189,7 +189,7 @@ R = Math.round(100.0 * R) / 100.0;
       </p>
      <figure xml:id="fig-temperature">
         <caption>The <c>Temperature</c> class.</caption>
-        <program language="java"><input>
+        <program language="java"><code>
           public class Temperature
           {
               public static double fahrToCels(double temp)
@@ -201,7 +201,7 @@ R = Math.round(100.0 * R) / 100.0;
                   return (9.0 * temp / 5.0 + 32.0);
               }
           } // Temperature
-        </input></program>
+        </code></program>
       </figure>
       <p>
         Note that because <c>celsToFahr()</c> uses the <c>double</c> value <c>temp</c> in its calculation,
@@ -211,9 +211,9 @@ R = Math.round(100.0 * R) / 100.0;
         For example,
         suppose we had written the <c>celsToFahr()</c> method using this calculation:
       </p>
-      <program language="java"><input>
+      <program language="java"><code>
         return (9 / 5 * temp + 32);    // Error: equals (temp + 32)
-      </input></program>
+      </code></program>
       <p>
         Because 9 divided by 5 gives the integer result 1, this expression 
         is always equivalent to <c>temp + 32</c>, which is not the correct conversion formula.
@@ -284,7 +284,7 @@ R = Math.round(100.0 * R) / 100.0;
         <statement><p>Try the following demo of the Temperature converter.  
           Try each of the tests mentioned above.  </p></statement>
           <program language="java" interactive="activecode">
-         <input>
+         <code>
          public class Temperature {
             
              public static double fahrToCels(double temp)
@@ -302,7 +302,7 @@ R = Math.round(100.0 * R) / 100.0;
                   System.out.println("0 in C is " + Temperature.celsToFahr(0) + "F");
              }
          }
-        </input>
+        </code>
         </program>
         </activity>
 
@@ -354,7 +354,8 @@ R = Math.round(100.0 * R) / 100.0;
 </subsubsection>
 -->
 
-<exercises xml:id="ss-TempUI">
+</subsection>
+     <subsection xml:id="ss-TempUI">
   <title>Self-Study Exercises</title>
 <!-- <subsubsection xml:id="ss-5-7-1"> -->
      
@@ -374,12 +375,12 @@ R = Math.round(100.0 * R) / 100.0;
               you do not need to instantiate a <c>Temperature</c> object in this project.
               You can invoke the conversion methods directly through the <c>Temperature</c> class:
             </p>
-            <program language="java"><input>
+            <program language="java"><code>
               double fahr = Temperature.celsToFahr(98.6);
-            </input></program>
+            </code></program>
           </statement>
           <solution>
-            <program language="java"><input>
+            <program language="java"><code>
               public class TemperatureUI
                { private KeyboardReader reader; // Handles command line I/O
                  public TemperatureUI() 
@@ -402,7 +403,7 @@ R = Math.round(100.0 * R) / 100.0;
                   ui.run();                  //  run the user interface.
                 } // main()
                } // TemperatureUI
-            </input></program>
+            </code></program>
           </solution>
         </exercise>
         <exercise label="temp_GUI">
@@ -419,7 +420,7 @@ R = Math.round(100.0 * R) / 100.0;
             </figure>
             </statement>
             <solution><p>
-             <program language="java"><input>
+             <program language="java"><code>
               import javax.swing.*;
                import java.awt.*;
                import java.awt.event.*;
@@ -467,10 +468,10 @@ R = Math.round(100.0 * R) / 100.0;
                  } // actionPerformed
                } // TemperatureJPanel
           
-            </input></program>
+            </code></program>
             </p></solution>
         </exercise>
-    </exercises>
+    
  <!--   </subsubsection> -->
   </subsection>
   <subsection xml:id="class-constants">
@@ -499,12 +500,12 @@ R = Math.round(100.0 * R) / 100.0;
       <term>class constants</term>,
       constant values that are associated with the class rather than with its instances:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       public static final int PLAYER_ONE = 1;
       public static final int PLAYER_TWO = 2;
       public static final int MAX_PICKUP = 3;
       public static final int MAX_STICKS = 7;
-    </input></program>
+    </code></program>
     <p>
       The <c>final</c> modifier indicates that the value of a variable cannot be changed.
       When <c>final</c> is used in a variable declaration,
@@ -514,9 +515,9 @@ R = Math.round(100.0 * R) / 100.0;
       For example, given the preceding declarations,
       the following assignment statement would cause a compiler error:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       PLAYER_ONE = 5;  // Syntax error; PLAYER_ONE is a constant
-    </input></program>
+    </code></program>
     <p>
       Note how we use uppercase letters and underscore characters (_) in the names of constants.
       This is a convention that professional Java programmers follow,
@@ -536,10 +537,10 @@ R = Math.round(100.0 * R) / 100.0;
       For example, for the <c>OneRowNim</c> class,
       compare the following two <c>if</c> conditions:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       if (num &lt; 1 || num > 3 || num > nSticks) ...
       if (num &lt; 1 || num > MAX_PICKUP || num > nSticks) ...
-    </input></program>
+    </code></program>
     <p>
       Clearly, the second condition is easier to read and understand.
       In the first condition,
@@ -556,13 +557,13 @@ R = Math.round(100.0 * R) / 100.0;
       we could use PLAYER_ONE and PLAYER_TWO to make methods 
       such as the following easier to read and understand:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       public int getPlayer()
       {   if (onePlaysNext)
               return PLAYER_ONE;
           else return PLAYER_TWO;
       } // getPlayer()
-    </input></program>
+    </code></program>
     <principle>
       <title>PROGRAMMING TIP: Readability</title>
       <p>
@@ -579,9 +580,9 @@ R = Math.round(100.0 * R) / 100.0;
       occurrences of 4 that were used to represent the maximum pick up.
       If we used a named constant, we need only change its declaration to:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       public static final int MAX_PICKUP = 4;
-    </input></program>
+    </code></program>
     <principle>
       <title>EFFECTIVE DESIGN: Maintainability</title>
       <p>
@@ -614,9 +615,9 @@ R = Math.round(100.0 * R) / 100.0;
       instances of the class exist.  For example, a class constant
       (as opposed to an instance constant) may be used during object instantiation:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       OneRowNim game = new OneRowNim(OneRowNim.MAX_STICKS);
-    </input></program>
+    </code></program>
     <p>
       Note how we use the name of the class to refer to the class constant.
       Of course, MAX_STICKS has to be a public variable in order 
@@ -636,7 +637,7 @@ R = Math.round(100.0 * R) / 100.0;
     </p>
     <listing xml:id="list-constnim">
       <caption>This version of <c>OneRowNim</c> uses named constants.</caption>
-      <program language="java"><input>
+      <program language="java"><code>
         public class OneRowNim
         {   public static final int PLAYER_ONE = 1;
             public static final int PLAYER_TWO = 2;
@@ -685,11 +686,12 @@ R = Math.round(100.0 * R) / 100.0;
                   + "\nNext turn by player " + getPlayer() + "\n");
             }   // report()
           } // OneRowNim class
-      </input></program>
+      </code></program>
     </listing>
 
 <!--<subsubsection xml:id="ss-5-7-2"> -->
-<exercises>
+</subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
     
   <exercise label="OneRowNimWithConstants">
@@ -700,7 +702,7 @@ R = Math.round(100.0 * R) / 100.0;
            use of the <c>MAX_STICKS</c> and <c>MAX_PICKUP</c> in the main method.
           </p>
           </statement>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
           public class OneRowNim
           {   public static final int PLAYER_ONE = 1;
               public static final int PLAYER_TWO = 2;
@@ -766,9 +768,9 @@ R = Math.round(100.0 * R) / 100.0;
                     + "\nNext turn by player " + getPlayer() + "\n");
               }   // report()
             } // OneRowNim class
-        </input></program>
+        </code></program>
       <solution>
-        <program language="java"><input>
+        <program language="java"><code>
         public static void main(String argv[])
         { 
              OneRowNim game = new OneRowNim(MAX_STICKS);
@@ -783,10 +785,10 @@ R = Math.round(100.0 * R) / 100.0;
              System.out.print("Game won by player ");
              System.out.println(game.getWinner());
        } // main()
-      </input></program>
+      </code></program>
       </solution> 
       </exercise>
-    </exercises>
+   
 <!--      </subsubsection> -->
       </subsection>
        
@@ -835,7 +837,8 @@ R = Math.round(100.0 * R) / 100.0;
     </introduction>
 <!-- <subsubsection xml:id="ss-5-7-3"> -->
 
-<exercises><title>Self-Study Exercise</title>
+</subsection>
+     <subsection><title>Self-Study Exercise</title>
 <exercise label="onerownim-UI">
   <title>OneRowNim UI</title>
    <statement>
@@ -847,7 +850,7 @@ R = Math.round(100.0 * R) / 100.0;
           </p>
         </statement>
   </exercise>
-  </exercises>
+  
 <!--  </subsubsection> -->
   </subsection>
   <subsection xml:id="winningORN">
@@ -881,14 +884,14 @@ R = Math.round(100.0 * R) / 100.0;
       Notice that if you take the remainder after dividing each of these 
       numbers by 4 you always get 1:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       1 % 4  == 1
       5 % 4  == 1
       9 % 4  == 1
       13 % 4  == 1
       17 % 4  == 1
       21 % 4  == 1
-    </input></program>
+    </code></program>
     <p>
       Thus, we can base our winning strategy on the goal of leaving the 
       opponent with a number of sticks,
@@ -911,45 +914,45 @@ R = Math.round(100.0 * R) / 100.0;
       <c>N</c>, such that <em>N % 4 == 1</em>.
       Then we have the following two equations:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       sticksLeft - M == N
       N % 4 == 1
-    </input></program>
+    </code></program>
     <p>
       We can combine these into a single equation,
       which can be simplified as follows:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       (sticksLeft - M)  % 4 == 1
-    </input></program>
+    </code></program>
     <p>
       If <em>sticksLeft - M</em> leaves a remainder of 1 when divided by 4, 
       that means that <em>sticksLeft - M</em>
       is equal to some integer quotient,
       <em>Q</em> times 4 plus 1:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       (sticksLeft - M)   ==  (Q * 4) + 1
-    </input></program>
+    </code></program>
     <p>
       By adding <c>M</c> to both sides and subtracting 1 from both sides of this equation, we get:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       (sticksLeft - 1)   ==  (Q * 4) + M
-    </input></program>
+    </code></program>
     <p>
       This equation is saying that <em>(sticksLeft - 1) % 4 == M</em>.
       That is, that when you divide <em>sticksLeft-1</em>
       by 4, you will get a remainder of <c>M</c>, which is the number of sticks you should pick up.
       Thus, to decide how many sticks to take, we want to compute:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       M == (sticksLeft -1) % 4
-    </input></program>
+    </code></program>
     <p>
       To verify this, let's look at some examples:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
     sticksLeft     (sticksLeft -1) % 4     sticksLeft
       Before                                  After
       ----------------------------------------------------
@@ -958,7 +961,7 @@ R = Math.round(100.0 * R) / 100.0;
         7            (7-1) % 4 == 2         5
         6            (6-1) % 4 == 1         5
         5            (5-1) % 4 == 0         Illegal Move
-    </input></program>
+    </code></program>
     <p>
       The examples in this table show that when we use
       <em>(sticksLeft-1 % 4)</em> to calculate our move,
@@ -972,7 +975,7 @@ R = Math.round(100.0 * R) / 100.0;
       this <c>move()</c> method makes use of two important
       <c>Math</c> class methods:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       public int move()
       { int sticksLeft = nim.getSticks();   // Get number of sticks
         if (sticksLeft % (nim.MAX_PICKUP + 1) != 1)   // If winnable
@@ -982,7 +985,7 @@ R = Math.round(100.0 * R) / 100.0;
           return 1 + (int)(Math.random() * maxPickup);
         }
       }
-    </input></program>
+    </code></program>
     <p>
       The <c>move()</c> method will return an <c>int</c> representing the best move possible.
       It begins by getting the number of sticks left from the <c>OneRowNim</c> object,
@@ -1014,9 +1017,9 @@ R = Math.round(100.0 * R) / 100.0;
       Note how we use the <c>Math.min()</c> method to decide 
       the maximum number of sticks that can be picked up:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
      int maxPickup = Math.min(nim.MAX_PICKUP, sticksLeft);
-    </input></program>
+    </code></program>
     <p>
       The <c>min()</c> method returns the minimum value between its two arguments.
     </p>
@@ -1024,16 +1027,16 @@ R = Math.round(100.0 * R) / 100.0;
       Finally, note how we use the <c>Math.random()</c> method to calculate 
       a random number between 1 and the maximum:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       1 + (int)(Math.random() * maxPickup);
-    </input></program>
+    </code></program>
     <p>
       The <c>random()</c> method returns a real number between 0 and 0.999999 <mdash/> that is,
       a real number between 0 and 1 but not including 1:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       0 &lt;= Math.random() &lt; 1.0
-    </input></program>
+    </code></program>
     <p>
       If we multiply <c>Math.random()</c> times 2, the result would be a value between 0 and 1.9999999.
       Similarly, if we multiplied it by 3, the result would be a value between 0 and 2.9999999.
@@ -1041,9 +1044,9 @@ R = Math.round(100.0 * R) / 100.0;
       we have to convert it into an integer,
       which is done by using the <c>(int)</c> cast operator:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       (int)(Math.random() * maxPickup);
-    </input></program>
+    </code></program>
     <p>
       Recall that when a <c>double</c> is cast into an <c>int</c>, 
       Java just throws away the fractional part.
@@ -1054,16 +1057,17 @@ R = Math.round(100.0 * R) / 100.0;
       we merely add 1 to the result.
       Thus, using the expression
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
     1 + (int)(Math.random() * maxPickup)
-    </input></program>
+    </code></program>
     <p>
       gives us a random number between 1 and <c>maxPickup</c>, where
       <c>maxPickup</c> is either 1, 2, or 3, depending on the situation of the game at that point.
     </p>
     </introduction>
 
-<exercises>
+</subsection>
+     <subsection>
 <!-- <subsection xml:id="ss-5-7-4"> -->
   <title>Self-Study Exercises</title>
   <figure xml:id="fig-nimplayer">
@@ -1088,7 +1092,7 @@ R = Math.round(100.0 * R) / 100.0;
             allowing the <c>NimPlayer</c> to be given a reference when it is instantiated.
           </p>
       </statement>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
           /** Complete the class NimPlayer below */
           class NimPlayer
           {   
@@ -1194,9 +1198,9 @@ R = Math.round(100.0 * R) / 100.0;
                       + "\nNext turn by player " + getPlayer() + "\n");
                 }   // report()
               } // OneRowNim class
-          </input></program>
+          </code></program>
         <solution>
-          <program language="java"><input>
+          <program language="java"><code>
           class NimPlayer
           {   private OneRowNim nim;
              
@@ -1213,7 +1217,7 @@ R = Math.round(100.0 * R) / 100.0;
                   }
               }
           } // NimPlayer
-        </input></program>
+        </code></program>
         </solution> 
         </exercise>
 
@@ -1229,7 +1233,7 @@ R = Math.round(100.0 * R) / 100.0;
           </p>
         </statement>
           <solution>
-            <program language="java"><input>
+            <program language="java"><code>
  public class KBComputerNim
  { public static void main(String argv[])
    {   
@@ -1261,11 +1265,11 @@ R = Math.round(100.0 * R) / 100.0;
        System.out.println(" I win. Nice game!");
    } // main()
  } // KBComputerNim
-</input></program>
+</code></program>
           </solution>
        
   </exercise>
-</exercises>
+
 </subsection>
 
 </section>

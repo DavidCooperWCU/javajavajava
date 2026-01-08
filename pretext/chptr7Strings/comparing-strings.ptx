@@ -86,7 +86,7 @@
     </p>
 <listing xml:id="lst-precedes">
  <caption>The <c>precede()</c> method</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean precedes(String s1, String s2) 
 {
   int minlen = Math.min(s1.length(), s2.length()); // Pick shorter length
@@ -100,7 +100,7 @@ public boolean precedes(String s1, String s2)
                                        //  then s1 &lt; s2 if it is shorter than s2
   return s1.length() &lt; s2.length();  
 } // precedes()
- </input></program>
+ </code></program>
 </listing>
     <p>
       This method does a character-by-character comparison of  the two strings,
@@ -131,7 +131,8 @@ public boolean precedes(String s1, String s2)
       is shorter than
       <q>alphabet.</q>
     </p>
-    <exercises>
+  </subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
           <exercise label="swap-str-algorithm" adaptive="yes">
             <title>Lexicographic Order</title>
@@ -174,7 +175,7 @@ public boolean precedes(String s1, String s2)
         define and test a follows method. It should return true if and
         only if s1 follows s2 in lexicographic order.</p>
        </statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
     public class StringFollows {
 
         public boolean follows(String s1, String s2) {
@@ -190,9 +191,9 @@ public boolean precedes(String s1, String s2)
 
         } // main()
     } // StringFollows
-    </input></program>
+    </code></program>
     <solution>
-      <program language="java"><input>
+      <program language="java"><code>
     public class StringFollows {
 
        public static boolean follows(String s1, String s2) {
@@ -216,21 +217,21 @@ public boolean precedes(String s1, String s2)
              System.out.println (follows("ab", "ab") );
        } // main()
     } // StringFollows
-      </input></program>
+      </code></program>
     </solution>
     </exercise>
-  </exercises>         
+         
   </subsection>
   <subsection xml:id="sub-venus">
     <title>Object Identity Versus Object Equality</title>
     <p>
       Java provides several methods for comparing <c>String</c> s:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean equals(Object anObject); // Overrides Object.equals()
 public boolean equalsIgnoreCase(String  anotherString);
 public int compareTo(String  anotherString);
- </input></program>
+ </code></program>
     <p>
       The first comparison method, <c>equals()</c>,
           <idx><h>String.equals()</h></idx>
@@ -238,10 +239,10 @@ public int compareTo(String  anotherString);
       Two <c>String</c> s are equal if they have the exact same letters in the exact same  order.
       Thus, for the following declarations,
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 String s1 = "hello";
 String s2 = "Hello";
- </input></program>
+ </code></program>
     <p>
 <c>s1.equals(s2)</c> is <c>false</c>, but <c>s1.equals("hello")</c> is <c>true</c>.
     </p>
@@ -274,11 +275,11 @@ String s2 = "Hello";
       We can create an analogous situation in Java by using the following
 <c>JButton</c> definitions:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 JButton b1 = new Button("a");
 JButton b2 = new Button("a");
 JButton b3 = b2;
- </input></program>
+ </code></program>
     <p>
       Given these three declarations, <c>b1.equals(b2)</c> and 
       <c>b1.equals(b3)</c> would be <c>false</c>, 
@@ -315,7 +316,7 @@ JButton b3 = b2;
       <caption>The <c>TestEquals</c> program tests Java's default <c>equals()</c> method, 
       which is defined in the <c>Object</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 public class TestEquals 
 {
@@ -351,7 +352,7 @@ public class TestEquals
     isIdentical(b2, b3);     // identical
   } // main()
 } // TestEquals
- </input></program>
+ </code></program>
     </listing>
     <p>
       This program will produce the following output:      
@@ -378,14 +379,14 @@ java.awt.Button[button1,0,0,0x0,invalid,label=b]
       object identity and string equality.
       Thus, consider the following declarations:
     </p>
-   <program language="java"><input>
+   <program language="java"><code>
       String s1 = new String("hello");
       String s2 = new String("hello");
       String s3 = new String("Hello");
       String s4 = s1;            // s1 and s4 are now identical
       String s5 = "hello";
       String s6 = "hello";
-    </input></program>
+    </code></program>
     <p>
       which create the situation shown in <xref ref="fig-strings">Figure</xref>.
     </p>
@@ -402,19 +403,19 @@ java.awt.Button[button1,0,0,0x0,invalid,label=b]
       Given these declarations,
       we would get the  following results if we compare the equality of the <c>String</c>s:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 s1.equals(s2) ==> true  s1.equalsIgnoreCase(s3)  ==> true
 s1.equals(s3) ==> false s1.equals(s5)            ==> true
 s1.equals(s4) ==> true  s1.equals(s6)            ==> true
- </input></program>
+ </code></program>
     <p>
       and the following results if we compare their identity:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 s1 == s2  ==> false            s1 == s3  ==> false
 s1 == s4  ==> true             s1 == s5  ==> false
 s5 == s6  ==> true
- </input></program>
+ </code></program>
     <p>
       The only true identities among these <c>String</c>s are
       <em>s1</em> and <em>s4</em>,
@@ -428,7 +429,7 @@ s5 == s6  ==> true
       <caption>Program illustrating the difference between
       string equality and identity.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 public class TestStringEquals
 {
@@ -470,7 +471,7 @@ public class TestStringEquals
   } // main()
 }// TestStringEquals
 
- </input></program>
+ </code></program>
  <pre>
            ------Program Output-----
            hello equals hello
@@ -485,7 +486,8 @@ public class TestStringEquals
            hello is identical to hello
 </pre>
     </listing>
-<exercises>
+</subsection>
+     <subsection>
   <title>Self-Study Exercises</title>
       <exercise label="str-equal1">
       <title>String equality vs identity</title>
@@ -493,11 +495,11 @@ public class TestStringEquals
       <p>
         Evaluate the following expressions as true or false based on these  <c>String</c> declarations,
         </p>
-        <program language="java"><input>
+        <program language="java"><code>
         String s1 = "java", s2 = "java", s3 = "Java";
         String s4 = new String(s2);
         String s5 = new String("java");
-        </input></program>
+        </code></program>
           <ol marker="a">
            <li>
               <c>s1 == s2</c> <var/>
@@ -593,11 +595,11 @@ public class TestStringEquals
         Evaluate the following expressions as true or false 
         based on these  <c>String</c> declarations,
         </p>
-        <program language="java"><input>
+        <program language="java"><code>
         String s1 = "java", s2 = "java", s3 = "Java";
         String s4 = new String(s2);
         String s5 = new String("java");
-        </input></program>
+        </code></program>
           <ol marker="a">
            <li>
               <c>s2.equals(s4)</c>  <var/>
@@ -678,7 +680,7 @@ public class TestStringEquals
         the strings s1 and s2 as described. Use 
         <c>System.out.println()</c> to test your code.</p>
        </statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
           <![CDATA[
     public class StringPlay {
 
@@ -702,9 +704,9 @@ public class TestStringEquals
 
 ]]>
 
-    </input></program>
+    </code></program>
     <solution>
-    <program language="java"><input>
+    <program language="java"><code>
     public static void main(String args[]) {
       String s1 = "abcdefghijklmnopqrstuvwxyz";
       String s2 = "hello world";
@@ -718,9 +720,9 @@ public class TestStringEquals
       System.out.println(s1.substring(s1.indexOf('n')) + 
                          s1.substring(0,s1.indexOf('n')));
     } // main()
-    </input></program>
+    </code></program>
     </solution>
     </exercise>
-  </exercises> 
+  
   </subsection>
 </section>

@@ -16,7 +16,7 @@
 	  terms.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>System.in</em></premise>
@@ -96,7 +96,7 @@
           <response>a path that begins from the current location of the directory tree</response>
 	</match>
 	
-      </matches>
+      </cardsort>
       </exercise>
 
     <exercisegroup>
@@ -225,9 +225,9 @@
 
       <p>
         In what different ways can the following string of 32 bits be interpreted?
- <program language="java"><input>
+ <program language="java"><code>
 00010101111000110100000110011110
- </input></program>
+ </code></program>
       </p>
     </statement>
       <response />
@@ -292,10 +292,10 @@
       <p>
         Could the following string of bits possibly be a Java object?
         Explain.
- <program language="java"><input>
+ <program language="java"><code>
 00010111000111101010101010000111001000100
 11010010010101010010101001000001000000111
- </input></program>
+ </code></program>
       </p>
     </statement>
       <response />
@@ -311,7 +311,7 @@
       </p>
     </statement>
        <program label="jfex_grep_method_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-   <input>
+   <code>
 public class Program {
     public void wordFilter(String filename, String match) {
 
@@ -322,7 +322,7 @@ public class Program {
 		    
     }
 }
-   </input>
+   </code>
        </program>
     </exercise>
                <exercise label="jfex_code_file_statistics">       
@@ -334,7 +334,7 @@ public class Program {
       </p>
  </statement>
  <program label="jfex_file_stats_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-   <input>
+   <code>
 public class Program {		
     public static void main(String args[]) {
           // HtmlImageUtil.java is available to this program
@@ -344,7 +344,7 @@ public class Program {
 }
 
 
-    </input>
+    </code>
  </program>
     </exercise>
                <exercise label="jfex_code_file_word_counter">       
@@ -401,14 +401,14 @@ public class Program {
  </datafile>
       <program label="jfex_sort_ascending_prg" interactive="activecode"
 	       language="java" datafile="jfex_sort_me.txt">
-<input>
+<code>
 	    public class Program {		
 	        public static void main(String args[]) {
 	            String filename = "jfex_sort_me.txt"; // file to sort
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -452,7 +452,7 @@ public class Program {
 
       <program label="jfex_file_merge_prg" interactive="activecode"
 	       language="java" datafile="jfex_sorted_a.txt jfex_sorted_b.txt">
-<input>
+<code>
 	    public class Program {		
 	        public static void main(String args[]) {
 	            String sortedfile1 = "jfex_sorted_a.txt";
@@ -460,7 +460,7 @@ public class Program {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -494,13 +494,13 @@ public class Program {
  </datafile>
       <program label="jfex_lat_lon_prg" interactive="activecode"
 	       language="java" datafile="jfex_lat_lon_rain.txt">
-	<input>
+	<code>
 public class Program {		
     public static void main(String args[]) {
         String filename = "jfex_lat_lon_rain.txt"; // the data file.
     }
 }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -519,13 +519,13 @@ public class Program {
     </statement>
       <program label="jfex_gen_record_prg" interactive="activecode"
 	       language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -542,13 +542,13 @@ public class Program {
     </statement>
       <program label="jfex_copy_file_prg" interactive="activecode"
 	       language="java" datafile="jfex_lat_lon_rain.txt">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    String filename = "jfex_lat_lon_rain.txt"; // the data file.
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -566,13 +566,13 @@ public class Program {
       </p>
     </statement>
       <program label="jfex_address_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Address {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -587,13 +587,13 @@ public class Program {
       </p>
     </statement>
       <program label="jfex_student_address_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Student {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -617,26 +617,26 @@ public class Program {
         For example,
         a file that is readable but not writable will have the code
         <em>r</em>-. Here's an example listing:
- <program language="java"><input>
+ <program language="java"><code>
 Listing for directory: myfiles
   name          length modified   code
   index.html    548    129098     rw
   index.gif     78     129190     rw
   me.html       682    128001     r-
   private.txt   1001   129000     --
- </input></program>
+ </code></program>
     Note that the <c>File.lastModified()</c> returns a <c>long</c>, which gives the modification time of the file.
         This number can't easily be converted into a date, so just report its value.
       </p>
       </statement>
       <program label="jfex_directory_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Directory {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -652,13 +652,13 @@ Listing for directory: myfiles
       </p>
       </statement>
       <program label="jfex_save_one_row_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class OnewRowNimGUI {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -674,13 +674,13 @@ Listing for directory: myfiles
       </p>
       </statement>
       <program label="jfex_grep_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class GrepProgram {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -702,13 +702,13 @@ Listing for directory: myfiles
       </p>
     </statement>
       <program label="jfex_copy_more_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Copy {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>

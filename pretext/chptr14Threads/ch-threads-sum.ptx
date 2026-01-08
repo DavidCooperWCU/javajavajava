@@ -182,7 +182,7 @@
       <ol>
         <li>
           <p>
-             <program language="java"><input>
+             <program language="java"><code>
 public class PrintOdds implements Runnable {
   private int bound;
   public PrintOdds(int b) {
@@ -195,26 +195,26 @@ public class PrintOdds implements Runnable {
   public void run() {
     print();
   }}
- </input></program>
+ </code></program>
           </p>
         </li>
         <li>
           <p>
             On my system, the experiment yielded the following output,
             if each thread printed its number after every 100,000 iterations:
- <program language="java"><input>
+ <program language="java"><code>
 1111112222222211111111333333322222221111113333333
 222224444444433333344444445555555544444555555555555
- </input></program>This suggests that round-robin scheduling is being used.
+ </code></program>This suggests that round-robin scheduling is being used.
           </p>
         </li>
         <li>
           <p>
             If each thread is given 50 milliseconds of sleep on each iteration,
             they tend to run in the order in which they were created:
- <program language="java"><input>
+ <program language="java"><code>
 123451234512345...
- </input></program>
+ </code></program>
           </p>
         </li>
         <li>

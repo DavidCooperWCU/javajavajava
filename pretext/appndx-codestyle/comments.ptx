@@ -47,11 +47,11 @@
       is a multiline comment that is used to describe files, methods,
       data structures, and algorithms:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  /*
   * Multiline comment block
   */
- </input></program>
+ </code></program>
   </subsection>
   <subsection>
     <title>Single-Line Comments</title>
@@ -61,11 +61,11 @@
       a line of code that you want to skip during a particular run.
       The following example illustrates these uses:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 /* Single line comment */
 System.out.println("Hello");    // End of line comment
 // System.out.println("Goodbye");
- </input></program>
+ </code></program>
     <p>
       Note that the third line is commented out and would be ignored by the Java compiler.
     </p>
@@ -92,13 +92,13 @@ System.out.println("Hello");    // End of line comment
       constructors, methods, and fields.
       They generally take the following form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  /**
   * The Example class blah blah
   * @author J. Programmer
   */
  public class Example { ...
- </input></program>
+ </code></program>
     <p>
       Note how the class definition is aligned with the beginning of the comment. 
       <c>Javadoc</c> comments use special tags,

@@ -50,9 +50,9 @@
     If you're interested in learning more about this issue,
     a good place to start would be the Web site maintained by the Electronic Privacy Information Center (EPIC) at
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 http://www.epic.org/
- </input></program>
+ </code></program>
   <p>
     \rule[0pt]{26pc}{2pt}
   </p>
@@ -228,12 +228,12 @@ http://www.epic.org/
         <p>
           Because <c>FileWriter</c> contains a constructor that takes a file name argument, <c>FileWriter(String)</c>, it can be used with
 <c>PrintWriter</c> to perform output to a text file:
- <program language="java"><input>
+ <program language="java"><code>
 PrintWriter outStream =     //  Create output stream
     new PrintWriter(new FileWriter(fileName)); // Open file
 outStream.print (display.getText());// Display text
 outStream.close();                  // Close output stream
- </input></program>
+ </code></program>
         </p>
       </li>
       <li>
@@ -253,7 +253,7 @@ outStream.close();                  // Close output stream
       </li>
       <li>
         <p>
-           <program language="java"><input>
+           <program language="java"><code>
 public void getFileAttributes(String fileName) {
     File file = new File (fileName);
     System.out.println(filename);
@@ -264,7 +264,7 @@ public void getFileAttributes(String fileName) {
         System.out.println("Directory");
     else
         System.out.println("Not a Directory");} // getFileAttributes()
- </input></program>
+ </code></program>
         </p>
       </li>
       <li>
@@ -341,9 +341,9 @@ public void getFileAttributes(String fileName) {
     <li>
       <p>
         In what different ways can the following string of 32 bits be interpreted?
- <program language="java"><input>
+ <program language="java"><code>
 00010101111000110100000110011110
- </input></program>
+ </code></program>
       </p>
     </li>
     <li>
@@ -378,10 +378,10 @@ public void getFileAttributes(String fileName) {
       <p>
         Could the following string of bits possibly be a Java object?
         Explain.
- <program language="java"><input>
+ <program language="java"><code>
 00010111000111101010101010000111001000100
 11010010010101010010101001000001000000111
- </input></program>
+ </code></program>
       </p>
     </li>
     <li>
@@ -488,14 +488,14 @@ public void getFileAttributes(String fileName) {
         For example,
         a file that is readable but not writable will have the code
         <em>r</em>-. Here's an example listing:
- <program language="java"><input>
+ <program language="java"><code>
 Listing for directory: myfiles
   name          length modified   code
   index.html    548    129098     rw
   index.gif     78     129190     rw
   me.html       682    128001     r-
   private.txt   1001   129000     --
- </input></program>Note that the <c>File.lastModified()</c> returns a <c>long</c>, which gives the modification time of the file.
+ </code></program>Note that the <c>File.lastModified()</c> returns a <c>long</c>, which gives the modification time of the file.
         This number can't easily be converted into a date, so just report its value.
         Challenge: Modify the <c>OneRowNimGUI</c> class that is listed in Chapter<nbsp/>4's Figure<nbsp/> 4-25 so that the user can save the position of the game to a file or open and read a game position from a file.
         You should add two new <c>JButton</c> s to the GUI interface.

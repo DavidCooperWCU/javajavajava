@@ -23,10 +23,10 @@
     <p>
       The <c>java.lang.Comparable</c> interface consists of the compareTo() method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public abstract interface Comparable {
   public int compareTo (Object o);  // Abstract method}
- </input></program>
+ </code></program>
     <p>
       By implementing <c>compareTo()</c>, a class 
       can impose an order on its objects.
@@ -54,11 +54,11 @@ public abstract interface Comparable {
       Classes that implement <c>compareTo()</c> must abide by the following 
       rules for its return value:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (o1 &lt; o2)    then o1.compareTo(o2) &lt; 0
 if (o1.equals(o2)) then o1.compareTo(o2) == 0
 if (o1 > o2)       then o1.compareTo(o2) > 0
- </input></program>
+ </code></program>
     <p>
       In other words,
       if <c>o1 &lt; o2</c>, then <c>o1.compareTo(o2)</c> will return a negative integer.
@@ -78,7 +78,7 @@ if (o1 > o2)       then o1.compareTo(o2) > 0
       to sort any array of <c>Comparable</c> objects<mdash/>that is,
       any array of objects whose class implements <c>Comparable</c> for any type <c>T</c>.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
   public  &lt;T extends Comparable&lt;T>> void sort(T[] arr) {
     T temp;      // Temporary variable for insertion
 
@@ -90,7 +90,7 @@ if (o1 > o2)       then o1.compareTo(o2) > 0
     arr[i+1] = temp;        // Insert the element
   }
 } // sort()
- </input></program>
+ </code></program>
     <p>
       In this version,
       the parameter is an array of any Object type <c>T</c>. Thus,
@@ -98,9 +98,9 @@ if (o1 > o2)       then o1.compareTo(o2) > 0
       Then, to compare elements of a <c>Comparable</c> array,
       we use the <c>compareTo()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (i = k-1; i >= 0 &amp;&amp; arr[i].compareTo(temp) > 0; i--)
- </input></program>
+ </code></program>
     <p>
       Note that our algorithm no longer refers to <c>int</c>s, as in the original insertion sort.
       Indeed, it doesn't mention the specific type<mdash/><c>Integer</c>, 
@@ -132,7 +132,7 @@ for (i = k-1; i >= 0 &amp;&amp; arr[i].compareTo(temp) > 0; i--)
     <listing xml:id="lst-testsort">
       <caption><c>TestSort</c> uses the polymorphic <c>sort()</c> method
       to sort either <c>Integer</c>s or <c>Float</c>s.</caption>
- <program language="java" interactive="activecode"><input>
+ <program label="polymorphic-testsort" language="java" interactive="activecode"><code>
 public class TestSort {
   public static int MAXSIZE = 25;
 
@@ -173,7 +173,7 @@ public class TestSort {
     test.print(fArr);
   } // main()
 }
- </input></program>
+ </code></program>
     </listing>
     <p>
       This example of polymorphic sorting illustrates once again the great power of 
@@ -209,18 +209,18 @@ public class TestSort {
       For example,
       here's how we would use it to sort the two arrays declared in the <c>TestSort</c> program:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 java.util.Arrays.sort(iArr);
 // or if you: import java.util.*;
 Arrays.sort(fArr);
- </input></program>
+ </code></program>
     <p>
       That's all there is to it!
       Obviously, learning how to use Java's class and method library,
       saves real-word programmers lots of effort. Try it below!
     </p>
     <activity label="rndArr"><statement>Run the code below a couple times to populate the array with random numbers and see the result of the <c>Arrays.sort()</c> method.</statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
 import java.util.*;
 public class TestSort {  
    public static void main(String args[]) {
@@ -234,10 +234,11 @@ public class TestSort {
     }
   } // main()
 }
-</input></program>
+</code></program>
 </activity>
 
-<exercises>
+</subsection>
+     <subsection>
     <title>Self-Study Exercises</title>
     <exercise label="poly-sort">
     <title>Polymorphic Sort</title>
@@ -267,7 +268,7 @@ public class TestSort {
         </li>
       </ol>
     </statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
       public class AnalyzeFreq {
       
         private LetterFreq[] freqArr; //An array of frequencies
@@ -320,11 +321,11 @@ public class TestSort {
         freq++;
     }
   } //LetterFreq   
-  </input></program>
+  </code></program>
     <solution>
      <ol marker="a">
         <li><p> A <c>compareTo()</c> for <c>LetterFreq</c>:</p>
-          <program language="java"><input>
+          <program language="java"><code>
           public int compareTo(Object lf) {
               LetterFreq  letFreq = (LetterFreq)lf;
               if (freq &lt; letFreq.getFreq())
@@ -333,17 +334,17 @@ public class TestSort {
                   return +1;
               else return 0; //The frequencies must be equal.
           } //compareTo()
-          </input></program>
+          </code></program>
         </li>
         <li> <p>A <c>sort()</c> for <c>AnalyzeFreq</c>:</p>
-          <program language="java"><input>
+          <program language="java"><code>
           public void sort() {
               java.util.Arrays.sort(freqArr);
           } //sort()
-          </input></program>
+          </code></program>
         </li>
         <li><p>A new <c>AnalyzeFreq.main()</c> that uses <c>sort()</c>:</p>
-          <program language="java"><input>
+          <program language="java"><code>
           public static void main(String[] argv) {
             AnalyzeFreq af = new AnalyzeFreq();
             af.countLetters("Now is the time for all good students" +
@@ -351,11 +352,11 @@ public class TestSort {
             af.sort();
             af.printArray();
           } //main()
-          </input></program>
+          </code></program>
         </li>
       </ol>
     </solution>
   </exercise>
-  </exercises>
+  
   </subsection>
 </section>

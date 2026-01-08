@@ -28,14 +28,14 @@
     suppose only numbers between 0 and 100 are considered valid.
     The data validation algorithm would be as follows:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 do
  Get the next grade // Initialize: priming input
  if the grade &lt; 0 or grade > 100 and grade != 9999
    print an error message // Error case
             // Sentinel test
 while the grade &lt; 0 or grade > 100 and grade != 9999
- </input></program>
+ </code></program>
  
     
     <figure xml:id="fig-data-alg">
@@ -61,7 +61,7 @@ while the grade &lt; 0 or grade > 100 and grade != 9999
   <listing xml:id="fig-validate">
     <caption>A program to compute average grade using a <c>while</c>
     structure. This version validates the user's input.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.io.*;
 public class Validate {                            // Console input
   private KeyboardReader reader = new KeyboardReader();
@@ -102,7 +102,7 @@ public class Validate {                            // Console input
        System.out.println("Your average is " + average);
   } // main()
 } // Validate
- </input></program>
+ </code></program>
 </listing>
 <activity label="validate"><title>Validate</title><statement>
 <p>

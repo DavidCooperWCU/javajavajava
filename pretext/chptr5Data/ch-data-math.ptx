@@ -136,14 +136,14 @@
     The <c>Math</c> is somewhat exceptional in terms of what we've already
     learned about Java classes. Here is an outline of how it is defined:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
       public final class Math    // Final, can't subclass
       {   private Math() {}      // Private, can't invoke
           ...
           public static native double sqrt(double a)
                 throws ArithmeticException;
       }
-  </input></program>
+  </code></program>
   <p>
     Notice that the class is declared <c>public final</c>. This means that it can 
     be accessed (<c>public</c>) but it cannot be extended or subclassed (<c>final</c>).
@@ -160,10 +160,10 @@
     Notice also that the <c>sqrt()</c> method is declared  <c>static</c>, as are all <c>Math</c>
     class methods:
   </p> 
-  <program language="java"><input>
+  <program language="java"><code>
           public static native double sqrt(double a)
                 throws ArithmeticException;
-  </input></program>  
+  </code></program>  
 
   <p>
     This means that when we want to use a <c>Math</c> method, we have 
@@ -188,12 +188,12 @@
      number into a range starting from a minimum number. The range is the (max number - min number + 1).
     </p>
     <program language="java">
-      <input>
+      <code>
       // returns a random number between 0-.99
       double randDec = Math.random();
       // returns a random number between 1 and 10
       int randNum = (int)(Math.random()* 10) + 1;
-    </input>
+    </code>
     </program>
     
     <activity label="MathMethods">
@@ -201,7 +201,7 @@
         Run it several times to see how the random value changes each time. 
         How could you change the code to return a random integer from 5 to 15?</p></statement>
     <program language="java" interactive="activecode">
-      <input>
+      <code>
       public class Test
       {
         public static void main(String[] args)
@@ -212,7 +212,7 @@
           System.out.println((int) (Math.random() * 10) + 1);
         }
       }
-    </input>
+    </code>
     </program>
     </activity>
   <p>
@@ -220,7 +220,7 @@
     useful when we need elements that don't depend on the existence of objects of a class.
     For example, consider the following class definition:   
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
       public Widget
       {   
           public static nWidgets = 0;
@@ -229,7 +229,7 @@
             nWidgets++;
           } 
       }
-  </input></program>
+  </code></program>
   <p>
     Here we have a <c>public static</c> variable, <c>nWidgets</c> that is meant to
     keep a count of the number of widgets created. The count is incremented 

@@ -14,7 +14,7 @@ their inheritance relationships and/or associations.
 	  Recursion concepts.
 	</p>
       </statement>
-      <matches>
+      <cardsort>
 	<match>
 	  <order>1</order>
           <premise><em>iteration</em></premise>
@@ -67,7 +67,7 @@ their inheritance relationships and/or associations.
 	</match>
 	
 	
-      </matches>
+      </cardsort>
       </exercise>
 
     
@@ -115,7 +115,7 @@ their inheritance relationships and/or associations.
     fashion, you should test it. Here's a simple application
     program that you can use for this purpose:
 </p>
-<program language="java"><input>
+<program language="java"><code>
             <![CDATA[
 
 public class MethodTester {
@@ -132,7 +132,7 @@ public class MethodTester {
     }
 }
     ]]>
-</input></program>
+</code></program>
     <p>
         Just replace
         the <c> countdown()</c> method with your method. Note that
@@ -151,13 +151,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_array_print_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -170,13 +170,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_reverse_print_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -189,13 +189,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_concat_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -210,13 +210,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_odd_seq_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -229,13 +229,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_even_seq_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -249,13 +249,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_mult_ten_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -265,23 +265,23 @@ public class MethodTester {
 
         <p>
           Write a recursive method to print the following geometric pattern:
- <program language="java"><input>
+ <program language="java"><code>
 #
 # #
 # # #
 # # # #
 # # # # #
- </input></program>
+ </code></program>
         </p>
       </statement>
       <program label="jrcx_pattern_slide_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -291,7 +291,7 @@ public class MethodTester {
 
         <p>
           Write recursive methods to print each of the following patterns.
- <program language="java"><input>
+ <program language="java"><code>
 # # # # # # # #     # # # # # # # #
   # # # # # # #     # # # # # # #
     # # # # # #     # # # # # #
@@ -300,17 +300,17 @@ public class MethodTester {
           # # #     # # #
             # #     # #
               #     #
- </input></program>
+ </code></program>
         </p>
       </statement>
       <program label="jrcx_two_patterns_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -324,13 +324,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_mult_table_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -343,13 +343,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_sum_grades_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -362,13 +362,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_count_substr_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -381,13 +381,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_rm_tags_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -400,13 +400,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_decode_recurse_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -426,13 +426,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_fib_recurse_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -448,13 +448,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_rotate_right_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -470,13 +470,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_rotate_left_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -491,13 +491,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_bin_to_dec_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -516,13 +516,13 @@ public class MethodTester {
         </p>
       </statement>
       <program label="jrcx_is_pal_recur_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -542,7 +542,7 @@ public class MethodTester {
       </statement>
       <program label="jrcx_draw_binary_prg" interactive="activecode"
 	       language="java" datafile="HtmlImageUtil.java">
-	<input>
+	<code>
 	  import javax.swing.*;
           import java.awt.*;
 
@@ -551,7 +551,7 @@ public class MethodTester {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>
@@ -575,7 +575,7 @@ public class MethodTester {
 <c>move(3, "A", "B", "C")</c>: <image width="73%" source="chptr12/hanoi.png"/> \caption{The towers of Hanoi problem.
           Move all the disks from needle A to needle B.<nbsp/>Only one disk can be moved at a time,
           and a larger disk can never go on top of a smaller one. }
- <program language="java"><input>
+ <program language="java"><code>
 Move 1 disk from A to B.
 Move 1 disk from A to C.
 Move 1 disk from B to C.
@@ -583,17 +583,17 @@ Move 1 disk from A to B.
 Move 1 disk from C to A.
 Move 1 disk from C to B.
 Move 1 disk from A to B.
- </input></program>
+ </code></program>
         </p>
       </statement>
       <program label="jrcx_hanoi_method_prg" interactive="activecode" language="java">
-<input>
+<code>
 	    public class Program {		
 		public static void main(String args[]) {
 		    
 		}
 	    }
-</input>
+</code>
 </program>    
 
     </exercise>

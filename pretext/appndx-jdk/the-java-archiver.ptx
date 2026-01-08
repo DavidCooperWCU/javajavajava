@@ -51,9 +51,9 @@
     (along with other files, perhaps),
     then the command we use from within that directory is as follows:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 jar cf nplayerlib.jar *.class
- </input></program>
+ </code></program>
   <p>
     In this case,
     the <c>cf</c> options specify that we are creating a jar file 
@@ -61,9 +61,9 @@ jar cf nplayerlib.jar *.class
     This will create a file named <c>nplayerlib.jar</c>. To list the contents of this file,
     you can use the following command:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 jar tf nplayerlib.jar
- </input></program>
+ </code></program>
   <p>
     Once we have created the jar file,
     we can copy it into the directory that contains our source code for 
@@ -71,10 +71,10 @@ jar tf nplayerlib.jar
     We would then use the following commands to include the code 
     contained in the library when we compile and run <c>WordGuess.java</c>
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 javac -classpath nplayerlib.jar:. WordGuess.java
 java -classpath nplayerlib.jar:. WordGuess
- </input></program>
+ </code></program>
   <p>
     These commands,
     which use the <c>-classpath</c> option,
@@ -91,7 +91,7 @@ java -classpath nplayerlib.jar:. WordGuess
     linked all of the applet's code into a jar file named <c>wordguessapplet.jar</c>. 
     The following HTML file would allow users to download the applet from their web browser:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 &lt;html>
     &lt;head>&lt;title>WordGuess Applet&lt;/title>&lt;/head>
     &lt;body>
@@ -105,7 +105,7 @@ java -classpath nplayerlib.jar:. WordGuess
     &lt;/applet>
     &lt;/body>
 &lt;/html>
- </input></program>
+ </code></program>
   <p>
     When specified in this way,
     the browser will take care of downloading the archive file and 

@@ -36,10 +36,10 @@
     For example,
     if we instantiated a <c>StringTokenizer</c> as in the code
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 StringTokenizer sTokenizer
   = new StringTokenizer("This is an English sentence.");
- </input></program>
+ </code></program>
   <p>
     it would break the string into the following tokens,
     which would be stored internally in the <c>StringTokenizer</c> in the order shown:
@@ -62,11 +62,11 @@ sentence.
     The second parameter specifies a string of those characters that should be used as delimiters.
     For example, in the instantiation,
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 StringTokenizer sTokenizer
     = new StringTokenizer("This is an English sentence.",
                           "\b\t\n,;.!");
- </input></program>
+ </code></program>
   <p>
     various punctuation symbols (periods,
     commas, and so on) are included among the delimiters.
@@ -82,12 +82,12 @@ StringTokenizer sTokenizer
     For example,
     here's a code segment that will break a standard URL string into its constituent parts:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 String url = "http://java.trincoll.edu/&#126;jjj/index.html";
 StringTokenizer sTokenizer = new StringTokenizer(url,":/");
 while (sTokenizer.hasMoreTokens()) {
     System.out.println(sTokenizer.nextToken());}
- </input></program>
+ </code></program>
   <p>
     This code segment will produce the following output:
   </p>

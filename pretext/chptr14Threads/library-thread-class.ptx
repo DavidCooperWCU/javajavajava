@@ -34,7 +34,7 @@ interface<mdash/>that is, any object that implements the
 alternative way to implement the <c>NumberThread</c> program:
 </p>
 
- <program language="java"><input>
+ <program language="java"><code>
 public class NumberPrinter implements Runnable {
     int num;
 
@@ -47,12 +47,12 @@ public class NumberPrinter implements Runnable {
             System.out.print(num);
     } // run()
 } // NumberPrinter
- </input></program>
+ </code></program>
  
 <p> Given this definition, we would then pass instances of this class to
 the individual threads as we create them:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Numbers {
   public static void main(String args[]) {
 
@@ -65,7 +65,7 @@ public class Numbers {
     number5 = new Thread(new NumberPrinter(5)); number5.start();
   } // main()
 } // Numbers
- </input></program>
+ </code></program>
 
 <p> The <c>NumberPrinter</c> class implements
 <c> Runnable</c> by defining exactly the same <c>run()</c> that was used
@@ -114,7 +114,8 @@ interface is preferable to redefining the class as a <c>Thread</c>
 subclass.
 </p>
 </principle>
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercise</title>
 <exercise label="runnable">
 <title>Runnable</title>
@@ -139,7 +140,7 @@ all the even numbers up to and including its bound:
 </p>
 </li>
 </ol>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Numbers {
     public static void main(String args[]) {
 
@@ -165,10 +166,10 @@ class PrintOdds {
             System.out.println(k);
     }
 }
-</input></program>
+</code></program>
 </statement>
 <solution>
-<program language="java"><input>
+<program language="java"><code>
 class PrintOdds implements Runnable {
     private int bound;
 
@@ -202,10 +203,10 @@ class PrintEvens implements Runnable {
         print();
     }
 }
-</input></program>
+</code></program>
 </solution>
 </exercise>
-</exercises>
+
 
 </subsection>
 
@@ -246,12 +247,12 @@ wants to run will <em>preempt</em> any threads of lower priority.
 To see how <c>setPriority()</c> works, suppose we change
 <c>NumberThread</c>'s constructor to the following:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 public NumberThread(int n) {
     num = n;
     setPriority(n);
 }
-</input></program> 
+</code></program> 
 <p>
 In this case, each thread sets its priority to its ID number.
 So, thread five will have priority five, a higher priority than
@@ -261,18 +262,18 @@ time if we print the thread's ID on each iteration, let's modify the
 <c>run()</c> method, so that the ID is printed every 1 million
 iterations:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 for (int k = 0; k &lt; 10; k++)
     if (k % 1000000 == 0)
         System.out.print(num);
-</input></program> 
+</code></program> 
 <p>
 Given this modification, we get the following output when we
 run  <c>Numbers()</c>}:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 5544332211
-</input></program> 
+</code></program> 
 <p>
 It appears from this output that the threads ran to completion
 in priority order.  Thus, thread five completed 2 million iterations before
@@ -328,18 +329,18 @@ embedded within a <c>try/catch</c> block or the method it's in must
 throw an <c>InterruptedException</c>.  Try/catch blocks were covered in
 Chapter 10.
 </p>  
-<program language="java"><input>
+<program language="java"><code>
 try {
     sleep(100);
 } catch (InterruptedException e) {
     System.out.println(e.getMessage());
 }
-</input></program> 
+</code></program> 
 <p>
    For example, consider the following version of the
 <c>NumberPrinter.run()</c>:
 </p>
-  <program language="java"><input>
+  <program language="java"><code>
 public void run() {
     for (int k=0; k &lt; 10; k++) {
         try {
@@ -350,7 +351,7 @@ public void run() {
         System.out.print(num);
     } // for
 } // run()
-</input></program> 
+</code></program> 
  <p>
  In this example, each thread is forced to sleep for a random
 number of milliseconds between 0 and 1,000. When a thread sleeps, it
@@ -358,15 +359,16 @@ gives up the CPU, which allows one of the other waiting threads to
 run.  As you would expect, the output we get from this example will
 reflect the randomness in the amount of time that each thread sleeps:
  </p>
- <program language="java"><input>
+ <program language="java"><code>
 14522314532143154232152423541243235415523113435451
-</input></program> 
+</code></program> 
 <p>
 As we will see, the <c>sleep()</c> method provides a
 rudimentary form of thread synchronization, in which one thread
 yields control to another.
 </p>
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-Study Exercises</title>
 <exercise label="eq-priority">
 <title>Equal Priority</title>
@@ -378,7 +380,7 @@ output.  Don't print after every iteration! What sort of scheduling
 algorithm (round-robin, priority scheduling, or something else) was used
 to schedule threads of equal priority on your system?
           </p>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Numbers {
   public static void main(String args[]) {
                                   // 5 threads
@@ -408,13 +410,13 @@ class NumberThread extends Thread {
         } //for
     } // run()
 } // NumberThread
-</input></program>
+</code></program>
 </statement>
 <solution>
 <p>
   On my system, the experiment yielded the following output,
   if each thread printed its number after every 100,000 iterations:
- <program language="java"><input>
+ <program language="java"><code>
      public void run() {
         for (int k = 0; k &lt;= 2000000; k++) {
             if (k % 100000 == 0)
@@ -424,7 +426,7 @@ class NumberThread extends Thread {
  
  1453253142513245314523451235421531245314534235132513
  52413524135241354213421534215342514325432514321421421
- </input></program>
+ </code></program>
  This suggests that round-robin scheduling is being used.
 </p>
 </solution>
@@ -439,7 +441,7 @@ milliseconds). How does this affect the scheduling of the threads? To
 make things easier to see, print each thread's ID after every 100,000
 iterations.
           </p>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Numbers {
   public static void main(String args[]) {
                                   // 5 threads
@@ -470,11 +472,11 @@ class NumberThread extends Thread {
         } // for
     } // run()
 } // NumberThread
-</input></program>
+</code></program>
 
 </statement>
 <solution>
-<program language="java"><input>
+<program language="java"><code>
     public void run() {
         for (int k = 0; k &lt; 100; k++) {
             try {
@@ -489,7 +491,7 @@ class NumberThread extends Thread {
 
 The output, with spaces inserted after each five numbers, looks far less random:
 41253 32415 43251 32451 45231 35421 53421 35241 25431 25431
-</input></program>
+</code></program>
 </solution>
 </exercise>
 <exercise label="garbage-collect">
@@ -530,7 +532,7 @@ than your program?
   </p>
 </solution>
 </exercise>
-</exercises>
+
 
 </subsection>
 <subsection>
@@ -561,9 +563,9 @@ be able to complete a simple Java arithmetic operation once it has started
 it.   For example, suppose a thread had to execute the following
 operation:
 </p>
- <program language="java"><input>
+ <program language="java"><code>
 int N = 5 + 3;
-</input></program> 
+</code></program> 
 <p>
 This operation computes the sum of 5 and 3 and assigns the result to
 <c>N</c>.  It would be tempting to think that once the thread started
@@ -573,11 +575,11 @@ a rudimentary bytecode, which is translated still further into
 the computer's machine language.   In machine language, this operation
 would break down into something like the following three steps:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 Fetch 5 from memory and store it in register A.
 Add 3 to register A.
 Assign the value in register A to N.
-</input></program>
+</code></program>
 <p>
 Although none of the individual machine instructions can
 be preempted, the thread could be interrupted between any two machine

@@ -56,7 +56,7 @@
     you need to define a node class and a tree class.
     The node class with unimplemented methods, would look like:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class PhoneTreeNode {
    private String name;
    private String phone;
@@ -69,11 +69,11 @@ public class PhoneTreeNode {
    public void insert(String nam, String pho){ }
    //other methods
   } // PhoneTreeNode
- </input></program>
+ </code></program>
   <p>
     The tree structure itself contains a reference to a node:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class PhoneTree {
   private PhoneTreeNode root;
   public PhoneTree(){ }
@@ -81,12 +81,12 @@ public class PhoneTree {
   public void insert(String nam, String pho){ }
   //other methods
 } // PhoneTreeNode
- </input></program>
+ </code></program>
   <p>
     We will implement only the two <c>contains()</c> methods.
     The <c>PhoneTree</c> version is very simple:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
   /**
   * contains() returns true if and only if the binary tree
   * which root points to has a node with its name variable 
@@ -101,7 +101,7 @@ public class PhoneTree {
      else 
          return root.contains(nam, pho);
   } // contains() in PhoneTree
- </input></program>
+ </code></program>
   <p>
     The implementation of the <c>contains()</c> method of <c>PhoneTreeNode</c> is only 
     slightly more involved. This is a recursive method that checks the name at the current 
@@ -110,7 +110,7 @@ public class PhoneTree {
     right subtree contains it, or if it is alphabetically before it, it checks the left subtree. 
     It is possible to implement this with a loop or recursion.
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean contains(String nam, String pho){
     if (name.equals(nam))
         return true;
@@ -126,11 +126,11 @@ public boolean contains(String nam, String pho){
            return left.contains(nam, pho);
     }
   } // contains() in PhoneTreeNode
- </input></program>
+ </code></program>
 
  <p>The <c>insert</c> method has a very similar structure to the contains method above. 
   Here is the pseudocode algorithm for it.</p>
- <program language="java"><input>
+ <program language="java"><code>
   Insert a new PhoneTreeNode:
   if name compared to num is &lt;= 0:
     if right is null
@@ -142,16 +142,16 @@ public boolean contains(String nam, String pho){
       set left to a new PhoneTreeNode constructed with nam and pho
     else 
         call left.insert recursively
-   </input></program>
+   </code></program>
 
-   <exercises><title>Self-Study Exercise</title>
+     <subsection><title>Self-Study Exercise</title>
     <exercise label="bstEx">
       <statement>
           <p>
           Using the pseudocode above and the <c>contains</c> method as a guide, write the 
           <c>insert</c> method in the <c>PhoneTree</c> and <c>PhoneTreeNode</c>. 
         Run to test the methods with the main method below. </p>  </statement>
-          <program language="java" interactive="activecode"><input>
+          <program language="java" interactive="activecode"><code>
  /*
  * The PhoneTree class
  * Description: A binary search tree of PhoneTreeNodes.
@@ -266,19 +266,19 @@ public boolean contains(String nam, String pho){
      } // insert
 
  } // PhoneTreeNode class
-</input></program> 
+</code></program> 
  <solution>
   <p>In class <c>PhoneTree</c>:</p>
-  <program language="java"><input>
+  <program language="java"><code>
     public void insert(String nam, String pho){ 
       if (root == null) 
             root = new PhoneTreeNode(nam, pho);
        else 
             root.insert(nam, pho);
      }
-  </input></program>
+  </code></program>
   <p>In class <c>PhoneTreeNode</c>:</p>
-  <program language="java"><input>
+  <program language="java"><code>
     public void insert(String nam, String pho){    
       if (name.compareTo(nam) &lt;= 0) { // name &lt;= nam
           if (right == null) 
@@ -292,8 +292,8 @@ public boolean contains(String nam, String pho){
               left.insert(nam, pho);
       } // else
   } // insert
-  </input></program>
+  </code></program>
  </solution>
  </exercise>
- </exercises>
+ </subsection>
 </section>

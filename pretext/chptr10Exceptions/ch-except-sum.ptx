@@ -81,7 +81,7 @@
    The Try/Catch Statement</title>
    <p> The <c>try/catch/finally</c> statement has the following syntax:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 try {
     // Block of statements
     // At least one of which may throw an exception
@@ -96,7 +96,7 @@ try {
     // Optional block of statements that is executed
     // Whether an exception is thrown or not
   }
- </input></program>
+ </code></program>
   <p>
     The try block is meant to include a statement or statements that might throw an exception.
     The catch blocks<mdash/>there can be one or more<mdash/>are meant to handle exceptions that are thrown in the try block.

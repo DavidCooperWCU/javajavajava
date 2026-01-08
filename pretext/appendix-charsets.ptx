@@ -28,7 +28,7 @@
   </p>
   <figure>
     <caption>ASCII<idx><h>ASCII</h></idx> codes for selected characters</caption>
- <program language="java"><input>
+ <program language="java"><code>
  Code   32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
  Char   SP !  "  #  $  %  &amp;  '  (  )   *  +  ,  -  .  /
  Code   48 49 50 51 52 53 54 55 56 57
@@ -47,6 +47,6 @@
  Char   n   o   p   q   r   s   t   u   v   w   x   y   z
  Code   123 124 125 126
  Char   {   |   }   &#126;
- </input></program>
+ </code></program>
   </figure>
 </appendix>

@@ -39,11 +39,11 @@
     </p>
     <algorithm>
     <title>Processing binary files</title>
-    <program language="java"><input>
+    <program language="java"><code>
       Connect a stream to the file.
       Read or write the data, possibly using a loop. 
       Close the stream.
-    </input></program>
+    </code></program>
     </algorithm>
     <p>
       The difference between text and binary file I/O resides in the Java streams that we use.
@@ -76,12 +76,12 @@
         the data in a file containing four records might look like this,
         once the data are interpreted:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 Name0 24 15.06
 Name1 25 5.09
 Name2 40 11.45
 Name3 52 9.25
- </input></program>
+ </code></program>
       <p>
         As you can see,
         these data look as if they were randomly generated,
@@ -150,10 +150,10 @@ Name3 52 9.25
         <c>DataOutputStream</c> gives us the output methods we need,
         and the <c>FileOutputStream</c> lets us use the file's name to create the stream:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 DataOutputStream outStream
   = new DataOutputStream(new FileOutputStream (fileName));
- </input></program>
+ </code></program>
       <p>
         This enables the program to write data to the <c>DataOutputStream</c>, which will pass them 
         through the <c>FileOutputStream</c> to the file itself.
@@ -168,12 +168,12 @@ DataOutputStream outStream
         We need one <c>write()</c> statement for each of the elements in the employee record: 
         The name (<c>String</c>), age (<c>int</c>), and pay rate (<c>double</c>):
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k = 0; k &lt; 5; k++) {  // Output 5 data records
  outStream.writeUTF("Name" + k);             // Name
  outStream.writeInt((int)(20 + Math.random() * 25)); //Age
  outStream.writeDouble(Math.random() * 500); // Payrate}
- </input></program>
+ </code></program>
       <p>
         Within the loop body we have one output statement for each data element in the record.
         The names of the methods reflect the type of data they write.
@@ -218,7 +218,7 @@ for (int k = 0; k &lt; 5; k++) {  // Output 5 data records
       <figure xml:id="fig-writerecordsmethod">
         <caption>A method to write a binary file consisting of five
         randomly constructed records.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 private void writeRecords( String fileName )  {
  try {
    DataOutputStream outStream   // Open stream
@@ -234,7 +234,7 @@ private void writeRecords( String fileName )  {
    display.setText("IOERROR: " + e.getMessage() + "\n");
  }
 } // writeRecords()
- </input></program>
+ </code></program>
       </figure>
     </subsubsection>
   </subsection>
@@ -280,10 +280,10 @@ private void writeRecords( String fileName )  {
       <c>DataInputStream</c> and <c>FileInputStream</c>:
     </p>
 
- <program language="java"><input>
+ <program language="java"><code>
 DataInputStream inStream
    = new DataInputStream(new FileInputStream(file));
- </input></program>
+ </code></program>
     <p>
       Now that we have identified the classes and methods we'll use to read the data,
       the most important remaining issue is designing a read loop that will terminate correctly.
@@ -297,7 +297,7 @@ DataInputStream inStream
       Thus, the binary loop is coded as an infinite loop that's exited when the <c>EOFException</c> is 
       raised: 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 try {
   while (true) {                        // Infinite loop
     String name = inStream.readUTF();   // Read a record
@@ -306,7 +306,7 @@ try {
     display.append(name + " " + age + " " + pay + "\n");
   } // while
 } catch (EOFException e) {} // Until EOF exception
- </input></program>
+ </code></program>
     <p>
       The read loop is embedded within a <c>try/catch</c> statement.
       Note that the <c>catch</c> clause for the <c>EOFException</c> does nothing.
@@ -346,7 +346,7 @@ try {
     </p>
     <listing xml:id="fig-readrecordsmethod">
       <caption>A method for reading binary data.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 private void readRecords( String fileName ) {
  try {
    DataInputStream inStream                 // Open stream
@@ -369,7 +369,7 @@ private void readRecords( String fileName ) {
       display.setText("IOERROR: " + e.getMessage() + "\n");
    }
 } // readRecords()
- </input></program>
+ </code></program>
     </listing>
     <p>
       It's important that a <c>close()</c> statement be placed after the
@@ -401,7 +401,8 @@ private void readRecords( String fileName ) {
         No particular action need be taken when the <c>EOFException</c> is caught.
       </p>
     </principle>
-  <exercises>
+  </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
     <exercise label="read-binary">
     <title>Find the error</title>
@@ -410,14 +411,14 @@ private void readRecords( String fileName ) {
             Which of the following method definitions would correctly read a binary file
             of <c>int</c>?
         </p>
- <program language="java"><input>
+ <program language="java"><code>
 
- </input></program>
+ </code></program>
   </statement>
       <choices>
             <choice correct="no">
             <statement>
-                <program language="java"><input>
+                <program language="java"><code>
 public void readIntegers(DataInputStream inStream) {
     try {
         while (true) {
@@ -429,7 +430,7 @@ public void readIntegers(DataInputStream inStream) {
     } catch (IOException e) {
     }
 } // readIntegers                           
-                </input></program>
+                </code></program>
             </statement>
                 <feedback>
                     <p>
@@ -439,7 +440,7 @@ public void readIntegers(DataInputStream inStream) {
             </choice>
             <choice correct="no">
             <statement>
-                <program language="java"><input>
+                <program language="java"><code>
 public void readIntegers(DataInputStream inStream) {
     try {
         while (true) {
@@ -451,7 +452,7 @@ public void readIntegers(DataInputStream inStream) {
         inStream.close();
     }
 } // readIntegers                            
-                </input></program>
+                </code></program>
             </statement>
                 <feedback>
                   <p>
@@ -461,7 +462,7 @@ public void readIntegers(DataInputStream inStream) {
             </choice>
             <choice correct="yes">
             <statement>
-                <program language="java"><input>
+                <program language="java"><code>
 public void readIntegers(DataInputStream inStream) {
     try {
         while (true) {
@@ -474,7 +475,7 @@ public void readIntegers(DataInputStream inStream) {
         inStream.close();
     }
 } // readIntegers                             
-                </input></program>
+                </code></program>
             </statement>
                 <feedback>
                 <p>
@@ -487,7 +488,7 @@ public void readIntegers(DataInputStream inStream) {
           <p>
           The <c>inStream.close()</c> statement should go in the <c>finally</c> block:
           </p>
-                          <program language="java"><input>
+                          <program language="java"><code>
 public void readIntegers(DataInputStream inStream) {
     try {
         while (true) {
@@ -500,11 +501,11 @@ public void readIntegers(DataInputStream inStream) {
         inStream.close();
     }
 } // readIntegers                             
-                </input></program>
+                </code></program>
           
   </solution>
   </exercise>
-</exercises>
+
  
  </subsection>
   <subsection xml:id="fig-biniouml">
@@ -533,7 +534,7 @@ public void readIntegers(DataInputStream inStream) {
       <caption>The <c>BinaryIO</c> class illustrates
       simple input and output from a binary file.
     </caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;         // Swing components
 import java.awt.*;
 import java.io.*;
@@ -620,7 +621,7 @@ private void writeRecords( String fileName )  {
  } // main()
 } // BinaryIO
 
- </input></program>
+ </code></program>
     </listing>
   </subsection>
   <subsection>
@@ -630,19 +631,19 @@ private void writeRecords( String fileName )  {
       For example,
       if the file contains records that consist of a <c>String</c> followed by an <c>int</c> followed by a <c>double</c>, then they must be written by a sequence consisting of
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 writeUTF();
 writeInt():
 writeDouble();
- </input></program>
+ </code></program>
     <p>
       And they must thereafter be read by the sequence of
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 readUTF();
 readInt():
 readDouble();
- </input></program>
+ </code></program>
     <p>
       Attempting to do otherwise would make it impossible to interpret the data in the file.
     </p>
@@ -661,10 +662,10 @@ readDouble();
       where one data element begins and another one ends.
       For example, the 64-bit sequence
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 010100110011001001010100110011000
 010100110011001011010100110011000
- </input></program>
+ </code></program>
     <p>
       could represent two 32-bit <c>int</c>s or two 32-bit <c>float</c>s or one 64-bit double or four 16-bit <c>char</c>s 
       or a single <c>String</c> of 8 ASCII characters.

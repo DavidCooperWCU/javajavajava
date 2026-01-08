@@ -86,7 +86,7 @@
     <p>
       
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private ButtonGroup optGroup = new ButtonGroup();
 private JCheckBox titles[] = new JCheckBox[NTITLES];
 private JRadioButton options[] = new JRadioButton[NOPTIONS];
@@ -95,18 +95,18 @@ private String titleLabels[] =
                            "Crossword Maker - $19.95"};
 private String optionLabels[] = {"Credit Card",
              "Debit Card", "E-cash"};
- </input></program>
+ </code></program>
     <p>
       Again, the advantage of this design is that it simplifies the instantiation and 
       initialization of the buttons: 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for(int k = 0; k &lt; titles.length; k++) {
     titles[k] = new JCheckBox(titleLabels[k]);
     titles[k].addItemListener(this);
     choicePanel.add(titles[k]);
   }
- </input></program>
+ </code></program>
     <p>
       The only difference between this array of checkboxes and the keypad array of buttons that 
       we used in the <c>Converter</c> program is that checkboxes generate <c>ItemEvent</c>s instead
@@ -121,7 +121,7 @@ for(int k = 0; k &lt; titles.length; k++) {
     <p>
       The code for instantiating and initializing the radio buttons is almost the same:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for(int k = 0; k &lt; options.length; k++) {
     options[k] = new JRadioButton(optionLabels[k]);
     options[k].addItemListener(this);
@@ -129,7 +129,7 @@ for(int k = 0; k &lt; options.length; k++) {
     optGroup.add(options[k] );
   }
 options[0].setSelected(true); // Set first button 'on'
- </input></program>
+ </code></program>
     <p>
       Radio buttons also generate <c>ItemEvent</c> s, so they too must be registered with an <c>ItemListener</c>. Note that the first button is set on,
       which represents a default payment option for the user.
@@ -218,10 +218,10 @@ options[0].setSelected(true); // Set first button 'on'
 <c>JPanel</c><mdash/>is very simple.
       It takes one statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 choicePanel.setBorder(
        BorderFactory.createTitledBorder("Titles"));
- </input></program>
+ </code></program>
     
  
  <p>
@@ -268,10 +268,10 @@ choicePanel.setBorder(
       Once again, to set the layout manager for a container you use the
 <c>setLayout()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 choicePanel.setLayout(new
              BoxLayout(choicePanel,BoxLayout.Y_AXIS));
- </input></program>
+ </code></program>
     <p>
       The <c>BoxLayout()</c> constructor has two parameters.
       The first is a reference to the container that's being managed,
@@ -301,7 +301,7 @@ choicePanel.setLayout(new
       which consists of a single method,
       the <c>itemStateChanged()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void itemStateChanged(ItemEvent e) {
   display.setText("Your order so far (Payment by: ");
   for (int k = 0; k &lt; options.length; k++ )
@@ -311,7 +311,7 @@ public void itemStateChanged(ItemEvent e) {
     if (titles[k].isSelected())
       display.append("\t" + titles[k].getText() + "\n");
   } // itemStateChanged()
- </input></program>
+ </code></program>
     <p>
       This version of the method handles item changes for both the checkbox menu and the radio buttons menu.
       The code uses two consecutive for loops.
@@ -332,9 +332,9 @@ public void itemStateChanged(ItemEvent e) {
       However, like the ActionEvent class,
       the ItemEvent class contains methods that can retrieve the item that caused the event:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 getItem();  // Returns a menu item within a menu
- </input></program>
+ </code></program>
     <p>
       The <c>getItem()</c> method is the <c>ItemListener</c>'s analogue to the <c>ActionEvent</c>'s <c>getSource()</c> method.
       It enables you to obtain the object that generated the event but returns a representation of the item that was selected or deselected.
@@ -372,7 +372,7 @@ getItem();  // Returns a menu item within a menu
     <listing xml:id="listing-orderapp">
       <caption>The <c>OrderApp</c> class</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
@@ -469,7 +469,7 @@ private void initChoices() {
         "Thank you. Maybe we can serve you next time!\n");
   } // actionPerformed()
 } // OrderApp
- </input></program>
+ </code></program>
 </listing>
     <p>
       Second, note the use of titled borders around the four internal panels.

@@ -73,14 +73,14 @@
     <p>
       The first step is to declare and instantiate the <c>JComboBox</c>es as instance variables:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
       	      <![CDATA[
 private String items[] =
     {"Sierpinski Gasket","Nested Boxes"};
 private JComboBox<String> patterns = new JComboBox<>(items);
 private JComboBox<String> levels = new JComboBox<>();
 ]]>
- </input></program>
+ </code></program>
     <p>
       Note that in this case we pass the constructor for the 
       <c>patterns</c> menu an entire array of items.
@@ -89,11 +89,11 @@ private JComboBox<String> levels = new JComboBox<>();
        <c>RecursivePatterns()</c>. In fact,
       that's how we'll initialize the <c>levels</c> menu:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 for (int k=0; k &lt; 10; k++)   // Add 10 levels
     levels.addItem(k + "" );
 levels.setSelectedItem("4"); // Select default level
- </input></program>
+ </code></program>
     <p>
       This loop would be placed in the JFrame's constructor, <c> RecursivePatterns()</c>. 
       It adds strings representing levels 0 to 9 to the menu and initializes 
@@ -104,7 +104,7 @@ levels.setSelectedItem("4"); // Select default level
       the JFrame is named as the object that will handle the events that occur in the <c>JComboBox</c>es.
       Then we add the <c>JComboBox</c> component to the JFrame:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 controls.add(levels);    // Control panel for menus
 controls.add(patterns);
                                
@@ -113,7 +113,7 @@ getContentPane().add(canvas, "Center");   // And drawing panel
               
 levels.addItemListener(this);   // Register menus with a listener
 patterns.addItemListener(this);
- </input></program>
+ </code></program>
     <p>
       Note that we use a separate <c>controls</c> panel (a <c>JPanel</c>) 
       for the two menus and a <c>canvas</c> panel (another <c>JPanel</c>) for the drawings.
@@ -128,13 +128,13 @@ patterns.addItemListener(this);
       which consists of the single method <c>itemStateChanged()</c>. This method is 
       invoked automatically whenever the user selects an item from one of the <c>JComboBox</c> es:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void itemStateChanged(ItemEvent e) {
     canvas.setPattern(patterns.getSelectedIndex(),
                          levels.getSelectedIndex());
     repaint();
 }
- </input></program>
+ </code></program>
     <p>
       The <c>itemStateChanged()</c> method has the same general form as 
       the <c>actionPerformed()</c> method,
@@ -169,7 +169,7 @@ public void itemStateChanged(ItemEvent e) {
 -->
     <listing xml:id="fig-recursivepatterns">
       <caption>The <c>RecursivePatterns</c> program.</caption>
-      <program language="java"><input>
+      <program language="java"><code>
 	<![CDATA[
 import java.awt.*;
 import javax.swing.*;
@@ -209,7 +209,7 @@ public class RecursivePatterns extends JFrame implements ItemListener  {
    }
    } // RecursivePatterns
    ]]>
- </input></program>
+ </code></program>
 </listing>
 
     <figure xml:id="fig-canvas">
@@ -231,7 +231,7 @@ public class RecursivePatterns extends JFrame implements ItemListener  {
     
     <listing xml:id="fig-canvaspanel">
       <caption>The <c>Canvas</c> class is a drawing panel.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import javax.swing.*;
 import java.awt.*;
 
@@ -303,9 +303,10 @@ public class Canvas extends JPanel {
         }
     } // drawBoxes()
 } // Canvas
- </input></program>
+ </code></program>
     </listing>
-<exercises>
+</subsection>
+     <subsection>
 <title>Self-study Exercises</title>
 <exercise label="patterns">
 <title>Recursive Patterns</title>
@@ -319,7 +320,7 @@ public class Canvas extends JPanel {
 	    <c>RecursivePatterns</c> program below as a third pattern.</p>
             </li>
             </ol>
-	    <program language="java" interactive="activecode" datafile="HtmlImageUtil.java"><input>
+	    <program language="java" interactive="activecode" datafile="HtmlImageUtil.java"><code>
 	      <![CDATA[ 
 import javax.swing.*;
 import java.awt.*;
@@ -420,10 +421,10 @@ class Canvas extends JPanel {
     } // drawBoxes()
     } // Canvas
     ]]>
- </input></program>
+ </code></program>
 </statement>
 <solution>
- <program language="java"><input>
+ <program language="java"><code>
 private void  drawBoxesRev(Graphics g, int level, int locX,
                    int locY, int side, int delta) {
     g.drawRect(locX, locY, side, side );
@@ -435,10 +436,10 @@ private void  drawBoxesRev(Graphics g, int level, int locX,
                          side - 2 * dside, delta);
     }
 } // drawBoxesRev()
- </input></program>
+ </code></program>
 </solution>
 </exercise>
-</exercises>
+
 
 
  </subsection>

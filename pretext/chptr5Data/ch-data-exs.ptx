@@ -399,9 +399,9 @@ their inheritance relationships and/or associations.
         What value would <c>m</c> have after each of the 
         statements that follow is executed?  Assume that <c>m, k, j</c> are
         reinitialized before each statement.
-        <program language="java"><input>
+        <program language="java"><code>
             int m = 5, k = 0, j = 1;
-        </input></program>
+        </code></program>
     </p>
     </introduction>
         <task label="jdex_eval_assignment_1">       
@@ -435,10 +435,10 @@ their inheritance relationships and/or associations.
         before each statement. It may help to parenthesize the right-hand side
         of the statements before evaluating them.
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
         boolean b;
         int m = 5, k = 0, j = 1;
-   </input></program>
+   </code></program>
    </introduction>
     <task label="jdex_eval_assignment_6">       
  <statement>  <c>b = m > k + j;</c></statement>       
@@ -470,10 +470,10 @@ their inheritance relationships and/or associations.
         determine the value of the variable on the left-hand side
         (if not, change it to a valid expression):
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
         char c = 'a' ;
          int  m = 95;
-    </input></program>
+    </code></program>
     </introduction>
         <task label="jdex_eval_assignment_11">       
  <statement>  <c>c = c + 5;</c></statement>       
@@ -535,13 +535,13 @@ their inheritance relationships and/or associations.
     <p>
         What would be output by the following code segment?
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
         int m = 0, n = 0, j = 0, k = 0;
         m = 2 * n++;
         System.out.println("m= " + m + " n= " + n);
         j += ( --k * 2 );
         System.out.println("j= " + j + " k= " + k);
-    </input></program>
+    </code></program>
 </statement>       
  <response />       
  </exercise>
@@ -554,7 +554,7 @@ their inheritance relationships and/or associations.
     fashion, you should test it. Here's a simple application
     program that you can use for this purpose:
 </p>
-<program language="java"><input>
+<program language="java"><code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -563,7 +563,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input></program>
+</code></program>
     <p>
         Just replace
         the <c> square()</c> method with your method. Note that
@@ -584,7 +584,7 @@ public class MethodTester {
     </p>
 </statement>       
 <program label="jdex_code_sales_tax_task" interactive="activecode" language="java">
-<input>
+<code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -593,7 +593,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input>
+</code>
 </program>
  </exercise>
 <exercise label="jdex_day_of_week_method">
@@ -614,7 +614,7 @@ public class MethodTester {
     </p>
 </statement>       
  <program label="jdex_code_day_of_week_task" interactive="activecode" language="java">
-<input>
+<code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -623,7 +623,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 <exercise label="jdex_day_of_year_method">
@@ -641,7 +641,7 @@ public class MethodTester {
     </p>
 </statement>       
  <program label="jdex_code_day_of_year_task" interactive="activecode" language="java">
-<input>
+<code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -650,7 +650,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 <exercise label="jdex_convert_to_lowercase_method">
@@ -665,7 +665,7 @@ public class MethodTester {
     </p>
 </statement>
  <program label="jdex_code_convert_to_lowercase_task" interactive="activecode" language="java">
-<input>
+<code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -674,7 +674,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 
@@ -694,7 +694,7 @@ public class MethodTester {
     </p>
 </statement>
  <program label="jdex_code_shift_encode_task" interactive="activecode" language="java">
-<input>
+<code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -703,7 +703,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 
@@ -718,7 +718,7 @@ public class MethodTester {
     </p>
 </statement>
 <program label="jdex_code_bool_to_string_task" interactive="activecode" language="java">
-<input>
+<code>
 public class MethodTester {
     public static int square(int n) {
         return n * n;
@@ -727,7 +727,7 @@ public class MethodTester {
         System.out.println("5 squared = " + square(5));
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 </exercisegroup>
@@ -743,14 +743,14 @@ public class MethodTester {
     </p>
 </statement>       
  <program label="jdex_code_rect_cube_task" interactive="activecode" language="java" stdin="10 11 20">
-<input>
+<code>
 public class RectangularCubeProgram {
     
     public static void main(String args[]) {
         
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 
@@ -764,14 +764,14 @@ public class RectangularCubeProgram {
     </p>
 </statement>
 <program label="jdex_code_sort_three_task" interactive="activecode" language="java" >
-<input>
+<code>
 public class IncreasingOrder {
     
     public static void main(String args[]) {
         
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 <exercise label="jdex_is_divisible_program">
@@ -785,14 +785,14 @@ public class IncreasingOrder {
     </p>
 </statement>       
  <program label="jdex_code_is_divisible_task" interactive="activecode" language="java" stdin="13 3">
-<input>
+<code>
 public class IsDivisible {
     
     public static void main(String args[]) {
         
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 <exercise label="jdex_print_table_program">
@@ -812,14 +812,14 @@ public class IsDivisible {
         </pre>
 	</statement>
  <program label="jdex_code_print_table_task" interactive="activecode" language="java">
-<input>
+<code>
 public class PrintTable {
   
     public static void main(String args[]) {
         
     }
 }
-</input>
+</code>
 </program>       
  </exercise>
 <exercise label="jdex_conversion_gui_program">
@@ -886,21 +886,21 @@ public class PrintTable {
         would contain an instance variable, say, <c> temperature</c>, and access
         methods that operate on it. The access methods would be: 
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
         setFahrenheit(double)
         getFahrenheit():double
         setCelsius(double)
         getCelsius():double
-    </input></program>
+    </code></program>
     <p>
         One way to
         implement this design is to store the temperature in the Kelvin scale
         and then convert from and to Kelvin in the access methods.  The
         formula for converting Kelvin to Celsius is
     </p>
-        <program language="java"><input>
+        <program language="java"><code>
             K = C + 273.15
-        </input></program>
+        </code></program>
     <p>
         Draw a UML class diagram representing this design
         of the <c> Temperature</c> class. Which design is more object oriented,
@@ -918,11 +918,11 @@ public class PrintTable {
     </p>
 </statement>       
  <program label="jdex_code_temperature_units_task" interactive="activecode" language="java">
-<input>
+<code>
 public class Temperature {
     
 }
-</input>
+</code>
 	<tests>
           <![CDATA[
 import static org.junit.Assert.*;

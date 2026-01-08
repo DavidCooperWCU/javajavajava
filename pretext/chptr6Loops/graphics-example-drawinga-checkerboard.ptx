@@ -43,7 +43,7 @@
     </p>
     <figure xml:id="fig-checkerframe">
       <caption>The <c>CheckerBoardProgram</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 import java.awt.*;
 import javax.swing.*;
 public class CheckerBoardProgram {
@@ -56,7 +56,7 @@ public class CheckerBoardProgram {
         c.setVisible(true);
     }
   } // CheckerBoardFrame
- </input></program>
+ </code></program>
     </figure>
     <p>
       As shown there,
@@ -117,12 +117,12 @@ public class CheckerBoardProgram {
       Returning now to the design of <c>CheckerBoard</c>'s instance methods,
       the complete definition of the <c>CheckerBoard</c> class is given in <xref ref="fig-checkerclass">Figure</xref>.
       Note how simple its <c>paint()</c> method is.</p>
-      <program language="java"><input>
+      <program language="java"><code>
         public void paint(Graphics g) { // Draw board and checkers
           drawBoard(g);
           drawCheckers(g);
       }
-      </input></program>
+      </code></program>
 <p>      As we noted earlier, in order to using Java's drawing commands,
       it is necessary to have a reference to a <c>Graphics</c> object.
       This is passed to the <c>paint()</c> method when the <c>paint()</c> method is invoked in the program.
@@ -131,7 +131,7 @@ public class CheckerBoardProgram {
     <figure xml:id="fig-checkerclass">
       <caption>The <c>CheckerBoard</c> class.</caption>
       
-      <program language="java"><input>
+      <program language="java"><code>
 	<![CDATA[
 import java.awt.*;
 public class CheckerBoard extends Canvas {
@@ -181,7 +181,7 @@ public class CheckerBoard extends Canvas {
   }//paint()
   } //CheckerBoard
   ]]>
- </input></program>
+ </code></program>
     </figure>
     <p>
       The <c>drawBoard()</c> method uses a nested <c>for</c> loop to draw an
@@ -210,9 +210,9 @@ public class CheckerBoard extends Canvas {
       To switch from one color to the other,
       we use the <c>Graphics</c><c>setColor()</c> method to alternate between the two colors designated for the checkerboard, <c>SQ_COLOR1</c> and <c>SQ_COLOR2</c>. We then use the following method call to draw the colored squares:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 g.fillRect(LEFT_X+col*SQ_SIDE, UPPER_Y+row*SQ_SIDE, SQ_SIDE, SQ_SIDE);
- </input></program>
+ </code></program>
     <p>
       Note how we use the loop variables, <c>row</c><c>col</c>, together with the constants specifying the top left corner of the board (<c>UPPER_Y</c> and <c>LEFT_X</c>) and the size of the squares (<c>SQ_SIDE</c>) to calculate the location and size of each square.
       The calculation here is illustrated in <xref ref="fig-checkerlayout">Figure</xref>.
@@ -233,7 +233,7 @@ g.fillRect(LEFT_X+col*SQ_SIDE, UPPER_Y+row*SQ_SIDE, SQ_SIDE, SQ_SIDE);
       <m>(row+col) \% 2 == 1)</m><mdash/>on the first three rows of each player's side of the board.
       So, each player's checkers initially are located in the first three rows and last three rows of the checker board:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if ((row + col)%2 == 1) {// One player has top 3 rows
     if (row &lt; 3){
         g.setColor(CHECKER_COLOR1);
@@ -246,7 +246,7 @@ if ((row + col)%2 == 1) {// One player has top 3 rows
            UPPER_Y+row*SQ_SIDE,SQ_SIDE-2,SQ_SIDE-2);
     }//if
   }//if
- </input></program>
+ </code></program>
     <p>
       Because the checkers are circles,
       we use the <c>fillOval()</c> method to draw them.
@@ -275,7 +275,7 @@ if ((row + col)%2 == 1) {// One player has top 3 rows
     </p>
     </statement>
     <program label="draw_checkerboard_practice_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-  <input>
+  <code>
     <![CDATA[
 import java.awt.*;
 public class CheckerBoard extends Canvas {
@@ -333,7 +333,7 @@ public class CheckerBoard extends Canvas {
 } //CheckerBoard
 
     ]]>
-  </input>
+  </code>
     </program>
       </activity>
   </subsection>

@@ -131,11 +131,11 @@
       <p>
         This gives us the following class header for <c>OneRowNim</c>:
       </p>
-     <program language="java"><input>
+     <program language="java"><code>
         public class OneRowNim  // Class header
         {                       // Beginning of class body
         }                       // End of class body
-     </input></program>
+     </code></program>
     </subsubsection>
     <subsubsection>
       <title>Instance Variables</title>
@@ -152,7 +152,7 @@
       </p>
       <figure xml:id="fig-form">
         <caption>A template for constructing a Java class definition.</caption>
-        <program language="java"><input>
+        <program language="java"><code>
           public class ClassName
           {  // Instance variables
                VariableDeclaration1
@@ -163,7 +163,7 @@
                MethodDefinition2
                ...
           } // End of class
-        </input></program>
+        </code></program>
       </figure>
       <p>
         Instance variables are distinguished from <term>local variables</term>, which are variables defined within a method.
@@ -208,10 +208,10 @@
         The <c>Riddle</c> class (<xref ref="lstng_riddleclass">Listing</xref>) that we considered earlier has the 
         following two examples of valid declarations of instance variables:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 private String question;
 private String answer;
- </input></program>
+ </code></program>
 -->
 
  <subsubsection>
@@ -302,7 +302,7 @@ private String answer;
         we get the following:
  -->
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class OneRowNim
 {
   private int nSticks = 7;
@@ -310,7 +310,7 @@ public class OneRowNim
 
   //Method definitions go here
 } // OneRowNim
- </input></program>
+ </code></program>
 <p>
   Our initializations of the variables indicate that the game will start with 7 sticka and player
   1 will go first. 
@@ -342,11 +342,11 @@ public class OneRowNim
         The method header declares the name of the method and other general information about the method.
         The method body contains the executable statements that the method performs.
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void methodName()  // Method header
 {                  // Beginning of method body
 }                  // End of method body
- </input></program>
+ </code></program>
     </subsubsection>
     <subsubsection>
       <title>The Method Header</title>
@@ -454,7 +454,7 @@ public void methodName()  // Method header
       <listing xml:id="list-ornmheaders">
         <caption>The Instance variables and method headers for the <c>
 OneRowNim</c> class.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class OneRowNim
 { 
   private int nSticks = 7; // Start with 7 sticks.
@@ -465,7 +465,7 @@ public class OneRowNim
   public void takeThree(){ }
   public void report(){ }
 } //OneRowNim class
- </input></program>
+ </code></program>
       </listing>
       <p>
         Because all four of the <c>OneRowNim</c> instance methods are meant to communicate with other
@@ -496,9 +496,9 @@ public class OneRowNim
         reduce the value stored in <c>nSticks</c> by one and change the value in <c>player</c> from 2 to 1 or from 1 to 2.
         The first of these changes is accomplished by the following assignment:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 nSticks = nSticks - 1;
- </input></program>
+ </code></program>
       <p>
         This statement says subtract 1 from the value stored in <c>nSticks</c> and assign the new value back to <c>nSticks</c>.
       </p>
@@ -512,9 +512,9 @@ nSticks = nSticks - 1;
         Therefore, the new value of <c>player</c> will always be equal to 3 minus its current value.
         Writing this as an assignment we have:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 player = 3 - player;
- </input></program>
+ </code></program>
       <p>
         The following table can be used to verify that this assignment will switch players from 1 to 2 and vice versa:
         <tabular>
@@ -531,13 +531,13 @@ player = 3 - player;
 -->
         The complete definition of <c>takeOne()</c> method becomes:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void takeOne()
 {
    nSticks = nSticks - 1;  // Take one stick
    player = 3 - player;    // Change to other player
 }
- </input></program>
+ </code></program>
       <p>
         The <c>takeTwo()</c> and <c>takeThree()</c> methods are 
         completely analogous to the <c>takeOne()</c> method with the only difference being the 
@@ -549,10 +549,10 @@ public void takeOne()
         to clarufy the meaning of the values.
         Thus the body of <c>report()</c> could contain:
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 System.out.println("Number of sticks left: " + nSticks);
 System.out.println("Next turn by player " + player);
- </input></program>
+ </code></program>
       <p>
         This completes the method bodies of the <c>OneRowNim</c> class.
         The completed class definition is shown in <xref ref="list-orndef">Listing</xref>.
@@ -560,7 +560,7 @@ System.out.println("Next turn by player " + player);
       <listing xml:id="list-orndef">
         <caption>The <c>OneRowNim</c> class definition.</caption>
         
- <program language="java"><input>
+ <program language="java"><code>
 public class OneRowNim
 { private int nSticks = 7; // Start with 7 sticks.
   private int player = 1;  //Player 1 plays first.
@@ -585,7 +585,7 @@ public class OneRowNim
     System.out.println("Next turn by player " + player);
   }   // report()
 } // OneRowNim class
- </input></program>
+ </code></program>
 </listing>
       <p>
         We will discuss alternative methods for this class in the next chapter.
@@ -642,7 +642,7 @@ public class OneRowNim
  <activity label="oneRowNim1">
   <statement><p>Run the following program to see the game in action. 
     Change the code in main to call takeOne() instead of takeThree().</p></statement>
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
 public class OneRowNimTester
 { 
   public static void main(String args[])
@@ -681,7 +681,7 @@ class OneRowNim
     System.out.println("Next turn by player " + player);
   }   // report()
 } // OneRowNim class
- </input></program></activity>
+ </code></program></activity>
 
     <p>
       When it is run, <c>OneRowNimTester</c> produces the following output:
@@ -701,8 +701,8 @@ class OneRowNim
       This output indicates that player 1 removed the final stick and so player 2 is the winner of this game.
     </p>
 
-  <!--    </subsection> -->
-      <exercises><title>Self-Study Exercises</title>
+  </subsection>
+      <subsection><title>Self-Study Exercises</title>
      
  
           
@@ -719,7 +719,7 @@ class OneRowNim
                instance variable to whatever <c>String</c> value it receives as a parameter.
                           What should the result type be for this method?
                          </li></ol>  </p></statement>
-              <program language="java" interactive="activecode"><input>
+              <program language="java" interactive="activecode"><code>
               class Riddle 
               {                                  
                   private String question;       // Instance variables
@@ -777,34 +777,34 @@ class OneRowNim
                     System.out.println(riddle2.getHint());
                   } // main()
                 } // RiddleUser
-              </input>  </program>
+              </code>  </program>
             <solution>
                 <p>
                   <ol><li>Definition of new instance variable in the <c>Riddle</c> class:
-         <program language="java"><input>
+         <program language="java"><code>
         private String hint;
-         </input></program>
+         </code></program>
                  </li>
         
                  <li>The <c>getHint()</c> method of the <c>Riddle</c> class,
                     which should be a <c>public</c> method,
                     is:
-         <program language="java"><input>
+         <program language="java"><code>
         public String getHint()
         {
           return hint;
         }
-         </input></program>
+         </code></program>
               </li>
               <li>
                 
                    The  <c>setHint()</c> method of the <c>Riddle</c> class, with the  result type <c>void</c>.  is:
-         <program language="java"><input>
+         <program language="java"><code>
         public void setHint(String aHint)
         {
           hint = aHint;
         }
-         </input></program>   
+         </code></program>   
               </li>
               </ol>
               </p>
@@ -823,7 +823,7 @@ class OneRowNim
                   </li><li> The last method returns a <c>String</c> containing the student's first name and last name.
                            </li></ol>        
                              </p></statement>
-                <program language="java" interactive="activecode"><input>
+                <program language="java" interactive="activecode"><code>
                 public class Student 
                 {                     
 
@@ -847,11 +847,11 @@ class OneRowNim
                     System.out.println("Name: " + s.getStudentID() );
                   }
                 }
-              </input>                </program>
+              </code>                </program>
             <solution>
               <p>
                 A possible definition of the <c>Student</c> class is given below.
-     <program language="java"><input>
+     <program language="java"><code>
     public class Student
     {  private String firstName;
        private String lastName;
@@ -867,13 +867,13 @@ class OneRowNim
         return firstName + " " + lastName; 
       } 
     }
-     </input></program>
+     </code></program>
             </p></solution>
           </exercise>           
          
         
-</exercises>
 </subsection>
+
 
   <subsection xml:id="sec-methodcall">
     <title>Flow of Control: Method Call and Return</title>
@@ -934,7 +934,7 @@ class OneRowNim
     </p>
     <listing xml:id="fig-trace">
       <caption>A trace of the <c>OneRowNim</c> program.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class OneRowNim
 2 {  private int nSticks = 7; // Start with 7 sticks.
 3    private int player = 1;  //Player 1 plays first.
@@ -965,7 +965,7 @@ public class OneRowNim
 22       game.report();
 23     } //main()
    } //OneRowNim class
- </input></program>
+ </code></program>
 </listing>
     <p>
       Execution of the <c>OneRowNim</c> program begins with the first statement in the <c>main()</c> method,

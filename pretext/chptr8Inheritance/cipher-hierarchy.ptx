@@ -64,7 +64,7 @@
       and return a <c>String</c> result.
       The following method definition will work for any cipher:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String encrypt(String s) {
   StringBuffer result = new StringBuffer("");
   StringTokenizer words = new StringTokenizer(s);// Tokenize
@@ -73,7 +73,7 @@ public String encrypt(String s) {
   }
   return result.toString();        // Return result
 } // encrypt()
- </input></program>
+ </code></program>
     <p>
       This method creates a local <c>StringBuffer</c> variable,
       <c>result</c>, and uses <c>StringTokenizer</c> to break the original
@@ -91,10 +91,10 @@ public String encrypt(String s) {
       Thus, if we define <c>Caesar</c> and <c>Transpose</c> as  
       instances of these classes will be able to use the <c>encrypt()</c> method.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Caesar extends Cipher { ... }
 public class Transpose extends Cipher { ... }
- </input></program>
+ </code></program>
 -->
     <p>
       On the other hand,
@@ -109,11 +109,11 @@ public class Transpose extends Cipher { ... }
       Thus, within the <c>Cipher</c> class,
       we would define <c>encode()</c> and <c>decode()</c> as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Abstract methods
 public abstract String encode(String word);
 public abstract String decode(String word);
- </input></program>
+ </code></program>
  <!--
     <p>
       These declarations within the <c>Cipher</c> class tell the compiler that these 
@@ -133,7 +133,7 @@ public abstract String decode(String word);
 <listing xml:id="fig-cipher">
   <caption>The <c>abstract Cipher</c> class.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 import java.util.*;
 public abstract class Cipher {
   public String encrypt(String s) {
@@ -155,7 +155,7 @@ public abstract class Cipher {
   public abstract String encode(String word);            // Abstract methods
   public abstract String decode(String word);
 } // Cipher
- </input></program>
+ </code></program>
 </listing>
     <p>
       Note again that <c>encrypt()</c> and <c>decrypt()</c> call <c>encode()</c> and <c>decode()</c>,  
@@ -169,12 +169,12 @@ public abstract class Cipher {
       respectively,
       then the following calls to <c>encrypt()</c> will cause their respective <c>encode()</c> methods to be invoked:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Invokes caesar.encode()
 caesar.encrypt("hello world");
 // Invokes transpose.encode()
 transpose.encrypt("hello world");
- </input></program>
+ </code></program>
     <p>
       When <c>caesar.encrypt()</c> is called,
       it will in turn invoke <c>caesar.encode()</c><mdash/>that is,
@@ -194,7 +194,7 @@ transpose.encrypt("hello world");
 
 <listing xml:id="fig-caesar">
   <caption>The <c>Caesar</c> class.</caption>
-  <program language="java"><input>
+  <program language="java"><code>
 public class Caesar extends Cipher {
 
   public String encode(String word) {
@@ -217,7 +217,7 @@ public class Caesar extends Cipher {
     return result.toString();            // Return the result as a string
   } // decode()
 } // Caesar
- </input></program>
+ </code></program>
 </listing>
 
     <p>
@@ -248,25 +248,25 @@ public class Caesar extends Cipher {
     </p>
     <algorithm>
     <title>Ceasar shift the letter ch</title>
-    <program language="java"><input>
+    <program language="java"><code>
     1. Convert ch to a number between 0 and 25.
     2. Add the shift to that number.
     3. Divide that number % 26.
     4. Convert the resulting number back to a character.
-    </input></program>
+    </code></program>
     </algorithm>
     <p>
       For step one of this algorithm we can convert any letter
       'a' to 'z' into a number 0 to 25 simply by subtracting
       the letter 'a' from it:      
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 'a' - 'a' = 0
 'b' - 'a' = 1
 'c' - 'a' = 2
 ...
 'z' - 'a' = 25
- </input></program>
+ </code></program>
 <p>
   Adding the shift and dividing % 26 gives us a number between 0 and 25. To convert that
   back into a letter, we can just add the letter 'a' to it and use the <c>(char)</c>
@@ -277,17 +277,17 @@ public class Caesar extends Cipher {
       If we combine these steps, we get the following expression for shifting
       <c>ch</c> by  3:
     </p>
-    <program language="java"><input>
+    <program language="java"><code>
         (char)('a' + (ch -'a'+ 3) % 26)
-    </input></program>
+    </code></program>
     <p>which breaks down as follows:
-        <program language="java"><input>
+        <program language="java"><code>
         ch -'a'                          // Convert to 0 to 25
         (ch -'a'+ 3)                     // Add shift
         (ch -'a'+ 3) % 26                // Divide % 26
         ('a' + (ch -'a'+ 3) % 26)        // Add 'a'
         (char)('a' + (ch -'a'+ 3) % 26)  // Cast back into a letter
-    </input></program>
+    </code></program>
     </p>
     <p>
       To summarize,
@@ -312,7 +312,7 @@ public class Caesar extends Cipher {
     This code will only work with lowercase letters.
   </p>
   </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
     import java.util.*;
 
     public class TestCipher {
@@ -371,7 +371,7 @@ public class Caesar extends Cipher {
         return result.toString();            // Return the result as a string
       } // decode()
     } // Caesar
-  </input></program>
+  </code></program>
 </activity>
 
   </subsection>
@@ -397,7 +397,7 @@ public class Caesar extends Cipher {
 
 <listing xml:id="fig-transpose">
   <caption>The <c>Transpose</c> class</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Transpose extends Cipher {
 
   // encode() reverses and returns a word
@@ -410,7 +410,7 @@ public class Transpose extends Cipher {
     return encode(word);         // Just call encode
   } // decode
 } // Transpose
- </input></program>
+ </code></program>
 </listing>
   </subsection>
   <subsection>
@@ -423,7 +423,7 @@ public class Transpose extends Cipher {
     <listing xml:id="fig-testcipher">
       <caption>The <c>TestEncrypt</c> class<idx><h>TestEncrypt class</h></idx>.</caption>
       
- <program language="java"><input>
+ <program language="java"><code>
 public class TestEncrypt {
   public static void main(String argv[]) {
     Caesar caesar = new Caesar();
@@ -441,14 +441,14 @@ public class TestEncrypt {
     System.out.println("Decrypted: " + transpose.decrypt(secret));// Decrypt
   } // main()
 } // end TestEncrypt
- </input></program>
+ </code></program>
 </listing>
     <p>
       It creates a <c>Caesar</c> cipher and   a <c>Transpose</c> cipher and 
       then encrypts and decrypts the same sentence using each cipher.
       If you run this program, it will produce the following output:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
     ********* Caesar Cipher Encryption *********
     PlainText: this is the secret message
     Encrypted: wklv lv wkh vhfuhw phvvdjh
@@ -457,7 +457,7 @@ public class TestEncrypt {
     PlainText: this is the secret message
     Encrypted: siht si eht terces egassem
     Decrypted: this is the secret message
- </input></program>
+ </code></program>
 
  <p>See this code in action below.</p>
 
@@ -466,7 +466,7 @@ public class TestEncrypt {
   lowercase string and try again.
     This code will only work with lowercase letters.</p>
   </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
     import java.util.*;
     
     public class TestEncrypt {
@@ -539,10 +539,10 @@ public class TestEncrypt {
         return encode(word);         // Just call encode
       } // decode
     } // Transpose
-     </input></program>
+     </code></program>
 </activity>
-    
-    <exercises xml:id="self-study-exercises-crypto">
+    </subsection>
+     <subsection xml:id="self-study-exercises-crypto">
     <title>Self-Study Exercises</title>
 
           <exercise label="caesar-shift-exercise">
@@ -554,7 +554,7 @@ public class TestEncrypt {
               the shift, add a constructor to set it, and change the encode method to use it.)
             </p>
             </statement>
-            <program language="java" interactive="activecode"><input>
+            <program language="java" interactive="activecode"><code>
               import java.util.*;
 
               public class TestCipher {
@@ -611,9 +611,9 @@ public class TestEncrypt {
                   return result.toString();            // Return the result as a string
                 } // decode()
               } // Caesar
-               </input></program>
+               </code></program>
                <solution>
-    <program language="java"><input>
+    <program language="java"><code>
     import java.util.*;
     public class TestCipher {
        public static void main(String[] args)  {
@@ -677,7 +677,7 @@ public class TestEncrypt {
         return result.toString();            // Return the result as a string
       } // decode()
     } // Caesar
-    </input></program>
+    </code></program>
     </solution>
    </exercise>
           <exercise label="transpose-shift-exercise">
@@ -692,7 +692,7 @@ public class TestEncrypt {
               (Hint: use a loop to append the letters into a new string)
             </p>   
             </statement>
-            <program language="java" interactive="activecode"><input>
+            <program language="java" interactive="activecode"><code>
               import java.util.*;
               
               public class TestTranspose {
@@ -744,9 +744,9 @@ public class TestEncrypt {
                   return encode(word);         // Just call encode
                 } // decode
               } // Transpose
-               </input></program>
+               </code></program>
   <solution>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
 // Modification to Transpose class for a 2-letter rotation.
 // Note the expression in decode to reverse the rotation: (k + word.length() - 2) 
       class Transpose extends Cipher {
@@ -766,10 +766,10 @@ public class TestEncrypt {
         } // decode
       } // Transpose
 
- </input></program>
+ </code></program>
   </solution>
   </exercise>
-    </exercises>
+    
   </subsection>
 
 </section>

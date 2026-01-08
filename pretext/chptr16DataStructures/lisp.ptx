@@ -26,9 +26,9 @@
     For example,
     here's a definition of a function that computes the square of two numbers:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 (define (square x) (* x x) )
- </input></program>
+ </code></program>
   <p>
     The expression <em>(square x)</em>
     is a list giving the name of the function and its parameter.
@@ -62,10 +62,10 @@
     Given these basic list operators,
     it is practically trivial to define a stack in LISP:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 (define (push x stack) (cons x stack))
 (define (pop stack)(setf stack (cdr stack))(car stack))
- </input></program>
+ </code></program>
   <p>
     The push operation creates a new stack by forming the
     <em>cons</em> of the element <em>x</em>

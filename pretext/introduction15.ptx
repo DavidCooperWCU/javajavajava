@@ -66,20 +66,20 @@
       <q>Hello</q>
       <em>N</em> times:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void hello(int N)  {
     for (int k = 0; k &lt; N; k++)
         System.out.println("Hello");} // hello()
- </input></program>
+ </code></program>
     <p>
       A recursive version of this method would be defined  as follows:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public void hello(int N)  {
     if (N > 0) \verb!{!
         System.out.println("Hello");
         hello(N - 1);                // Recursive call} // hello()
- </input></program>
+ </code></program>
     <p>
       This method is recursive because it calls itself when
       <em>N</em> is greater than 0.
@@ -89,7 +89,7 @@ public void hello(int N)  {
       equal to 5, the following is a trace of what happens.
       The indentations indicate each time the method calls itself:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 hello(5)
     Print "Hello"
     hello(4)
@@ -101,7 +101,7 @@ hello(5)
                 hello(1)
                     Print "Hello"
                     hello(0)
- </input></program>
+ </code></program>
     <p>
       Thus,
       <q>Hello</q>
@@ -141,23 +141,23 @@ hello(5)
         <li>
           <p>
             What would be printed if we call the following method with the expression <c>mystery(0)</c>?
- <program language="java"><input>
+ <program language="java"><code>
 public void mystery(int N) {
     System.out.print(N + " ");
     if (N &lt;= 5)
         mystery(N + 1);} // mystery()
- </input></program>What about <c>mystery(100)</c>?
+ </code></program>What about <c>mystery(100)</c>?
           </p>
         </li>
         <li>
           <p>
             What would be printed if we call the following method with the expression <c>mystery(5)</c>?
- <program language="java"><input>
+ <program language="java"><code>
 public void mystery(int N) {
     System.out.print(N + " ");
     if (N &lt;= 5)
         mystery(N - 1);} // mystery()
- </input></program>
+ </code></program>
           </p>
         </li>
       </ol>

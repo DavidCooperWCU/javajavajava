@@ -26,20 +26,20 @@
       Constructors usually are <c>public</c>.  
       Here is a simple constructor for our <c>OneRowNim</c> class. Notice there is no return type void in between the public and the classname. 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public OneRowNim()
 {   nSticks = 7;
     player = 1;
 }
- </input></program>
+ </code></program>
     <p>
       This constructor merely sets the initial values of the instance  variables, <c>nSticks</c> and <c>player</c>. In our current version of
 <c>OneRowNim</c> these variables are given initial values by using initializer statements when they are first declared:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  private int nSticks = 7;
  private int player = 1;
- </input></program>
+ </code></program>
     <p>
       So we now have two ways to initialize a class's instance  variables.
       In the <c>OneRowNim</c> class it doesn't really matter which way we do it.
@@ -67,12 +67,12 @@ public OneRowNim()
       when instance objects are created.
       An instance creation expression involves the keyword <c>new</c> followed by the constructor invocation:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim game // Declare
     = new OneRowNim(); // and instantiate game1
 OneRowNim game2 // Declare
     = new OneRowNim(); // and instantiate game2
- </input></program>
+ </code></program>
     <p>
       Note here that we have combined variable declaration and instantiation into a single statement,
       whereas in some previous examples we used separate declaration and instantiation statements.
@@ -98,18 +98,18 @@ OneRowNim game2 // Declare
       In order to do this,
       we would need a constructor with a single <c>int</c> parameter:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public OneRowNim(int sticks)
 {   nSticks = sticks;
 }
- </input></program>
+ </code></program>
     <p>
       Now that we have this constructor we can use it when we create instances of <c>OneRowNim</c>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim game1 = new OneRowNim(21);
 OneRowNim game2 = new OneRowNim(13);
- </input></program>
+ </code></program>
     <p>
       The effect of these statements is the same as if we had used the <c>setSticks()</c> method that was discussed briefly in the last section.
       The difference is that we can now set the number of sticks when we create the object.
@@ -127,17 +127,18 @@ OneRowNim game2 = new OneRowNim(13);
 <c>player</c>. The only time that it should be possible to set the number of sticks for a game is when a constructor is used to create a new instance of <c>OneRowNim</c>.
     </p>
     </introduction>
+   
     
-    <exercises><title>Self-Study Exercises</title>
+    <subsection><title>Self-Study Exercises</title>
      <exercise label="constructBug">
       <title>Constructor Definition Bug</title>
       <statement><p>
             What's wrong with the following constructor definition? 
- <program language="java"><input>
+ <program language="java"><code>
 public void OneRowNim(int sticks)
 {   nSticks = sticks;
 }
- </input></program>
+ </code></program>
 </p></statement>
 <hint><p>What is void in the header?</p></hint>
 <solution>
@@ -163,7 +164,7 @@ public void OneRowNim(int sticks)
             to 2. 
             Write another constructor that takes 2 parameters to set the number of sticks and to set the player.</p>
         </statement>
-      <program language="java" interactive='activecode'><input>
+      <program language="java" interactive='activecode'><code>
         /*
          * File: OneRowNim.java
          * Author: Java Java Java
@@ -214,9 +215,9 @@ public void OneRowNim(int sticks)
               game.report();            
             } // end of main
         } // OneRowNim class
-        </input></program>
+        </code></program>
         <solution>
-          <program language="java"><input>
+          <program language="java"><code>
             public OneRowNim(int sticks)
             {    
                  nSticks = sticks;
@@ -227,10 +228,10 @@ public void OneRowNim(int sticks)
                  nSticks = sticks;
                  player = initPlayer;
             }
-             </input></program>
+             </code></program>
         </solution>
       </exercise>
-    </exercises>
+    </subsection>
     
   <subsection xml:id="sec-defaultconstructors">
     <title>Default Constructors</title>
@@ -257,15 +258,15 @@ public void OneRowNim(int sticks)
       In terms of what it does,
       the default constructor for <c>OneRowNim</c> would be equivalent to a <c>public</c> constructor method with an empty body:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public OneRowNim() { }
- </input></program>
+ </code></program>
     <p>
       This explains why the following statement was valid when a class definition of <c>OneRowNim</c> contained no explicit definition of a constructor:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim game = new OneRowNim();
- </input></program>
+ </code></program>
   </subsection>
  
   <subsection>
@@ -275,12 +276,12 @@ OneRowNim game = new OneRowNim();
       For example,
       consider the following two <c>OneRowNim</c> constructors:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public OneRowNim() {} // Constructor #1
 public OneRowNim(int sticks)   // Constructor #2
 {   nSticks = sticks;
 }
- </input></program>
+ </code></program>
     <p>
       The first is an explicit representation of the default constructor.
       The second is the constructor we defined earlier to initialize the number of sticks in a <c>OneRowNim</c> object.
@@ -298,10 +299,10 @@ public OneRowNim(int sticks)   // Constructor #2
       which consists of its name together with the number and types of formal parameters it takes.
       Thus, our <c>OneRowNim</c> constructors have the following distinct signatures:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim()
 OneRowNim(int)
- </input></program>
+ </code></program>
     <p>
       Both have the same name, but the first takes no parameters,
       whereas the second takes a single <c>int</c> parameter.
@@ -329,20 +330,20 @@ OneRowNim(int)
       we want a constructor that would let us set both the number of sticks and the player who starts first.
       The following constructor will do what we want:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public OneRowNim(int sticks, int starter)
 {   nSticks = sticks; // Set the number of sticks
     player = starter; // Set who starts
 }
- </input></program>
+ </code></program>
     <p>
       When calling this constructor,
       we would have to take care to pass the number of sticks as the value of the first argument and either 1 or 2 as the value of the second argument:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim game3 = new OneRowNim(14, 2);
 OneRowNim game4 = new OneRowNim(31, 1);
- </input></program>
+ </code></program>
     <p>
       If we mistakenly reversed 14 and 2 in the first of these statements,
       we would end up with a <c>OneRowNim</c> game that starts with 2 sticks and has player 14 as the player with the first move.
@@ -351,11 +352,11 @@ OneRowNim game4 = new OneRowNim(31, 1);
       We have now defined three constructor methods for the <c>OneRowNim</c> class.
       Each constructor has the name <c>OneRowNim</c>, but each has a distinct signature:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim()
 OneRowNim(int)
 OneRowNim(int, int)
- </input></program>
+ </code></program>
   </subsection>
   <subsection>
     <title>Constructor Invocation</title>
@@ -363,22 +364,22 @@ OneRowNim(int, int)
       A constructor method is invoked only as part of a <c>new</c> expression when an instance object is first created.
       Each of  these is a valid invocation of a <c>OneRowNim</c> constructor:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 // Default constructor
 OneRowNim game1 = new OneRowNim();
                   // Sets number of sticks
 OneRowNim game2 = new OneRowNim(21);
                   // Sets both instance variables
 OneRowNim game3 = new OneRowNim(19, 2);
- </input></program>
+ </code></program>
     <p>
       The following constructor invocations are invalid because there are no matching constructor definitions:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 // No matching constructors
 OneRowNim game4 = new OneRowNim("21");
 OneRowNim game5 = new OneRowNim(12, 2, 5);
- </input></program>
+ </code></program>
     <p>
       In the first case,
       there is no constructor method that takes a <c>String</c> parameter,

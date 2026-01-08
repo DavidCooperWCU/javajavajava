@@ -14,9 +14,9 @@
       let's declare a variable, <c>onePlaysNext</c>, and initialize it to true,
       to represent the fact that player one will play first:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 private boolean onePlaysNext = true;
- </input></program>
+ </code></program>
     <p>
       When <c>onePlaysNext</c> is true,
       it will be player one's turn.
@@ -28,12 +28,12 @@ private boolean onePlaysNext = true;
       it is necessary to redefine the methods that had previously used the <c>player</c> variable.
       The first method that needs revision is the constructor:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public OneRowNim(int sticks, int starter)
 {   nSticks = sticks;
     onePlaysNext = (starter == 1);
 }  // OneRowNim() constructor3
- </input></program>
+ </code></program>
     <p>
       In the constructor,
       the <c>starter</c> parameter is used with a value of 1 or 2 to set which player goes first.
@@ -46,19 +46,19 @@ public OneRowNim(int sticks, int starter)
       which will be assigned to <c>onePlaysNext</c>. Thus,
       the assignment statement is equivalent to the following if/else statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 if (player == 1)
    onePlaysNext = true;
 else
    onePlaysNext = false;
- </input></program>
+ </code></program>
     <p>
       The remaining changes are shown in <xref ref="fig-newonerow">Listing</xref>.
       There are only two instance methods that need revision to accommodate the use of <c>boolean</c> variables.
       The <c>takeSticks()</c> method contains two revisions.
       The first uses the boolean OR operator to test whether a move is valid:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean takeSticks(int num)
 {   if (num &lt; 1 || num > 3 || num > nSticks)
         return false;                // Error
@@ -68,33 +68,33 @@ public boolean takeSticks(int num)
         return true;
     } //else
 } // takeSticks()
- </input></program>
+ </code></program>
     <p>
       It also uses the boolean NOT operator to toggle the value of <c>onePlaysNext</c>, to switch to the other player's turn:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 onePlaysNext = !onePlaysNext;
- </input></program>
+ </code></program>
     <p>
       Finally, the <c>getPlayer()</c> method now uses a if/else statement 
       to return either 1 or 2 depending on who's turn it is:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int getPlayer()
 {   if (onePlaysNext)
         return 1;
     else return 2;
 } // getPlayer()
- </input></program>
+ </code></program>
 
 <p>
       The full listing of the revised <c>OneRowNim</c> is
       given in <xref ref="fig-newonerow">Listing</xref>. Run to see this code in action.
 </p>
-    <listing xml:id="fig-newonerow">
+    <listing  xml:id="fig-newonerow">
       <caption>The revised <c>OneRowNim</c> uses a <c>boolean</c>
       variable to keep track of who's turn it is.</caption>
- <program language="java" interactive="activecode"><input>
+ <program label="data-bool-rev-onerownum" language="java" interactive="activecode"><code>
 public class OneRowNim
 {    private int nSticks = 7;
      private boolean onePlaysNext = true;
@@ -155,6 +155,6 @@ public class OneRowNim
          System.out.println(game.getWinner());
      } // main()
 } // OneRowNim class
- </input></program>
+ </code></program>
     </listing>
 </section>

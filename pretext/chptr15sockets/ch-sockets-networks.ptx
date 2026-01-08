@@ -111,7 +111,8 @@
       each of which uses its own
       <q>language.</q>
     </p>
-    <exercises><title>Self-Study Exercises</title>
+    </subsection>
+     <subsection><title>Self-Study Exercises</title>
       <exercise label="matching-topology">
         <title>Matching Problem for Topologies</title>
         <statement>
@@ -120,7 +121,7 @@
         <feedback>
             <p>Review the topologies above.</p>
         </feedback>
-        <matches>
+        <cardsort>
             <match>
                 <premise>Bus topology</premise>
                 <response>The topology that requires the least cable to connect 10 computers.                </response>
@@ -135,7 +136,7 @@
               <response>The topology that would be least resistant to having one of its computers crash.
               </response>
           </match>  
-            </matches>
+            </cardsort>
             <solution>
               <ul>
               <li>
@@ -158,7 +159,7 @@
             </exercise>
          
             
-      </exercises>
+      
  </subsection>
 
   <subsection>
@@ -198,17 +199,17 @@
             <idx><h>Uniform Resource Locator (URL)</h></idx>
         A URL specifies three necessary bits of information: The method used to transfer information (e.g., HTTP or FTP), the address of the host computer (e.g., <c>www.prenhall.com</c>), and the path describing where the file is located on the host ( <c>/morelli/index.html</c>):
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 METHOD://HOST/PATH
 HTTP://www.prenhall.com/morelli/index.html
- </input></program>
+ </code></program>
       <p>
         Similarly, an e-mail address is specified by the SMTP protocol to consist of a local mailbox address (<c>George.W.Bush</c>) followed by the address of the computer (<c>mail.whitehouse.gov</c>):
       </p>
- <program language="java"><input>
+ <program language="java"><code>
 LOCAL_MAILBOX@COMPUTER
 George.W.Bush@mail.whitehouse.gov
- </input></program>
+ </code></program>
       <p>
         Another good example of an application protocol is the Internet's
         <term>Domain Name System (DNS)</term>,
@@ -234,7 +235,8 @@ George.W.Bush@mail.whitehouse.gov
         It is their role to translate names such as <c>java.trincoll.edu</c> to numeric addresses whenever they are requested to do so by clients such as the SMTP or the HTTP server.
         Also, the DNS servers must communicate among themselves to make sure that their databases of names and addresses are up-to-date.
       </p>
-    <exercises><title>     Self-Study Exercise</title>
+    </subsubsection>
+     <subsubsection><title>     Self-Study Exercise</title>
            
             <exercise label="matching-url-parts">
               <title>URL parts</title>
@@ -249,7 +251,7 @@ George.W.Bush@mail.whitehouse.gov
               <feedback>
                   <p>Review the subsection above.</p>
               </feedback>
-              <matches>
+              <cardsort>
                   <match>
                       <premise>http</premise>
                       <response>protocol              </response>
@@ -266,7 +268,7 @@ George.W.Bush@mail.whitehouse.gov
                   <premise>com</premise>
                   <response>Internet domain     </response>
               </match>  
-                  </matches>
+                  </cardsort>
                   <solution>
                     <p>
              
@@ -278,7 +280,7 @@ George.W.Bush@mail.whitehouse.gov
                                </p>
                     </solution>
                     </exercise>
-      </exercises>
+      
     </subsubsection>
   </subsection>
   <subsection>
@@ -336,7 +338,8 @@ George.W.Bush@mail.whitehouse.gov
       </p>
     </principle>
    
-    <exercises>
+    </subsection>
+     <subsection>
     <title>Self-Study Exercise</title>
    
     <exercise label="clientserverEx">
@@ -401,7 +404,7 @@ George.W.Bush@mail.whitehouse.gov
         </solution>
         </exercise>
               
-      </exercises>
+      
       
  </subsection>
   <subsection>

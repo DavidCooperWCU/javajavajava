@@ -14,37 +14,37 @@
     When we perform the cast <c>(char) ('a' - 32 )</c>, the resulting value 
     is <c>'A'</c>, as the following example shows:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     (char)('a' - 32)              ==>  'A'
-  </input></program>
+  </code></program>
   <p>
     In evaluating <c>'a' - 32</c>Java will promote <sq>a</sq> to an <c>int</c> and 
     then perform the subtraction.  Thus, a step-by-step evaluation of the expression would go as follows:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     Step 1. (char)((int)'a' - 32)// Promote 'a' to int
     Step 2. (char)(97 - 32)      // Subtract
     Step 3. (char) (65)          // Cast result to a char
     Step 4. 'A'                  // Results in 'A'
-  </input></program>
+  </code></program>
   <p>
     Similarly, we can convert an uppercase letter into the corresponding  
     lowercase letter by simply adding 32 to its integer code and casting the result back to a char:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     (char)('J' + 32)              ==>  'j'
-  </input></program>
+  </code></program>
   <p>
     We can group these ideas into a method that performs conversion from lowercase to uppercase:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     char toUpperCase(char ch) 
     {
       if ((ch >= 'a') &amp;&amp; (ch &lt;= 'z'))
         return ch - 32 ;  // Error: can't return an int
       return ch;
     }
-  </input></program>
+  </code></program>
   <p>
     This method
         <idx><h>toUpperCase() method</h></idx>
@@ -76,14 +76,14 @@
     In order to avoid this error,
     the result must be converted back to <c>char</c> before it can be returned:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     char toUpperCase (char ch) 
     {
       if ((ch >= 'a') &amp;&amp; (ch &lt;= 'z'))
         return (char)(ch - 32);  // Explicit cast
       return ch;
     }
-  </input></program>
+  </code></program>
   <p>
     Another common type of conversion is to convert a digit
         <idx><h>digitToInteger() method</h></idx>
@@ -92,9 +92,9 @@
     we convert the character <sq>9</sq> to the integer 9 by  making use of the fact that the digit <sq>9</sq> is 9 characters beyond the digit <sq>0</sq> in the lexical order.
     Therefore, subtracting <sq>0</sq> from <sq>9</sq> gives integer 9 as a result:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     ('9' - '0')  ==> (57 - 48) ==>   9
-  </input></program>
+  </code></program>
   <p>
     More generally,
     the expression <em><m>ch -</m> <sq>0</sq></em> will convert any digit,
@@ -102,14 +102,14 @@
     We can encapsulate these ideas into a method that converts any 
     digit into its corresponding integer value:
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
     int digitToInteger(char ch) 
     {
       if ((ch >= '0') &amp;&amp; (ch &lt;= '9'))
         return ch - '0';
       return -1 ;
     }
-  </input></program>
+  </code></program>
   <p>
     This method takes a single <c>char</c> parameter and returns an
     <c>int</c>. It first checks that
@@ -128,11 +128,11 @@
     a useful and justifiable shortcut if, as in this case,
     we are just testing the methods.
   </p>
-  <listing xml:id="list-testapp">
+  <listing  xml:id="list-testapp">
     <caption>A Java program illustrating character<idx><h>character
     conversion example</h></idx> conversions. When run, the program will generate
     the following outputs, one per line: a, 98, b, A, B, 7.</caption>
-    <program language="java" interactive="activecode"><input>
+    <program label="char-conv-illustration-1" language="java" interactive="activecode"><code>
     public class Test 
     {
         public static char toUpperCase(char ch) 
@@ -160,6 +160,6 @@
             System.out.println(digitToInteger('7'));
         }
     } // Test
-    </input></program>
+    </code></program>
   </listing>
 </section>

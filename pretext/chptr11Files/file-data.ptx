@@ -38,10 +38,10 @@
   <p>
     Let us first choose descriptive names for  declaring the two new instance variables:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 private String[] wordArray;
 private int arraySize;
- </input></program>
+ </code></program>
   <p>
     Note that it will be useful to store the number of words in the file in its first line so that 
     this information can be used to allocate memory for the array.
@@ -52,12 +52,12 @@ private int arraySize;
     and it will have  a single word per line after that.
     Thus, a small file might look like:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 3
     STREAMS
     CONDUIT
     DIALOGS
- </input></program>
+ </code></program>
   <p>
     We can use the body of the <c>readTextFile()</c> method of the <c>TextIO</c> class as a model for 
     the Java code that needs to be added to the <c>WordGuess</c> constructor.
@@ -65,7 +65,7 @@ private int arraySize;
   </p>
   <algorithm>
   <title>Read textfile algorithm</title>
- <program language="java"><input>
+ <program language="java"><code>
     Use file name to open a  BufferedReader stream
     Read first line and convert to an integer
     Store the integer as the size of the array
@@ -75,7 +75,7 @@ private int arraySize;
        Store the word in the next array element
        Read next line of file
     Close the BufferedReader stream
- </input></program>
+ </code></program>
 </algorithm>
   <p>
     When this pseudocode is translated into Java and inserted into a
@@ -83,7 +83,7 @@ private int arraySize;
   </p>
   <listing xml:id="fig-wordguessfile">
     <caption>Code added at beginning of the <c>WordGuess</c> constructor.</caption>
- <program language="java"><input>
+ <program language="java"><code>
     try {
         FileReader fr = new FileReader("secretwords.txt");
         BufferedReader inStream
@@ -104,18 +104,18 @@ private int arraySize;
     } catch(IOException e){
         e.printStackTrace();
     } //catch
- </input></program>
+ </code></program>
   </listing>
   <p>
     The new <c>getSecretWord()</c> method merely needs to generate a  random array 
     index and return the corresponding array element:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
     private String getSecretWord() {
         int num = (int)(Math.random()*arraySize);
         return wordArray[num];
     } //getSecretWord()
- </input></program>
+ </code></program>
   <p>
     The only other modification that is needed for to complete new
     <c>WordGuess</c> class is to add an initial <c>import java.io.*;</c> statement so that the file 

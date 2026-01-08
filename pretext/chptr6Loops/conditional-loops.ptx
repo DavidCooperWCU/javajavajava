@@ -76,7 +76,7 @@ Algorithm for computing the 3N+1 sequence
       <em><c>while</c> statement</em>,
       whose flowchart is shown in <xref ref="fig-whileflow6">Figure</xref>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 while (N != 1) {            // While N not equal to 1
   System.out.print(N + " ");// Print N
   if (N % 2 == 0)           // If N is even
@@ -85,7 +85,7 @@ while (N != 1) {            // While N not equal to 1
       N = 3 * N + 1;        //  multiply by 3 and add 1
 }
 System.out.println(N);      // Print N
- </input></program>
+ </code></program>
     <p>
       Recall that unlike the <c>for</c> statement,
       the <c>while</c> statement does not contain syntax for the initializer and the updater.
@@ -109,13 +109,13 @@ System.out.println(N);      // Print N
     <p>
       The <c>while</c> structure has the following form:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 InitializerStatements;         // Initializer
 while (loop entry condition) { // Bound test
     Statements;                // Loop body
     UpdaterStatements;         // Updater
 }
- </input></program>
+ </code></program>
     <p>
       As its form suggests,
       the <c>while</c> structure is designed so that on some conditions the loop body will never be executed.
@@ -136,20 +136,20 @@ while (loop entry condition) { // Bound test
 Here's a simpler problem. Assume you're working your way through a set of problems in an assignment. 
 You could follow the pseudocode below and use a while loop. 
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 write the problems on the assignment sheet // Initializer
 while there are problems on the sheet      // Bound test
     do a problem                            // Loop body
     cross it off the assignment sheet         // Updater
- </input></program>
+ </code></program>
     <p>
       It is possible that the assignment sheet contains no homework problems to begin with.
       In that case,
       there's no work for the body of the loop to do and it should be skipped.
     </p>
 
-    
-    <exercises xml:id="self-study-exercisesB18"><title>Self-Study Exercises</title>
+   </subsection>
+     <subsection xml:id="self-study-exercisesB18"><title>Self-Study Exercises</title>
       <p>
         Identify and fix the syntax error in the following <c>while</c> loop structures.
       </p>
@@ -158,7 +158,7 @@ while there are problems on the sheet      // Bound test
   <title>While Loop Bugs 1</title>
 <statement>
         <p>Fix the bugs in the following while loop.         
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Debug
 {
    public static void main(String[] args)
@@ -171,17 +171,17 @@ public class Debug
       }
     }
   }               
- </input></program>
+ </code></program>
  </p></statement>
  <solution>
                  
-  <program language="java"><input>
+  <program language="java"><code>
     int k = 5;
     while (k &lt; 20) {
         System.out.println(k);
         k++                     &lt;&lt; Missing semicolon
       }
-     </input></program>
+     </code></program>
  </solution>
  </exercise>
 
@@ -189,7 +189,7 @@ public class Debug
   <title>While Loop Bugs 2</title>
   <statement>
           <p>Fix the bugs in the following while loop.      
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   public class Debug
   {
      public static void main(String[] args)
@@ -202,16 +202,16 @@ public class Debug
         }
       }
     }
- </input></program>
+ </code></program>
 </p></statement>
 <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     int k = 0;
     while (k &lt; 12;) {           &lt;&lt; Extra semicolon
         System.out.println(k);
         k++;
       }
-     </input></program>
+     </code></program>
 </solution>
 </exercise>
  
@@ -219,7 +219,7 @@ public class Debug
   <title>While Loop Bugs 3</title>
   <statement>
           <p>Fix the bugs in the following while loop.        
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   public class Debug
   {
      public static void main(String[] args)
@@ -229,18 +229,18 @@ public class Debug
             System.out.println(k);
      }
     }
- </input></program>
+ </code></program>
 </p></statement>
 <solution><p>
   Infinite Loop. k needs to be changed in the loop. Fixed:
-  <program language="java"><input> 
+  <program language="java"><code> 
   int k = 0;
   while (k &lt; 10) 
   {
       System.out.println(k);
       k++;  // add increment counter k and { } in loop body.
   }
-     </input></program></p>
+     </code></program></p>
 </solution>
  </exercise>
 
@@ -248,7 +248,7 @@ public class Debug
   <title>While Loop Bugs 4</title>
   <statement>
           <p>Fix the bugs in the following while loop.        
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   public class Debug
   {
      public static void main(String[] args)
@@ -259,17 +259,17 @@ public class Debug
         }
       }
     }
- </input></program>
+ </code></program>
 </p></statement>
 <solution>
   <p> Missing initializer for k. Add k = 0; or some initial value.
-    <program language="java"><input>
+    <program language="java"><code>
    int k = 0;  &lt;&lt; Missing initializer
    while (k &lt; 10) {          
      System.out.println(k);
      k++;
     }
-    </input></program>
+    </code></program>
                  </p>
 </solution>
 </exercise>
@@ -282,7 +282,7 @@ public class Debug
     Write a while loop that prints the following sequence of numbers: 0, 6, 12, 18, 24, 30, 36.
   </p>
 </statement>
-               <program language="java" interactive="activecode"><input>
+               <program language="java" interactive="activecode"><code>
                 public class CountBy6
                 {
                    public static void main(String[] args)
@@ -296,18 +296,18 @@ public class Debug
 
                    }
                 }
- </input></program>
+ </code></program>
  <solution>
   <p>
     Your younger sister is now learning how to count by sixes.
     Write a <c>while</c> loop that prints the following sequence of numbers: 0, 6, 12, 18, 24, 30, 36.
-<program language="java"><input>
+<program language="java"><code>
 int k = 0;                 // Initializer
 while (k &lt;= 36) {          // Loop-entry condition
  System.out.println(k);
  k += 6;                  // Updater
 }
-</input></program>
+</code></program>
   </p>
  </solution>
 </exercise>
@@ -326,7 +326,7 @@ while (k &lt;= 36) {          // Loop-entry condition
               then you get the sequence: 15, 7, 3, 1, 0.
               Write a method that implements this sequence using a while statement.      </p>
           </statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Sequence
 {
    public static void main(String[] args)
@@ -340,7 +340,7 @@ public class Sequence
           
     }
  }
-</input></program>
+</code></program>
 <solution>
   <p>
     If <em>N</em> is even, divide it by 2.
@@ -349,7 +349,7 @@ public class Sequence
     For example, if <em>N</em> is initially 15,
     then you get the sequence 15, 7, 3, 1, 0.
     Write a method that implements this sequence using a <c>while</c> statement.
-<program language="java"><input>
+<program language="java"><code>
 public static void sub1Div2(int N) {
   while(N != 0) {
     System.out.print(N + " ");
@@ -360,11 +360,11 @@ public static void sub1Div2(int N) {
   }
   System.out.println( N );
 } // sub1Div2()
-</input></program>
+</code></program>
   </p>
 </solution>
           </exercise>
-          </exercises>
+          
         </subsection>
 
   <subsection> 
@@ -413,7 +413,7 @@ Algorithm for calculating grass loss
       We can implement this algorithm using Java's
       <em>do-while statement</em>:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int losingGrass(double perCentGrass) {
   double amtGrass = 100.0; // Initialize amount grass
   int nDays = 0;            // Initialize day counter
@@ -424,7 +424,7 @@ public int losingGrass(double perCentGrass) {
                    // As long as enough grass remains
   return nDays / 7;     // Return the number of weeks
 } // losingGrass()
- </input></program>
+ </code></program>
   
   
     <principle>
@@ -434,11 +434,11 @@ public int losingGrass(double perCentGrass) {
         It has the following syntax:
       </p>
       <p>
-        <program language="java"><input>
+        <program language="java"><code>
          do {
             loop body
          } while(loop condition); 
-         </input></program>
+         </code></program>
       </p>
     </principle>
     <p>
@@ -475,13 +475,13 @@ do {                        // Beginning of loop body
     <p>
       The <c>do-while</c> structure would be an appropriate control structure for the following type of problem:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 do
   dial the desired telephone number  // Initializer
   if you get a busy signal
     hang up                          // Updater
 while there is a busy signal         // Bound test
- </input></program>
+ </code></program>
     <p>
       In this case,
       you want to perform the actions in the body of the loop at least once and possibly more than once
@@ -507,8 +507,8 @@ while there is a busy signal         // Bound test
     
     
    
-      
- <exercises xml:id="self-study-exercisesC18"><title>Self-Study Exercises</title>
+ </subsection>
+     <subsection xml:id="self-study-exercisesC18"><title>Self-Study Exercises</title>
         <p>
           Identify and fix the syntax error in the following <c>do-while</c> loop structures.
         </p>
@@ -516,7 +516,7 @@ while there is a busy signal         // Bound test
   <title>Do While Loop Bugs 1</title>
 <statement>
         <p>Fix the bugs in the following do-while loop.       
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class Debug
 {
    public static void main(String[] args)
@@ -529,17 +529,17 @@ public class Debug
       }
     }
   }
- </input></program>
+ </code></program>
 </p></statement>
 <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     int k = 0;
     do while (k &lt; 100) &lt;&lt; Misplaced condition
     {
          System.out.println(k);
          k++;
     }                    &lt;&lt; Belongs here
-     </input></program>
+     </code></program>
 </solution>
    </exercise>
   
@@ -547,7 +547,7 @@ public class Debug
     <title>Do While Loop Bugs 2</title>
     <statement>
             <p>Fix the bugs in the following do-while loop.         
-    <program language="java" interactive="activecode"><input>
+    <program language="java" interactive="activecode"><code>
     public class Debug
     {
        public static void main(String[] args)
@@ -559,16 +559,16 @@ public class Debug
           } while (k &lt; 12)
         }
     }
- </input></program>
+ </code></program>
 </p></statement>
 <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     int k = 0;
     do {
         System.out.println(k);
         k++;
     } while (k &lt; 12) &lt;&lt; Missing semicolon
-     </input></program>
+     </code></program>
 </solution>
  </exercise>
            
@@ -581,7 +581,7 @@ public class Debug
               1, 8, 15, 22, 29, 36, 43.
              </p>
           </statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
 public class CountBy7
 {
   public static void main(String[] args)
@@ -595,18 +595,18 @@ public class CountBy7
       
    }
 }
-           </input></program>
+           </code></program>
            <solution>
             <p>
               Your sister has moved on to counting by sevens.
               Write a <c>do-while</c> loop that prints the following sequence of numbers: 1, 8, 15, 22, 29, 36, 43.
-     <program language="java"><input>
+     <program language="java"><code>
 n = 1;      // Initializer
 do {
   System.out.print(n + " ");
   n += 7;                 // Updater
 } while (n &lt;= 43);     // Loop re-entry condition
-</input></program>
+</code></program>
   </p>
            </solution>
           </exercise>
@@ -632,7 +632,7 @@ do {
       <solution>
         <p>
           Write a method to input and validate pizza sales.
- <program language="java"><input>
+ <program language="java"><code>
 public int getAndValidatePizzaPrice() { // Uses KeyboardReader
   int pizza = 0;
   do {
@@ -647,7 +647,7 @@ public int getAndValidatePizzaPrice() { // Uses KeyboardReader
   } while ((pizza != 99) &amp;&amp; (pizza != 8) &amp;&amp; (pizza != 10) &amp;&amp; (pizza != 15));
   return pizza;
 } // getAndValidatePizzaPrice()
- </input></program>
+ </code></program>
         </p>
       </solution>
       </exercise>
@@ -667,7 +667,7 @@ public int getAndValidatePizzaPrice() { // Uses KeyboardReader
       <solution>
         <p>
           Write a method to input and validate pizza sales using the numbers 1, 2, and 3 to represent pizzas at different price levels.
- <program language="java"><input>
+ <program language="java"><code>
 public int getAndValidatePizzaPrice() { // Uses KeyboardReader
   int pizza = 0;
   do {
@@ -690,11 +690,10 @@ public int getAndValidatePizzaPrice() { // Uses KeyboardReader
   else
     return 0;
   } // getAndValidatePizzaPrice()
- </input></program>
+ </code></program>
         </p>
       </solution>
       </exercise>
-        
-      </exercises>
+      
         </subsection>
 </section>

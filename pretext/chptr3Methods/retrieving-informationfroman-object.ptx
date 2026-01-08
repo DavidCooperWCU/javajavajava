@@ -11,14 +11,14 @@
       the values of each of the instance variables.
       Consider the following method definitions:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public int getSticks()
 {   return nSticks;
 }
 public int getPlayer()
 {   return player;
 }
- </input></program>
+ </code></program>
     <p>
       A method's <term>Result Type</term> or <term>Return Type</term>
       is specified just in front of the <em>MethodName</em>.
@@ -38,11 +38,11 @@ We can name this method <c>gameOver()</c> and give it a <c>boolean</c> result ty
 <c>true</c> when the instance variable <c>nSticks</c> no longer contains a positive <c>int</c> value.
       Thus we can define:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public boolean gameOver()
 {   return (nSticks &lt;= 0);
 }
- </input></program>
+ </code></program>
     <p>
       The expression <c>(nSticks &lt;= 0)</c> evaluates to a <c>false</c> value if <c>nSticks</c> stores a positive value and it evaluates to
 <c>true</c> otherwise.
@@ -57,10 +57,10 @@ public boolean gameOver()
       or is replaced by, the value that is returned.
       For example, if we execute the statements
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim game1 = new OneRowNim(11);
 int sticksLeft = game1.getSticks();
- </input></program>
+ </code></program>
     <p>
       the expression <c>game1.getSticks()</c> will take on the value 11 after the <c>getSticks()</c> method is finished executing.
       At that point,
@@ -68,9 +68,9 @@ int sticksLeft = game1.getSticks();
       which is assigned to <c>sticksLeft</c>. In effect,
       the second statement is equivalent to the following statement:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int sticksLeft = 11;
- </input></program>
+ </code></program>
     <principle>
       <title>Evaluating Method Calls</title>
       <p>
@@ -86,12 +86,12 @@ int sticksLeft = 11;
       or be an argument of another method.
       All of the following statements involve valid calls of methods that return values:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 int fewerSticks = game1.getSticks() - 1;
 boolean done = game1.gameOver();
 System.out.println(game1.getPlayer());
 game1.getSticks();
- </input></program>
+ </code></program>
     <p>
       In each statement,
       the method call can be replaced with the value it returns.
@@ -180,7 +180,7 @@ game1.getSticks();
     </p>
     <figure xml:id="fig-testorn3">
       <caption>A <c>main()</c> method that tests the new methods for <c>OneRowNim</c></caption>
- <program language="java"><input>
+ <program language="java"><code>
 public static void main(String[] args)
 { OneRowNim game = new OneRowNim(13,2);
   game.takeSticks(2);
@@ -191,7 +191,7 @@ public static void main(String[] args)
   System.out.print("Sticks remaining: ");
   System.out.println(game.getSticks());
 } //main()
- </input></program>
+ </code></program>
     </figure>
     <p>
       The output to the console when this program is run will be:
@@ -211,7 +211,7 @@ Sticks remaining: 11
     <activity label="getTrace">
       <statement><p>Click on Show CodeLens and then the Next button to step through the code.</p></statement>
       <program xml:id="OneRowNimWithGetTrace" interactive="activecode" language="java">
-      <input>
+      <code>
       /*
       * File: OneRowNim.java
       * Author: Java Java Java
@@ -274,35 +274,35 @@ Sticks remaining: 11
              System.out.println(game.getSticks());
          } // main()
      } // OneRowNim class     
-      </input>
+      </code>
   </program>
 </activity>
 
     
-      
-      <exercises><title>Self-Study Exercises</title>
+      </subsection>
+      <subsection><title>Self-Study Exercises</title>
    
         <exercise label="qbasic">
           <title>Determine Output</title>
           <statement>
           <p>
             What would these segments of Java code display on the screen?
- <program language="java"><input>
+ <program language="java"><code>
 OneRowNim myGame = new OneRowNim(10,2);
 System.out.println(myGame.getPlayer());
 System.out.println(2 * myGame.getSticks());
 System.out.println(myGame.gameOver());
- </input></program>
+ </code></program>
           </p>
           </statement>
         <solution>
           <p>
             The following would be displayed on the screen:
-   <program language="java"><input>
+   <program language="java"><code>
      1
      20
      false
-   </input></program>        
+   </code></program>        
         </p>
         </solution></exercise>
         
@@ -323,7 +323,7 @@ System.out.println(myGame.gameOver());
         Write a method <c>playerOneGoesNext()</c> that returns a <c>boolean</c> value true if player one has the next turn.
       </p></statement>
       <program  interactive="activecode" language="java">
-      <input>
+      <code>
       /*
       * File: OneRowNim.java
       * Author: Java Java Java
@@ -399,10 +399,10 @@ System.out.println(myGame.gameOver());
              System.out.println(game.playerOneGoesNext());
          } // main()
      } // OneRowNim class     
-      </input>
+      </code>
   </program>
   <solution>
-    <program language="java"><input>
+    <program language="java"><code>
       public int getMoves()
       {   
            return nMoves;
@@ -412,9 +412,9 @@ System.out.println(myGame.gameOver());
       {   
            return (player == 1);
       }
-       </input></program>
+       </code></program>
   </solution>
 </exercise>
-</exercises>
+
 </subsection>
 </section>

@@ -10,7 +10,7 @@
       <feedback>
           <p>Review the chapter vocabulary in the Summary.</p>
       </feedback>
-      <matches>
+      <cardsort>
           <match>
               <premise>Divide and Conquer Principle</premise>
               <response>Dividing a problem or a task into parts
@@ -38,7 +38,7 @@
           <premise>Extensibility Principle</premise>
           <response>Objects will be designed so that they can potentially be extended.</response>
       </match>
-      </matches>
+      </cardsort>
     </exercise>
     
     <exercise label="matching-devices">
@@ -50,7 +50,7 @@
       <feedback>
           <p>Review the chapter vocabulary in the Summary.</p>
       </feedback>
-      <matches>
+      <cardsort>
           <match>
               <premise>A disk drive</premise>
               <response>memory device
@@ -84,7 +84,7 @@
       <premise>http</premise>
       <response>The protocol used by the World Wide Web.</response>
   </match>
-      </matches>
+      </cardsort>
     </exercise>     
      
   </exercises>

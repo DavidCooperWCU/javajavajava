@@ -23,9 +23,9 @@
     <xref ref="fig-orphan">Figure</xref> illustrates the process.
     Thus, given the statement
   </p>
-  <program language="java"><input>
+  <program language="java"><code>
    resultStr = resultStr + ptr + " ";
-  </input></program>
+  </code></program>
   <p>
     Java will evaluate the right-hand side,
     which creates a new <c>String</c> object whose value would 
@@ -115,7 +115,7 @@
   </p>
   <listing xml:id="lst-keywordsearch-rev">
     <caption>The revised <c>keywordSearch()</c> mrthod.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public String keywordSearch(String s, String keyword) 
 {
                                    // Create StringBuffer
@@ -130,7 +130,7 @@ public String keywordSearch(String s, String keyword)
   resultStr.insert(0, count + ": ");
   return resultStr.toString(); // Convert buffer to String
 } // keywordSearch()
- </input></program>
+ </code></program>
  </listing>
   <p>
     We declare <c>resultStr</c> as a <c>StringBuffer</c>
@@ -162,7 +162,7 @@ public String keywordSearch(String s, String keyword)
     use a <c>StringBuffer</c> instead of a <c>String</c> in such contexts.
   </p>
 
-  <exercises>
+     <subsection>
     <title>Self-Study Exercise</title>
 
     <exercise label="keyword-search-2">
@@ -170,7 +170,7 @@ public String keywordSearch(String s, String keyword)
       <statement><p>Run the code below to test the revised <c>keywordSearch()</c> method.
         Add additional calls to <c>keywordSearch()</c>.
               </p></statement>
-      <program language="java" interactive="activecode"><input>
+      <program language="java" interactive="activecode"><code>
    public class KeywordSearch {
       public String keywordSearch(String s, String keyword) 
       {
@@ -193,9 +193,9 @@ public String keywordSearch(String s, String keyword)
           System.out.println(result);
         }
     }
-      </input></program>
+      </code></program>
     <solution>
-    <program language="java"><input>
+    <program language="java"><code>
         public static void main(String args[]) {
           KeywordSearch searcher = new KeywordSearch();
           String result = searcher.keywordSearch("this is a test","is");
@@ -205,8 +205,8 @@ public String keywordSearch(String s, String keyword)
           result = searcher.keywordSearch("this is a test","taste"); 
           System.out.println(result);        
         } 
-    </input></program>
+    </code></program>
     </solution>        
     </exercise>
-  </exercises>   
+  </subsection>   
 </section>

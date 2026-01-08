@@ -4,11 +4,11 @@
     Java's Swing components are defined in a collection of packages named <c>javax.swing.*</c>, which is imported by the code shown in this and subsequent chapters.
     Swing packages include the following:
   </p>
- <program language="java"><input>
+ <program language="java"><code>
 javax.swing.event.*
 javax.swing.text.*
 javax.swing.plaf.*
- </input></program>
+ </code></program>
   <p>
     The <c>javax.swing.event</c> package defines the various Swing events and their listeners,
     such as the <c>MenuEvent</c> and the <c>MenuListener</c>. (In the AWT, the AWT events and listeners were defined in <c>java.awt.event</c>.)

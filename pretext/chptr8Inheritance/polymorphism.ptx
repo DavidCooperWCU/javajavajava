@@ -74,7 +74,7 @@
     <p>
       Here is the definition of the <c>Animal</c> class:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public abstract class Animal {
     protected String kind; // Cow, pig, cat, etc.
     public Animal()  {  }
@@ -83,16 +83,16 @@ public abstract class Animal {
     }
     public abstract String speak();   // Abstract method
 }
- </input></program>
+ </code></program>
     <p>
       Note how we declare the abstract method (<c>speak()</c>) and the abstract class.
       Because one or more of its methods is not implemented,
       an abstract class cannot be instantiated.
       That is, you cannot say:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 Animal animal = new Animal(); // Error: Animal is abstract
- </input></program>
+ </code></program>
     <p>
       Even though it is not necessary,
       we give the <c>Animal</c> class a constructor.
@@ -141,7 +141,7 @@ Animal animal = new Animal(); // Error: Animal is abstract
     </p>
     <listing xml:id="lst-animalsubs">
       <caption>Two <c>Animal</c> subclasses.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public class Cat extends Animal {
     public Cat() {
         kind = "cat";
@@ -158,7 +158,7 @@ public class Cow extends Animal {
         return "moo";
     }
 }
- </input></program>
+ </code></program>
 </listing>
 
 
@@ -182,7 +182,7 @@ public class Cow extends Animal {
       </p>
 <activity label="animals">
 <statement>Run the following code. Can you change what the cow and cat say?</statement>
-<program language="java" interactive="activecode"><input>
+<program language="java" interactive="activecode"><code>
   /** A main class to test the animal hierarchy */
   public class AnimalRunner {
   
@@ -229,18 +229,18 @@ class Cow extends Animal { // Extends Animal, implements speak()
       return "moo";
   }
 }
-</input></program>
+</code></program>
 </activity>
 
 <p>
       Consider the following code segment from the <c>main()</c> method:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
  Animal animal = new Cow();
  System.out.println(animal.toString()); // A cow goes moo
  animal = new Cat();
  System.out.println(animal.toString()); // A cat goes meow
- </input></program>
+ </code></program>
     <p>
       We first create a <c>Cow</c> object and then invoke its (inherited) <c>toString()</c> method.
       It returns,
@@ -277,7 +277,7 @@ class Cow extends Animal { // Extends Animal, implements speak()
       we could use a <c>switch</c> statement to select the appropriate method call.
       For example, consider the following method definition:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public String talk(Animal a) {
   if (a instanceof Cow)
      return "I am a " + kind + " and I go " + a.moo();
@@ -286,7 +286,7 @@ public String talk(Animal a) {
   else
     return "I don't know what I am";
 }
- </input></program>
+ </code></program>
     <p>
       In this example, 
       we introduce the <c>instanceof</c> operator,
@@ -303,7 +303,8 @@ public String talk(Animal a) {
       Imagine how unwieldy this would become if we want to add many different animals.
     </p>
 
-    <exercises>
+   </subsection>
+     <subsection>
       <title>Self-Study Exercises</title>          
             <exercise label="PigEx">
               <title>Pig subclass</title>
@@ -313,7 +314,7 @@ public String talk(Animal a) {
                 <q>oink.</q>
               </p>
             </statement>
-              <program language="java" interactive="activecode"><input>
+              <program language="java" interactive="activecode"><code>
                 /** A main class to test the animal hierarchy */
                 public class AnimalRunner {
                 
@@ -360,9 +361,9 @@ public String talk(Animal a) {
                     return "moo";
                 }
               }
-              </input></program>
+              </code></program>
 <solution>
-  <program language="java"><input>
+  <program language="java"><code>
     public class Pig extends Animal {
         public Pig() {
             kind = "pig";
@@ -371,7 +372,7 @@ public String talk(Animal a) {
             return "oink";
         }
     }
-     </input></program>
+     </code></program>
 </solution>
 </exercise>
               
@@ -379,7 +380,7 @@ public String talk(Animal a) {
 <title>Pig talk</title>
 <statement><p>Modify the <c>talk()</c> method  
   to incorporate the <c>Pig</c> class.</p></statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
     /** A main class to test the animal hierarchy */
     public class AnimalRunner {
   
@@ -429,10 +430,10 @@ public String talk(Animal a) {
         return "moo";
       }
     }
-  </input>
+  </code>
    </program>
    <solution>  
-    <program language="java"><input>
+    <program language="java"><code>
       // A non-polymorphic design
       public String talk(Animal a) {
         if (a instanceof Cow)
@@ -444,10 +445,10 @@ public String talk(Animal a) {
          else
            return "I don't know what I am";
       }
-       </input></program>    
+       </code></program>    
   </solution>  
   </exercise>  
-</exercises>
+
 </subsection>
 
 <subsection>
@@ -478,7 +479,7 @@ public String talk(Animal a) {
     </p>
     <figure xml:id="fig-speakable">
       <caption>Defining and using the  <c>Speakable</c> interface.</caption>
- <program language="java"><input>
+ <program language="java"><code>
 public interface Speakable {
     public String speak();
 }
@@ -490,7 +491,7 @@ public class Animal {
                ((Speakable)this).speak();
     }
 }
- </input></program>
+ </code></program>
     </figure>
     <p>
       Note the differences between this definition of <c>Animal</c> and the previous definition.
@@ -510,7 +511,7 @@ public class Animal {
     <p>
       Given these definitions, <c>Animal</c> subclasses will now <c>extend</c> the <c>Animal</c> class and <c>implement</c> the <c>Speakable</c> interface:
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 public class Cat extends Animal implements Speakable {
     public Cat() { kind = "cat"; }
     public String speak() { 
@@ -523,7 +524,7 @@ public class Cow extends Animal implements Speakable {
       return "moo";  
     }
 }
- </input></program>
+ </code></program>
     <p>
       To implement a Java interface,
       one must provide a method implementation for each of the abstract methods in the interface.
@@ -533,9 +534,9 @@ public class Cow extends Animal implements Speakable {
       Note, again,
       the expression from the <c>Animal.toString()</c> class
     </p>
- <program language="java"><input>
+ <program language="java"><code>
 ((Speakable)this).speak();
- </input></program>
+ </code></program>
     <p>
       which casts <c>this</c> object into a <c>Speakable</c> object.
       The cast is required because the <c>Animal</c> class does not have 
@@ -559,12 +560,12 @@ public class Cow extends Animal implements Speakable {
       Given these definitions of the <c>Cow</c> and <c>Cat</c> subclasses,
       the following code segment will produce the same results as in the previous section.
     </p>
- <program language="java"><input>
+ <program language="java"><code>
   Animal animal = new Cow();
   System.out.println(animal.toString()); // A cow goes moo
   animal = new Cat();
   System.out.println(animal.toString()); // A cat goes meow
- </input></program>
+ </code></program>
     
 <exercises>
  <exercise label="animalsInterface">
@@ -573,7 +574,7 @@ public class Cow extends Animal implements Speakable {
     <p>Modify the code below to add a <c>Pig</c> to the hierarchy 
       using the interface implementation.</p>
 </statement>
-  <program language="java" interactive="activecode"><input>
+  <program language="java" interactive="activecode"><code>
   /** A main class to test the animal hierarchy */
   public class AnimalRunner {    
     public static void main(String args[]) {
@@ -611,7 +612,7 @@ public class Cow extends Animal implements Speakable {
 
     public String speak() { return "moo"; }
   }   
-  </input></program>
+  </code></program>
   <solution>
     <p>The <c>Pig</c> class:</p>
       <pre>
